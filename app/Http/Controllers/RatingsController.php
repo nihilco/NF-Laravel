@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\App\Rating;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 
 class RatingsController extends Controller

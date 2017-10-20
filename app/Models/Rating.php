@@ -1,10 +1,10 @@
 <?php
 
-namespace App\App;
+namespace App\Rating;
 
 use Illuminate\Database\Eloquent\Model;
 
-class View extends Model
+class Rating extends Model
 {
     //
 }
