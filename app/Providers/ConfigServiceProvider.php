@@ -37,7 +37,13 @@ class ConfigServiceProvider extends ServiceProvider
 
 	// Set other variables based on domain
 	// Title
-	$config->set('view.title', $domain->title);
+	$title = $host;
+	if($domain) {
+	    if($domain->title != "") {
+	        $title = $domain->title;
+	    }
+	}
+	$config->set('view.title', $title);
 	// Stripe Account
 	$config->set('services.stripe.connect.account', '');
 	$config->set('services.stripe.connect.secret', '');
