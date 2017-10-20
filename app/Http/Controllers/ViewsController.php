@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publisher;
+use App\App\View;
 use Illuminate\Http\Request;
 
-class PublisherController extends Controller
+class ViewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PublisherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\App\View  $view
      * @return \Illuminate\Http\Response
      */
-    public function show(Publisher $publisher)
+    public function show(View $view)
     {
         //
     }
@@ -52,10 +52,10 @@ class PublisherController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\App\View  $view
      * @return \Illuminate\Http\Response
      */
-    public function edit(Publisher $publisher)
+    public function edit(View $view)
     {
         //
     }
@@ -64,10 +64,10 @@ class PublisherController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\App\View  $view
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publisher $publisher)
+    public function update(Request $request, View $view)
     {
         //
     }
@@ -75,10 +75,10 @@ class PublisherController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Publisher  $publisher
+     * @param  \App\App\View  $view
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Publisher $publisher)
+    public function destroy(View $view)
     {
         //
     }

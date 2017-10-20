@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Currency;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 
-class CurrencyController extends Controller
+class PublishersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CurrencyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Currency  $currency
+     * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function show(Currency $currency)
+    public function show(Publisher $publisher)
     {
         //
     }
@@ -52,10 +52,10 @@ class CurrencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Currency  $currency
+     * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Currency $currency)
+    public function edit(Publisher $publisher)
     {
         //
     }
@@ -64,10 +64,10 @@ class CurrencyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Currency  $currency
+     * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Currency $currency)
+    public function update(Request $request, Publisher $publisher)
     {
         //
     }
@@ -75,10 +75,10 @@ class CurrencyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Currency  $currency
+     * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Currency $currency)
+    public function destroy(Publisher $publisher)
     {
         //
     }

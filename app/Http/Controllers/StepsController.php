@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Zone;
+use App\Models\Step;
 use Illuminate\Http\Request;
 
-class ZoneController extends Controller
+class StepsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ZoneController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Zone  $zone
+     * @param  \App\Models\Step  $step
      * @return \Illuminate\Http\Response
      */
-    public function show(Zone $zone)
+    public function show(Step $step)
     {
         //
     }
@@ -52,10 +52,10 @@ class ZoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Zone  $zone
+     * @param  \App\Models\Step  $step
      * @return \Illuminate\Http\Response
      */
-    public function edit(Zone $zone)
+    public function edit(Step $step)
     {
         //
     }
@@ -64,10 +64,10 @@ class ZoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Zone  $zone
+     * @param  \App\Models\Step  $step
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Zone $zone)
+    public function update(Request $request, Step $step)
     {
         //
     }
@@ -75,10 +75,10 @@ class ZoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Zone  $zone
+     * @param  \App\Models\Step  $step
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Zone $zone)
+    public function destroy(Step $step)
     {
         //
     }

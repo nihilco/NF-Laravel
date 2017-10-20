@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Link;
+use App\Models\Currency;
 use Illuminate\Http\Request;
 
-class LinkController extends Controller
+class CurrenciesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class LinkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Currency  $currency
      * @return \Illuminate\Http\Response
      */
-    public function show(Link $link)
+    public function show(Currency $currency)
     {
         //
     }
@@ -52,10 +52,10 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Currency  $currency
      * @return \Illuminate\Http\Response
      */
-    public function edit(Link $link)
+    public function edit(Currency $currency)
     {
         //
     }
@@ -64,10 +64,10 @@ class LinkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Currency  $currency
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Link $link)
+    public function update(Request $request, Currency $currency)
     {
         //
     }
@@ -75,10 +75,10 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Currency  $currency
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Link $link)
+    public function destroy(Currency $currency)
     {
         //
     }

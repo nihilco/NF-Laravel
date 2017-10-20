@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Website;
+use App\Models\Receipt;
 use Illuminate\Http\Request;
 
-class WebsiteController extends Controller
+class ReceiptsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class WebsiteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Website  $website
+     * @param  \App\Models\Receipt  $receipt
      * @return \Illuminate\Http\Response
      */
-    public function show(Website $website)
+    public function show(Receipt $receipt)
     {
         //
     }
@@ -52,10 +52,10 @@ class WebsiteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Website  $website
+     * @param  \App\Models\Receipt  $receipt
      * @return \Illuminate\Http\Response
      */
-    public function edit(Website $website)
+    public function edit(Receipt $receipt)
     {
         //
     }
@@ -64,10 +64,10 @@ class WebsiteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Website  $website
+     * @param  \App\Models\Receipt  $receipt
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Website $website)
+    public function update(Request $request, Receipt $receipt)
     {
         //
     }
@@ -75,10 +75,10 @@ class WebsiteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Website  $website
+     * @param  \App\Models\Receipt  $receipt
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Website $website)
+    public function destroy(Receipt $receipt)
     {
         //
     }

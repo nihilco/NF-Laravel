@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Step;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
-class StepController extends Controller
+class PlansController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class StepController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Step  $step
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show(Step $step)
+    public function show(Plan $plan)
     {
         //
     }
@@ -52,10 +52,10 @@ class StepController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Step  $step
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Step $step)
+    public function edit(Plan $plan)
     {
         //
     }
@@ -64,10 +64,10 @@ class StepController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Step  $step
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Step $step)
+    public function update(Request $request, Plan $plan)
     {
         //
     }
@@ -75,10 +75,10 @@ class StepController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Step  $step
+     * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Step $step)
+    public function destroy(Plan $plan)
     {
         //
     }

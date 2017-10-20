@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\App\Rating;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class RatingController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class RatingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\App\Rating  $rating
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Rating $rating)
+    public function show(Post $post)
     {
         //
     }
@@ -52,10 +52,10 @@ class RatingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\App\Rating  $rating
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rating $rating)
+    public function edit(Post $post)
     {
         //
     }
@@ -64,10 +64,10 @@ class RatingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\App\Rating  $rating
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rating $rating)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -75,10 +75,10 @@ class RatingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\App\Rating  $rating
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rating $rating)
+    public function destroy(Post $post)
     {
         //
     }

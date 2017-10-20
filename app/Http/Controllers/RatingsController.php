@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Exception;
+use App\App\Rating;
 use Illuminate\Http\Request;
 
-class ExceptionController extends Controller
+class RatingsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ExceptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Exception  $exception
+     * @param  \App\App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function show(Exception $exception)
+    public function show(Rating $rating)
     {
         //
     }
@@ -52,10 +52,10 @@ class ExceptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Exception  $exception
+     * @param  \App\App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function edit(Exception $exception)
+    public function edit(Rating $rating)
     {
         //
     }
@@ -64,10 +64,10 @@ class ExceptionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Exception  $exception
+     * @param  \App\App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Exception $exception)
+    public function update(Request $request, Rating $rating)
     {
         //
     }
@@ -75,10 +75,10 @@ class ExceptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Exception  $exception
+     * @param  \App\App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Exception $exception)
+    public function destroy(Rating $rating)
     {
         //
     }

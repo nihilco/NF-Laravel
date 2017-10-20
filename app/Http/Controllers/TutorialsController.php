@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Reply;
+use App\Models\Tutorial;
 use Illuminate\Http\Request;
 
-class ReplyController extends Controller
+class TutorialsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ReplyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Reply  $reply
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function show(Reply $reply)
+    public function show(Tutorial $tutorial)
     {
         //
     }
@@ -52,10 +52,10 @@ class ReplyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Reply  $reply
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reply $reply)
+    public function edit(Tutorial $tutorial)
     {
         //
     }
@@ -64,10 +64,10 @@ class ReplyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Reply  $reply
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(Request $request, Tutorial $tutorial)
     {
         //
     }
@@ -75,10 +75,10 @@ class ReplyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Reply  $reply
+     * @param  \App\Models\Tutorial  $tutorial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Tutorial $tutorial)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Domains;
+use App\Models\Domain;
 use Illuminate\Http\Request;
 
 class DomainsController extends Controller

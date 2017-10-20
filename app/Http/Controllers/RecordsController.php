@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Source;
+use App\Models\Record;
 use Illuminate\Http\Request;
 
-class SourceController extends Controller
+class RecordsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SourceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Source  $source
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Source $source)
+    public function show(Record $record)
     {
         //
     }
@@ -52,10 +52,10 @@ class SourceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Source  $source
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function edit(Source $source)
+    public function edit(Record $record)
     {
         //
     }
@@ -64,10 +64,10 @@ class SourceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Source  $source
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Source $source)
+    public function update(Request $request, Record $record)
     {
         //
     }
@@ -75,10 +75,10 @@ class SourceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Source  $source
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Source $source)
+    public function destroy(Record $record)
     {
         //
     }

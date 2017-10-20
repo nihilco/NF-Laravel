@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\App\View;
+use App\App\Vote;
 use Illuminate\Http\Request;
 
-class ViewController extends Controller
+class VotesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ViewController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\App\View  $view
+     * @param  \App\App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function show(View $view)
+    public function show(Vote $vote)
     {
         //
     }
@@ -52,10 +52,10 @@ class ViewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\App\View  $view
+     * @param  \App\App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function edit(View $view)
+    public function edit(Vote $vote)
     {
         //
     }
@@ -64,10 +64,10 @@ class ViewController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\App\View  $view
+     * @param  \App\App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, View $view)
+    public function update(Request $request, Vote $vote)
     {
         //
     }
@@ -75,10 +75,10 @@ class ViewController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\App\View  $view
+     * @param  \App\App\Vote  $vote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(View $view)
+    public function destroy(Vote $vote)
     {
         //
     }

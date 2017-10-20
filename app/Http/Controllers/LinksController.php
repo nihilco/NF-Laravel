@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Record;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
-class RecordController extends Controller
+class LinksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class RecordController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function show(Record $record)
+    public function show(Link $link)
     {
         //
     }
@@ -52,10 +52,10 @@ class RecordController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function edit(Record $record)
+    public function edit(Link $link)
     {
         //
     }
@@ -64,10 +64,10 @@ class RecordController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Record $record)
+    public function update(Request $request, Link $link)
     {
         //
     }
@@ -75,10 +75,10 @@ class RecordController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Record $record)
+    public function destroy(Link $link)
     {
         //
     }

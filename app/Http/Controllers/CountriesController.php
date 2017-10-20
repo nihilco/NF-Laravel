@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tutorial;
+use App\Models\Country;
 use Illuminate\Http\Request;
 
-class TutorialController extends Controller
+class CountriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TutorialController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tutorial  $tutorial
+     * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Tutorial $tutorial)
+    public function show(Country $country)
     {
         //
     }
@@ -52,10 +52,10 @@ class TutorialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tutorial  $tutorial
+     * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tutorial $tutorial)
+    public function edit(Country $country)
     {
         //
     }
@@ -64,10 +64,10 @@ class TutorialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tutorial  $tutorial
+     * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tutorial $tutorial)
+    public function update(Request $request, Country $country)
     {
         //
     }
@@ -75,10 +75,10 @@ class TutorialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tutorial  $tutorial
+     * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tutorial $tutorial)
+    public function destroy(Country $country)
     {
         //
     }

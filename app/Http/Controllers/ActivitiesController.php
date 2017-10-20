@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\App\Device;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
-class DeviceController extends Controller
+class ActivitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class DeviceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\App\Device  $device
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
+    public function show(Activity $activity)
     {
         //
     }
@@ -52,10 +52,10 @@ class DeviceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\App\Device  $device
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Device $device)
+    public function edit(Activity $activity)
     {
         //
     }
@@ -64,10 +64,10 @@ class DeviceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\App\Device  $device
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Device $device)
+    public function update(Request $request, Activity $activity)
     {
         //
     }
@@ -75,10 +75,10 @@ class DeviceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\App\Device  $device
+     * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Device $device)
+    public function destroy(Activity $activity)
     {
         //
     }
