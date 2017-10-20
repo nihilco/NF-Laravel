@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Domains extends Model
+class Page extends Model
 {
     //
 }

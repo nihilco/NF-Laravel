@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Issues extends Model
+class Domain extends Model
 {
     //
 }
