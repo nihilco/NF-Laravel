@@ -24,16 +24,28 @@ class DomainsTableSeeder extends Seeder
 	    'title' => 'NIHIL Framework',	    
 	]);
 
-	$nihil = factory(App\Models\Domain::class)->create([
+	$jupiter = factory(App\Models\Domain::class)->create([
 	    'tld' => 'jupiter.nihil.co',
 	    'host' => 'jupiter.nihil.co',
 	    'title' => 'The NIHIL Corporation',	    
 	]);
 
-	$nihil = factory(App\Models\Domain::class)->create([
+	$uclemmer = factory(App\Models\Domain::class)->create([
 	    'tld' => 'uclemmer.com',
 	    'host' => 'www.uclemmer.com',
 	    'title' => 'uclemmer',	    
+	]);
+
+	$cclemmer = factory(App\Models\Domain::class)->create([
+	    'tld' => 'cclemmer.com',
+	    'host' => 'www.cclemmer.com',
+	    'title' => 'cclemmer',	    
+	]);
+
+	$crosbyjeepclub = factory(App\Models\Domain::class)->create([
+	    'tld' => 'crosbyjeepclub.com',
+	    'host' => 'www.crosbyjeepclub.com',
+	    'title' => 'Crosby Jeep Club',	    
 	]);
     }
 }
