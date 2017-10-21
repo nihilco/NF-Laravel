@@ -15,6 +15,12 @@ class CreateZonesTable extends Migration
     {
         Schema::create('zones', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->string('domain');
+	    $table->string('nameserver');
+	    $table->string('email');
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ class CreateExceptionsTable extends Migration
     {
         Schema::create('exceptions', function (Blueprint $table) {
             $table->increments('id');
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

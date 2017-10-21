@@ -15,6 +15,13 @@ class CreateOrderItemsTable extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('invoice_id');
+	    $table->string('name');
+	    $table->unsignedInteger('unit_id');
+	    $table->unsignedInteger('quantity');
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

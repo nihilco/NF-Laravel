@@ -15,6 +15,15 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('customer_id');
+	    $table->unsignedInteger('type_id');
+	    $table->string('stripe_id');
+	    $table->string('nickname')->nullable();
+	    $table->string('reference_number');
+	    $table->datetime('last_used_on')->nullable();
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

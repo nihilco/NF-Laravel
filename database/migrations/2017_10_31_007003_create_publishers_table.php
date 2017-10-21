@@ -15,6 +15,12 @@ class CreatePublishersTable extends Migration
     {
         Schema::create('publishers', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('address_id');
+	    $table->string('name');
+	    $table->string('website');
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

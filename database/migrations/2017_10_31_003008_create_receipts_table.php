@@ -15,6 +15,13 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('customer_id');
+	    $table->string('slug');
+	    $table->text('content');
+	    $table->datetime('opened_at')->nullable();
+	    $table->softDeletes();
             $table->timestamps();
         });
     }

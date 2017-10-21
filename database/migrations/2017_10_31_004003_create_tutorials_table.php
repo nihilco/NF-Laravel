@@ -15,6 +15,13 @@ class CreateTutorialsTable extends Migration
     {
         Schema::create('tutorials', function (Blueprint $table) {
             $table->increments('id');
+	    $table->unsignedInteger('creator_id');
+	    $table->unsignedInteger('owner_id');
+	    $table->string('title');
+	    $table->string('slug');
+	    $table->text('description');
+	    $table->unsignedInteger('total_steps')->default(0);
+	    $table->softDeletes();
             $table->timestamps();
         });
     }
