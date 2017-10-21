@@ -25,7 +25,17 @@ class ConfigServiceProvider extends ServiceProvider
     {
         //
 	$host = \Request::server("HTTP_HOST");
-	$domain = \DB::table('domains')->where('host', $host)->first();
+
+	if (\App::runningInConsole())
+	{
+	    $domain = factory(\App\Models\Domain::class)->make([
+	        'tld' => 'nihilframework.com',
+		'host' => 'www.nihilframework.com',
+		'title' => 'NIHIL Framework',
+	    ]);
+	}else{
+	    $domain = \DB::table('domains')->where('host', $host)->first();
+	}
 
 	$config = app('config');
 
