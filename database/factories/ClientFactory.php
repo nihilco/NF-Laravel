@@ -7,5 +7,9 @@ $factory->define(App\Models\Client::class, function (Faker $faker) {
     return [
     	'creator_id' => 1,
 	'owner_id' => 1,
+	'user_id' => null,
+	'address_id' => null,
+	'type_id' => null,
+	'name' => $faker->company,
     ];
 });

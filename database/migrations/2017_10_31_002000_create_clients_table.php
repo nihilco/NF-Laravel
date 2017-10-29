@@ -17,9 +17,10 @@ class CreateClientsTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('user_id');
-	    $table->unsignedInteger('address_id');
-	    $table->unsignedInteger('type_id');
+	    $table->unsignedInteger('user_id')->nullable();
+	    $table->unsignedInteger('address_id')->nullable();
+	    $table->unsignedInteger('type_id')->nullable();
+	    $table->string('name');
 	    $table->softDeletes();
             $table->timestamps();
         });

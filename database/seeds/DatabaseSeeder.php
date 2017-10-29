@@ -13,7 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         //
 	$this->call([
+	    ClientsTableSeeder::class,
 	    DomainsTableSeeder::class,
+	    WebsitesTableSeeder::class,
+	    PagesTableSeeder::class,
+	    PostsTableSeeder::class,
+	    TutorialsTableSeeder::class,
 	]);
     }
 }

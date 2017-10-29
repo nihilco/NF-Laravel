@@ -17,7 +17,9 @@ class CreateWebsitesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->string('domain');
+   	    $table->unsignedInteger('domain_id');
+    	    $table->unsignedInteger('account_id')->nullable();
+	    $table->string('hostname');
 	    $table->string('title');
 	    $table->softDeletes();
             $table->timestamps();

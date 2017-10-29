@@ -10,10 +10,8 @@ $factory->define(App\Models\Domain::class, function (Faker $faker) {
     return [
     	'creator_id' => 1,
 	'owner_id' => 1,
-	'account_id' => 1,
+	'client_id' => 1,
 	'tld' => $tld,
-	'host' => 'www.' . $tld,
-        'title' => $faker->company,
 	'registered_on' => $today->toDateString(),
 	'expires_on' => $today->addYear()->toDateString(),
     ];

@@ -28,13 +28,12 @@ class ConfigServiceProvider extends ServiceProvider
 
 	if (\App::runningInConsole())
 	{
-	    $domain = factory(\App\Models\Domain::class)->make([
-	        'tld' => 'nihilframework.com',
-		'host' => 'www.nihilframework.com',
+	    $website = factory(\App\Models\Domain::class)->make([
+		'hostname' => 'www.nihilframework.com',
 		'title' => 'NIHIL Framework',
 	    ]);
 	}else{
-	    $domain = \DB::table('domains')->where('host', $host)->first();
+	    $website = \DB::table('websites')->where('hostname', $host)->first();
 	}
 
 	$config = app('config');
@@ -48,9 +47,9 @@ class ConfigServiceProvider extends ServiceProvider
 	// Set other variables based on domain
 	// Title
 	$title = $host;
-	if($domain) {
-	    if($domain->title != "") {
-	        $title = $domain->title;
+	if($website) {
+	    if($website->title != "") {
+	        $title = $website->title;
 	    }
 	}
 	$config->set('view.title', $title);

@@ -17,10 +17,8 @@ class CreateDomainsTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('account_id');
+	    $table->unsignedInteger('client_id');
 	    $table->string('tld');
-	    $table->string('host');
-	    $table->string('title');
 	    $table->date('registered_on');
 	    $table->date('expires_on');
 	    $table->softDeletes();
