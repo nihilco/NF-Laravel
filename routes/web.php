@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('default.index');
-});
+Route::get('/', 'DefaultController@index');
 
-Route::resource('accounts', 'accountsAccountsController');
+Route::resource('accounts', 'AccountsAccountsController');
 Route::resource('activities', 'ActivitiesController');
 Route::resource('addresses', 'AddressesController');
 Route::resource('authors', 'AuthorsController');
+Route::resource('blog', 'BlogController');
 Route::resource('books', 'BooksController');
 Route::resource('clients', 'ClientsController');
 Route::resource('comments', 'CommentsController');
@@ -36,6 +35,7 @@ Route::resource('invoices', 'InvoicesController');
 Route::resource('issues', 'IssuesController');
 Route::resource('links', 'LinksController');
 Route::resource('orders', 'OrdersController');
+Route::resource('organizations', 'OrganizationsController');
 Route::resource('pages', 'PagesController');
 Route::resource('payments', 'PaymentsController');
 Route::resource('plans', 'PlansController');
@@ -47,6 +47,7 @@ Route::resource('receipts', 'ReceiptsController');
 Route::resource('records', 'RecordsController');
 Route::resource('replies', 'RepliesController');
 Route::resource('resources', 'ResourcesController');
+Route::resource('series', 'SeriesController');
 Route::resource('sessions', 'SessionsController');
 Route::resource('sources', 'SourcesController');
 Route::resource('steps', 'StepsController');
@@ -60,3 +61,8 @@ Route::resource('votes', 'VotesController');
 Route::resource('websites', 'WebsitesController');
 Route::resource('zones', 'ZonesController');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{page}', 'PagesController@show');

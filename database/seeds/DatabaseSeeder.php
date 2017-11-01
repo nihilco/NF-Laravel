@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
 	    PagesTableSeeder::class,
 	    PostsTableSeeder::class,
 	    TutorialsTableSeeder::class,
+	    AuthorsTableSeeder::class,
+	    SeriesTableSeeder::class,
+	    BooksTableSeeder::class,
 	]);
     }
 }
