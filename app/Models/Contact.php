@@ -27,4 +27,14 @@ class Contact extends Model
     {
         return '/contacts/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -27,4 +27,15 @@ class Step extends Model
     {
         return '/steps/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

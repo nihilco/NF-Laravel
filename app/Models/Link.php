@@ -27,4 +27,14 @@ class Link extends Model
     {
         return '/links/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

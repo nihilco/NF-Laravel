@@ -27,4 +27,14 @@ class Exception extends Model
     {
         return '/exceptions/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

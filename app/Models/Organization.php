@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Zone extends Model
+class Organization extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -21,11 +21,11 @@ class Zone extends Model
      * @var array
      */
     protected $hidden = [];
-
+    
     //
     public function path()
     {
-        return '/zones/' . $this->id;
+        return '/organizations/' . $this->id;
     }
 
     public function creator()

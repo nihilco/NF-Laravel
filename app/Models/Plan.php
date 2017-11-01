@@ -27,4 +27,15 @@ class Plan extends Model
     {
         return '/plans/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

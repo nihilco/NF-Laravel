@@ -27,4 +27,14 @@ class Author extends Model
     {
         return '/authors/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

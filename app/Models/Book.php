@@ -27,4 +27,24 @@ class Book extends Model
     {
         return '/books/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class)->withTimestamps();
+    }
+
+    public function addAuthor($aid)
+    {
+        return $this->authors()->attach($aid);
+    }
 }

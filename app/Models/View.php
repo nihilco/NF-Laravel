@@ -27,4 +27,15 @@ class View extends Model
     {
         return '/views/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

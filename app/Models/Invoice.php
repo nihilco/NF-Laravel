@@ -27,4 +27,15 @@ class Invoice extends Model
     {
         return '/invoices/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

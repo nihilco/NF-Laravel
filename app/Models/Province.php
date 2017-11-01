@@ -27,4 +27,15 @@ class Province extends Model
     {
         return '/provineces/' . $this->id;
     }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class)
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
