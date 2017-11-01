@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ZonesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ZonesController extends Controller
     public function index()
     {
         //
+	$zones = Zone::all();
+	return view('zones.index', compact('zones'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ZonesController extends Controller
     public function create()
     {
         //
+	return view('zones.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class ZonesController extends Controller
     public function show(Zone $zone)
     {
         //
+	return view('zones.show', compact('zone'));
     }
 
     /**
@@ -58,6 +72,7 @@ class ZonesController extends Controller
     public function edit(Zone $zone)
     {
         //
+	return view('zones.edit', compact('zone'));
     }
 
     /**

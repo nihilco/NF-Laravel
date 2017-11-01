@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class RepliesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class RepliesController extends Controller
     public function index()
     {
         //
+	$replies = Reply::all();
+	return view('replies.index', compact('replies'));
     }
 
     /**
@@ -25,6 +37,7 @@ class RepliesController extends Controller
     public function create()
     {
         //
+	return view('replies.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class RepliesController extends Controller
     public function show(Reply $reply)
     {
         //
+	return view('replies.show', compact('reply'));
     }
 
     /**
@@ -58,6 +72,7 @@ class RepliesController extends Controller
     public function edit(Reply $reply)
     {
         //
+	return view('replies.edit', compact('reply'));
     }
 
     /**

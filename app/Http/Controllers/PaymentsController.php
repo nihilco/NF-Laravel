@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PaymentsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class PaymentsController extends Controller
     public function index()
     {
         //
+	$payments = Payment::latest()->get();
+	return view('payments.index', compact('payments'));
     }
 
     /**
@@ -25,6 +37,7 @@ class PaymentsController extends Controller
     public function create()
     {
         //
+	return view('payments.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class PaymentsController extends Controller
     public function show(Payment $payment)
     {
         //
+	return view('payments.show', compact('payment'));
     }
 
     /**
@@ -58,6 +72,7 @@ class PaymentsController extends Controller
     public function edit(Payment $payment)
     {
         //
+	return view('payments.edit', compact('payment'));
     }
 
     /**

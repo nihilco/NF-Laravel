@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class CountriesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class CountriesController extends Controller
     public function index()
     {
         //
+	$countries = Country::all();
+	return view('countries.index', compact('countries'));
     }
 
     /**
@@ -25,6 +37,7 @@ class CountriesController extends Controller
     public function create()
     {
         //
+	return view('countries.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class CountriesController extends Controller
     public function show(Country $country)
     {
         //
+	return view('countries.show', compact('country'));
     }
 
     /**
@@ -58,6 +72,7 @@ class CountriesController extends Controller
     public function edit(Country $country)
     {
         //
+	return view('countries.edit', compact('country'));
     }
 
     /**

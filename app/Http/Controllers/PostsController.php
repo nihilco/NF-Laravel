@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class PostsController extends Controller
     public function index()
     {
         //
+	$posts = Post::latest()->get();
+	return view('posts.index', compact('posts'));
     }
 
     /**
@@ -25,6 +37,7 @@ class PostsController extends Controller
     public function create()
     {
         //
+	return view('posts.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         //
+	return view('posts.show', compact('post'));
     }
 
     /**
@@ -58,6 +72,7 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         //
+	return view('posts.edit', compact('post'));
     }
 
     /**

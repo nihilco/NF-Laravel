@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class BooksController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class BooksController extends Controller
     public function index()
     {
         //
+	$books = Book::latest()->get();
+	return view('books.index', compact(['books']));
     }
 
     /**
@@ -25,6 +37,7 @@ class BooksController extends Controller
     public function create()
     {
         //
+	return view('books.create');
     }
 
     /**
@@ -41,30 +54,32 @@ class BooksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Books $books)
+    public function show(Book $book)
     {
         //
+	return view('books.show', compact('book'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit(Book $book)
     {
         //
+	return view('books.edit', compact('book'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Books $books)
@@ -75,7 +90,7 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Books  $books
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function destroy(Books $books)

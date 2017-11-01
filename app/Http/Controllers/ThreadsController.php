@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ThreadsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ThreadsController extends Controller
     public function index()
     {
         //
+	$threads = Thread::all();
+	return view('threads.index', compact('threads'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ThreadsController extends Controller
     public function create()
     {
         //
+	return view('threads.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class ThreadsController extends Controller
     public function show(Thread $thread)
     {
         //
+	return views('threads.show', compact('thread'));
     }
 
     /**
@@ -58,6 +72,7 @@ class ThreadsController extends Controller
     public function edit(Thread $thread)
     {
         //
+	return view('thread.edit', compact('thread'));
     }
 
     /**

@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class WebsitesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class WebsitesController extends Controller
     public function index()
     {
         //
+	$websites = Website::all();
+	return view('websites.index', compact('websites'));
     }
 
     /**
@@ -25,6 +37,7 @@ class WebsitesController extends Controller
     public function create()
     {
         //
+	return view('websites.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class WebsitesController extends Controller
     public function show(Website $website)
     {
         //
+	return view('websites.show', compact('website'));
     }
 
     /**
@@ -58,6 +72,7 @@ class WebsitesController extends Controller
     public function edit(Website $website)
     {
         //
+	return view('websites.edit', compact('website'));
     }
 
     /**

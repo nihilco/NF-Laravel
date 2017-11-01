@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class OrdersController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class OrdersController extends Controller
     public function index()
     {
         //
+	$orders = Order::latest()->get();
+	return view('orders.index', compact('orders'));
     }
 
     /**
@@ -25,6 +37,7 @@ class OrdersController extends Controller
     public function create()
     {
         //
+	return view('orders.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class OrdersController extends Controller
     public function show(Order $order)
     {
         //
+	return view('orders.show', compact('order'));
     }
 
     /**
@@ -58,6 +72,7 @@ class OrdersController extends Controller
     public function edit(Order $order)
     {
         //
+	return view('orders.edit', compact('order'));
     }
 
     /**

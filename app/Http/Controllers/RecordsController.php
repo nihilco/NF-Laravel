@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class RecordsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class RecordsController extends Controller
     public function index()
     {
         //
+	$records = Record::all();
+	return view('recors.index', compact('records'));
     }
 
     /**
@@ -25,6 +37,7 @@ class RecordsController extends Controller
     public function create()
     {
         //
+	return view('records.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class RecordsController extends Controller
     public function show(Record $record)
     {
         //
+	return view('records.show', compact('record'));
     }
 
     /**
@@ -58,6 +72,7 @@ class RecordsController extends Controller
     public function edit(Record $record)
     {
         //
+	return view('records.edit', compact('record'));
     }
 
     /**

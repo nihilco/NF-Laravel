@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class LinksController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class LinksController extends Controller
     public function index()
     {
         //
+	$links = Link::all();
+	return view('links.index', compact('links'));
     }
 
     /**
@@ -25,6 +37,7 @@ class LinksController extends Controller
     public function create()
     {
         //
+	return view('links.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class LinksController extends Controller
     public function show(Link $link)
     {
         //
+	return view('links.show', compact('link'));
     }
 
     /**
@@ -58,6 +72,7 @@ class LinksController extends Controller
     public function edit(Link $link)
     {
         //
+	return view('links.edit', compact('link'));
     }
 
     /**

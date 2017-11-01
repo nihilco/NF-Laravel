@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class TypesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class TypesController extends Controller
     public function index()
     {
         //
+	$types = Type::all();
+	return view('types.index', compact('types'));
     }
 
     /**
@@ -25,6 +37,7 @@ class TypesController extends Controller
     public function create()
     {
         //
+	return view('types.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class TypesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Types  $types
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Types $types)
+    public function show(Type $type)
     {
         //
+	return view('types.show', compact('type'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Types  $types
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Types $types)
+    public function edit(Type $type)
     {
         //
+	return view('types.edit', compact('type'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Types  $types
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Types $types)
+    public function update(Request $request, Type $type)
     {
         //
     }
@@ -75,10 +90,10 @@ class TypesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Types  $types
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Types $types)
+    public function destroy(Type $type)
     {
         //
     }

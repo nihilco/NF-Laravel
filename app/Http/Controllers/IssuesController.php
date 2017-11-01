@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class IssuesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class IssuesController extends Controller
     public function index()
     {
         //
+	$issues = Issue::latest()->get();
+	return view('issues.index', compact('issues'));
     }
 
     /**
@@ -25,6 +37,7 @@ class IssuesController extends Controller
     public function create()
     {
         //
+	return view('issues.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class IssuesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function show(Issues $issues)
+    public function show(Issue $issue)
     {
         //
+	return view('issues.show', compact('issue'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function edit(Issues $issues)
+    public function edit(Issue $issue)
     {
         //
+	return view('issues.edit', compact('issue'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Issues $issues)
+    public function update(Request $request, Issue $issue)
     {
         //
     }
@@ -75,10 +90,10 @@ class IssuesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Issues  $issues
+     * @param  \App\Models\Issue  $issue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Issues $issues)
+    public function destroy(Issue $issue)
     {
         //
     }

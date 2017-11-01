@@ -2,11 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Accounts;
+use App\Models\Account;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +25,8 @@ class AccountsController extends Controller
     public function index()
     {
         //
+	$accounts = Account::all();
+	return view('accounts.index', compact(['accounts']));
     }
 
     /**
@@ -25,6 +37,7 @@ class AccountsController extends Controller
     public function create()
     {
         //
+	return view('accounts.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class AccountsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Accounts  $accounts
+     * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function show(Accounts $accounts)
+    public function show(Account $account)
     {
         //
+	return view('accounts.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Accounts  $accounts
+     * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function edit(Accounts $accounts)
+    public function edit(Account $account)
     {
         //
+	return view('accounts.edit', compact('account'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Accounts  $accounts
+     * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accounts $accounts)
+    public function update(Request $request, Account $account)
     {
         //
     }
@@ -78,7 +93,7 @@ class AccountsController extends Controller
      * @param  \App\Models\Accounts  $accounts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accounts $accounts)
+    public function destroy(Account $account)
     {
         //
     }

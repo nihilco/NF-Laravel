@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class DevicesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class DevicesController extends Controller
     public function index()
     {
         //
+	$devices = Device::all();
+	return view('devices.index', compact('devices'));
     }
 
     /**
@@ -25,6 +37,7 @@ class DevicesController extends Controller
     public function create()
     {
         //
+	return view('devices.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class DevicesController extends Controller
     public function show(Device $device)
     {
         //
+	return view('devices.show', compact('device'));
     }
 
     /**
@@ -58,6 +72,7 @@ class DevicesController extends Controller
     public function edit(Device $device)
     {
         //
+	return view('devices.edit', compact('device'));
     }
 
     /**

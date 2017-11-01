@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class TutorialsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class TutorialsController extends Controller
     public function index()
     {
         //
+	$tutorials = Tutorial::latest()->get();
+	return view('tutorials.index', compact('tutorials'));
     }
 
     /**
@@ -25,6 +37,7 @@ class TutorialsController extends Controller
     public function create()
     {
         //
+	return view('tutorials.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class TutorialsController extends Controller
     public function show(Tutorial $tutorial)
     {
         //
+	return view('tutorials.show', compact('tutorial'));
     }
 
     /**
@@ -58,6 +72,7 @@ class TutorialsController extends Controller
     public function edit(Tutorial $tutorial)
     {
         //
+	return view('tutorials.edit');
     }
 
     /**

@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ReceiptsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ReceiptsController extends Controller
     public function index()
     {
         //
+	$receipts = Receipt::all();
+	return view('receipts.index', compact('receipts'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ReceiptsController extends Controller
     public function create()
     {
         //
+	return view('receipts.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class ReceiptsController extends Controller
     public function show(Receipt $receipt)
     {
         //
+	return view('receipts.show', compact('receipt'));
     }
 
     /**
@@ -58,6 +72,7 @@ class ReceiptsController extends Controller
     public function edit(Receipt $receipt)
     {
         //
+	return view('receipts.edit', compact('receipt'));
     }
 
     /**

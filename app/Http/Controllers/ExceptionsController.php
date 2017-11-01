@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ExceptionsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ExceptionsController extends Controller
     public function index()
     {
         //
+	$exceptions = Exception::all();
+	return view('exceptions.index', compact('exceptions'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ExceptionsController extends Controller
     public function create()
     {
         //
+	return view('exceptions.create');
     }
 
     /**
@@ -36,6 +49,7 @@ class ExceptionsController extends Controller
     public function store(Request $request)
     {
         //
+	
     }
 
     /**
@@ -47,6 +61,7 @@ class ExceptionsController extends Controller
     public function show(Exception $exception)
     {
         //
+	return view('exceptions.show', compact('exception'));
     }
 
     /**
@@ -58,6 +73,7 @@ class ExceptionsController extends Controller
     public function edit(Exception $exception)
     {
         //
+	return view('exceptions.edit');
     }
 
     /**

@@ -15,6 +15,8 @@ class VotesController extends Controller
     public function index()
     {
         //
+	$votes = vote::latest()->get();
+	return view('votes.index', compact('votes'));
     }
 
     /**
@@ -25,6 +27,7 @@ class VotesController extends Controller
     public function create()
     {
         //
+	return view('votes.create');
     }
 
     /**
@@ -47,6 +50,7 @@ class VotesController extends Controller
     public function show(Vote $vote)
     {
         //
+	return view('votes.show', compact('vote'));
     }
 
     /**
@@ -58,6 +62,7 @@ class VotesController extends Controller
     public function edit(Vote $vote)
     {
         //
+	return view('votes.edit', compact('vote'));
     }
 
     /**

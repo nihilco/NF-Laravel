@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class AuthorsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class AuthorsController extends Controller
     public function index()
     {
         //
+	$authors = Author::all();
+	return view('authors.index', compact('authors'));
     }
 
     /**
@@ -25,6 +37,7 @@ class AuthorsController extends Controller
     public function create()
     {
         //
+	return view('authors.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class AuthorsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Authors  $authors
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Authors $authors)
+    public function show(Author $author)
     {
         //
+	return view('authors.show', compact('author'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Authors  $authors
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Authors $authors)
+    public function edit(Author $author)
     {
         //
+	return view('authors.edit', compact('author'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Authors  $authors
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Authors $authors)
+    public function update(Request $request, Author $author)
     {
         //
     }
@@ -75,10 +90,10 @@ class AuthorsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Authors  $authors
+     * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Authors $authors)
+    public function destroy(Author $author)
     {
         //
     }

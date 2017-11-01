@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PublishersController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class PublishersController extends Controller
     public function index()
     {
         //
+	$publishers = Publisher::all();
+	return view('publishers.index', compact('publishers'));
     }
 
     /**
@@ -25,6 +37,7 @@ class PublishersController extends Controller
     public function create()
     {
         //
+	return view('publishers.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class PublishersController extends Controller
     public function show(Publisher $publisher)
     {
         //
+	return view('publishers.show', compact('publisher'));
     }
 
     /**
@@ -58,6 +72,7 @@ class PublishersController extends Controller
     public function edit(Publisher $publisher)
     {
         //
+	return view('publishers.edit', compact('publisher'));
     }
 
     /**

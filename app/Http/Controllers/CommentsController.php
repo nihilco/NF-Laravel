@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class CommentsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class CommentsController extends Controller
     public function index()
     {
         //
+	$comments = Comment::all();
+	return view('comments.index', compact('comments'));
     }
 
     /**
@@ -25,6 +37,7 @@ class CommentsController extends Controller
     public function create()
     {
         //
+	return view('comments.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class CommentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comments  $comments
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Comments $comments)
+    public function show(Comment $comment)
     {
         //
+	return view('comments.show', compact('comment'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comments  $comments
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comments $comments)
+    public function edit(Comment $comment)
     {
         //
+	return view('comments.edit', compact('comments'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comments  $comments
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comments $comments)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -75,10 +90,10 @@ class CommentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comments  $comments
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comments $comments)
+    public function destroy(Comment $comment)
     {
         //
     }

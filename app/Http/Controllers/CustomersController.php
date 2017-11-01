@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class CustomersController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class CustomersController extends Controller
     public function index()
     {
         //
+	$customers = Customer::all();
+	return view('customers.index', compact('customers'));
     }
 
     /**
@@ -25,6 +37,7 @@ class CustomersController extends Controller
     public function create()
     {
         //
+	return view('customers.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class CustomersController extends Controller
     public function show(Customer $customer)
     {
         //
+	return view('customers.show', compact('customer'));
     }
 
     /**
@@ -58,6 +72,7 @@ class CustomersController extends Controller
     public function edit(Customer $customer)
     {
         //
+	return view('customers.edit', compact('customer'));
     }
 
     /**

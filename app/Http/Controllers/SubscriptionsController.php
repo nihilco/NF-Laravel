@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class SubscriptionsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class SubscriptionsController extends Controller
     public function index()
     {
         //
+	$subscriptions = Subscription::all();
+	return view('subscriptions.index', compact('subscriptions'));
     }
 
     /**
@@ -25,6 +37,7 @@ class SubscriptionsController extends Controller
     public function create()
     {
         //
+	return view('subscriptions.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class SubscriptionsController extends Controller
     public function show(Subscription $subscription)
     {
         //
+	return view('subscriptions.show', compact('subscription'));
     }
 
     /**
@@ -58,6 +72,7 @@ class SubscriptionsController extends Controller
     public function edit(Subscription $subscription)
     {
         //
+	return view('subscriptions.edit', compact('subscription'));
     }
 
     /**

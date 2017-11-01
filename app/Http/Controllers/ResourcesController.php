@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ResourcesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ResourcesController extends Controller
     public function index()
     {
         //
+	$resources = Resource::all();
+	return view('resources.index', compact('resources'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ResourcesController extends Controller
     public function create()
     {
         //
+	return view('resources.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class ResourcesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Resources  $resources
+     * @param  \App\Models\Resource  $resource
      * @return \Illuminate\Http\Response
      */
-    public function show(Resources $resources)
+    public function show(Resource $resource)
     {
         //
+	return view('resources.show', compact('resource'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Resources  $resources
+     * @param  \App\Models\Resource  $resource
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resources $resources)
+    public function edit(Resource $resource)
     {
         //
+	return view('resources.edit', compact('resource'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Resources  $resources
+     * @param  \App\Models\Resource  $resource
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resources $resources)
+    public function update(Request $request, Resource $resource)
     {
         //
     }
@@ -75,10 +90,10 @@ class ResourcesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Resources  $resources
+     * @param  \App\Models\Resource  $resource
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resources $resources)
+    public function destroy(Resource $resource)
     {
         //
     }

@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class PagesController extends Controller
     public function index()
     {
         //
+	$pages = Page::latest()->get();
+	return view('pages.index', compact('pages'));
     }
 
     /**
@@ -25,6 +37,7 @@ class PagesController extends Controller
     public function create()
     {
         //
+	return view('pages.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class PagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pages  $pages
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(Pages $pages)
+    public function show(Page $page)
     {
         //
+	return view('pages.show', compact('page'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pages  $pages
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pages $pages)
+    public function edit(Page $page)
     {
         //
+	return view('page.edit', compact('page'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pages  $pages
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pages $pages)
+    public function update(Request $request, Page $page)
     {
         //
     }
@@ -75,10 +90,10 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pages  $pages
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pages $pages)
+    public function destroy(Page $page)
     {
         //
     }

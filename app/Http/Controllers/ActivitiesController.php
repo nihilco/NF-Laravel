@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ActivitiesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ActivitiesController extends Controller
     public function index()
     {
         //
+	$activities = Activity::all();
+	return view('activities.index', compact('activities'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ActivitiesController extends Controller
     public function create()
     {
         //
+	return view('activities.create')
     }
 
     /**
@@ -47,6 +60,7 @@ class ActivitiesController extends Controller
     public function show(Activity $activity)
     {
         //
+	return view('activities.show', compact('activity'));
     }
 
     /**
@@ -58,6 +72,7 @@ class ActivitiesController extends Controller
     public function edit(Activity $activity)
     {
         //
+	return view('activities.edit', compact('activity'));
     }
 
     /**

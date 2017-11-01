@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class InvoicesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class InvoicesController extends Controller
     public function index()
     {
         //
+	$invoices = Invoice::all();
+	return view('invoices.index', compact('invoices'));
     }
 
     /**
@@ -25,6 +37,7 @@ class InvoicesController extends Controller
     public function create()
     {
         //
+	return view('invoices.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class InvoicesController extends Controller
     public function show(Invoice $invoice)
     {
         //
+	return view('invoices.show', compact('invoice'));
     }
 
     /**
@@ -58,6 +72,7 @@ class InvoicesController extends Controller
     public function edit(Invoice $invoice)
     {
         //
+	return view('invoices.edit', compact('invoice'));
     }
 
     /**

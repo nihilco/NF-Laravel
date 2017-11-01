@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class StepsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class StepsController extends Controller
     public function index()
     {
         //
+	$steps = Step::all();
+	return view('steps.index', compact('steps'));
     }
 
     /**
@@ -25,6 +37,7 @@ class StepsController extends Controller
     public function create()
     {
         //
+	return view('steps.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class StepsController extends Controller
     public function show(Step $step)
     {
         //
+	return view('steps.show', compact('step'));
     }
 
     /**
@@ -58,6 +72,7 @@ class StepsController extends Controller
     public function edit(Step $step)
     {
         //
+	return view('steps.edit', compact('step'));
     }
 
     /**

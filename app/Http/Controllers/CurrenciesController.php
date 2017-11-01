@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class CurrenciesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class CurrenciesController extends Controller
     public function index()
     {
         //
+	$currencies = Currency::all();
+	return view('currencies.index', compact('currencies'));
     }
 
     /**
@@ -25,6 +37,7 @@ class CurrenciesController extends Controller
     public function create()
     {
         //
+	return view('currencies.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class CurrenciesController extends Controller
     public function show(Currency $currency)
     {
         //
+	return view('currencies.show', compact('currency'));
     }
 
     /**
@@ -58,6 +72,7 @@ class CurrenciesController extends Controller
     public function edit(Currency $currency)
     {
         //
+	return view('currencies.edit', compact('currency'));
     }
 
     /**

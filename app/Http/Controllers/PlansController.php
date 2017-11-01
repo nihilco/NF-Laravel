@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class PlansController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class PlansController extends Controller
     public function index()
     {
         //
+	$plans = Plan::all();
+	return view('plans.index', compact('plans'));
     }
 
     /**
@@ -25,6 +37,7 @@ class PlansController extends Controller
     public function create()
     {
         //
+	return view('plans.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class PlansController extends Controller
     public function show(Plan $plan)
     {
         //
+	return view('plans.show', compact('plan'));
     }
 
     /**
@@ -58,6 +72,7 @@ class PlansController extends Controller
     public function edit(Plan $plan)
     {
         //
+	return view('plans.edit', compact('plan'));
     }
 
     /**

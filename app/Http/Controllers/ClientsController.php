@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ClientsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ClientsController extends Controller
     public function index()
     {
         //
+	$clients = Client::all();
+	return view('clients.index', compact('clients'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ClientsController extends Controller
     public function create()
     {
         //
+	return view('clients.create');
     }
 
     /**
@@ -41,33 +54,35 @@ class ClientsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Clients  $clients
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Clients $clients)
+    public function show(Client $client)
     {
         //
+	return view('clients.show', compact('client'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Clients  $clients
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Clients $clients)
+    public function edit(Client $client)
     {
         //
+	return view('clients.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Clients  $clients
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clients $clients)
+    public function update(Request $request, Client $client)
     {
         //
     }
@@ -75,10 +90,10 @@ class ClientsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Clients  $clients
+     * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Clients $clients)
+    public function destroy(Client $client)
     {
         //
     }

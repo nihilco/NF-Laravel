@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ForumsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class ForumsController extends Controller
     public function index()
     {
         //
+	$forums = Forum::all();
+	return view('forums.index', compact('forums'));
     }
 
     /**
@@ -25,6 +37,7 @@ class ForumsController extends Controller
     public function create()
     {
         //
+	return view('forums.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class ForumsController extends Controller
     public function show(Forum $forum)
     {
         //
+	return view('forums.show', compact('forum'));
     }
 
     /**
@@ -58,6 +72,7 @@ class ForumsController extends Controller
     public function edit(Forum $forum)
     {
         //
+	return view('forums.edit', compact('forum'));
     }
 
     /**

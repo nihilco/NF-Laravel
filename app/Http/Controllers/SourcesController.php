@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class SourcesController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -15,6 +25,8 @@ class SourcesController extends Controller
     public function index()
     {
         //
+	$sources = Source:all();
+	return view('sources.index', compact('sources'));
     }
 
     /**
@@ -25,6 +37,7 @@ class SourcesController extends Controller
     public function create()
     {
         //
+	retun view('sources.create');
     }
 
     /**
@@ -47,6 +60,7 @@ class SourcesController extends Controller
     public function show(Source $source)
     {
         //
+	return view('sources.show', compact('source'));
     }
 
     /**
@@ -58,6 +72,7 @@ class SourcesController extends Controller
     public function edit(Source $source)
     {
         //
+	return view('sources.edit', compact('source'));
     }
 
     /**
