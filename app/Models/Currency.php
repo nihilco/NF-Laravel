@@ -30,7 +30,7 @@ class Currency extends Model
 
     public function creator()
     {
-        return $this->belongsTo(User::class)
+        return $this->belongsTo(User::class);
     }
 
     public function owner()
