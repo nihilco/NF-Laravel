@@ -17,8 +17,10 @@ class CreateBooksTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
+    	    $table->unsignedInteger('series_id')->nullable();
+	    $table->unsignedInteger('series_order')->nullable();
 	    $table->string('title');
-    	    $table->string('subtitle');
+    	    $table->string('subtitle')->nullable();
 	    $table->string('slug');
 	    $table->text('description');
 	    $table->softDeletes();
