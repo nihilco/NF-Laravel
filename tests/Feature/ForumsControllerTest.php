@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ForumsControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $forum;
 
     public function setUp()

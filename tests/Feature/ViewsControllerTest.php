@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ViewsControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $view;
 
     public function setUp()

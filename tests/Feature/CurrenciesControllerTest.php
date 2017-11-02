@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class CurrenciesControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $currency;
 
     public function setUp()

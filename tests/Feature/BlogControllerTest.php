@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class BlogControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $post;
 
     public function setUp()
@@ -23,7 +20,7 @@ class BlogControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_a_user_can_view_blogroll()
+    public function test_a_guest_can_view_blogroll()
     {	
         $response = $this->get('/blog');
 

@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class AddressesControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $address;
 
     public function setUp()

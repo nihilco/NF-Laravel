@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PublishersControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $publisher;
 
     public function setUp()

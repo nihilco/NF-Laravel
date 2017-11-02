@@ -3,12 +3,9 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LinksControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public $link;
 
     public function setUp()
