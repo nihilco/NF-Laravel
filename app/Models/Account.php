@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Account extends Model
+class Account extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -26,15 +24,5 @@ class Account extends Model
     public function path()
     {
         return '/accounts/' . $this->id;
-    }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
     }
 }

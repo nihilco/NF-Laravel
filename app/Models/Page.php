@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Page extends Model
+class Page extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -32,15 +30,4 @@ class Page extends Model
     {
         return 'slug';
     }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

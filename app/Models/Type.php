@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Type extends Model
+class Type extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -27,15 +25,4 @@ class Type extends Model
     {
         return '/types/' . $this->id;
     }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

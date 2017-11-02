@@ -37,4 +37,21 @@ class Author extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function authors()
+    {
+	return $this->hasMany(Author::class);
+    }
+
+    public function name()
+    {
+        $ret = $this->first_name;
+	if($this->middle_name && $this->middle_name != '')
+	{
+	    $ret .= ' ' . $this->middle_name;
+	}
+	$ret .= ' ' . $this->last_name;
+
+	return $ret;
+    }
 }

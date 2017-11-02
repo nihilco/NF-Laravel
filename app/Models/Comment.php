@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Comment extends Model
+class Comment extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -28,13 +26,16 @@ class Comment extends Model
         return '/comments/' . $this->id;
     }
 
-    public function creator()
+    /**
+     * Get all of the owning commentable models.
+     */
+    public function commentable()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 
-    public function owner()
+    public function posts()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphedByMany(Post::class, 'resource');
     }
 }

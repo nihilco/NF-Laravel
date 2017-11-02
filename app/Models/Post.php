@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Post extends Model
+class Post extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -28,14 +26,8 @@ class Post extends Model
         return '/posts/' . $this->id;
     }
 
-    public function creator()
+    public function comments()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphMany(Comment::class, 'resource');
     }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

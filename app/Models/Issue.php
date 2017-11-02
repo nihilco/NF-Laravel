@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Issue extends Model
+class Issue extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -26,15 +24,5 @@ class Issue extends Model
     public function path()
     {
         return '/issues/' . $this->id;
-    }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
     }
 }
