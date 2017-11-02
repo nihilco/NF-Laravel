@@ -13,7 +13,7 @@
 
 Route::get('/', 'DefaultController@index');
 
-Route::resource('accounts', 'AccountsAccountsController');
+Route::resource('accounts', 'AccountsController');
 Route::resource('activities', 'ActivitiesController');
 Route::resource('addresses', 'AddressesController');
 Route::resource('authors', 'AuthorsController');
