@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
 	    WebsitesTableSeeder::class,
 	    PagesTableSeeder::class,
 	    PostsTableSeeder::class,
+   	    CommentsTableSeeder::class,
 	    TutorialsTableSeeder::class,
 	    AuthorsTableSeeder::class,
 	    SeriesTableSeeder::class,

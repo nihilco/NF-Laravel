@@ -15,6 +15,8 @@ class BooksTableSeeder extends Seeder
 	$series = \App\Models\Series::all();
 
         $b1 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'title' => 'Beyond the Ice Limit',
 	    'description' => '',
 	]);
@@ -23,6 +25,8 @@ class BooksTableSeeder extends Seeder
 	$b1->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b2 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'title' => 'The Obsidian Chamber',
 	    'description' => '',
 	]);
@@ -31,6 +35,8 @@ class BooksTableSeeder extends Seeder
 	$b2->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b5 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'title' => 'Arcanum Unbound',
 	    'description' => '',
 	]);
@@ -38,6 +44,8 @@ class BooksTableSeeder extends Seeder
         $b5->addAuthor($authors->where('last_name', 'Sanderson')->first()->id);
 
         $b7 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'title' => 'Reliquary',
 	    'description' => '',
 	]);
@@ -46,6 +54,8 @@ class BooksTableSeeder extends Seeder
 	$b7->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b9 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Sutton',
 	    'description' => '',
 	]);
@@ -53,6 +63,8 @@ class BooksTableSeeder extends Seeder
         $b9->addAuthor($authors->where('last_name', 'Moehringer')->first()->id);
 
         $b10 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'White Fire',
             'description' => '',
         ]);
@@ -61,6 +73,8 @@ class BooksTableSeeder extends Seeder
 	$b10->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b11 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Blue Labyrinth',
             'description' => '',
         ]);
@@ -69,6 +83,8 @@ class BooksTableSeeder extends Seeder
 	$b11->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b12 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Two Graves',
 	    'description' => '',
 	]);
@@ -77,6 +93,8 @@ class BooksTableSeeder extends Seeder
 	$b12->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b13 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Cross the Line',
 	    'description' => '',
 	]);
@@ -84,6 +102,8 @@ class BooksTableSeeder extends Seeder
         $b13->addAuthor($authors->where('last_name', 'Patterson')->first()->id);
 
         $b14 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'No Man\'s Land',
 	    'description' => '',
 	]);
@@ -91,6 +111,8 @@ class BooksTableSeeder extends Seeder
         $b14->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
 
         $b15 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Guilty',
 	    'description' => '',
 	]);
@@ -98,6 +120,8 @@ class BooksTableSeeder extends Seeder
         $b15->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
 
         $b17 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Escape',
 	    'description' => '',
 	]);
@@ -105,6 +129,8 @@ class BooksTableSeeder extends Seeder
         $b17->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
 
         $b18 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Rogue Lawyer',
 	    'description' => '',
 	]);
@@ -112,6 +138,8 @@ class BooksTableSeeder extends Seeder
         $b18->addAuthor($authors->where('last_name', 'Grisham')->first()->id);
 
         $b19 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Go Set A Watchman',
 	    'description' => '',
 	]);
@@ -119,6 +147,8 @@ class BooksTableSeeder extends Seeder
         $b19->addAuthor($authors->where('last_name', 'Lee')->first()->id);
 
         $b20 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Hatching Twitter',
 	    'description' => '',
 	]);
@@ -126,6 +156,8 @@ class BooksTableSeeder extends Seeder
         $b20->addAuthor($authors->where('last_name', 'Bilton')->first()->id);
 
         $b21 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Guns, Germs, and Steel',
 	    'description' => '',
 	]);
@@ -133,6 +165,8 @@ class BooksTableSeeder extends Seeder
         $b21->addAuthor($authors->where('last_name', 'Diamond')->first()->id);
 
         $b23 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'London Bridges',
 	    'description' => '',
 	]);
@@ -140,6 +174,8 @@ class BooksTableSeeder extends Seeder
         $b23->addAuthor($authors->where('last_name', 'Patterson')->first()->id);
 
         $b25 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Armada',
 	    'description' => '',
 	]);
@@ -147,6 +183,8 @@ class BooksTableSeeder extends Seeder
         $b25->addAuthor($authors->where('last_name', 'Cline')->first()->id);
 
         $b27 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Maze Runner',
 	    'description' => '',
 	]);
@@ -154,6 +192,8 @@ class BooksTableSeeder extends Seeder
         $b27->addAuthor($authors->where('last_name', 'Dashner')->first()->id);
 
         $b28 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Eye of Mnids',
 	    'description' => '',
 	]);
@@ -161,6 +201,8 @@ class BooksTableSeeder extends Seeder
         $b28->addAuthor($authors->where('last_name', 'Dashner')->first()->id);
 
         $b29 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Human Division',
 	    'description' => '',
 	]);
@@ -168,6 +210,8 @@ class BooksTableSeeder extends Seeder
         $b29->addAuthor($authors->where('last_name', 'Scalzi')->first()->id);
 
         $b30 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'A Gentleman in Moscow',
 	    'description' => '',
 	]);
@@ -175,6 +219,8 @@ class BooksTableSeeder extends Seeder
         $b30->addAuthor($authors->where('last_name', 'Towels')->first()->id);
 
         $b31 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Lost Island',
 	    'description' => '',
 	]);
@@ -183,6 +229,8 @@ class BooksTableSeeder extends Seeder
 	$b31->addAuthor($authors->where('last_name', 'Child')->first()->id);
 
         $b32 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Kraken Poject',
 	    'description' => '',
 	]);
@@ -190,6 +238,8 @@ class BooksTableSeeder extends Seeder
 	$b32->addAuthor($authors->where('last_name', 'Preston')->first()->id);
 
         $b33 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Finders Keepers',
 	    'description' => '',
 	]);
@@ -197,6 +247,8 @@ class BooksTableSeeder extends Seeder
         $b33->addAuthor($authors->where('last_name', 'King')->first()->id);
 
         $b35 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'A Thousand Spendid Suns',
 	    'description' => '',
 	]);
@@ -204,6 +256,8 @@ class BooksTableSeeder extends Seeder
         $b35->addAuthor($authors->where('last_name', 'Hosseini')->first()->id);
 
         $b36 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Half the World',
 	    'description' => '',
 	]);
@@ -212,6 +266,8 @@ class BooksTableSeeder extends Seeder
 
         // Sword of Truth Series
 	$b37 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Wizard\'s First Rule',
 	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
 	    'series_order' => 1,
@@ -221,6 +277,8 @@ class BooksTableSeeder extends Seeder
         $b37->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b38 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Stone of Tears',
 	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
 	    'series_order' => 2,
@@ -230,6 +288,8 @@ class BooksTableSeeder extends Seeder
         $b38->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b39 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Blood of the Fold',
 	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
 	    'series_order' => 3,
@@ -239,6 +299,8 @@ class BooksTableSeeder extends Seeder
         $b39->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b40 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Temple of the Winds',
 	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
 	    'series_order' => 4,
@@ -248,6 +310,8 @@ class BooksTableSeeder extends Seeder
         $b40->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b41 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'Soul of the Fire',
 	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
 	    'series_order' => 5,
@@ -258,6 +322,8 @@ class BooksTableSeeder extends Seeder
 
         // The Demon Cycle
 	$b42 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
 	    'title' => 'The Warded Man',
 	    'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
 	    'series_order' => 1,
@@ -269,6 +335,8 @@ class BooksTableSeeder extends Seeder
         $b42->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b43 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'The Great Bazaar',
             'description' => '<p>Humanity has been brought to the brink of extinction. Each night the world is overrun by demons - bloodthirsty creatures of nightmare that have been hunting and killing humanity for over 300 years. A scant few hamlets and half-starved city-states are all that remain of a once-proud civilization, and it is only by hiding behind wards, ancient symbols with the power to repel the demons, that anyone has been able to survive.</p.
 
@@ -280,6 +348,8 @@ class BooksTableSeeder extends Seeder
         $b43->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b44 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'The Desert Spear',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 2,
@@ -289,6 +359,8 @@ class BooksTableSeeder extends Seeder
         $b44->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b45 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Brayan\'s Gold',
             'description' => '<p>Return to the world of The Warded Man and The Desert Spear in an illustrated new novella by Peter V. Brett.</p>
 
@@ -302,6 +374,8 @@ class BooksTableSeeder extends Seeder
         $b45->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b46 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Daylight War',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 3,
@@ -323,6 +397,8 @@ class BooksTableSeeder extends Seeder
         $b46->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b47 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Messenger\'s Legacy',
             'description' => '<p>Humanity has been brought to the brink of extinction. Each night, the world is overrun by demons--bloodthirsty creatures of nightmare that have been hunting the surface for over 300 years. A scant few hamlets and half-starved city-states are all that remain of a once proud civilization, and it is only by hiding behind wards, ancient symbols with the power to repel the demons, that they survive. A handful of Messengers brave the night to keep the lines of communication open between the increasingly isolated populace.</p>
 
@@ -334,6 +410,8 @@ class BooksTableSeeder extends Seeder
         $b47->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b48 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'The Skull Throne',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 4,
@@ -357,6 +435,8 @@ class BooksTableSeeder extends Seeder
         $b48->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b49 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'The Core',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 5,
@@ -372,6 +452,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b49->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b50 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Barren',
             'description' => '',
         ]);
@@ -380,6 +462,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
 
         // The Old Kingdom
         $b51 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Clariel',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 1,
@@ -389,6 +473,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b51->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b52 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Sabriel',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 2,
@@ -398,6 +484,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b52->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b53 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Lirael',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 3,
@@ -407,6 +495,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b53->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b54 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Abhorsen',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 4,
@@ -416,6 +506,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b54->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b55 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'To Hold the Bridge',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 5,
@@ -426,15 +518,19 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
 
         // The Desden Files
         $b56 = factory('App\Models\Book')->create([
-           'title' => 'Storm Front',
-           'series_id' => $series->where('name', 'Dresden Files')->first()->id,
-           'series_order' => 1,
-           'description' => 'For Harry Dresdenâ€”Chicago\'s only professional wizardâ€”business, to put it mildly, stinks. So when the police bring him in to consult on a grisly double murder committed with black magic, Harry\'s seeing dollar signs. But where there\'s black magic, there\'s a black mage behind it. And now that mage knows Harry\'s name...',
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
+            'title' => 'Storm Front',
+            'series_id' => $series->where('name', 'Dresden Files')->first()->id,
+            'series_order' => 1,
+            'description' => 'For Harry Dresdenâ€”Chicago\'s only professional wizardâ€”business, to put it mildly, stinks. So when the police bring him in to consult on a grisly double murder committed with black magic, Harry\'s seeing dollar signs. But where there\'s black magic, there\'s a black mage behind it. And now that mage knows Harry\'s name...',
         ]);
 
         $b56->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b57 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Fool Moon',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 2,
@@ -444,6 +540,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b57->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b58 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Grave Peril',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 3,
@@ -453,6 +551,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b58->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b59 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Summer Knight',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 4,
@@ -462,6 +562,8 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b59->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b60 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Death Masks',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 5,
@@ -477,6 +579,8 @@ Some days, it just doesn?t pay to get out of bed. No matter how much you?re char
         $b60->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b61 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Blood Rites',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 6,
@@ -488,6 +592,8 @@ Harry\'s even more frustrated because he only got involved with this bizarre mys
         $b61->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b62 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Dead Beat',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 7,
@@ -497,6 +603,8 @@ Harry\'s even more frustrated because he only got involved with this bizarre mys
         $b62->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b63 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Proven Guilty',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 8,
@@ -508,6 +616,8 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b63->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b64 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'White Night',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 9,
@@ -517,6 +627,8 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b64->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b65 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Small Favor',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 10,
@@ -526,6 +638,8 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b65->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b66 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Turn Coat',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 11,
@@ -535,6 +649,8 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b66->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b67 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Changes',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 12,
@@ -548,6 +664,8 @@ He\'s fighting to save his child.',
         $b67->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b68 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Ghost Story',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 13,
@@ -563,6 +681,8 @@ The eagerly awaited new novel in the #1 New York Times bestselling Dresden Files
         $b68->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b69 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Side Jobs',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 99,
@@ -575,6 +695,8 @@ Here, together for the first time, are the shorter works of #1 New York Times be
 
         // The Codex Alera
         $b70 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Furies of Calderon',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 1,
@@ -584,6 +706,8 @@ Here, together for the first time, are the shorter works of #1 New York Times be
         $b70->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b71 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Academ\'s Fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 2,
@@ -593,6 +717,8 @@ Here, together for the first time, are the shorter works of #1 New York Times be
         $b71->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b72 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Cursor\'s Fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 3,
@@ -604,6 +730,8 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b72->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b73 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Captain\'s Fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 4,
@@ -613,6 +741,8 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b73->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b74 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'Princeps\' Fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 5,
@@ -622,6 +752,8 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b74->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b75 = factory('App\Models\Book')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,	
             'title' => 'First Lord\'s Fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 6,
