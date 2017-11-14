@@ -14,4 +14,10 @@ class RatingsControllerTest extends TestCase
 
 	$this->rating = factory(\App\Models\Rating::class)->create();
     }
+
+    public function test_a_guest_cannot_view_ratings()
+    {
+	$response = $this->get('/ratings');
+	$response->assertStatus(302);
+    }
 }

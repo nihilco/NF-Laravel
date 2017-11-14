@@ -17,6 +17,7 @@ class CreateThreadsTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('forum_id');
 	    $table->string('title');
 	    $table->string('slug');
 	    $table->text('content');

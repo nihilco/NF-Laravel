@@ -25,4 +25,17 @@ class Reply extends Base
     {
         return '/replies/' . $this->id;
     }
+
+    /**
+     * Get all of the owning commentable models.
+     */
+    public function repliable()
+    {
+        return $this->morphTo();
+    }
+
+    public function threads()
+    {
+        return $this->morphedByMany(Thread::class, 'resource');
+    }
 }

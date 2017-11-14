@@ -17,7 +17,7 @@ $factory->define(App\Models\Reply::class, function (Faker $faker) {
 	    switch($r) {
 	        case 1:
 		default:
-		    $ret = facotry(App\Models\Issue::class)->create()->id;
+		    $ret = factory(App\Models\Issue::class)->create()->id;
 		    break;
 	    }
 	    return $ret;
@@ -31,5 +31,6 @@ $factory->define(App\Models\Reply::class, function (Faker $faker) {
 	    }
 	    return $ret;
 	},
+	'content' => $faker->paragraph(rand(3,6), true),
     ];
 });

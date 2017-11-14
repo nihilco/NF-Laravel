@@ -25,4 +25,9 @@ class Forum extends Base
     {
         return '/forums/' . $this->id;
     }
+
+    public function threads()
+    {
+	return $this->hasMany(Thread::class);
+    }
 }

@@ -25,4 +25,14 @@ class Thread extends Base
     {
         return '/threads/' . $this->id;
     }
+
+    public function forum()
+    {
+        return $this->belongsTo(Forum::class);
+    }
+
+    public function replies()
+    {
+        return $this->morphMany(Reply::class, 'resource');
+    }
 }

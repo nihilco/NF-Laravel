@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ForumTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $forum;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+	$this->forum = factory(\App\Models\Forum::class)->create();
+    }
+
+    public function test_a_forum_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->forum->owner);
+    }
+
+    public function test_a_forum_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->forum->creator);
     }
 }

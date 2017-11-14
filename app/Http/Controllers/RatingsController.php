@@ -72,7 +72,7 @@ class RatingsController extends Controller
     public function edit(Rating $rating)
     {
         //
-	retunr view('ratings.edit', compact('rating'));
+	return view('ratings.edit', compact('rating'));
     }
 
     /**

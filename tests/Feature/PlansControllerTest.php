@@ -14,4 +14,10 @@ class PlansControllerTest extends TestCase
 
 	$this->plan = factory(\App\Models\Plan::class)->create();
     }
+
+    public function test_a_guest_cannot_view_plans()
+    {
+	$response = $this->get('/plans');
+	$response->assertStatus(302);
+    }
 }

@@ -14,4 +14,10 @@ class CustomersControllerTest extends TestCase
 
 	$this->customer = factory(\App\Models\Customer::class)->create();
     }
+
+    public function test_a_guest_cannot_view_customers()
+    {
+	$response = $this->get('/customers');
+	$response->assertStatus(302);
+    }
 }

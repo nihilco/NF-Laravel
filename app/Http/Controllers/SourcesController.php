@@ -25,7 +25,7 @@ class SourcesController extends Controller
     public function index()
     {
         //
-	$sources = Source:all();
+	$sources = Source::all();
 	return view('sources.index', compact('sources'));
     }
 
@@ -37,7 +37,7 @@ class SourcesController extends Controller
     public function create()
     {
         //
-	retun view('sources.create');
+	return view('sources.create');
     }
 
     /**

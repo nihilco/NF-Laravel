@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Rating;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rating extends Model
+class Rating extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -27,15 +27,4 @@ class Rating extends Model
     {
         return '/ratings/' . $this->id;
     }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

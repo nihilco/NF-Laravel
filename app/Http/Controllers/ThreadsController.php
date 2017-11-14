@@ -14,7 +14,7 @@ class ThreadsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -60,7 +60,7 @@ class ThreadsController extends Controller
     public function show(Thread $thread)
     {
         //
-	return views('threads.show', compact('thread'));
+	return view('threads.show', compact('thread'));
     }
 
     /**

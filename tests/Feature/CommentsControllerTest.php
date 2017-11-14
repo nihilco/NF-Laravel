@@ -14,4 +14,10 @@ class CommentsControllerTest extends TestCase
 
 	$this->comment = factory(\App\Models\Comment::class)->create();
     }
+
+    public function test_a_guest_cannot_view_comments()
+    {
+	$response = $this->get('/comments');
+	$response->assertStatus(302);
+    }
 }

@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PageTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $page;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+	$this->page = factory(\App\Models\Page::class)->create();
+    }
+
+    public function test_a_page_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->page->owner);
+    }
+
+    public function test_a_page_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->page->creator);
     }
 }

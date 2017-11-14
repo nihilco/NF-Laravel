@@ -14,4 +14,11 @@ class VotesControllerTest extends TestCase
 
 	$this->vote = factory(\App\Models\Vote::class)->create();
     }
+
+    public function test_a_guest_cannot_view_votes()
+    {
+	$response = $this->get('/votes');
+	$response->assertStatus(302);
+    }
+
 }

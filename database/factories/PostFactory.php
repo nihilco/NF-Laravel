@@ -11,6 +11,9 @@ $factory->define(App\Models\Post::class, function (Faker $faker) {
 	'owner_id' => function () {
 	    return factory(App\Models\User::class)->create()->id;
 	},
+	'website_id' => function () {
+	    return factory(App\Models\Website::class)->create()->id;
+	},
 	'title' => $faker->words(rand(2, 5), true),
 	'slug' => $faker->slug,
 	'description' => $faker->paragraph(rand(3, 6)),

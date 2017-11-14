@@ -14,4 +14,10 @@ class ReceiptsControllerTest extends TestCase
 
 	$this->receipt = factory(\App\Models\Receipt::class)->create();
     }
+
+    public function test_a_guest_cannot_view_receipts()
+    {
+	$response = $this->get('/receipts');
+	$response->assertStatus(302);
+    }
 }

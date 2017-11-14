@@ -21,11 +21,16 @@ class Link extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     
     //
     public function path()
     {
-        return '/links/' . $this->id;
+        return '/links/' . $this->slug;
     }
 
     public function creator()

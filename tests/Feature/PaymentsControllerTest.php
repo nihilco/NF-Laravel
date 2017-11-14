@@ -14,4 +14,10 @@ class PaymentsControllerTest extends TestCase
 
 	$this->payment = factory(\App\Models\Payment::class)->create();
     }
+
+    public function test_a_guest_cannot_view_payments()
+    {
+	$response = $this->get('/payments');
+	$response->assertStatus(302);
+    }
 }

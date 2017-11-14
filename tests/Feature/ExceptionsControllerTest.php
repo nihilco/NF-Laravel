@@ -14,4 +14,10 @@ class ExceptionsControllerTest extends TestCase
 
 	$this->exception = factory(\App\Models\Exception::class)->create();
     }
+
+    public function test_a_guest_cannot_view_exceptions()
+    {
+	$response = $this->get('/exceptions');
+	$response->assertStatus(302);
+    }
 }

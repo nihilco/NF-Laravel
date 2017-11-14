@@ -14,4 +14,11 @@ class ContactsControllerTest extends TestCase
 
 	$this->contact = factory(\App\Models\Contact::class)->create();
     }
+
+    public function test_a_guest_cannot_view_contacts()
+    {
+	$response = $this->get('/contacts');
+	$response->assertStatus(302);
+    }
+
 }

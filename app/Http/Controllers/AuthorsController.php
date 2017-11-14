@@ -14,7 +14,7 @@ class AuthorsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('index', 'show');
     }
 
     /**
@@ -25,7 +25,7 @@ class AuthorsController extends Controller
     public function index()
     {
         //
-	$authors = Author::all();
+	$authors = Author::orderBy('last_name')->get();
 	return view('authors.index', compact('authors'));
     }
 

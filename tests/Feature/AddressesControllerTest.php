@@ -14,4 +14,10 @@ class AddressesControllerTest extends TestCase
 
 	$this->address = factory(\App\Models\Address::class)->create();
     }
+
+    public function test_a_guest_cannot_view_addresses()
+    {
+	$response = $this->get('/addresses');
+	$response->assertStatus(302);
+    }
 }

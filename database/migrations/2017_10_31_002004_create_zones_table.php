@@ -17,7 +17,7 @@ class CreateZonesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->string('domain');
+	    $table->unsignedInteger('domain_id');
 	    $table->string('nameserver');
 	    $table->string('email');
 	    $table->softDeletes();

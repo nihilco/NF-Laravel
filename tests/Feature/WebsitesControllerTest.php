@@ -14,4 +14,10 @@ class WebsitesControllerTest extends TestCase
 
 	$this->website = factory(\App\Models\Website::class)->create();
     }
+
+    public function test_a_guest_cannot_view_websites()
+    {
+	$response = $this->get('/websites');
+	$response->assertStatus(302);
+    }
 }

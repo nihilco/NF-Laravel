@@ -23,6 +23,11 @@ class Issue extends Base
     //
     public function path()
     {
-        return '/issues/' . $this->id;
+        return '/issues/' . $this->slug;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

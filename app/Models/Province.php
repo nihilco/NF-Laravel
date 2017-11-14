@@ -25,7 +25,7 @@ class Province extends Model
     //
     public function path()
     {
-        return '/provineces/' . $this->id;
+        return '/provinces/' . $this->id;
     }
 
     public function creator()

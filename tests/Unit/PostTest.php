@@ -7,13 +7,27 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PostTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $post;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+	$this->post = factory(\App\Models\Post::class)->create();
+    }
+
+    public function test_a_post_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->post->owner);
+    }
+
+    public function test_a_post_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->post->creator);
+    }
+
+    public function test_a_post_has_comments()
+    {
+        $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->post->comments);
     }
 }

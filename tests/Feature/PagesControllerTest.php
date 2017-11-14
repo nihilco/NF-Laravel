@@ -14,4 +14,11 @@ class PagesControllerTest extends TestCase
 
 	$this->page = factory(\App\Models\Page::class)->create();
     }
+
+    public function test_a_guest_can_view_a_page()
+    {
+	$response = $this->get($this->page->path());
+	
+	$response->assertSee($this->page->title);
+    }
 }

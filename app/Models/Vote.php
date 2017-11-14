@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Vote extends Model
+class Vote extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -26,16 +24,6 @@ class Vote extends Model
     public function path()
     {
         return '/votes/' . $this->id;
-    }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
     }
 
 }

@@ -14,4 +14,10 @@ class SourcesControllerTest extends TestCase
 
 	$this->source = factory(\App\Models\Source::class)->create();
     }
+
+    public function test_a_guest_cannot_view_sources()
+    {
+	$response = $this->get('/sources');
+	$response->assertStatus(302);
+    }
 }

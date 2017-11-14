@@ -10,7 +10,11 @@ class Comment extends Base
      * @var array
      */
     protected $fillable = [
-        
+        'creator_id',
+        'owner_id',
+	'content',
+	'resource_id',
+	'resource_type',
     ];
 
     /**

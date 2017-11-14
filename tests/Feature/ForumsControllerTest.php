@@ -14,4 +14,24 @@ class ForumsControllerTest extends TestCase
 
 	$this->forum = factory(\App\Models\Forum::class)->create();
     }
+
+    public function test_a_guest_cannot_view_clients()
+    {
+	$response = $this->get('/clients');
+	$response->assertStatus(302);
+    }
+
+    public function test_a_guest_can_view_forums()
+    {
+	$response = $this->get('/forums');
+	
+	$response->assertSee($this->forum->title);
+    }
+
+    public function test_a_guest_can_view_a_forum()
+    {
+	$response = $this->get($this->forum->path());
+
+	$response->assertSee($this->forum->title);
+    }
 }

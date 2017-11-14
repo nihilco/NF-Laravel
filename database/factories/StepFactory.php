@@ -14,6 +14,7 @@ $factory->define(App\Models\Step::class, function (Faker $faker) {
 	'tutorial_id' => function () {
 	    return factory(App\Models\Tutorial::class)->create()->id;
         },
-	'step_number' => 1,
+	'order' => 1,
+	'content' => $faker->paragraph(rand(3,6), true),
     ];
 });

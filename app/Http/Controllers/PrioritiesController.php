@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Status;
+use App\Models\Priority;
 use Illuminate\Http\Request;
 
-class StatusController extends Controller
+class PrioritiesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class StatusController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -25,8 +25,8 @@ class StatusController extends Controller
     public function index()
     {
         //
-	$statuses = Status::all();
-	return view('statuses.index', compact('statuses'));
+	$priorities = Priority::all();
+	return view('priorities.index', compact('priorities'));
     }
 
     /**
@@ -37,7 +37,7 @@ class StatusController extends Controller
     public function create()
     {
         //
-	return view('statuses.create');
+	return view('priorities.create');
     }
 
     /**
@@ -54,35 +54,35 @@ class StatusController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Status  $status
+     * @param  \App\Priority  $priority
      * @return \Illuminate\Http\Response
      */
-    public function show(Status $status)
+    public function show(Priority $priority)
     {
         //
-	return view('statuses.show', compact('status'));
+	return view('priorities.show', compact('priority'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Status  $status
+     * @param  \App\Priority  $priority
      * @return \Illuminate\Http\Response
      */
-    public function edit(Status $status)
+    public function edit(Priority $priority)
     {
         //
-	return view('statuses.edit', compact('status'));
+	return view('priorities.edit', compact('priority'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Status  $status
+     * @param  \App\Priority  $priority
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Status $status)
+    public function update(Request $request, Priority $priority)
     {
         //
     }
@@ -90,10 +90,10 @@ class StatusController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Status  $status
+     * @param  \App\Priority  $priority
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Status $status)
+    public function destroy(Priority $priority)
     {
         //
     }

@@ -14,4 +14,10 @@ class CurrenciesControllerTest extends TestCase
 
 	$this->currency = factory(\App\Models\Currency::class)->create();
     }
+
+    public function test_a_guest_cannot_view_currencies()
+    {
+	$response = $this->get('/currencies');
+	$response->assertStatus(302);
+    }
 }

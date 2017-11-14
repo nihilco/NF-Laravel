@@ -14,7 +14,7 @@ class LinksController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -60,7 +60,8 @@ class LinksController extends Controller
     public function show(Link $link)
     {
         //
-	return view('links.show', compact('link'));
+	//return view('links.show', compact('link'));
+	return redirect($link->url);
     }
 
     /**

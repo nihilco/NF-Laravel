@@ -18,6 +18,7 @@ class CreateTutorialsTable extends Migration
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
 	    $table->string('title');
+    	    $table->string('subtitle')->nullable();
 	    $table->string('slug');
 	    $table->text('description');
 	    $table->unsignedInteger('total_steps')->default(0);

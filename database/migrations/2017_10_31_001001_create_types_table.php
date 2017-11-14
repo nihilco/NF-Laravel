@@ -17,10 +17,10 @@ class CreateTypesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('resource_id');
+	    $table->unsignedInteger('parent_id')->nullable();
 	    $table->string('resource_type');
-	    $table->string('name');
-	    $table->string('slug')->unique();
+	    $table->string('name', 100);
+	    $table->string('slug', 100)->unique();
 	    $table->text('description');
 	    $table->softDeletes();
             $table->timestamps();

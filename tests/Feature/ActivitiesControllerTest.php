@@ -14,4 +14,10 @@ class ActivitiesControllerTest extends TestCase
 
 	$this->activity = factory(\App\Models\Activity::class)->create();
     }
+
+    public function test_a_guest_cannot_view_activities()
+    {
+	$response = $this->get('/activities');
+	$response->assertStatus(302);
+    }
 }

@@ -11,5 +11,11 @@ $factory->define(App\Models\Address::class, function (Faker $faker) {
 	'owner_id' => function () {
 	    return factory(App\Models\User::class)->create()->id;
 	},
+	'province_id' => function () {
+	    return factory(App\Models\Province::class)->create()->id;
+	},
+	'address1' => $faker->streetAddress,
+	'city' => $faker->city,
+	'postal_code' => $faker->postCode,
     ];
 });

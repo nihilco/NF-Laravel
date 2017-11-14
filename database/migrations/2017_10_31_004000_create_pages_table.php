@@ -17,8 +17,9 @@ class CreatePagesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
     	    $table->unsignedInteger('owner_id');
+	    $table->unsignedInteger('website_id');
 	    $table->string('title');
-	    $table->string('slug')->unique();
+	    $table->string('slug');
 	    $table->text('description');
     	    $table->text('content');
 	    $table->unsignedInteger('views_count')->default(0);

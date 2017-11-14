@@ -14,4 +14,10 @@ class AccountsControllerTest extends TestCase
 
 	$this->account = factory(\App\Models\Account::class)->create();
     }
+
+    public function test_a_guest_cannot_view_accounts()
+    {
+	$response = $this->get('/accounts');
+	$response->assertStatus(302);
+    }
 }

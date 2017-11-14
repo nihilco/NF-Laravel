@@ -14,4 +14,10 @@ class ResourcesControllerTest extends TestCase
 
 	$this->resource = factory(\App\Models\Resource::class)->create();
     }
+
+    public function test_a_guest_cannot_view_resources()
+    {
+	$response = $this->get('/resources');
+	$response->assertStatus(302);
+    }
 }

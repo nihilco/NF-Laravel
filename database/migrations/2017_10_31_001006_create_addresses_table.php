@@ -18,7 +18,6 @@ class CreateAddressesTable extends Migration
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
 	    $table->unsignedInteger('province_id');
-	    $table->unsignedInteger('country_id');
 	    $table->string('address1');
 	    $table->string('address2')->nullable();
 	    $table->string('address3')->nullable();

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resolution;
+use App\Models\Status;
 use Illuminate\Http\Request;
 
-class ResolutionController extends Controller
+class StatusesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class ResolutionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -25,8 +25,8 @@ class ResolutionController extends Controller
     public function index()
     {
         //
-	$resolutions = Resolution::all();
-	return view('resolutions.index', compact('resolutions'));
+	$statuses = Status::all();
+	return view('statuses.index', compact('statuses'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ResolutionController extends Controller
     public function create()
     {
         //
-	return view('resolutions.create');
+	return view('statuses.create');
     }
 
     /**
@@ -54,35 +54,35 @@ class ResolutionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Resolution  $resolution
+     * @param  \App\Status  $status
      * @return \Illuminate\Http\Response
      */
-    public function show(Resolution $resolution)
+    public function show(Status $status)
     {
         //
-	return view('resolutions.show', compact('resolution'));
+	return view('statuses.show', compact('status'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Resolution  $resolution
+     * @param  \App\Status  $status
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resolution $resolution)
+    public function edit(Status $status)
     {
         //
-	return view('resolutions.edit', compact('resolution'));
+	return view('statuses.edit', compact('status'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resolution  $resolution
+     * @param  \App\Status  $status
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resolution $resolution)
+    public function update(Request $request, Status $status)
     {
         //
     }
@@ -90,10 +90,10 @@ class ResolutionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Resolution  $resolution
+     * @param  \App\Status  $status
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resolution $resolution)
+    public function destroy(Status $status)
     {
         //
     }

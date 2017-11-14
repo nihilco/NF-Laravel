@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 /* @var Illuminate\Database\Eloquent\Factory $factory */
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Models\Resolution::class, function (Faker $faker) {
 
     $r = rand(1,1);
 

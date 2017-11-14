@@ -22,7 +22,7 @@ class CreateAccountsTable extends Migration
 	    $table->text('description');
 	    $table->string('stripe_id');
 	    $table->string('secret_key');
-	    $table->string('publishable_id');
+	    $table->string('publishable_key');
 	    $table->unsignedInteger('daily_transactions')->default(0);
 	    $table->integer('daily_volume')->default(0);
 	    $table->unsignedInteger('monthly_transactions')->default(0);

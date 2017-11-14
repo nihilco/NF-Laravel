@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Priority;
+use App\Models\Resolution;
 use Illuminate\Http\Request;
 
-class PriorityController extends Controller
+class ResolutionsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class PriorityController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     /**
@@ -25,8 +25,8 @@ class PriorityController extends Controller
     public function index()
     {
         //
-	$priorities = Priority::all();
-	return view('priorities.index', compact('priorities'));
+	$resolutions = Resolution::all();
+	return view('resolutions.index', compact('resolutions'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PriorityController extends Controller
     public function create()
     {
         //
-	return view('priorities.create');
+	return view('resolutions.create');
     }
 
     /**
@@ -54,35 +54,35 @@ class PriorityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Priority  $priority
+     * @param  \App\Resolution  $resolution
      * @return \Illuminate\Http\Response
      */
-    public function show(Priority $priority)
+    public function show(Resolution $resolution)
     {
         //
-	return view('priorities.show', compact('priority'));
+	return view('resolutions.show', compact('resolution'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Priority  $priority
+     * @param  \App\Resolution  $resolution
      * @return \Illuminate\Http\Response
      */
-    public function edit(Priority $priority)
+    public function edit(Resolution $resolution)
     {
         //
-	return view('priorities.edit', compact('priority'));
+	return view('resolutions.edit', compact('resolution'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Priority  $priority
+     * @param  \App\Resolution  $resolution
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Priority $priority)
+    public function update(Request $request, Resolution $resolution)
     {
         //
     }
@@ -90,10 +90,10 @@ class PriorityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Priority  $priority
+     * @param  \App\Resolution  $resolution
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Priority $priority)
+    public function destroy(Resolution $resolution)
     {
         //
     }

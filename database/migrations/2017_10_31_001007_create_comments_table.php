@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
 	    $table->unsignedInteger('resource_id');
+	    $table->string('resource_type');
 	    $table->text('content');
 	    $table->softDeletes();
             $table->timestamps();
