@@ -17,7 +17,7 @@ $factory->define(App\Models\Rating::class, function (Faker $faker) {
 	    switch($r) {
 	        case 1:
 		default:
-		    $ret = factory(App\Models\Reply::class)->create()->id;
+		    $ret = factory(App\Models\Post::class)->create()->id;
 		    break;
 	    }
 	    return $ret;
@@ -26,7 +26,7 @@ $factory->define(App\Models\Rating::class, function (Faker $faker) {
 	    switch($r) {
 	        case 1:
 		default:
-		    $ret = App\Models\Reply::class;
+		    $ret = App\Models\Post::class;
 		    break;
 	    }
 	    return $ret;

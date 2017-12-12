@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Filters\PostFilters;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -22,10 +23,10 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PostFilters $filters)
     {
-        //
-	$posts = Post::latest()->get();
+	$posts = Post::filter($filters)->get();
+
 	return view('posts.index', compact('posts'));
     }
 
@@ -49,6 +50,28 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	  'title' => 'required',
+	  'slug' => 'required',
+	  'description' => 'required',
+	  'content' => 'required',
+	]);
+    
+        //
+	$post = new Post();
+
+	$post->creator_id = auth()->id();
+	$post->owner_id = auth()->id();
+	$post->website_id = config('view.website_id');
+	$post->title = request('title');
+	$post->slug = request('slug');
+	$post->description = request('description');
+	$post->content = request('content');
+	$post->published_at = \Carbon\Carbon::now()->toDateTimeString();
+
+	$post->save();
+
+	return redirect('/posts');
     }
 
     /**

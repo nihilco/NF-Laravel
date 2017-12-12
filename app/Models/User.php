@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'email', 'password', 'birthday',
     ];
 
     /**
@@ -24,12 +24,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'email', 'birthday',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
 
     public function path()
     {
-        return '/users/' . $this->id;
+        return '/users/' . $this->username;
     }
 
     public function creator()
@@ -42,4 +47,13 @@ class User extends Authenticatable
         return $this->belongsTo(User::class);
     }
 
+    public function threads()
+    {
+        return $this->hasMany(Thread::class, 'owner_id');
+    }
+
+    public function activity()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

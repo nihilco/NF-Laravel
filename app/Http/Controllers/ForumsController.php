@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Channel;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 
@@ -25,8 +26,10 @@ class ForumsController extends Controller
     public function index()
     {
         //
-	$forums = Forum::all();
-	return view('forums.index', compact('forums'));
+	$channels = Channel::all()->load('forums');
+	return view('forums.index', [
+	    'channels' => $channels,
+	]);
     }
 
     /**
@@ -37,7 +40,8 @@ class ForumsController extends Controller
     public function create()
     {
         //
-	return view('forums.create');
+	$channels = Channel::all();
+	return view('forums.create', compact('channels'));
     }
 
     /**
@@ -49,6 +53,25 @@ class ForumsController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	    'channel_id' => 'required',
+	    'title' => 'required',
+	    'slug' => 'required',
+	    'description' => 'required',
+	]);
+
+	$forum = new Forum();
+
+	$forum->creator_id = auth()->id();
+	$forum->owner_id = auth()->id();
+	$forum->channel_id = request('channel_id');
+	$forum->title = request('title');
+	$forum->slug = request('slug');
+	$forum->description = request('description');
+
+	$forum->save();
+
+	return redirect($forum->path());
     }
 
     /**

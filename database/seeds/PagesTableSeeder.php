@@ -31,7 +31,7 @@ class PagesTableSeeder extends Seeder
 	    'title' => 'About Us',
 	    'slug' => 'about-us',
 	    'description' => '',
-	    'content' => '<p>Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
+	    'content' => '<p class="justify">Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
 	    Central and Eastern Kentucky. It was founded by Chandler Maze and Clayton Stone. Chandler and
 	    Clayton met in law school, and bonded over their fondness for their “Kentucky Home.” Chandler and
 	    Clayton truly care about the members of their community. We put our clients first, and work tirelessly to
@@ -47,7 +47,7 @@ class PagesTableSeeder extends Seeder
 	    'title' => 'Practice Areas',
 	    'slug' => 'practice-areas',
 	    'description' => '',
-	    'content' => '<h2 class="text-center">Personal Injury</h2><p>If you or a loved one has sustained any type of injury as a result of the carless or
+	    'content' => '<h2 class="text-center">Personal Injury</h2><p class="justify">If you or a loved one has sustained any type of injury as a result of the carless or
 	    negligent actions of another, it is important to seek the help of an experienced attorney. At the Maze &amp;
 	    Stone, we can examine the facts of your case, help determine what actions need to be taken, and work
 	    endlessly to get you the compensation you deserve. Many injuries can leave people with pain and
@@ -58,7 +58,7 @@ class PagesTableSeeder extends Seeder
 	    companies and big corporations accountable when accidents or negligence cause people to suffer.</p>
 
 	    <h2 class="text-center">Criminal Defense</h2>
-	    <p>At Maze &amp; Stone, we realize that good people make mistakes. An arrest and
+	    <p class="justify">At Maze &amp; Stone, we realize that good people make mistakes. An arrest and
 	    subsequent criminal charges can be one of the most stressful and trying times of one’s life. The
 	    attorneys at Maze &amp; Stone are committed to minimizing this stress and helping people get on with their
 	    lives. There are steps that need to be taken following your arrest to help raise the best possible defense
@@ -66,7 +66,7 @@ class PagesTableSeeder extends Seeder
 	    defense to each client’s needs.</p>
 
 	    <h2 class="text-center">Workers Compensation</h2>
-	    <p>Workplace injuries can take a serious toll on you and your family and cause
+	    <p class="justify">Workplace injuries can take a serious toll on you and your family and cause
 	    undue hardship on you physically, emotionally, and financially. If you have been injured at work, do not
 	    let your employer talk you out of filing a claim. Oftentimes, employers will make promises to injured
 	    workers that they do not intend to keep, in an attempt to dissuade them from filing a claim. You could
@@ -88,7 +88,7 @@ class PagesTableSeeder extends Seeder
 	    </div>
 	    <div class="col-sm-8 col-md-9">
 	    <h2>Chandler Maze</h2>
-<p>Chandler was born and raised in Eastern Kentucky.  Over the last decade, Chandler has lived in Western, Northern, and Central Kentucky, making invaluable connections to advance his education and career.  At his prior firm, Chandler was exposed to a variety of legal cases, scenarios, and experiences and was trained by some of the top lawyers in the area.  While focusing on personal injury, Chandler has also been immersed in many different areas of law. He has worked for the Montgomery County Attorney’s office and the Rowan County Attorney’s office, as well as the Public Defender’s office. As such, he has experience with criminal cases on both sides of the court. In addition, Chandler worked inside jails in Eastern Kentucky as a Pretrial Officer alongside Judges and arresting officers, helping to determine bonds for those incarcerated at the beginning stages of their proceedings. Having spent the last number of years working as an attorney for a large personal injury firm, Chandler has learned important tactics and strategies, crucial for maximizing the recovery value in every one of his client’s cases. After living in the Cincinnati and Lexington areas, Chandler feels very fortunate to be able to practice law in the area in which he grew up, and use his knowledge and experience to help those in need.</p>
+<p class="justify">Chandler was born and raised in Eastern Kentucky.  Over the last decade, Chandler has lived in Western, Northern, and Central Kentucky, making invaluable connections to advance his education and career.  At his prior firm, Chandler was exposed to a variety of legal cases, scenarios, and experiences and was trained by some of the top lawyers in the area.  While focusing on personal injury, Chandler has also been immersed in many different areas of law. He has worked for the Montgomery County Attorney’s office and the Rowan County Attorney’s office, as well as the Public Defender’s office. As such, he has experience with criminal cases on both sides of the court. In addition, Chandler worked inside jails in Eastern Kentucky as a Pretrial Officer alongside Judges and arresting officers, helping to determine bonds for those incarcerated at the beginning stages of their proceedings. Having spent the last number of years working as an attorney for a large personal injury firm, Chandler has learned important tactics and strategies, crucial for maximizing the recovery value in every one of his client’s cases. After living in the Cincinnati and Lexington areas, Chandler feels very fortunate to be able to practice law in the area in which he grew up, and use his knowledge and experience to help those in need.</p>
 	    </div>
 	    </div>
 
@@ -98,7 +98,7 @@ class PagesTableSeeder extends Seeder
 </div>
 <div class="col-sm-8 col-md-9">
 <h2>Clayton Stone</h2>
-<p>Clayton is a native of Central Kentucky and has a passion for serving his community. He
+<p class="justify">Clayton is a native of Central Kentucky and has a passion for serving his community. He
 completed his undergraduate studies at the University of Kentucky, with a degree in Political
 Science. After college, Clayton attended the Salmon P. Chase College of Law, where he would
 eventually graduate with honors. While in law school, Clayton interned for the Boone County
@@ -117,7 +117,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'About Us',
 	    'slug' => 'about-us',
 	    'description' => '',
-	    'content' => '<p>Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
+	    'content' => '<p class="justify">Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
 	    Central and Eastern Kentucky. It was founded by Chandler Maze and Clayton Stone. Chandler and
 	    Clayton met in law school, and bonded over their fondness for their “Kentucky Home.” Chandler and
 	    Clayton truly care about the members of their community. We put our clients first, and work tirelessly to
@@ -133,7 +133,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Practice Areas',
 	    'slug' => 'practice-areas',
 	    'description' => '',
-	    'content' => '<h2 class="text-center">Personal Injury</h2><p>If you or a loved one has sustained any type of injury as a result of the carless or
+	    'content' => '<h2 class="text-center">Personal Injury</h2><p class="justify">If you or a loved one has sustained any type of injury as a result of the carless or
 	    negligent actions of another, it is important to seek the help of an experienced attorney. At the Maze &amp;
 	    Stone, we can examine the facts of your case, help determine what actions need to be taken, and work
 	    endlessly to get you the compensation you deserve. Many injuries can leave people with pain and
@@ -144,7 +144,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    companies and big corporations accountable when accidents or negligence cause people to suffer.</p>
 
 	    <h2 class="text-center">Criminal Defense</h2>
-	    <p>At Maze &amp; Stone, we realize that good people make mistakes. An arrest and
+	    <p class="justify">At Maze &amp; Stone, we realize that good people make mistakes. An arrest and
 	    subsequent criminal charges can be one of the most stressful and trying times of one’s life. The
 	    attorneys at Maze &amp; Stone are committed to minimizing this stress and helping people get on with their
 	    lives. There are steps that need to be taken following your arrest to help raise the best possible defense
@@ -152,7 +152,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    defense to each client’s needs.</p>
 
 	    <h2 class="text-center">Workers Compensation</h2>
-	    <p>Workplace injuries can take a serious toll on you and your family and cause
+	    <p class="justify">Workplace injuries can take a serious toll on you and your family and cause
 	    undue hardship on you physically, emotionally, and financially. If you have been injured at work, do not
 	    let your employer talk you out of filing a claim. Oftentimes, employers will make promises to injured
 	    workers that they do not intend to keep, in an attempt to dissuade them from filing a claim. You could
@@ -174,7 +174,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    </div>
 	    <div class="col-sm-8 col-md-9">
 	    <h2>Chandler Maze</h2>
-<p>Chandler was born and raised in Eastern Kentucky.  Over the last decade, Chandler has lived in Western, Northern, and Central Kentucky, making invaluable connections to advance his education and career.  At his prior firm, Chandler was exposed to a variety of legal cases, scenarios, and experiences and was trained by some of the top lawyers in the area.  While focusing on personal injury, Chandler has also been immersed in many different areas of law. He has worked for the Montgomery County Attorney’s office and the Rowan County Attorney’s office, as well as the Public Defender’s office. As such, he has experience with criminal cases on both sides of the court. In addition, Chandler worked inside jails in Eastern Kentucky as a Pretrial Officer alongside Judges and arresting officers, helping to determine bonds for those incarcerated at the beginning stages of their proceedings. Having spent the last number of years working as an attorney for a large personal injury firm, Chandler has learned important tactics and strategies, crucial for maximizing the recovery value in every one of his client’s cases. After living in the Cincinnati and Lexington areas, Chandler feels very fortunate to be able to practice law in the area in which he grew up, and use his knowledge and experience to help those in need.</p>
+<p class="justify">Chandler was born and raised in Eastern Kentucky.  Over the last decade, Chandler has lived in Western, Northern, and Central Kentucky, making invaluable connections to advance his education and career.  At his prior firm, Chandler was exposed to a variety of legal cases, scenarios, and experiences and was trained by some of the top lawyers in the area.  While focusing on personal injury, Chandler has also been immersed in many different areas of law. He has worked for the Montgomery County Attorney’s office and the Rowan County Attorney’s office, as well as the Public Defender’s office. As such, he has experience with criminal cases on both sides of the court. In addition, Chandler worked inside jails in Eastern Kentucky as a Pretrial Officer alongside Judges and arresting officers, helping to determine bonds for those incarcerated at the beginning stages of their proceedings. Having spent the last number of years working as an attorney for a large personal injury firm, Chandler has learned important tactics and strategies, crucial for maximizing the recovery value in every one of his client’s cases. After living in the Cincinnati and Lexington areas, Chandler feels very fortunate to be able to practice law in the area in which he grew up, and use his knowledge and experience to help those in need.</p>
 	    </div>
 	    </div>
 
@@ -184,7 +184,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 </div>
 <div class="col-sm-8 col-md-9">
 <h2>Clayton Stone</h2>
-<p>Clayton is a native of Central Kentucky and has a passion for serving his community. He
+<p class="justify">Clayton is a native of Central Kentucky and has a passion for serving his community. He
 completed his undergraduate studies at the University of Kentucky, with a degree in Political
 Science. After college, Clayton attended the Salmon P. Chase College of Law, where he would
 eventually graduate with honors. While in law school, Clayton interned for the Boone County

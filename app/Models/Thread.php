@@ -2,8 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\ActivityTrait;
+use App\Traits\FavoriteTrait;
+use App\Traits\FollowTrait;
+use App\Traits\ReplyTrait;
+
 class Thread extends Base
 {
+    use ActivityTrait, FavoriteTrait, FollowTrait, ReplyTrait;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -18,8 +25,25 @@ class Thread extends Base
      *
      * @var array
      */
-    protected $hidden = [];
-    
+    protected $hidden = ['forum'];
+
+    protected $with = ['creator', 'owner'];
+
+    protected $appends = ['isFollowing'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+	static::created(function ($thread) {
+	    $thread->forum->increment('threads_count');
+	});
+
+	static::deleted(function ($thread) {
+	    $thread->forum->decrement('threads_count');
+	});
+    }
+
     //
     public function path()
     {
@@ -31,8 +55,13 @@ class Thread extends Base
         return $this->belongsTo(Forum::class);
     }
 
-    public function replies()
+    public function scopeFilter($query, $filters)
     {
-        return $this->morphMany(Reply::class, 'resource');
+        return $filters->apply($query);
+    }
+
+    public function getclassAttribute()
+    {
+        return get_class($this);
     }
 }

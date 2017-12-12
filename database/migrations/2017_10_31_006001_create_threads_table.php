@@ -21,7 +21,9 @@ class CreateThreadsTable extends Migration
 	    $table->string('title');
 	    $table->string('slug');
 	    $table->text('content');
-	    $table->unsignedInteger('replies_count');
+	    $table->unsignedInteger('replies_count')->default(0);
+	    $table->unsignedInteger('favorites_count')->default(0);
+	    $table->datetime('last_reply_at')->nullable();
 	    $table->softDeletes();
             $table->timestamps();
         });

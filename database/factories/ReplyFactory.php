@@ -7,12 +7,8 @@ $factory->define(App\Models\Reply::class, function (Faker $faker) {
     $r = rand(1,1);
 
     return [
-    	'creator_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'owner_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
+    	'creator_id' => 1,
+	'owner_id' => 1,
 	'resource_id' => function () use (&$r) {
 	    switch($r) {
 	        case 1:
@@ -32,5 +28,6 @@ $factory->define(App\Models\Reply::class, function (Faker $faker) {
 	    return $ret;
 	},
 	'content' => $faker->paragraph(rand(3,6), true),
+	'favorites_count' => 0,
     ];
 });

@@ -25,6 +25,8 @@ class CreatePostsTable extends Migration
     	    $table->unsignedInteger('views_count')->default(0);
 	    $table->datetime('last_viewed_at')->nullable();
 	    $table->datetime('published_at');
+	    $table->unsignedInteger('replies_count')->default(0);
+	    $table->datetime('last_reply_at')->nullable();
 	    $table->softDeletes();
 	    $table->timestamps();
         });

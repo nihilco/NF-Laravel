@@ -25,7 +25,7 @@ class BooksController extends Controller
     public function index()
     {
         //
-	$books = Book::latest()->get();
+	$books = Book::latest()->paginate(25);
 	return view('books.index', compact(['books']));
     }
 

@@ -18,6 +18,13 @@
 		<form method="POST" action="/contact">
 		{{ csrf_field() }}
 		    <div class="form-group">
+		        <label for="name">Name</label>
+			<input type="text" class="form-control {{ $errors->first('name') ? ' is-invalid' : '' }}" id="name" name="name" aria-describedby="nameHelp" placeholder="John Smith" value="{{ old('name') }}">
+			@if($errors->first('name'))
+			<small id="nameHelp" class="form-text invalid-feedback">{{ $errors->first('name') }}</small>
+			@endif
+		    </div>
+		    <div class="form-group">
 		        <label for="email">Email</label>
 		        <input type="email" class="form-control{{ $errors->first('email') ? ' is-invalid' : '' }}" id="email" name="email" aria-describedby="emailHelp" placeholder="jsmith@example.com" value="{{ old('email') }}">
 			@if($errors->first('email'))
@@ -25,10 +32,10 @@
 			@endif
 	            </div>
 	  	    <div class="form-group">
-		        <label for="name">Name</label>
-			<input type="text" class="form-control {{ $errors->first('name') ? ' is-invalid' : '' }}" id="name" name="name" aria-describedby="nameHelp" placeholder="John Smith" value="{{ old('name') }}">
-			@if($errors->first('name'))
-			<small id="nameHelp" class="form-text invalid-feedback">{{ $errors->first('name') }}</small>
+		        <label for="name">Phone</label>
+			<input type="text" class="form-control {{ $errors->first('phone') ? ' is-invalid' : '' }}" id="phone" name="phone" aria-describedby="phoneHelp" placeholder="(123) 456-7890" value="{{ old('phone') }}">
+			@if($errors->first('phone'))
+			<small id="phoneHelp" class="form-text invalid-feedback">{{ $errors->first('phone') }}</small>
 			@endif
 		    </div>
 		    <div class="form-group">

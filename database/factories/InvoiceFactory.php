@@ -5,12 +5,8 @@ use Faker\Generator as Faker;
 $factory->define(App\Models\Invoice::class, function (Faker $faker) {
 
     return [
-    	'creator_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'owner_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
+    	'creator_id' => 1,
+	'owner_id' => 1,
 	'customer_id' => function () {
 	    return factory(App\Models\Customer::class)->create()->id;
 	},

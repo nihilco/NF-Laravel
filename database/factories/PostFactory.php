@@ -21,5 +21,7 @@ $factory->define(App\Models\Post::class, function (Faker $faker) {
 	'views_count' => 0,
 	'last_viewed_at' => null,
 	'published_at' => \Carbon\Carbon::now()->toDateString(),
+	'replies_count' => 0,
+	'last_reply_at' => null,
     ];
 });

@@ -10,6 +10,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+	<link href="/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -80,5 +82,7 @@
             @yield('content')
 
         </div>
+
+	<script src="/js/bootstrap-datepicker.min.js"></script>
     </body>
 </html>

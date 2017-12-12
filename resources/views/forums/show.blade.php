@@ -15,35 +15,50 @@
 
                 <p class="lead">{{ $forum->description }}</p>
 
-		<h2>Threads</h2>
-
-		@forelse($forum->threads as $thread)
-                <article>
-		    <a href="{{ $thread->path() }}"><h3>{{ $thread->title }}</h3></a>
-	            <p class="thread-content">{{ $thread->content }}</p>
-                </article>
-		@empty
-		<p>No threads at this time.</p>
-		@endforelse
+		<div class="row mt-3">
+		  <div class="col-sm-5">
+		    <h2>Treads</h2>
+		  </div>
+		  <div class="col-sm-7">
+		    <div class="row">
+		      <div class="col-sm-4">
+		      &nbsp;
+		      </div>
+		      <div class="col-sm-4">
+		      Replies
+		      </div>
+		      <div class="col-sm-4">
+		      Updated
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		@foreach($forum->threads as $thread)
+		<div class="row">
+		  <div class="col-sm-5">
+                    <h3><a href="{{ $thread->path() }}">{{ $thread->title }}</a></h3>
+		    <p class="thread-content">{{ $thread->content }}</p>
+		  </div>
+		  <div class="col-sm-7">
+		    <div class="row">
+		      <div class="col-sm-4">
+		      &nbsp;
+		      </div>
+		      <div class="col-sm-4">
+		      {{ $thread->replies_count }}
+		      </div>
+		      <div class="col-sm-4">
+		      {{ $thread->updated_at->diffForHumans() }}
+		      </div>
+		    </div>
+		  </div>
+                </div>
+                @endforeach
 
 	    </div>
 	    <div class="col-sm-4 col-md-3">
 
-                <div class="card mt-3 mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
+	      @include('forums.sidebar')
 
 	    </div>
 	</div>

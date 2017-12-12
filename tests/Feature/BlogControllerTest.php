@@ -6,13 +6,13 @@ use Tests\TestCase;
 
 class BlogControllerTest extends TestCase
 {
-    public $post;
+    public $blogPost;
 
     public function setUp()
     {
         parent::setUp();
 
-	$this->post = factory(\App\Models\Post::class)->create();
+	$this->blogPost = factory(\App\Models\Post::class)->create();
     }
 
     /**
@@ -24,7 +24,7 @@ class BlogControllerTest extends TestCase
     {	
         $response = $this->get('/blog');
 
-	$response->assertSee($this->post->title);
+	$response->assertSee($this->blogPost->title);
     }
 
 }

@@ -60,7 +60,9 @@ class CustomersController extends Controller
     public function show(Customer $customer)
     {
         //
-	return view('customers.show', compact('customer'));
+	return view('customers.show', [
+	    'customer' => $customer->append('class'),
+	]);
     }
 
     /**

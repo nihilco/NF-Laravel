@@ -8,15 +8,9 @@ $factory->define(App\Models\Type::class, function (Faker $faker) {
 
     return [
         //
-   	'creator_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'owner_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'parent_id' => function () {
-	    return rand(0,1) ? null : factory(App\Models\Type::class)->create()->id;
-	},	
+   	'creator_id' => 1,
+	'owner_id' => 1,
+	'parent_id' => null,	
 	'resource_type' => function () use (&$r) {
 	    switch($r) {
 	        case 1:

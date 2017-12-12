@@ -41,18 +41,27 @@ class ConfigServiceProvider extends ServiceProvider
 	$paths = $config['view']['paths'];
 	array_unshift($paths, base_path() . "/themes/" . $host . "/resources/views");
 
+	$markdownPaths = $config['mail']['markdown']['paths'];
+	array_unshift($markdownPaths, base_path() . "/themes/" . $host . "/resources/views/vendor/mail");
+
 	$config->set('app.url', 'https://' . $host);
 	$config->set('view.paths', $paths);
+	$config->set('mail.markdown.paths', $markdownPaths);
+
+	//dd($config['mail']['markdown']['paths']);
 
 	// Set other variables based on domain
 	// Title
 	$title = $host;
+	$website_id = 1;
 	if($website) {
 	    if($website->title != "") {
 	        $title = $website->title;
 	    }
+	    $website_id = $website->id;
 	}
 	$config->set('view.title', $title);
+	$config->set('view.website_id', $website_id);
 	// Stripe Account
 	$config->set('services.stripe.connect.account', '');
 	$config->set('services.stripe.connect.secret', '');

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Traits\ReplyTrait;
 
-class Customer extends Model
+class Customer extends Base
 {
+    use ReplyTrait;
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +23,9 @@ class Customer extends Model
      * @var array
      */
     protected $hidden = [];
-    
+
+    protected $with = ['creator', 'owner'];
+
     //
     public function path()
     {
@@ -36,5 +40,10 @@ class Customer extends Model
     public function owner()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getclassAttribute()
+    {
+        return get_class($this);
     }
 }

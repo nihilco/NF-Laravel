@@ -7,11 +7,11 @@
     <div class="container page-top">
 
         <div class="row pt-3">
-            <div class="col-sm-8">
+            <div class="col-sm-12">
 
                 <h1>{{ $page->title }}</h1>
 
-		<p class="lead">{{ $page->description }}</p>
+		<p class="lead justify">{{ $page->description }}</p>
 
 		{!! $page->content !!}
 

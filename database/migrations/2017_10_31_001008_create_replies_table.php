@@ -20,6 +20,7 @@ class CreateRepliesTable extends Migration
 	    $table->unsignedInteger('resource_id');
 	    $table->string('resource_type');
 	    $table->text('content');
+	    $table->unsignedInteger('favorites_count')->default(0);
 	    $table->softDeletes();
             $table->timestamps();
         });

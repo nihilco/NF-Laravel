@@ -10,12 +10,8 @@ $factory->define(App\Models\Status::class, function (Faker $faker) {
 
     return [
         //
-   	'creator_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'owner_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
+   	'creator_id' => 1,
+	'owner_id' => 1,
 	'resource_type' => function () use (&$r) {
 	    switch($r) {
 	        case 1:

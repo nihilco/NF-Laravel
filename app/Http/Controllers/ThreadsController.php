@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Forum;
 use App\Models\Thread;
+use App\Models\User;
+use App\Filters\ThreadFilters;
 use Illuminate\Http\Request;
 
 class ThreadsController extends Controller
@@ -22,10 +25,15 @@ class ThreadsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(ThreadFilters $filters)
     {
         //
-	$threads = Thread::all();
+	$threads = Thread::filter($filters)->get();
+
+	if(request()->wantsJson()) {
+	    return $threads;
+	}
+
 	return view('threads.index', compact('threads'));
     }
 
@@ -37,7 +45,8 @@ class ThreadsController extends Controller
     public function create()
     {
         //
-	return view('threads.create');
+	$forums = Forum::all();
+	return view('threads.create', compact('forums'));
     }
 
     /**
@@ -48,7 +57,28 @@ class ThreadsController extends Controller
      */
     public function store(Request $request)
     {
+	$this->validate(request(), [
+	    'forum_id' => 'required',
+	    'title' => 'required',
+	    'slug' => 'required',
+	    'content' => 'required',
+	]);
+
         //
+	$thread = new Thread();
+
+	$thread->creator_id = auth()->id();
+	$thread->owner_id = auth()->id();
+	$thread->forum_id = request('forum_id');
+	$thread->title = request('title');
+	$thread->slug = request('slug');
+	$thread->content = request('content');
+	$thread->replies_count = 0;
+
+	$thread->save();
+
+	return redirect($thread->path())
+	    ->with('flash', 'Your thread has been published!');
     }
 
     /**
@@ -59,8 +89,9 @@ class ThreadsController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
-	return view('threads.show', compact('thread'));
+	return view('threads.show', [
+	    'thread' => $thread->append(['class', 'isFollowing']),
+	]);
     }
 
     /**
@@ -95,6 +126,16 @@ class ThreadsController extends Controller
      */
     public function destroy(Thread $thread)
     {
+	//
+	$this->authorize('delete', $thread);
+
         //
+	$thread->delete();
+
+	if(request()->wantsJson()) {
+	    return response([], 204);
+	}
+
+	return redirect('/forums');
     }
 }

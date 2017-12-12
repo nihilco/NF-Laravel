@@ -35,4 +35,26 @@ class ThreadTest extends TestCase
     {
         $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->thread->replies);
     }
+
+    public function test_an_user_can_follow_a_thread()
+    {
+	$user = $this->login();
+
+	$this->thread->follow();
+
+	$this->assertEquals(1, $this->thread->follows()->where('owner_id', $user->id)->count());
+    }
+
+    public function test_an_user_can_unfollow_a_thread()
+    {
+	$user = $this->login();
+
+	$this->thread->follow();
+
+	$this->assertEquals(1, $this->thread->follows()->where('owner_id', $user->id)->count());
+
+	$this->thread->unfollow();
+
+	$this->assertCount(0, $this->thread->follows);
+    }
 }

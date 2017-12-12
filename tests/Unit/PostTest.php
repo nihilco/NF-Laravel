@@ -26,8 +26,8 @@ class PostTest extends TestCase
         $this->assertInstanceOf(\App\Models\User::class, $this->post->creator);
     }
 
-    public function test_a_post_has_comments()
+    public function test_a_post_has_replies()
     {
-        $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->post->comments);
+        $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->post->replies);
     }
 }

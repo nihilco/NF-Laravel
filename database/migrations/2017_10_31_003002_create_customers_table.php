@@ -18,7 +18,10 @@ class CreateCustomersTable extends Migration
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
 	    $table->unsignedInteger('account_id');
+	    $table->unsignedInteger('type_id');
 	    $table->string('stripe_id');
+	    $table->string('name');
+	    $table->unsignedInteger('replies_count')->default(0);
 	    $table->softDeletes();
             $table->timestamps();
         });

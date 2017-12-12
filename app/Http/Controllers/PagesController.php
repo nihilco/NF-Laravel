@@ -49,6 +49,28 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	  'title' => 'required',
+	  'slug' => 'required',
+	  'description' => 'required',
+	  'content' => 'required',
+	]);
+    
+        //
+	$page = new Page();
+
+	$page->creator_id = auth()->id();
+	$page->owner_id = auth()->id();
+	$page->website_id = config('view.website_id');
+	$page->title = request('title');
+	$page->slug = request('slug');
+	$page->description = request('description');
+	$page->content = request('content');
+	$page->published_at = \Carbon\Carbon::now()->toDateTimeString();
+
+	$page->save();
+
+	return redirect('/pages');
     }
 
     /**

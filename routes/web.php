@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', 'DefaultController@index');
+Route::get('/', 'DefaultController@index')->name('home');
+
+Route::get('/login', 'SessionsController@create')->name('login');
+Route::post('/login', 'SessionsController@store');
+Route::post('/logout', 'SessionsController@destroy')->name('logout');
+Route::get('/register', 'RegistrationController@create')->name('register');
+Route::get('/signup', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/profile', 'ProfileController@index')->name('profile');
 
 Route::resource('accounts', 'AccountsController');
 Route::resource('activities', 'ActivitiesController');
@@ -19,8 +29,7 @@ Route::resource('addresses', 'AddressesController');
 Route::resource('authors', 'AuthorsController');
 Route::resource('blog', 'BlogController');
 Route::resource('books', 'BooksController');
-Route::resource('clients', 'ClientsController');
-Route::resource('comments', 'CommentsController');
+Route::resource('channels', 'ChannelsController');
 Route::resource('contact', 'ContactController');
 Route::resource('contacts', 'ContactsController');
 Route::resource('countries', 'CountriesController');
@@ -30,22 +39,31 @@ Route::resource('default', 'DefaultController');
 Route::resource('devices', 'DevicesController');
 Route::resource('domains', 'DomainsController');
 Route::resource('exceptions', 'ExceptionsController');
+Route::delete('/favorites', 'FavortitesController@destroy');
+Route::resource('favorites', 'FavoritesController');
+Route::resource('follows', 'FollowsController');
 Route::resource('forums', 'ForumsController');
+Route::post('/forums/{forum}/threads', 'ThreadsController@store');
 Route::resource('invoices', 'InvoicesController');
 Route::resource('issues', 'IssuesController');
+Route::post('/issues/{issue}/replies', 'RepliesController@store');
 Route::resource('links', 'LinksController');
+Route::get('/notifications/list', 'NotificationsController@list');
+Route::resource('notifications', 'NotificationsController');
 Route::resource('orders', 'OrdersController');
 Route::resource('organizations', 'OrganizationsController');
 Route::resource('pages', 'PagesController');
 Route::resource('payments', 'PaymentsController');
 Route::resource('plans', 'PlansController');
 Route::resource('posts', 'PostsController');
+Route::post('/posts/{post}/replies', 'RepliesController@store');
 Route::resource('priorities', 'PrioritiesController');
 Route::resource('provinces', 'ProvincesController');
 Route::resource('publishers', 'PublishersController');
 Route::resource('ratings', 'RatingsController');
 Route::resource('receipts', 'ReceiptsController');
 Route::resource('records', 'RecordsController');
+Route::get('/replies/list', 'RepliesController@list');
 Route::resource('replies', 'RepliesController');
 Route::resource('resolutions', 'ResolutionsController');
 Route::resource('resources', 'ResourcesController');
@@ -56,6 +74,7 @@ Route::resource('statuses', 'StatusesController');
 Route::resource('steps', 'StepsController');
 Route::resource('subscriptions', 'SubscriptionsController');
 Route::resource('threads', 'ThreadsController');
+Route::post('/threads/{thread}/replies', 'RepliesController@store');
 Route::resource('tutorials', 'TutorialsController');
 Route::resource('types', 'TypesController');
 Route::resource('users', 'UsersController');
@@ -64,7 +83,10 @@ Route::resource('votes', 'VotesController');
 Route::resource('websites', 'WebsitesController');
 Route::resource('zones', 'ZonesController');
 
-Auth::routes();
+Route::get('/mailable', function () {
+  $user = App\Models\User::first();
+  return new App\Mail\RegistrationComplete($user);
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

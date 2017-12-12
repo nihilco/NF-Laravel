@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Filters\PostFilters;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -22,10 +23,11 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PostFilters $filters)
     {
         //
-	$posts = Post::latest()->get();
+	$posts = Post::filter($filters)->get();
+
 	return view('blog.index', compact('posts'));
     }
 }

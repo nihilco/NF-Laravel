@@ -13,34 +13,42 @@
 
                 <p class="lead">{{ $post->description }}</p>
 
-		<h2>Comments</h2>
+		<h2>Replies</h2>
 
-		@forelse($post->comments as $comment)
+		@forelse($post->replies as $reply)
                 <article>
-	            <p class="comment-content">{{ $comment->content }}</p>
+	            <p class="reply-content">{{ $reply->content }}</p>
                 </article>
 		@empty
-		<p>No comments at this time.</p>
+		<p>No replies at this time.</p>
 		@endforelse
+
+		@if(auth()->check())
+		<div class="row">
+		    <div class="col-sm-12">
+
+		        <form method="POST" action="{{ $post->path() . '/replies' }}">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+	                        <label for="content">Leave a reply</label>
+	                        <textarea class="form-control{{ $errors->first('content') ? ' is-invalid' : '' }}" id="content" name="content" aria-describedby="contentHelp" rows="5">{{ old('content') }}</textarea>
+	                        @if($errors->first('content'))
+	                        <small id="contentHelp" class="invalid-feedback">{{ $errors->first('content') }}</small>
+	                        @endif
+	                    </div>
+
+   	                    <button type="submit" class="btn btn-primary">Reply</button>
+	
+                        </form>
+
+		    </div>
+		</div>
+		@endif
 
 	    </div>
 	    <div class="col-sm-4 col-md-3">
 
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
+	      @include('blog.sidebar')
 
 	    </div>
 	</div>

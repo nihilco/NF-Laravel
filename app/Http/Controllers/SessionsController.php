@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Modesl\Session;
+use App\Http\Requests\LoginRequest;
+use App\Models\Session;
 
 class SessionsController extends Controller
 {
@@ -14,7 +15,7 @@ class SessionsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['create']);
+        $this->middleware('auth')->except(['create', 'store']);
     }
 
     /**
@@ -46,9 +47,14 @@ class SessionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoginRequest $request)
     {
         //
+	if(! auth()->attempt(request(['email', 'password'])) ) {
+	     return back();
+	}
+
+	return redirect()->route('dashboard');
     }
 
     /**
@@ -96,6 +102,9 @@ class SessionsController extends Controller
     public function destroy(Session $session)
     {
         //
+	auth()->logout();
+
+	return redirect()->home();
     }
 
 }

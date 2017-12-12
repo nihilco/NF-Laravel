@@ -15,31 +15,52 @@
 
                 <p class="lead">Forums for the blog.</p>
 
-                @foreach($forums as $forum)
-                <article>
-                    <h2><a href="{{ $forum->path() }}">{{ $forum->title }}</a></h2>
-	            <p class="forum-description">{{ $forum->desciption }}</p>
-                </article>
+                @foreach($channels as $channel)
+		<div class="row mt-3">
+		  <div class="col-sm-5">
+		    <h2>{{ $channel->title }}</h2>
+		    <p>{{ $channel->desciption }}</p>
+		  </div>
+		  <div class="col-sm-7">
+		    <div class="row">
+		      <div class="col-sm-4">
+		      Threads
+		      </div>
+		      <div class="col-sm-4">
+		      Replies
+		      </div>
+		      <div class="col-sm-4">
+		      Updated
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		@foreach($channel->forums as $forum)
+		<div class="row">
+		  <div class="col-sm-5">
+                    <h3><a href="{{ $forum->path() }}">{{ $forum->title }}</a></h3>
+		  </div>
+		  <div class="col-sm-7">
+		    <div class="row">
+		      <div class="col-sm-4">
+		      {{ $forum->threads_count }}
+		      </div>
+		      <div class="col-sm-4">
+		      {{ $forum->replies_count }}
+		      </div>
+		      <div class="col-sm-4">
+		      {{ $forum->updated_at->diffForHumans() }}
+		      </div>
+		    </div>
+		  </div>
+                </div>
+		@endforeach
                 @endforeach
 
 	    </div>
 	    <div class="col-sm-4 col-md-3">
 
-                <div class="card mt-3 mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Special title treatment</h4>
-	                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		        <a href="#" class="btn btn-primary">Go somewhere</a>
-		    </div>
-		</div>
+	      @include('forums.sidebar')
 
 	    </div>
 	</div>
