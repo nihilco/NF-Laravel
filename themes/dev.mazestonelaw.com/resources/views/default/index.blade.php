@@ -12,7 +12,7 @@
 <p class="justify">Maze & Stone, PLLC is a Central Kentucky law firm that handles a wide range of legal issues, including serious personal injury cases, car, truck, and motorcycle accidents, criminal defense, DUIs, workers’ compensation, estate planning, bankruptcy, and divorce. No matter your legal issue, the attorneys at Maze & Stone are well-equipped to guide you through the often confusing and complicated legal process.</p>
 
 <p class="justify">Frequently, the biggest complaint that clients have with a law office is: “MY ATTORNEY NEVER RETURNS MY CALLS” or their questions and communications are deferred to secretaries and staff.  When deciding who you should trust to handle your case, you should consider the following:
-<ul class="justify">
+<ul class="checks justify">
 <li>You will ALWAYS get to talk to your attorney at Maze & Stone.</li>
 <li>We will evaluate each and every case FOR FREE.</li>
 <li>We will start working on your case immediately.</li>
