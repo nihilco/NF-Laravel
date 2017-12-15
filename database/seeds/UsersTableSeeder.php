@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         // Uriah Clemmer
 	factory(\App\Models\User::class)->create([
 	    'name' => 'Uriah',
-	    'username' => 'uclemmer',
+	    'username' => 'uriah.clemmer@nihil.co',
 	    'email' => 'uriah@nihil.co',
 	    'birthday' => '1987/09/22',
 	    'password' => '$2y$10$CdT2ADBWBObWxeI4MaEmn.xPADMhk5zaquLt/QS//SXwHHvPH2yde',

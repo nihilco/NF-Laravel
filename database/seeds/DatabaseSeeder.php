@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 	    CustomersTableSeeder::class,
 	    DomainsTableSeeder::class,
 	    WebsitesTableSeeder::class,
+    	    AliasesTableSeeder::class,
 	    InvoicesTableSeeder::class,
 	    PagesTableSeeder::class,
 	    PostsTableSeeder::class,
