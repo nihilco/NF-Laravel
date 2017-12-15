@@ -32,7 +32,9 @@ class ContactMonitors extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact-monitors.html')
+        return $this->subject($this->request['name'] . ' Contacted You')
+	            ->from(['No-Reply | Maze & Stone' => 'no-reply@mazestonelaw.com'])
+	            ->markdown('emails.contact-monitors.html')
 	            ->text('emails.contact-monitors.text');
     }
 }

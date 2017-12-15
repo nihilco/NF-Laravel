@@ -92,7 +92,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('send_test_email', function(){
     Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message) {
-        $message->to('mclemmer@gmail.com');
+        $message->to('mclemmer@gmail.com', 'Matt Clemmer');
+	$message->from('no-reply@dev.mazestonelaw.com', 'No-Reply | Maze & Stone');
+	$message->subject('Mailgun and Laravel Test');
       });
 });
 

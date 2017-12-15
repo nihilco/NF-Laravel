@@ -32,7 +32,8 @@ class ContactReceipt extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact-receipt.html')
+        return $this->subject('Contact Receipt from ' . config('view.title'))
+	            ->markdown('emails.contact-receipt.html')
 	            ->text('emails.contact-receipt.text');
     }
 }
