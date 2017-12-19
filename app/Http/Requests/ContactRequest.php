@@ -39,11 +39,12 @@ class ContactRequest extends FormRequest
 
     public function persist()
     {
+
 	$monitors = ['Uriah' => 'uriah@nihil.co'];
-	$sender = [$this->name => $this->email];
+	$monitors = [config('mail.contact.name') => config('mail.contact.address')];
 
 	Mail::to($monitors)->send(new ContactMonitors($this));	
-	Mail::to($sender)->send(new ContactReceipt($this));
+	Mail::to([$this->name => $this->email])->send(new ContactReceipt($this));
     }
 
 }

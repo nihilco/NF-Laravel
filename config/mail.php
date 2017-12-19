@@ -60,6 +60,11 @@ return [
         'name' => env('MAIL_FROM_NAME', 'No-Reply | NIHIL Framework'),
     ],
 
+    'contact' => [
+        'address' => env('MAIL_CONTACT_ADDRESS', 'contact@nihilframework.com'),
+        'name' => env('MAIL_CONTACT_NAME', 'Contact | NIHIL Framework'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol

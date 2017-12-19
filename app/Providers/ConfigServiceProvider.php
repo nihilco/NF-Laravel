@@ -67,7 +67,10 @@ class ConfigServiceProvider extends ServiceProvider
 	$config->set('services.stripe.connect.secret', '');
 	$config->set('services.stripe.connect.publishable', '');
 	// Emails
-	$config->set('mail.from.address', 'no-reply@' . $host);
+	$config->set('mail.from.address', 'no-reply@' . substr($host,4));
 	$config->set('mail.from.name', 'No-Reply | ' . $title);
+	$config->set('mail.contact.address', 'contact@' . substr($host,4));
+	$config->set('mail.contact.name', 'Contact | ' . $title);
+	$config->set('services.mailgun.domain', 'mailgun.' . substr($host,4));
     }
 }
