@@ -96,6 +96,14 @@ class WebsitesTableSeeder extends Seeder
 	factory(App\Models\Website::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'taraloka.org')->first()->id,
+	    'hostname' => 'dev.taraloka.org',
+	    'title' => 'The Taraloka Foundation',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'domain_id' => $domains->where('tld', 'chattitup.com')->first()->id,
 	    'hostname' => 'www.chattitup.com',
 	    'title' => 'Chattitup',
