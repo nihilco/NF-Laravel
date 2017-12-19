@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'driver' => 'smtp',
+    'host' => 'poseidon.nihil.co',
+    'port' => '587',
+    
+];
