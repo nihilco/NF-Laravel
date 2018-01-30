@@ -17,11 +17,13 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('province_id');
+	    $table->unsignedInteger('resource_id');
+	    $table->string('resource_type');
 	    $table->string('address1');
 	    $table->string('address2')->nullable();
 	    $table->string('address3')->nullable();
 	    $table->string('city');
+	    $table->unsignedInteger('province_id');
 	    $table->string('postal_code');
 	    $table->softDeletes();
             $table->timestamps();

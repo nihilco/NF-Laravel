@@ -21,11 +21,16 @@ class Book extends Model
      * @var array
      */
     protected $hidden = [];
-    
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     //
     public function path()
     {
-        return '/books/' . $this->id;
+        return '/books/' . $this->slug;
     }
 
     public function creator()
@@ -46,5 +51,16 @@ class Book extends Model
     public function addAuthor($aid)
     {
         return $this->authors()->attach($aid);
+    }
+
+    public function isAuthor($aid)
+    {
+	foreach($this->authors as $author) {
+	    if($author->id == $aid) {
+	        return true;
+	    }
+	}
+
+	return false;
     }
 }

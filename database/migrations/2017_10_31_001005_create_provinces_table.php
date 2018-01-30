@@ -18,7 +18,8 @@ class CreateProvincesTable extends Migration
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
 	    $table->unsignedInteger('country_id');
-	    $table->string('name');
+	    $table->string('abbr');
+    	    $table->string('name');
 	    $table->softDeletes();
             $table->timestamps();
         });

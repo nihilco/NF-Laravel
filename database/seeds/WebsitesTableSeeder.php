@@ -276,5 +276,14 @@ class WebsitesTableSeeder extends Seeder
 	    'hostname' => 'dev.mazestonelaw.com',
 	    'title' => 'Maze & Stone',
 	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'uclemmer.com')->first()->id,
+	    'hostname' => 'dev.uclemmer.com',
+	    'title' => 'uclemmer',
+	]);
+
     }
 }

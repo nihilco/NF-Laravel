@@ -10,6 +10,7 @@ $factory->define(App\Models\Province::class, function (Faker $faker) {
 	'country_id' => function () {
 	    return factory(App\Models\Country::class)->create()->id;
 	},
+	'abbr' => $faker->stateAbbr,
 	'name' => $faker->state,
     ];
 });

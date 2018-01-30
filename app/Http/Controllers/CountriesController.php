@@ -49,6 +49,25 @@ class CountriesController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	    'code' => 'required',
+	    'name' => 'required',
+	]);
+
+	$country = new Country();
+
+	$country->creator_id = auth()->id();
+	$country->owner_id = auth()->id();
+	$country->code = request('code');
+	$country->name = request('name');
+
+	$country->save();
+
+	if(request()->expectsJson()) {
+	    return $country->load(['creator', 'owner']);
+	}
+
+	return redirect($country->path());
     }
 
     /**
@@ -71,6 +90,8 @@ class CountriesController extends Controller
      */
     public function edit(Country $country)
     {
+	$this->authorize('update', $country);
+	
         //
 	return view('countries.edit', compact('country'));
     }
@@ -84,7 +105,24 @@ class CountriesController extends Controller
      */
     public function update(Request $request, Country $country)
     {
+	$this->authorize('update', $country);
+
         //
+	$this->validate(request(), [
+	    'code' => 'required',
+	    'name' => 'required',
+	]);
+
+	$country->code = request('code');
+	$country->name = request('name');
+
+	$country->save();
+
+	if(request()->expectsJson()) {
+	    return $country->load(['creator', 'owner']);
+	}
+
+	return redirect($country->path());
     }
 
     /**
@@ -96,5 +134,14 @@ class CountriesController extends Controller
     public function destroy(Country $country)
     {
         //
+	$this->authorize('delete', $country);
+
+	$country->delete();
+
+	if(request()->expectsJson()) {
+	    return response([], 204);
+	}
+
+	return back();
     }
 }

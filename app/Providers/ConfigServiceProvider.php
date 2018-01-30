@@ -54,14 +54,17 @@ class ConfigServiceProvider extends ServiceProvider
 	// Title
 	$title = $host;
 	$website_id = 1;
+	$account_id = 1;
 	if($website) {
 	    if($website->title != "") {
 	        $title = $website->title;
 	    }
 	    $website_id = $website->id;
+	    $account_id = $website->account_id;
 	}
 	$config->set('view.title', $title);
 	$config->set('view.website_id', $website_id);
+	$config->set('view.account_id', $account_id);
 	// Stripe Account
 	$config->set('services.stripe.connect.account', '');
 	$config->set('services.stripe.connect.secret', '');

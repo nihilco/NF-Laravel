@@ -49,6 +49,37 @@ class AuthorsController extends Controller
     public function store(Request $request)
     {
         //
+	$this->authorize('create', Author::class);
+
+	$this->validate(request(), [
+	    'first' => 'required',
+	    'middle' => '',
+	    'last' => 'required',
+	    'website' => '',
+	    'description' => 'required',
+	]);
+
+	$author = new Author();
+
+	$author->creator_id = auth()->id();
+	$author->owner_id = auth()->id();
+	$author->first_name = request('first');
+	if(request('middle') != '') {
+	    $author->middle_name = request('middle');
+	}
+	$author->last_name = request('last');
+	if(request('website') != '') {
+	    $author->website = request('website');
+	}
+	$author->description = request('description');
+
+	$author->save();
+
+	if(request()->expectsJson()) {
+	    return $author->load(['creator', 'owner']);
+	}
+
+	return redirect($author->path());
     }
 
     /**
@@ -72,6 +103,8 @@ class AuthorsController extends Controller
     public function edit(Author $author)
     {
         //
+	$this->authorize('update', $author);
+
 	return view('authors.edit', compact('author'));
     }
 
@@ -85,6 +118,33 @@ class AuthorsController extends Controller
     public function update(Request $request, Author $author)
     {
         //
+	$this->authorize('update', $author);
+
+	$this->validate(request(), [
+	    'first' => 'required',
+	    'middle' => '',
+	    'last' => 'required',
+	    'website' => '',
+	    'description' => 'required',
+	]);
+
+	$author->first_name = request('first');
+	if(request('middle') != '') {
+	    $author->middle_name = request('middle');
+	}
+	$author->last_name = request('last');
+	if(request('website') != '') {
+	    $author->website = request('website');
+	}
+	$author->description = request('description');
+
+	$author->save();
+
+	if(request()->expectsJson()) {
+	    return $author->load(['creator', 'owner']);
+	}
+
+	return redirect($author->path());
     }
 
     /**
@@ -96,5 +156,14 @@ class AuthorsController extends Controller
     public function destroy(Author $author)
     {
         //
+	$this->authorize('delete', $author);
+
+	$author->delete();
+
+	if(request()->expectsJson()) {
+	    return response([], 204);
+	}
+
+	return back();
     }
 }

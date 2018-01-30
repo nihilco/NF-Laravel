@@ -9,7 +9,7 @@
         <div class="row pt-3">
 	    <div class="col-sm-8 col-md-9">
 
-	        <h1>{{ $book->title }}</h1>
+	        <h1>{{ $book->title_display }}</h1>
 
                 <p class="lead">{!! $book->description !!}</p>
 

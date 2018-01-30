@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Province;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class ProvincesController extends Controller
     {
         //
 	$provinces = Province::all();
-	return view('provinces.index', compact('province'));
+	return view('provinces.index', compact('provinces'));
     }
 
     /**
@@ -36,8 +37,10 @@ class ProvincesController extends Controller
      */
     public function create()
     {
+	$countries = Country::all();
+	
         //
-	return view('provinces.create');
+	return view('provinces.create', compact(['countries']));
     }
 
     /**
@@ -49,6 +52,27 @@ class ProvincesController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	    'abbr' => 'required',
+	    'name' => 'required',
+	    'country' => 'required|integer',
+	]);
+
+	$province = new Province();
+
+	$province->creator_id = auth()->id();
+	$province->owner_id = auth()->id();
+	$province->abbr = request('abbr');
+	$province->name = request('name');
+	$province->country_id = request('country');
+
+	$province->save();
+
+	if(request()->expectsJson()) {
+	    return $province->load(['creator', 'owner']);
+	}
+
+	return redirect($province->path());
     }
 
     /**
@@ -71,8 +95,12 @@ class ProvincesController extends Controller
      */
     public function edit(Province $province)
     {
+	$this->authorize('update', $province);
+
+    	$countries = Country::all();
+	
         //
-	return view('provinces.edit', compact('province'));
+	return view('provinces.edit', compact(['province', 'countries']));
     }
 
     /**
@@ -84,7 +112,26 @@ class ProvincesController extends Controller
      */
     public function update(Request $request, Province $province)
     {
+	$this->authorize('update', $province);
+	
         //
+	$this->validate(request(), [
+	    'abbr' => 'required',
+	    'name' => 'required',
+	    'country' => 'required|integer',
+	]);
+
+	$province->abbr = request('abbr');
+	$province->name = request('name');
+	$province->country_id = request('country');
+
+	$province->save();
+
+	if(request()->expectsJson()) {
+	    return $province->load(['creator', 'owner']);
+	}
+
+	return redirect($province->path());
     }
 
     /**
@@ -96,5 +143,14 @@ class ProvincesController extends Controller
     public function destroy(Province $province)
     {
         //
+	$this->authorize('delete', $province);
+	
+	$province->delete();
+
+	if(request()->expectsJson()) {
+	    return response([], 204);
+	}
+
+	return back();
     }
 }

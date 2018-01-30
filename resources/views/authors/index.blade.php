@@ -9,16 +9,35 @@
         <div class="row">
 	    <div class="col-sm-8 col-md-9">
 
-                <div class="mt-3">
-		    <h1>Authors</h1>
-                </div>
-
+	        <div class="row">
+		    <div class="col-sm-9">
+                        <h1 class="pt-3">Authors</h1>
+		    </div>
+		    <div class="col-sm-3">
+                        <a href="/authors/create" class="btn btn-primary mt-3">Create Author</a>
+		    </div>
+		</div>
 
                 <p class="lead">Authors for the books.</p>
 
                 @foreach($authors as $author)
                 <article>
-                    <h2><a href="{{ $author->path() }}">{{ $author->first_name . ' ' . $author->last_name }}</a></h2>
+		    <div class="row">
+		        <div class="col-sm-9">
+                            <h2><a href="{{ $author->path() }}">{{ $author->first_name . ' ' . $author->last_name }}</a></h2>
+			</div>
+			<div class="col-sm-3">
+			    <ul class="list-inline">
+			        <li class="list-inline-item"><a href="{{ $author->path() }}">View</a></li>
+			        @can('update', $author)
+			        <li class="list-inline-item"><a href="{{ $author->path() . '/edit' }}">Edit</a></li>
+			        @endcan
+			        @can('delete', $author)
+			        <li class="list-inline-item"><form method="POST" action="{{ $author->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
+			        @endcan
+			    </ul>
+			</div>
+		    </div>
 	            <p class="author-description">{{ $author->description }}</p>
                 </article>
                 @endforeach

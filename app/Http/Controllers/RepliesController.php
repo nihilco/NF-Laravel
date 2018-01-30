@@ -80,7 +80,7 @@ class RepliesController extends Controller
 	$reply->save();
 
 	if(request()->expectsJson()) {
-	    return $reply->load('creator', 'owner');
+	    return $reply->load(['creator', 'owner']);
 	}
 
 	return redirect($model->path())->with('flash', 'Your reply was successful.');

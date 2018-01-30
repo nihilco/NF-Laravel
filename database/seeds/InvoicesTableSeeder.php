@@ -138,5 +138,21 @@ class InvoicesTableSeeder extends Seeder
 	    'due_at' => \Carbon\Carbon::createFromDate(2017, 12, 31, 'America/New_York')
 	        ->toDateTimeString(),
 	]);
+
+        // Mazeston Law
+	factory(\App\Models\Invoice::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => 1,
+	    'status_id' => 1,
+	    'slug' => str_random(16),
+	    'total_items' => 2,
+	    'tax_rate' => 0,
+	    'tax' => 0,
+	    'shipping' => 0,
+	    'total' => 25000,
+	    'due_at' => \Carbon\Carbon::createFromDate(2017, 12, 31, 'America/New_York')
+	        ->toDateTimeString(),
+	]);
     }
 }

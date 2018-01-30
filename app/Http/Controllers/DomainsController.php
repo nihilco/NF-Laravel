@@ -49,6 +49,27 @@ class DomainsController extends Controller
     public function store(Request $request)
     {
         //
+	$this->validate(request(), [
+	    'tld' => 'required',
+	    'registered' => 'required',
+	    'expires' => 'required',
+	]);
+
+	$domain = new Domain();
+
+	$domain->creator_id = auth()->id();
+	$domain->owner_id = auth()->id();
+	$domain->tld = request('tld');
+	$domain->registered_on = request('registered');
+	$domain->expires_on = request('expires');
+
+	$domain->save();
+
+	if(request()->expectsJson()) {
+	    return $domain->load(['creator', 'owner']);
+	}
+
+	return redirect($domain->path());
     }
 
     /**
@@ -60,7 +81,7 @@ class DomainsController extends Controller
     public function show(Domain $domain)
     {
         //
-	return view('domains.edit', compact('domain'));
+	return view('domains.show', compact('domain'));
     }
 
     /**
@@ -72,6 +93,8 @@ class DomainsController extends Controller
     public function edit(Domain $domain)
     {
         //
+	$this->authorize('update', $domain);
+	
 	return view('domains.edit', compact('domain'));
     }
 
@@ -85,6 +108,25 @@ class DomainsController extends Controller
     public function update(Request $request, Domain $domain)
     {
         //
+	$this->authorize('update', $domain);
+
+	$this->validate(request(), [
+	    'tld' => 'required',
+	    'registered' => 'required',
+	    'expires' => 'required',
+	]);
+
+	$domain->tld = request('tld');
+	$domain->registered_on = request('registered');
+	$domain->expires_on = request('expires');
+
+	$domain->save();
+
+	if(request()->expectsJson()) {
+	    return $domain->load(['creator', 'owner']);
+	}
+
+	return redirect($domain->path());
     }
 
     /**
@@ -96,5 +138,14 @@ class DomainsController extends Controller
     public function destroy(Domain $domain)
     {
         //
+	$this->authorize('delete', $domain);
+
+	$domain->delete();
+
+	if(request()->expectsJson()) {
+	    return response([], 204);
+	}
+
+	return back();
     }
 }

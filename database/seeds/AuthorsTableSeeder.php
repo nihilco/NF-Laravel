@@ -158,5 +158,13 @@ class AuthorsTableSeeder extends Seeder
             'first_name' => 'Khaled',
             'last_name' => 'Hosseini',
         ]);
+
+        $a22 = factory('App\Models\Author')->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+            'first_name' => 'A.J.',
+            'last_name' => 'Finn',
+        ]);
+
     }
 }
