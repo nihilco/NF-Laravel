@@ -12,7 +12,8 @@
 	"stripe/stripe-php": "5.*",
 	"ckeditor/ckeditor": "4.*",
 	"guzzlehttp/guzzle": "6.*",
-	"videojs/video.js": "6.*"
+	"videojs/video.js": "6.*",
+	"aws/aws-sdk-php" : "3.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
