@@ -30,13 +30,13 @@ class Customer extends Base
     {
 	parent::boot();
 
-	static::created(function ($customer) {
-	    $customer->timelines()->create([
-		'creator_id' => auth()->guest() ? 1 : auth()->id(),
-		'owner_id' => auth()->guest() ? 1 : auth()->id(),
-		'content' => 'Customer created.'		
-	    ]);
-	});
+	//static::created(function ($customer) {
+	//    $customer->timelines()->create([
+	//	'creator_id' => auth()->guest() ? 1 : auth()->id(),
+	//	'owner_id' => auth()->guest() ? 1 : auth()->id(),
+	//	'content' => 'Customer created.'		
+	//    ]);
+	//});
     }
 
     //

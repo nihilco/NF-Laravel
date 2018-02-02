@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-class Timeline extends Base
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class CaseNote extends Base
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -12,6 +16,8 @@ class Timeline extends Base
     protected $fillable = [
         'creator_id',
         'owner_id',
+	'account_id',
+	'case_id',
 	'content',
     ];
 
@@ -32,11 +38,11 @@ class Timeline extends Base
     //
     public function path()
     {
-        return '/timelines/' . $this->id;
+        return '/case-notes/' . $this->id;
     }
 
-    public function cusotmer()
+    public function case()
     {
-	return $this->belongsTo(Customer::class);
+        return $this->belongsTo(ClientCase::class);
     }
 }

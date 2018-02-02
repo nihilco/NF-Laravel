@@ -23,16 +23,16 @@ Route::post('/register', 'RegistrationController@store');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/profile', 'ProfileController@index')->name('profile');
 
-Route::model('client', App\Models\Customer::class);
-
 Route::resource('accounts', 'AccountsController');
 Route::resource('activities', 'ActivitiesController');
 Route::resource('addresses', 'AddressesController');
 Route::resource('authors', 'AuthorsController');
 Route::resource('blog', 'BlogController');
 Route::resource('books', 'BooksController');
+Route::resource('cases', 'CasesController');
+Route::resource('case-notes', 'CaseNotesController');
 Route::resource('channels', 'ChannelsController');
-Route::resource('clients', 'CustomersController');
+Route::resource('clients', 'ClientsController');
 Route::resource('contact', 'ContactController');
 Route::resource('contacts', 'ContactsController');
 Route::resource('countries', 'CountriesController');
@@ -80,13 +80,14 @@ Route::resource('subscriptions', 'SubscriptionsController');
 Route::resource('threads', 'ThreadsController');
 Route::post('/threads/{thread}/replies', 'RepliesController@store');
 Route::resource('timelines', 'TimelinesController');
-Route::resource('tutorials', 'TutorialsController');
 Route::resource('types', 'TypesController');
 Route::resource('users', 'UsersController');
 Route::resource('views', 'ViewsController');
 Route::resource('votes', 'VotesController');
 Route::resource('websites', 'WebsitesController');
 Route::resource('zones', 'ZonesController');
+
+Route::patch('/cases/{case}/settle', 'CasesController@settle');
 
 Route::get('/mailable', function () {
   $user = App\Models\User::first();

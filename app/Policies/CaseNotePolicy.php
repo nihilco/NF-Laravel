@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Province;
+use App\Models\CaseNote;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ProvincePolicy
+class CaseNotePolicy
 {
     use HandlesAuthorization;
 
@@ -19,10 +19,10 @@ class ProvincePolicy
      * Determine whether the user can view the thread.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Province $province
+     * @param  \App\Models\CaseNote $caseNote
      * @return mixed
      */
-    public function view(User $user, Province $province)
+    public function view(User $user, CaseNote $caseNote)
     {
         //
     }
@@ -42,25 +42,25 @@ class ProvincePolicy
      * Determine whether the user can update the thread.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Province $province
+     * @param  \App\Models\CaseNote $caseNote
      * @return mixed
      */
-    public function update(User $user, Province $province)
+    public function update(User $user, CaseNote $caseNote)
     {
         //
-	return $province->owner_id === $user->id;
+	return $caseNote->owner_id === $user->id;
     }
 
     /**
      * Determine whether the user can delete the thread.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Province $province
+     * @param  \App\Models\CaseNote $caseNote
      * @return mixed
      */
-    public function delete(User $user, Province $province)
+    public function delete(User $user, CaseNote $caseNote)
     {
         //
-	return $province->owner_id === $user->id;
+	return $caseNote->owner_id === $user->id;
     }
 }

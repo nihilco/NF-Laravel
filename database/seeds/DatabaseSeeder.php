@@ -31,6 +31,9 @@ class DatabaseSeeder extends Seeder
 	    AuthorsTableSeeder::class,
 	    SeriesTableSeeder::class,
 	    BooksTableSeeder::class,
+	    ClientsTableSeeder::class,
+	    CasesTableSeeder::class,
+	    CaseNotesTableSeeder::class,
 	]);
     }
 }

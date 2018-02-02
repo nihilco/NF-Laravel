@@ -6,7 +6,7 @@
 
     <div class="container page-top">
 
-        <div class="row pt-3 pb-3">
+        <div class="row pt-3">
             <div class="col-sm-8">
 
 	        <h1>Contact</h1>

@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Organization extends Model
+class Organization extends Base
 {
     /**
      * The attributes that are mass assignable.
@@ -27,15 +25,4 @@ class Organization extends Model
     {
         return '/organizations/' . $this->id;
     }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }
