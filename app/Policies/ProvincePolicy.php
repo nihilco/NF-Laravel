@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Province;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ThreadPolicy
+class ProvincePolicy
 {
     use HandlesAuthorization;
 
