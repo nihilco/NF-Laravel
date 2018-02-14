@@ -1,0 +1,173 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 109px;
+    font-family: Cambria, Georgia, serif;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 109px;
+    color:#FFF;
+    background-color: #565656;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container.padded {
+    padding: 30px 15px;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+code {
+    font-size: 80%;
+}
+
+a {
+    color: #354569;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform:uppercase;
+    font-family: Cambria, Georgia, serif;    
+}
+
+h2 {
+    text-decoration: underline;
+    font-size:1.75rem;
+}
+
+p {
+    /*-ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+a:hover {
+    color: #48608e;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: #48608e;
+    border-color: #354569;
+}
+
+.btn-primary:hover {
+    background-color: #354569;
+    border-color: #48608e;
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: #565656;
+}
+
+#header-contact {
+    text-align:center;
+}
+
+.bg-dark {
+    background-color: #354569!important;
+}
+
+.navbar {
+    text-transform:uppercase;
+}
+
+.navbar-brand {
+    font-size: 1rem;
+    text-transform:uppercase;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+
+ul.checks {
+    list-style: none;
+    padding:0;
+}
+
+ul.checks li:before {
+    content: '✓ ';
+}
+
+.justify {
+    align:justify!important;
+    text-align:justify!important;
+}
+
+.footer a {
+    color:#FFF;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color:#FFF;
+    text-decoration: none;
+}
+
+.footer #powered {
+    text-align:center;
+}
+
+@media (min-width: 576px) {
+    body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+    }
+    #header-contact {
+	margin-top:2em !important;
+    }
+    .navbar-brand {
+	font-size: 1.25rem;
+	display:none;
+    }
+    .footer {
+	height:67px;
+	line-height:60px;
+	padding-top:0px;
+	padding-bottom:0px;
+    }
+
+    .footer #copyright {
+	text-align:left;
+    }
+
+    .footer #powered {
+	text-align:right;
+    }
+}
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) {  }
+
+@media (min-width: 1200px) {  }
