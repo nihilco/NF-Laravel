@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\ClientCase;
+use App\Filters\CaseFilters;
 use Illuminate\Http\Request;
 
 class CasesController extends Controller
@@ -23,11 +24,11 @@ class CasesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CaseFilters $filters)
     {
         //
-	$clientCases = ClientCase::all();
-	
+	$clientCases = ClientCase::filter($filters)->with(['client', 'owner'])->get();
+
 	return view('cases.index', compact('clientCases'));
     }
 

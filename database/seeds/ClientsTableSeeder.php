@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Seeder;
@@ -15,19 +14,37 @@ class ClientsTableSeeder extends Seeder
 	factory(App\Models\Client::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'account_id' => 33,
+	    'account_id' => 38,
 	]);
 
 	factory(App\Models\Client::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'account_id' => 33,
+	    'account_id' => 38,
 	]);
 
 	factory(App\Models\Client::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'account_id' => 33,
+	    'account_id' => 38,
+	]);
+
+	factory(App\Models\Client::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'account_id' => 38,
+	]);
+
+	factory(App\Models\Client::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'account_id' => 38,
+	]);
+
+	factory(App\Models\Client::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'account_id' => 38,
 	]);
     }
 }

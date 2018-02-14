@@ -53,10 +53,15 @@ class ClientCase extends Base
 	return $this->belongsTo(Client::class);
     }
 
+    public function lastNote()
+    {
+        return $this->notes()->first();
+    }
+
     //
     public function notes()
     {
-        return $this->hasMany(CaseNote::class, 'case_id')->latest()->get();
+        return $this->hasMany(CaseNote::class, 'case_id')->with(['owner'])->latest()->get();
     }
 
     public function settle()
@@ -71,5 +76,10 @@ class ClientCase extends Base
 
 	$this->date_settled_at = \Carbon\Carbon::now();
 	$this->save();
+    }
+
+    public function scopeFilter($query, $filters)
+    {
+        return $filters->apply($query);
     }
 }

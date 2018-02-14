@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 	    UsersTableSeeder::class,
 	    CountriesTableSeeder::class,
 	    ProvincesTableSeeder::class,
+	    AccountsTableSeeder::class,
 	    CustomersTableSeeder::class,
 	    DomainsTableSeeder::class,
 	    WebsitesTableSeeder::class,

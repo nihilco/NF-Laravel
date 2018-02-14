@@ -1,0 +1,94 @@
+@extends('layouts.admin')
+
+@section('title', $clientCase->name)
+
+@section('content')
+
+    
+    <div class="container-fluid page-top" style="background:red">
+      <div class="container">
+        <div class="row" >
+          <div class="col-sm-12">
+	    Header
+	  </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+	  <form action="/case-notes" method="POST" class="pb-3">
+	    {{ csrf_field() }}
+	    <input name="case_id" type="hidden" value="{{ $clientCase->id }}">
+	    <div class="input-group mb-3">
+	      <input type="text" id="content" name="content" class="form-control" placeholder="Write a note" aria-label="Write a note">
+              <div class="input-group-append">
+  	        <button class="btn btn-primary" type="submit">Add Note</button>
+	      </div>
+	    </div>
+          </form>
+	</div>
+      </div>      
+    </div>
+
+    <div class="container page-top">
+
+        <div class="row">
+	    <div class="col-sm-12">
+
+                <h1 class="mt-3">{{ $clientCase->name }}</h1>
+
+                <p class="">{{ $clientCase->description }}</p>
+
+		<h2>Case Notes</h2>
+
+		<form action="/case-notes" method="POST" class="pb-3">
+		  {{ csrf_field() }}
+		  <input name="case_id" type="hidden" value="{{ $clientCase->id }}">
+		  <div class="form-group">
+		    <label for="content">Use the form below to add a case note:</label>
+		    <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Add Case Note</button>
+                </form>
+
+		<?php $first = true ?>
+
+		@forelse($clientCase->notes() as $note)
+
+                <div class="card mb-3">
+                  <div class="card-header">
+		    <div class="row">
+		    
+		      <div class="col-sm-9">
+		        Posted by <a href="{{ $note->owner->path() }}">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}  
+		      </div>
+		      
+		      <div class="col-sm-3 text-right">
+		        <ul class="list-inline" style="margin-bottom:0;">
+ 			  <li class="list-inline-item"><form method="POST" action="{{ $note->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form></li>
+			</ul>
+		      </div>
+		      
+		    </div>
+                  </div>
+	          <div class="card-body">
+	            <p class="card-text">{{ $note->content }}</p>
+		  </div>
+		</div>
+		
+	        @empty
+
+	        <div class="row">
+	            <div class="col-sm-12">
+		        No case notes at this time.
+	            </div>
+	        </div>
+
+	        @endforelse
+
+	    </div>
+	</div>
+    </div>
+
+@endsection

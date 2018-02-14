@@ -15,37 +15,6 @@
 		<p>{{ $customer->description }}</p>
 		@endif
 
-		<h2>Timeline</h2>
-
-		<table class="table table-bordered table-striped">
-		  <tbody>
-
-		@forelse($customer->timelines as $timeline)
-
-		    <tr>
-		      <td scope="row">{{ $timeline->content }}</td>
-		      <td scope="row">{{ $timeline->created_at->format('F j, Y \a\t g:i A') }}</td>
-		    </tr>
-
-		@empty
-          	    <tr>
-		      <td scope="row">No timeline entries at this time.</td>
-		    </tr>
-		@endforelse
-
-		  </tbody>
-		</table>
-
-		<form action="/timelines" method="POST">
-		  {{ csrf_field() }}
-		  <input name="customer_id" type="hidden" value="{{ $customer->id }}">
-		  <div class="form-group">
-		    <label for="content">Use the form below to add a timeline event:</label>
-		    <textarea class="form-control" id="content" name="content" rows="3"></textarea>
-		  </div>
-		  <button type="submit" class="btn btn-primary">Add Timeline</button>
-                </form>
-
 	    </div>
 	    <div class="col-sm-4 col-md-3">
 

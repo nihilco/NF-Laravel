@@ -17,11 +17,11 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('type_id');
+	    $table->string('type');
 	    $table->string('name');
 	    $table->text('description');
 	    $table->string('stripe_id');
-	    $table->string('secret_key');
+	    $table->string('secret_key', 255);
 	    $table->string('publishable_key');
 	    $table->unsignedInteger('daily_transactions')->default(0);
 	    $table->integer('daily_volume')->default(0);

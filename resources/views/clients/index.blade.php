@@ -44,7 +44,7 @@
 		        <ul class="list-inline">
 			  <li class="list-inline-item"><a href="{{ $client->path() }}">View</a></li>
 			  <li class="list-inline-item"><a href="{{ $client->path() . '/edit' }}">Edit</a></li>
- 			  <li class="list-inline-item"><form method="POST" action="/clients/{{ $client->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
+ 			  <li class="list-inline-item"><form method="POST" action="{{ $client->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
 			</ul>
 		      </td>
 		    </tr>

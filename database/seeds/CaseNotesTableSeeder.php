@@ -11,15 +11,17 @@ class CaseNotesTableSeeder extends Seeder
      */
     public function run()
     {
-	//foreach(\App\Models\ClientCase::where('account_id', 33)->get() as $case) {
-	//    for($i = 1; $i <= rand(3,10); $i++) {
-	//        factory(App\Models\CaseNote::class)->create([
-	//            'creator_id' => 1,
-	//            'owner_id' => 1,
-	//	    'account_id' => 33,
-	//	    'case_id' => $case->id,
-	//        ]);
-	//    }
-	//}
+	foreach(\App\Models\ClientCase::where('account_id', 38)->get() as $case) {
+	    for($i = 1; $i <= rand(3,10); $i++) {
+	        factory(App\Models\CaseNote::class)->create([
+	            'creator_id' => 1,
+	            'owner_id' => 1,
+		    'account_id' => 38,
+		    'case_id' => $case->id,
+		    'created_at' => \Carbon\Carbon::now()->addSeconds($i),
+		    'updated_at' => \Carbon\Carbon::now()->addSeconds($i),
+	        ]);
+	    }
+	}
     }
 }

@@ -180,6 +180,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 	App\Providers\ConfigServiceProvider::class,
+	App\Providers\GoutteServiceProvider::class,
+	App\Providers\StripeServiceProvider::class,	
     ],
 
     /*
@@ -230,6 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 	//
 	'Debugbar' => Barryvdh\Debugbar\Facade::class,
+	'Goutte' => App\Facades\GoutteFacade::class,
+	'Stripe' => App\Facades\StripeFacade::class,	
     ],
 
 ];
