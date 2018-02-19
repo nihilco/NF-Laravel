@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Organization;
 use Illuminate\Http\Request;
 
-class OrganizationController extends Controller
+class OrganizationsController extends Controller
 {
     /**
      * Create a new controller instance.

@@ -178,8 +178,29 @@ class DomainsTableSeeder extends Seeder
 	factory(App\Models\Domain::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Ben Hollerbach')->first()->id,
+	    'tld' => 'gahickory.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
 	    'customer_id' => $customers->where('name', 'Tim Williams')->first()->id,
 	    'tld' => 'twilliamsclass.org',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Katharine Freeman')->first()->id,
+	    'tld' => 'homeapothecarie.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Tisdale Construction')->first()->id,
+	    'tld' => 'tisdaleconstructioninc.com',
 	]);
 
 	factory(App\Models\Domain::class)->create([
@@ -243,6 +264,27 @@ class DomainsTableSeeder extends Seeder
 	    'owner_id' => 1,
 	    'customer_id' => $customers->where('name', 'Maze & Stone PLLC.')->first()->id,
 	    'tld' => 'mazestonelaw.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Kate Gribbin')->first()->id,
+	    'tld' => 'butterflyoutdoors.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Antiquarians')->first()->id,
+	    'tld' => 'chattanoogaantiques.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Antiquarians')->first()->id,
+	    'tld' => 'chattanoogaestatesales.com',
 	]);
     }
 }

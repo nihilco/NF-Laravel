@@ -17,6 +17,27 @@
 
 		<form method="POST" action="/customers">
 		    {{ csrf_field() }}
+
+		    <div class="form-group">
+    		        <label for="country">Type</label>
+        	    	<select class="form-control{{ $errors->first('type') ? ' is-invalid' : '' }}" id="type" name="type">
+			    <option></option>
+			    <option value="standard"{!! (old('type') == 'individual') ? ' selected="selected"' : '' !!}>Individual</option>
+			    <option value="business"{!! (old('type') == 'business') ? ' selected="selected"' : '' !!}>Business</option>				    
+			</select>
+			@if($errors->first('type'))
+	                    <small id="typeHelp" class="invalid-feedback">{{ $errors->first('type') }}</small>
+	                @endif
+		    </div>
+
+		    <div class="form-group">
+      	                <label for="name">Email</label>
+                        <input type="email" class="form-control{{ $errors->first('email') ? ' is-invalid' : '' }}" id="email" name="email" aria-describedby="emailHelp" value="{{ old('email') }}">
+	                @if($errors->first('email'))
+	                <small id="emailHelp" class="invalid-feedback">{{ $errors->first('email') }}</small>
+	                @endif
+	            </div>
+
 		    <div class="form-group">
       	                <label for="name">Name</label>
                         <input type="text" class="form-control{{ $errors->first('name') ? ' is-invalid' : '' }}" id="name" name="name" aria-describedby="nameHelp" value="{{ old('name') }}">
@@ -24,6 +45,7 @@
 	                <small id="nameHelp" class="invalid-feedback">{{ $errors->first('name') }}</small>
 	                @endif
 	            </div>
+		    
 	            <div class="form-group">
 	                <label for="description">Description</label>
 	                <textarea class="form-control{{$errors->first('description') ? ' is-invalid' : '' }}" id="description" name="description" aria-describedby="descriptionHelp" rows="3">{{ old('description') }}</textarea>
@@ -31,6 +53,15 @@
 	                <small id="descriptionHelp" class="invalid-feedback">{{ $errors->first('description') }}</small>
 	                @endif
 	            </div>
+
+		    <div class="form-group">
+      	                <label for="name">Stripe ID</label>
+                        <input type="text" class="form-control{{ $errors->first('stripe') ? ' is-invalid' : '' }}" id="stripe" name="stripe" aria-describedby="stripeHelp" value="{{ old('stripe') }}">
+	                @if($errors->first('stripe'))
+	                <small id="stripeHelp" class="invalid-feedback">{{ $errors->first('stripe') }}</small>
+	                @endif
+	            </div>
+
 
    	            <button type="submit" class="btn btn-primary">Create Customer</button>
 		    

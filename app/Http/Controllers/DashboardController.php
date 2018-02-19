@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClientCase;
+use App\Models\CaseNote;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -19,6 +21,9 @@ class DashboardController extends Controller
     //
     public function index()
     {
-        return view('dashboard.index');
+	//$cases = ClientCase::where('date_settled_at', '=', null)->get();
+	$caseNotes = CaseNote::latest()->take(50)->with(['case', 'owner'])->get();
+
+        return view('dashboard.index', compact(['caseNotes']));
     }
 }

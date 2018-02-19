@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller
@@ -37,9 +39,11 @@ class CustomersController extends Controller
     public function create()
     {
 	$this->authorize('create', \App\Models\Customer::class);
-	
+
+	$accounts = Account::all();
+
         //
-	return view('customers.create');
+	return view('customers.create', compact(['accounts']));
     }
 
     /**
@@ -51,21 +55,51 @@ class CustomersController extends Controller
     public function store(Request $request)
     {
 	$this->authorize('create', \App\Models\Customer::class);
-	
+
         //
 	$this->validate(request(), [
+	    'type' => 'required',
+	    'email' => 'required|email',
 	    'name' => 'required',
 	    'description' => 'required',
 	]);
 
+	if(!$user = User::where('email', request('email'))->first()) {
+	    $user = User::create([
+	        'name' => request('name'),
+		'email' => request('email'),
+		'username' => request('email'),
+	    ]);
+	}
+
+	if($c = Customer::where([['owner_id', $user->id],['account_id', config('view.account_id')]])->first()) {
+	    abort(400, 'Customer already exists!');
+	}
+
 	$customer = new Customer();
 
 	$customer->creator_id = auth()->id();
-	$customer->owner_id = auth()->id();
+	$customer->owner_id = $user->id;
 	$customer->account_id = config('view.account_id');
-	$customer->type_id = 1;
+	$customer->type = request('type');
 	$customer->name = request('name');
 	$customer->description = request('description');
+
+	$customer->save();
+
+	if(!$stripe_id = request('stripe')) {
+	    $sc = \Stripe\Customer::create([
+	        'email' => $user->email,
+	        'description' => request('description'),
+		'metadata' => [
+		    'account_id' => config('view.account_id'),
+		    'customer_id' => $customer->id,
+		],
+	    ], 'sk_test_pkUBnMZ0EEuUhIWsJGeyVNuX');
+	    $stripe_id = $sc->id;
+	}
+
+	$customer->stripe_id = $stripe_id;
 
 	$customer->save();
 

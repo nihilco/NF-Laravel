@@ -14,7 +14,8 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    
     <!-- Custom styles for this template -->
     <link href="/css/base.css" rel="stylesheet">
     <link href="/css/mazestonelaw.css?t=<?= time() ?>" rel="stylesheet">
@@ -37,10 +38,21 @@
 	      <a class="nav-link" href="/dashboard">Dashboard</a>
 	    </li>
     	    <li class="nav-item">
-	      <a class="nav-link" href="/clients">Clients</a>
+	      <a class="nav-link" href="/cases?active=true">Active Cases</a>
+	    </li>
+    	    <li class="nav-item">
+	      <a class="nav-link" href="/cases?closed=true">Closed Files</a>
 	    </li>
 	  </ul>
-	  	<ul class="navbar-nav dd-right">
+	  <form class="form-inline my-2 my-lg-0">
+	    <div class="input-group">
+	      <input type="search" class="form-control" placeholder="Search" aria-label="Search">
+	      <div class="input-group-append">
+		<button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
+	      </div>
+	    </div>
+	  </form>
+	  <ul class="navbar-nav dd-right">
 	  @guest
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
@@ -49,12 +61,11 @@
 	    <a class="nav-link" href="/signup">Signup</a>
 	  </li>
 	  @else
-	  <notifications></notifications>
 	  <li class="nav-item dropdown">
 	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	      {{ auth()->user()->username }}
 	    </a>
-	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 	      <a class="dropdown-item" href="/dashboard">Dashboard</a>
 	      <a class="dropdown-item" href="/profile">Profile</a>
 	      <div class="dropdown-divider"></div>

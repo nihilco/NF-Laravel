@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
 	    UsersTableSeeder::class,
 	    CountriesTableSeeder::class,
 	    ProvincesTableSeeder::class,
+	    AccountsTableSeeder::class,
 	    CustomersTableSeeder::class,
 	    DomainsTableSeeder::class,
 	    WebsitesTableSeeder::class,
@@ -31,6 +32,9 @@ class DatabaseSeeder extends Seeder
 	    AuthorsTableSeeder::class,
 	    SeriesTableSeeder::class,
 	    BooksTableSeeder::class,
+	    ClientsTableSeeder::class,
+	    CasesTableSeeder::class,
+	    CaseNotesTableSeeder::class,
 	]);
     }
 }

@@ -7,18 +7,41 @@
     <div class="container page-top">
 
         <div class="row">
-	    <div class="col-sm-8 col-md-9">
+	    <div class="col-sm-12">
 
 	        <div class="mt-3">
                     <h1>Dashboard</h1>
 		</div>
 
-                <p class="lead">User dashboard.</p>
+                <ul class="list-group">
 
-	    </div>
-	    <div class="col-sm-4 col-md-3">
+		@forelse($caseNotes as $note)
 
-	      
+                  <li class="list-group-item">
+
+      <div class="row case-note">
+        <div class="col-sm-1">
+          <img class="img-fluid" src="https://via.placeholder.com/150x150?text={{ $note->case->owner->initials() }}" alt="{{ $note->case->owner->initials() }}" />
+	</div>
+        <div class="col-sm-11">
+	<form method="POST" action="{{ $note->path() }}" style="position:absolute;right:15px;">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form>
+	  <h6>{{ $note->case->name }}</h6>
+          <p style="margin-bottom:0;margin-right:2em;">{{ $note->content }}</p>
+	  <small class="text-muted">Posted by <a href="{{ $note->owner->path() }}">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}</small>
+	</div>	
+      </div>	    
+
+		  </li>
+
+		@empty
+		
+		    <tr>
+		      <td colspan="4">No active cases at this time.</td>
+		    </tr>
+		    
+                @endforelse
+
+   	        </ul>
 
 	    </div>
 	</div>

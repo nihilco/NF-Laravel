@@ -6,14 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "aws/aws-sdk-php": "3.*",
+        "ckeditor/ckeditor": "4.*",
+        "fabpot/goutte": "^3.2",
         "fideloper/proxy": "~3.3",
+        "guzzlehttp/guzzle": "6.*",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-	"stripe/stripe-php": "5.*",
-	"ckeditor/ckeditor": "4.*",
-	"guzzlehttp/guzzle": "6.*",
-	"videojs/video.js": "6.*",
-	"aws/aws-sdk-php" : "3.*"
+        "stripe/stripe-php": "5.*",
+        "videojs/video.js": "6.*",
+        "weidner/goutte": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
@@ -37,7 +38,9 @@ class AccountsController extends Controller
     public function create()
     {
         //
-	return view('accounts.create');
+	$customers = Customer::all();
+	
+	return view('accounts.create', compact(['customers']));
     }
 
     /**
@@ -48,7 +51,43 @@ class AccountsController extends Controller
      */
     public function store(Request $request)
     {
+	$v = [
+	    'type' => 'required',
+	    'customer' => 'required',	    
+	    'name' => 'required',
+	    'description' => 'required',
+	];
+
+	if(request('type') == 'standard') {
+            $v['stripe'] = 'required';
+	    $v['secret'] = 'required';	    
+	    $v['publishable'] = 'required';
+	}
+
         //
+	$this->validate(request(), $v);
+
+	$customer = Customer::find(request('customer'));
+
+	\Stripe\Account::create([
+	    'type' => request('type'),
+	]);
+
+	$account = new Account();
+
+	$account->creator_id = auth()->id();
+	$account->owner_id = auth()->id();
+	$account->type = 'custom';
+	$account->name = request('name');
+	$account->description = request('description');
+
+	$account->save();
+
+	if(request()->expectsJson()) {
+	    return $account->load(['creator', 'owner']);
+	}
+
+	return redirect($account->path());
     }
 
     /**

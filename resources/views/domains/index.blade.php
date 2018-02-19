@@ -13,7 +13,7 @@
 		    <div class="col-sm-9">
                         <h1 class="pt-3">Domains</h1>
 		    </div>
-		    <div class="col-sm-3">
+		    <div class="col-sm-3 text-right">
                         <a href="/domains/create" class="btn btn-primary mt-3">Create Domain</a>
 		    </div>
 		</div>

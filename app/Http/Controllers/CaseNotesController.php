@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
-use App\Models\Timeline;
+use App\Models\Client;
+use App\Models\ClientCase;
+use App\Models\CaseNote;
 use Illuminate\Http\Request;
 
-class TimelinesController extends Controller
+class CaseNotesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,8 +27,8 @@ class TimelinesController extends Controller
     public function index()
     {
         //
-	$timelines = Timeline::all();
-	return view('timelines.index', compact('timelines'));
+	$caseNotes = CaseNote::all();
+	return view('case-notes.index', compact('caseNotes'));
     }
 
     /**
@@ -38,7 +39,7 @@ class TimelinesController extends Controller
     public function create()
     {
         //
-	return view('timelines.create');
+	return view('case-notes.create');
     }
 
     /**
@@ -51,60 +52,61 @@ class TimelinesController extends Controller
     {
         //
 	$this->validate(request(), [
-	    'customer_id' => 'required',
+	    'case_id' => 'required',
 	    'content' => 'required',
 	]);
 
-	$timeline = new Timeline();
+	$caseNote = new CaseNote();
 
-	$timeline->creator_id = auth()->id();
-	$timeline->owner_id = auth()->id();
-	$timeline->customer_id = request('customer_id');
-	$timeline->content = request('content');
+	$caseNote->creator_id = auth()->id();
+	$caseNote->owner_id = auth()->id();
+	$caseNote->account_id = config('view.account_id');
+	$caseNote->case_id = request('case_id');
+	$caseNote->content = request('content');
 
-	$timeline->save();
+	$caseNote->save();
 
 	if(request()->expectsJson()) {
-	    return $timeline->load(['creator', 'owner']);
+	    return $caseNote->load(['creator', 'owner']);
 	}
 
-	return redirect(Customer::find($timeline->customer_id)->path());
+	return redirect(ClientCase::find($caseNote->case_id)->path());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Timeline  $timeline
+     * @param  \App\Models\CaseNote  $caseNote
      * @return \Illuminate\Http\Response
      */
-    public function show(Timeline $timeline)
+    public function show(CaseNote $caseNote)
     {
         //
-	return view('timelines.show', [
-	    'timeline' => $timeline,
+	return view('case-notes.show', [
+	    'caseNote' => $caseNote,
 	]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Timeline  $timeline
+     * @param  \App\Models\CaseNote  $caseNote
      * @return \Illuminate\Http\Response
      */
-    public function edit(Timeline $timeline)
+    public function edit(CaseNote $caseNote)
     {
         //
-	return view('timelines.edit', compact('timeline'));
+	return view('casse-notes.edit', compact('caseNote'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Timeline  $timeline
+     * @param  \App\Models\CaseNote  $caseNote
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Timeline $timeline)
+    public function update(Request $request, CaseNote $caseNote)
     {
         //
     }
@@ -112,11 +114,20 @@ class TimelinesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Timeline $timeline
+     * @param  \App\Models\CaseNote $caseNote
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Timeline $timeline)
+    public function destroy(CaseNote $caseNote)
     {
         //
+	$this->authorize('delete', $caseNote);
+
+	$caseNote->delete();
+
+	if(request()->expectsJson()) {
+	    return response([], 204);
+	}
+
+	return back();
     }
 }

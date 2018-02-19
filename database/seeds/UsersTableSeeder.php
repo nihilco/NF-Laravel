@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         // Uriah Clemmer
 	factory(\App\Models\User::class)->create([
-	    'name' => 'Uriah',
+	    'name' => 'Uriah Clemmer',
 	    'username' => 'uriah.clemmer@nihil.co',
 	    'email' => 'uriah@nihil.co',
 	    'birthday' => '1987/09/22',
@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
 
 	// Ella Chedburn
 	factory(\App\Models\User::class)->create([
-	    'name' => 'Ella',
+	    'name' => 'Ella Chedburn',
 	    'username' => 'echedburn',
 	    'email' => 'echedburn@gmail.com',
 	    'birthday' => '1996-07-15',
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
 
 	// Chandler Maze
 	factory(\App\Models\User::class)->create([
-	    'name' => 'Chandler',
+	    'name' => 'Chandler Maze',
 	    'username' => 'cmaze',
 	    'email' => 'chandler@mazestonelaw.com',
 	    'birthday' => '1989-07-09',
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
 
 	// Clayton Stone
 	factory(\App\Models\User::class)->create([
-	    'name' => 'Clayton',
+	    'name' => 'Clayton Stone',
 	    'username' => 'Wcstone87',
 	    'email' => 'clayton@mazestonelaw.com',
 	    'birthday' => '1987-11-28',

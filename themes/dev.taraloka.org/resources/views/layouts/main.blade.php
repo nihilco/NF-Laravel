@@ -60,7 +60,6 @@
 	    <a class="nav-link" href="/signup">Signup</a>
 	  </li>
 	  @else
-	  <notifications></notifications>
 	  <li class="nav-item dropdown">
 	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	      {{ auth()->user()->username }}
@@ -84,9 +83,95 @@
 
     <footer class="footer">
       <div class="container">
+
+      <div class="row">
+        <div class="col-sm-4">
+
+          <div class="row">
+            <div class="col-sm-12">
+
+              <ul class="list-inline">
+                <li><a href="/"><img src="/img/taraloka-wordmark.png" alt="Taraloka Foundation" style="width:150px;" /></a></li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <p><strong class="font-green">The Taraloka Foundation</strong> is a registered 501(c)3 non-profit organization creating opportunities for Himalayan girls by providing education, healthcare, and a safe refuge.</p>
+              <p>A donation of $160 per month can pay the salary of one of our employees or sponsor all of the needs of one of our girls for one month.  A dollar goes a long way, so please make a donation today!</p>
+            </div>
+          </div>
+
+        </div>
+	<div class="col-sm-2">
+
+          <div class="row">
+            <div class="col-sm-12 text-center">
+
+              <ul class="list-unstyled" id="footer-menu">
+	        <li><a href="/mission">mission</a></li>
+	        <li><a href="/about">about</a></li>
+	        <li><a href="/newsletters">newsletters</a></li>
+	        <li><a href="/partners">partners</a></li>
+	        <!--<li><a href="/shop">shop</a></li>-->
+	        <li><a href="/contact">contact</a></li>
+	        <li><a href="/donate" class="btn btn-primary">donate</a></li>
+	      </ul>
+
+            </div>
+	  </div>
+
+	</div>
+	<div class="col-sm-3">
+
+          <div class="row">
+            <div class="col-sm-6">
+	      <a href="#" data-toggle="modal" data-target="#footerPic1"><img src="/img/girl-1.png" class="img-fluid" alt="Girl 1" /></a>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" data-toggle="modal" data-target="#footerPic2"><img src="/img/girl-2.png" class="img-fluid" alt="Girl 2" /></a>
+            </div>
+	  </div>  
+          <div class="row" style="margin-top:20px;">
+            <div class="col-sm-6">
+	      <a href="#" data-toggle="modal" data-target="#footerPic3"><img src="/img/girl-3.png" class="img-fluid" alt="Girl 3" /></a>
+	    </div>
+	    <div class="col-sm-6">
+	      <a href="#" data-toggle="modal" data-target="#footerPic4"><img src="/img/girl-4.png" class="img-fluid" alt="Girl 4" /></a>
+	    </div>
+	  </div>
+
+	</div>
+	<div class="col-sm-3">
+
+          <div class="row">
+            <div class="col-sm-12" id="footer-contact">
+	      <h4>Contact Information</h4>
+              <address>
+                <strong class="font-green">The Taraloka Foundation</strong><br>
+                705 Northern Avenue<br />
+                Signal Mountain, TN 37377<br />
+                <a href="tel:14236056163">423.605.6163</a><br />
+                <a href="mailto:contact@taraloka.org">contact@taraloka.org</a>
+              </address>
+
+              <ul class="list-inline">
+                <li><a href="https://www.facebook.com/TaralokaFoundation" target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
+                <!--<li><a href="#" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>-->
+                <li><a href="https://plus.google.com/100164349293155842593" rel="publisher" target="_blank"><i class="fa fa-2x fa-google-plus"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-2x fa-youtube"></i></a></li>
+                <li><a href="mailto:contact@taraloka.org" target="_blank"><i class="fa fa-2x fa-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+	</div>
+      </div>
+	
         <div class="row">
           <div class="col-sm-8" id="copyright">
-            Copyright &copy; 2015-2017 The Taraloka Foundation.  All rights reserved.
+            Copyright &copy; 2015-2017 <strong class="font-green">The Taraloka Foundation</strong>.  All rights reserved.
           </div>
           <div class="col-sm-4" id="powered">
             Powered by <a href="https://www.nihil.co" target="_blank">NIHIL</a>
