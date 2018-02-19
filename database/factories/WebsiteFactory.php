@@ -18,9 +18,10 @@ $factory->define(App\Models\Website::class, function (Faker $faker) {
 	    $domain = factory(App\Models\Domain::class)->create();
 	    return $domain->id; 
 	},
-	'account_id' => function () {
-	    return factory(App\Models\Account::class)->create()->id;
-	},
+	//'account_id' => function () {
+	//    return factory(App\Models\Account::class)->create()->id;
+	//},
+	'account_id' => null,
 	'hostname' => 'www.' . $domain->tld,
         'title' => $faker->company,
     ];

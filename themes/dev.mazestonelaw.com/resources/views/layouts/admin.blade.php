@@ -61,12 +61,11 @@
 	    <a class="nav-link" href="/signup">Signup</a>
 	  </li>
 	  @else
-	  <notifications></notifications>
 	  <li class="nav-item dropdown">
 	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	      {{ auth()->user()->username }}
 	    </a>
-	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 	      <a class="dropdown-item" href="/dashboard">Dashboard</a>
 	      <a class="dropdown-item" href="/profile">Profile</a>
 	      <div class="dropdown-divider"></div>

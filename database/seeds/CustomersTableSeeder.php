@@ -262,5 +262,12 @@ class CustomersTableSeeder extends Seeder
 	    'type' => 'business',
 	    'name' => 'Green Product Junkie',
 	]);
+
+	factory(App\Models\Customer::class)->create([
+	    'creator_id' => 1,
+	    //'owner_id' => 1,
+	    'type' => 'individual',
+	    'name' => 'Kate Gribbin',
+	]);
     }
 }

@@ -35,19 +35,23 @@
       </div>      
     </div>
 
-    @forelse($clientCase->notes() as $note)
-
     <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+	
+          <ul class="list-group">
 
+          @forelse($clientCase->notes() as $note)
+
+	    <li class="list-group-item">
       <div class="row case-note">
         <div class="col-sm-12">
 	<form method="POST" action="{{ $note->path() }}" style="position:absolute;right:15px;">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form>
           <p style="margin-bottom:0;margin-right:2em;">{{ $note->content }}</p>
 	  <small class="text-muted">Posted by <a href="{{ $note->owner->path() }}">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}</small>
 	</div>	
-      </div>
-
-    </div>
+      </div>	    
+	    </li>
 
     @empty
 
@@ -62,5 +66,11 @@
     </div>
 
     @endforelse
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
 
 @endsection

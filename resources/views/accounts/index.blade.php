@@ -13,8 +13,10 @@
 		    <div class="col-sm-9">
                         <h1 class="pt-3">Accounts</h1>
 		    </div>
-		    <div class="col-sm-3">
+		    <div class="col-sm-3 text-right">
+		        @can('create', \App\Models\Account::class)
                         <a href="/accounts/create" class="btn btn-primary mt-3">Create Account</a>
+			@endcan
 		    </div>
 		</div>
 
@@ -35,16 +37,12 @@
 		@forelse($accounts as $account)		  
 		    <tr>
 		      <th scope="row">{{ $c }}</th>
-		      <td><a href="{{ $account->path() }}">{{ $account->name }}</a></td>
+		      <td>{{ $account->name }}</td>
 		      <td>
 		        <ul class="list-inline">
 			  <li class="list-inline-item"><a href="{{ $account->path() }}">View</a></li>
-			  @can('update', $account)
 			  <li class="list-inline-item"><a href="{{ $account->path() . '/edit' }}">Edit</a></li>
-			  @endcan
-			  @can('delete', $account)
-			  <li class="list-inline-item"><form method="POST" action="/accounts/{{ $account->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
-			  @endcan
+ 			  <li class="list-inline-item"><form method="POST" action="{{ $account->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
 			</ul>
 		      </td>
 		    </tr>

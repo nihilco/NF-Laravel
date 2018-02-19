@@ -56,4 +56,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
+
+    public function initials()
+    {
+        $words = explode(" ", $this->name);
+	$acronym = "";
+
+	foreach ($words as $w) {
+  	    $acronym .= $w[0];
+  	}
+	
+        return $acronym;
+    }
 }
