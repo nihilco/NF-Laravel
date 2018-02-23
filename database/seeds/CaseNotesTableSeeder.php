@@ -15,7 +15,7 @@ class CaseNotesTableSeeder extends Seeder
 	    for($i = 1; $i <= rand(3,10); $i++) {
 	        factory(App\Models\CaseNote::class)->create([
 	            'creator_id' => 1,
-	            'owner_id' => 1,
+	            'owner_id' => rand(1,4),
 		    'account_id' => 38,
 		    'case_id' => $case->id,
 		    'created_at' => \Carbon\Carbon::now()->addSeconds($i),

@@ -1,3 +1,7 @@
+<?php
+  $colors = ['007bff', '6c757d', 'ffc107', '28a745'];
+?>
+
 @extends('layouts.admin')
 
 @section('title', 'Dashboard')
@@ -21,11 +25,11 @@
 
       <div class="row case-note">
         <div class="col-sm-1">
-          <img class="img-fluid" src="https://via.placeholder.com/150x150?text={{ $note->case->owner->initials() }}" alt="{{ $note->case->owner->initials() }}" />
+          <img class="img-fluid" src="https://via.placeholder.com/150x150/{{ $colors[$note->owner_id - 1] }}/ffffff?text={{ $note->owner->initials() }}" alt="{{ $note->case->owner->initials() }}" />
 	</div>
         <div class="col-sm-11">
 	<form method="POST" action="{{ $note->path() }}" style="position:absolute;right:15px;">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form>
-	  <h6>{{ $note->case->name }}</h6>
+	  <h6><a href="{{ $note->case->path() }}">{{ $note->case->name }}</a></h6>
           <p style="margin-bottom:0;margin-right:2em;">{{ $note->content }}</p>
 	  <small class="text-muted">Posted by <a href="{{ $note->owner->path() }}">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}</small>
 	</div>	

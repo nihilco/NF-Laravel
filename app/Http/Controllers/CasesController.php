@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\ClientCase;
+use App\Models\CaseType;
 use App\Filters\CaseFilters;
 use Illuminate\Http\Request;
 
@@ -39,10 +40,12 @@ class CasesController extends Controller
      */
     public function create()
     {
-	$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
-	
+	//$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+	$clients = Client::orderBy('name', 'asc')->get();
+	$caseTypes = CaseType::all();
+
         //
-	return view('cases.create', compact('clients'));
+	return view('cases.create', compact(['clients', 'caseTypes']));
     }
 
     /**
@@ -59,6 +62,7 @@ class CasesController extends Controller
         //
 	$this->validate(request(), [
 	    'client' => 'required',
+	    'type' => 'required',
 	    'name' => 'required',
 	    'description' => 'required',
 	]);
@@ -67,8 +71,9 @@ class CasesController extends Controller
 
 	$clientCase->creator_id = auth()->id();
 	$clientCase->owner_id = auth()->id();
-	$clientCase->account_id = config('view.account_id');
+	//$clientCase->account_id = config('view.account_id');
 	$clientCase->client_id = request('client');
+	$clientCase->case_type_id = request('type');
 	$clientCase->name = request('name');
 	$clientCase->description = request('description');
 
@@ -110,9 +115,9 @@ class CasesController extends Controller
 	$this->authorize('update', $clientCase);
 
 	$clients = Client::all();
-
+	$caseTypes = CaseType::all();
         //
-	return view('cases.edit', compact(['clientCase', 'clients']));
+	return view('cases.edit', compact(['clientCase', 'clients', 'caseTypes']));
     }
 
     /**
@@ -122,19 +127,25 @@ class CasesController extends Controller
      * @param  \App\Models\ClientCase  $clientCase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClientCase $clientCase)
+    public function update(Request $request, int $id)
     {
+	$clientCase = ClientCase::find($id);
+
         //
 	$this->authorize('update', $clientCase);
 
 	$this->validate(request(), [
 	    'name' => 'required',
 	    'client' => 'required',
+	    'type' => 'required',
+	    'description' => 'required',
 	]);
 
 	$clientCase->name = request('name');
 	$clientCase->client_id = request('client');
-
+	$clientCase->case_type_id = request('type');
+	$clientCase->description = request('description');
+	
 	$clientCase->save();
 
 	if(request()->expectsJson()) {
@@ -165,7 +176,7 @@ class CasesController extends Controller
 	    return response([], 204);
 	}
 
-	return back();
+	return redirect('/dashboard');
     }
 
     public function settle(int $id)

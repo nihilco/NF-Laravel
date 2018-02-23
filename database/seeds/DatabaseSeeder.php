@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
 	    ClientsTableSeeder::class,
 	    CasesTableSeeder::class,
 	    CaseNotesTableSeeder::class,
+	    CaseTypesTableSeeder::class,
 	]);
     }
 }

@@ -31,6 +31,7 @@ Route::resource('blog', 'BlogController');
 Route::resource('books', 'BooksController');
 Route::resource('cases', 'CasesController');
 Route::resource('case-notes', 'CaseNotesController');
+Route::resource('case-types', 'CaseTypesController');
 Route::resource('channels', 'ChannelsController');
 Route::resource('clients', 'ClientsController');
 Route::resource('contact', 'ContactController');

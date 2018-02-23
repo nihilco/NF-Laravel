@@ -17,7 +17,7 @@ class CreateCaseNotesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('account_id');
+	    $table->unsignedInteger('account_id')->nullable();
 	    $table->unsignedInteger('case_id');
 	    $table->text('content');
 	    $table->softDeletes();
