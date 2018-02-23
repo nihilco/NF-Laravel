@@ -18,6 +18,7 @@ class AuthServiceProvider extends ServiceProvider
 	\App\Models\Client::class => \App\Policies\ClientPolicy::class,
 	\App\Models\ClientCase::class => \App\Policies\ClientCasePolicy::class,
 	\App\Models\CaseNote::class => \App\Policies\CaseNotePolicy::class,
+	\App\Models\CaseType::class => \App\Policies\CaseTypePolicy::class,
 	\App\Models\Country::class => \App\Policies\CountryPolicy::class,
 	\App\Models\Customer::class => \App\Policies\CustomerPolicy::class,
 	\App\Models\Province::class => \App\Policies\ProvincePolicy::class,

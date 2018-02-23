@@ -72,7 +72,7 @@ class ClientsController extends Controller
 
 	$client->creator_id = auth()->id();
 	$client->owner_id = auth()->id();
-	$client->account_id = config('view.account_id');
+	//$client->account_id = config('view.account_id');
 	$client->name = request('name');
 	$client->email = request('email');
 	$client->phone = request('phone');
@@ -134,10 +134,12 @@ class ClientsController extends Controller
     {
 	$this->authorize('update', $client);
 
+	//dd($client);
+
         //
 	$this->validate(request(), [
 	    'name' => 'required',
-	    'description' => 'required',
+	    //'description' => 'required',
 	]);
 
 	$client->name = request('name');
@@ -149,7 +151,8 @@ class ClientsController extends Controller
 	    return $client->load(['creator', 'owner']);
 	}
 
-	return redirect($client->path());
+	//return redirect($client->path());
+	return back();
     }
 
     /**

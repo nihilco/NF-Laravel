@@ -60,7 +60,7 @@ class CaseNotesController extends Controller
 
 	$caseNote->creator_id = auth()->id();
 	$caseNote->owner_id = auth()->id();
-	$caseNote->account_id = config('view.account_id');
+	//$caseNote->account_id = config('view.account_id');
 	$caseNote->case_id = request('case_id');
 	$caseNote->content = request('content');
 

@@ -39,6 +39,10 @@ class ClientCase extends Base
 		'content' => 'Case created.'		
 	    ]);
 	});
+
+	static::deleting(function ($clientCase) {
+	    $clientCase->notes()->each->delete();
+	});
     }
     
     //
@@ -51,6 +55,12 @@ class ClientCase extends Base
     public function client()
     {
 	return $this->belongsTo(Client::class);
+    }
+
+    //
+    public function type()
+    {
+	return $this->belongsTo(CaseType::class, 'case_type_id');
     }
 
     public function lastNote()

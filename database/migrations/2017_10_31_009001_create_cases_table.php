@@ -17,8 +17,9 @@ class CreateCasesTable extends Migration
             $table->increments('id');
 	    $table->unsignedInteger('creator_id');
 	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('account_id');
+	    $table->unsignedInteger('account_id')->nullable();
 	    $table->unsignedInteger('client_id');
+    	    $table->unsignedInteger('case_type_id');
 	    $table->string('name');
 	    $table->text('description')->nullable();
 	    $table->date('date_of_incident')->nullable();
