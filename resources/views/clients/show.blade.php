@@ -11,11 +11,17 @@
 
                 <h1 class="mt-3">{{ $client->name }}</h1>
 
+		@if($client->phone)
 		Phone: <a href="tel:{{ $client->phone }}">{{ $client->phone }}</a>
 		<br />
+		@endif
+		@if($client->email)
 		Email: <a href="mailto:{{ $client->email }}">{{ $client->email }}</a>
 		<br />
+		@endif
+		@if($client->address1 || $client->address2 || $client->city || $client->province || $client->postalcode)
 		Address: {{ $client->address1 . ', ' . $client->city . ', ' . $client->province->abbr . ' ' . $client->postal_code }}
+		@endif
 
 		@if($client->description)
 		<p class="mt-3">{{ $client->description }}</p>
@@ -41,15 +47,14 @@
 		      <td><a href="{{ $case->path() }}">{{ $case->name }}</a></td>
 		      <td>
 		        <ul class="list-inline">
-			  <li class="list-inline-item"><a href="{{ $case->path() }}">View</a></li>
 			  @can('update', $case)
-			  <li class="list-inline-item"><a href="{{ $case->path() . '/edit' }}">Edit</a></li>
+			  <li class="list-inline-item"><a href="{{ $case->path() . '/edit' }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a></li>
 			  @endcan
 			  @if(!$case->date_settled_at)
-  			  <li class="list-inline-item"><form method="POST" action="{{ $case->path() . '/settle' }}">{{ csrf_field() }}{{ method_field('PATCH') }}<button type="submit" class="btn btn-sm btn-primary">Settle</button></form></li>
+  			  <li class="list-inline-item"><form method="POST" action="{{ $case->path() . '/settle' }}">{{ csrf_field() }}{{ method_field('PATCH') }}<button type="submit" class="btn btn-sm btn-success"><i class="fas fa-exchange-alt"></i></button></form></li>
 			  @endif			  			  
 			  @can('delete', $case)
-			  <li class="list-inline-item"><form method="POST" action="/cases/{{ $case->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
+			  <li class="list-inline-item"><form method="POST" action="/cases/{{ $case->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form></li>
 			  @endcan
 			</ul>
 		      </td>

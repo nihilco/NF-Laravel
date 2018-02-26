@@ -26,7 +26,8 @@ class ClientsController extends Controller
     public function index()
     {
         //
-	$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+	//$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+	$clients = Client::orderBy('name', 'asc')->get();
 	return view('clients.index', compact('clients'));
     }
 
@@ -58,14 +59,14 @@ class ClientsController extends Controller
         //
 	$this->validate(request(), [
 	    'name' => 'required',
-	    'email' => 'required|email',
-	    'phone' => 'required',
-	    'address1' => 'required',
+	    'email' => '',
+	    'phone' => '',
+	    'address1' => '',
 	    'address2' => '',
-	    'city' => 'required',
-	    'province' => 'required',
-	    'postal_code' => 'required',
-	    'description' => 'required',
+	    'city' => '',
+	    'province' => '',
+	    'postal_code' => '',
+	    'description' => '',
 	]);
 
 	$client = new Client();
@@ -172,6 +173,6 @@ class ClientsController extends Controller
 	    return response([], 204);
 	}
 
-	return back();
+	return redirect('/clients');
     }
 }

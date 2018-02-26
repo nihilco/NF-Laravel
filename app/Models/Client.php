@@ -29,6 +29,10 @@ class Client extends Base
     protected static function boot()
     {
 	parent::boot();
+
+	//static::deleting(function ($client) {
+	//    $client->cases()->each->delete();
+	//});
     }
 
     //

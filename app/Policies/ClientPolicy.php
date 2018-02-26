@@ -36,6 +36,7 @@ class ClientPolicy
     public function create(User $user)
     {
         //
+	return true;
     }
 
     /**
@@ -48,7 +49,8 @@ class ClientPolicy
     public function update(User $user, Client $client)
     {
         //
-	return $client->owner_id === $user->id;
+	//return $client->owner_id === $user->id;
+	return true;
     }
 
     /**
@@ -61,6 +63,7 @@ class ClientPolicy
     public function delete(User $user, Client $client)
     {
         //
-	return $client->owner_id === $user->id;
+	//return $client->owner_id === $user->id;
+	return true;
     }
 }

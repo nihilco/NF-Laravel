@@ -34,7 +34,7 @@
 			        <input type="text" id="name" name="name" class="form-control" aria-describedby="addon-address" placeholder="Name" value="{{ old('name') }}" autocomplete="on" autofocus>		               
 			    </div>
 			    @if($errors->first('name'))
- 	                      <small id="nameHelp" class="invalid-feedback">{{ $errors->first('name') }}</small>
+ 	                      <small id="nameHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('name') }}</small>
 	                    @endif
 			</div>
 
@@ -44,7 +44,7 @@
 			        <input type="text" id="username" name="username" class="form-control" aria-describedby="addon-user" placeholder="Username" value="{{ old('username') }}" autocomplete="on">
 			    </div>
 			    @if($errors->first('username'))
- 	                      <small id="usernameHelp" class="invalid-feedback">{{ $errors->first('username') }}</small>
+ 	                      <small id="usernameHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('username') }}</small>
 	                    @endif
 			</div>
 
@@ -54,7 +54,7 @@
 			        <input type="email" id="email" name="email" class="form-control"  aria-describedby="addon-envelope" placeholder="Email" value="{{ old('email') }}" autocomplete="on">
 			    </div>
 			    @if($errors->first('email'))
- 	                      <small id="emailHelp" class="invalid-feedback">{{ $errors->first('email') }}</small>
+ 	                      <small id="emailHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('email') }}</small>
 	                    @endif
 			</div>
 
@@ -64,7 +64,7 @@
 			         <input type="password" id="password" name="password" class="form-control" aria-describedby="addon-lock" placeholder="Password" autocomplete="off">
 			     </div>
 			     @if($errors->first('password'))
- 	                       <small id="passwordHelp" class="invalid-feedback">{{ $errors->first('password') }}</small>
+ 	                       <small id="passwordHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('password') }}</small>
 	                     @endif
 			</div>
 
@@ -74,7 +74,7 @@
 			        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" aria-describedby="addon-lock" placeholder="Confiirm Password" autocomplete="off">
 			    </div>
 			    @if($errors->first('password_confirmation'))
- 	                      <small id="passwordConfirmationHelp" class="invalid-feedback">{{ $errors->first('password_confirmation') }}</small>
+ 	                      <small id="passwordConfirmationHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('password_confirmation') }}</small>
 	                    @endif
 			</div>
 
@@ -84,7 +84,7 @@
 			        <input type="birthday" id="birthday" name="birthday" class="form-control" aria-describedby="addon-calendar" placeholder="Birthday" value="{{ old('birthday') }}" autocomplete="off">
 			    </div>
 			    @if($errors->first('birthday'))
- 	                      <small id="birthdayHelp" class="invalid-feedback">{{ $errors->first('birthday') }}</small>
+ 	                      <small id="birthdayHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('birthday') }}</small>
 	                    @endif
 			</div>
 
@@ -95,7 +95,7 @@
 			    </label>
 			  </div>
 			  @if($errors->first('agreed'))
- 	                    <small id="agreedHelp" class="invalid-feedback">{{ $errors->first('agreed') }}</small>
+ 	                    <small id="agreedHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('agreed') }}</small>
                           @endif
 			</div>
 						      

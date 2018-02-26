@@ -36,7 +36,7 @@ class RegistrationRequest extends FormRequest
 	    'email' => 'required|email|unique:users',
 	    'password' => 'required|confirmed',
 	    'password_confirmation' => 'required',
-	    'agreed' => 'required|boolean',
+	    'agreed' => 'required|accepted',
         ];
     }
 

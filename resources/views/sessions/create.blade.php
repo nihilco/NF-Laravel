@@ -26,7 +26,7 @@
 			        <input type="email" id="email" name="email" class="form-control"  aria-describedby="addon-envelope" placeholder="Email" value="{{ old('email') }}" autocomplete="on">
 			    </div>
 			    @if($errors->first('email'))
- 	                      <small id="emailHelp" class="invalid-feedback">{{ $errors->first('email') }}</small>
+ 	                      <small id="emailHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('email') }}</small>
                             @endif
 			</div>
 
@@ -36,7 +36,7 @@
 			         <input type="password" id="password" name="password" class="form-control" aria-describedby="addon-lock" placeholder="Password" autocomplete="off">
 			     </div>
 			     @if($errors->first('password'))
- 	                       <small id="passwordHelp" class="invalid-feedback">{{ $errors->first('password') }}</small>
+ 	                       <small id="passwordHelp" class="invalid-feedback" style="display:inherit;">{{ $errors->first('password') }}</small>
                              @endif
 			</div>
 

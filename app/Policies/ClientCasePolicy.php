@@ -36,6 +36,7 @@ class ClientCasePolicy
     public function create(User $user)
     {
         //
+	return true;
     }
 
     /**
@@ -48,7 +49,8 @@ class ClientCasePolicy
     public function update(User $user, ClientCase $clientCase)
     {
         //
-	return $clientCase->owner_id === $user->id;
+	//return $clientCase->owner_id === $user->id;
+	return true;
     }
 
     /**
@@ -61,7 +63,8 @@ class ClientCasePolicy
     public function delete(User $user, ClientCase $clientCase)
     {
         //
-	return $clientCase->owner_id === $user->id;
+	//return $clientCase->owner_id === $user->id;
+	return true;
     }
 
     /**
@@ -74,7 +77,8 @@ class ClientCasePolicy
     public function settle(User $user, ClientCase $clientCase)
     {
         //
-	return $clientCase->owner_id === $user->id;
+	//return $clientCase->owner_id === $user->id;
+	return true;
     }
 
 }

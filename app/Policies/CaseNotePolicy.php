@@ -36,6 +36,7 @@ class CaseNotePolicy
     public function create(User $user)
     {
         //
+	return true;
     }
 
     /**
@@ -48,7 +49,8 @@ class CaseNotePolicy
     public function update(User $user, CaseNote $caseNote)
     {
         //
-	return $caseNote->owner_id === $user->id;
+	//return $caseNote->owner_id === $user->id;
+	return true;
     }
 
     /**
@@ -61,6 +63,7 @@ class CaseNotePolicy
     public function delete(User $user, CaseNote $caseNote)
     {
         //
-	return $caseNote->owner_id === $user->id;
+	//return $caseNote->owner_id === $user->id;
+	return true;
     }
 }

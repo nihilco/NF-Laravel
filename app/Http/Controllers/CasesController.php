@@ -64,7 +64,7 @@ class CasesController extends Controller
 	    'client' => 'required',
 	    'type' => 'required',
 	    'name' => 'required',
-	    'description' => 'required',
+	    'description' => '',
 	]);
 
 	$clientCase = new ClientCase();
@@ -74,6 +74,7 @@ class CasesController extends Controller
 	//$clientCase->account_id = config('view.account_id');
 	$clientCase->client_id = request('client');
 	$clientCase->case_type_id = request('type');
+	$clientCase->date_of_incident = request('doi');
 	$clientCase->name = request('name');
 	$clientCase->description = request('description');
 
@@ -138,12 +139,13 @@ class CasesController extends Controller
 	    'name' => 'required',
 	    'client' => 'required',
 	    'type' => 'required',
-	    'description' => 'required',
+	    'description' => '',
 	]);
 
 	$clientCase->name = request('name');
 	$clientCase->client_id = request('client');
 	$clientCase->case_type_id = request('type');
+	$clientCase->date_of_incident = request('doi');
 	$clientCase->description = request('description');
 	
 	$clientCase->save();

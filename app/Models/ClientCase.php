@@ -32,8 +32,8 @@ class ClientCase extends Base
 
 	static::created(function ($clientCase) {
 	    \App\Models\CaseNote::create([
-		'creator_id' => auth()->guest() ? 1 : auth()->id(),
-		'owner_id' => auth()->guest() ? 1 : auth()->id(),
+		'creator_id' => $clientCase->creator_id,
+		'owner_id' => $clientCase->owner_id,
 		'account_id' => $clientCase->account_id,
 		'case_id' => $clientCase->id,
 		'content' => 'Case created.'		
