@@ -27,7 +27,8 @@ class CustomersController extends Controller
     public function index()
     {
         //
-	$customers = Customer::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+	//$customers = Customer::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+	$customers = Customer::orderBy('name', 'asc')->get();
 	return view('customers.index', compact('customers'));
     }
 

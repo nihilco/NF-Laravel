@@ -286,5 +286,33 @@ class DomainsTableSeeder extends Seeder
 	    'customer_id' => $customers->where('name', 'Antiquarians')->first()->id,
 	    'tld' => 'chattanoogaestatesales.com',
 	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Hollerbach & Tompkins LLC.')->first()->id,
+	    'tld' => 'hollerbach-tompkins.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Hollerbach & Tompkins LLC.')->first()->id,
+	    'tld' => 'woodleatherawesome.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'The NIHIL Corporation')->first()->id,
+	    'tld' => 'virtuosolo.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'The NIHIL Corporation')->first()->id,
+	    'tld' => 'coldstorage.solutions',
+	]);
     }
 }

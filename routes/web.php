@@ -19,6 +19,7 @@ Route::post('/logout', 'SessionsController@destroy')->name('logout');
 Route::get('/register', 'RegistrationController@create')->name('register');
 Route::get('/signup', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
+Route::get('/verify-email', 'VerifyEmailController@index');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/profile', 'ProfileController@index')->name('profile');

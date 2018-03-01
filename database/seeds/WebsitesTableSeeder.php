@@ -651,5 +651,53 @@ class WebsitesTableSeeder extends Seeder
 	    'hostname' => 'www.chattanoogaestatesales.com',
 	    'title' => 'Chattanooga Estate Sales',
 	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'hollerbach-tompkins.com')->first()->id,
+	    'hostname' => 'www.hollerbach-tompkins.com',
+	    'title' => 'Hollerbach & Tompkins LLC.',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'woodleatherawesome.com')->first()->id,
+	    'hostname' => 'www.woodleatherawesome.com',
+	    'title' => 'Wood, Leather, Awesome',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'virtuosolo.com')->first()->id,
+	    'hostname' => 'www.virtuosolo.com',
+	    'title' => 'Virtuosolo',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'virtuosolo.com')->first()->id,
+	    'hostname' => 'dev.virtuosolo.com',
+	    'title' => 'Virtuosolo',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'coldstorage.solutions')->first()->id,
+	    'hostname' => 'www.coldstorage.solutions',
+	    'title' => 'Cold Storage Solutions',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'coldstorage.solutions')->first()->id,
+	    'hostname' => 'dev.coldstorage.solutions',
+	    'title' => 'Cold Storage Solutions',
+	]);
     }
 }
