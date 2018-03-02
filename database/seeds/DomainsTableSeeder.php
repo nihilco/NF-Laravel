@@ -220,8 +220,8 @@ class DomainsTableSeeder extends Seeder
 	factory(App\Models\Domain::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'customer_id' => $customers->where('name', 'Lexander Farms')->first()->id,
-	    'tld' => 'lexanderfarms.com',
+	    'customer_id' => $customers->where('name', 'Lexander Farm')->first()->id,
+	    'tld' => 'lexanderfarm.com',
 	]);
 
 	factory(App\Models\Domain::class)->create([
@@ -313,6 +313,27 @@ class DomainsTableSeeder extends Seeder
 	    'owner_id' => 1,
 	    'customer_id' => $customers->where('name', 'The NIHIL Corporation')->first()->id,
 	    'tld' => 'coldstorage.solutions',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'UTK Delts')->first()->id,
+	    'tld' => 'fisherscholarship.com',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Ben Hollerbach')->first()->id,
+	    'tld' => 'hollerbach.co',
+	]);
+
+	factory(App\Models\Domain::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'customer_id' => $customers->where('name', 'Jen Clemmer')->first()->id,
+	    'tld' => 'goodbyemonstercookies.com',
 	]);
     }
 }

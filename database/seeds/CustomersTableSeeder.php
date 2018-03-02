@@ -176,7 +176,7 @@ class CustomersTableSeeder extends Seeder
 	    'creator_id' => 1,
 	    //'owner_id' => 1,
 	    'type' => 'business',
-	    'name' => 'Lexander Farms',
+	    'name' => 'Lexander Farm',
 	]);
 
 	factory(App\Models\Customer::class)->create([
@@ -268,6 +268,13 @@ class CustomersTableSeeder extends Seeder
 	    //'owner_id' => 1,
 	    'type' => 'individual',
 	    'name' => 'Kate Gribbin',
+	]);
+
+	factory(App\Models\Customer::class)->create([
+	    'creator_id' => 1,
+	    //'owner_id' => 1,
+	    'type' => 'individual',
+	    'name' => 'Jen Clemmer',
 	]);
     }
 }

@@ -494,18 +494,18 @@ class WebsitesTableSeeder extends Seeder
 	factory(App\Models\Website::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'domain_id' => $domains->where('tld', 'lexanderfarms.com')->first()->id,
-	    'hostname' => 'www.lexander.com',
-	    'title' => 'Lexander Farms',
+	    'domain_id' => $domains->where('tld', 'lexanderfarm.com')->first()->id,
+	    'hostname' => 'www.lexanderfarm.com',
+	    'title' => 'Lexander Farm',
 	]);
 
 	// 54
 	factory(App\Models\Website::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 1,
-	    'domain_id' => $domains->where('tld', 'lexanderfarms.com')->first()->id,
-	    'hostname' => 'dev.lexander.com',
-	    'title' => 'Lexander Farms',
+	    'domain_id' => $domains->where('tld', 'lexanderfarm.com')->first()->id,
+	    'hostname' => 'dev.lexanderfarm.com',
+	    'title' => 'Lexander Farm',
 	]);
 
 	// 55
@@ -698,6 +698,54 @@ class WebsitesTableSeeder extends Seeder
 	    'domain_id' => $domains->where('tld', 'coldstorage.solutions')->first()->id,
 	    'hostname' => 'dev.coldstorage.solutions',
 	    'title' => 'Cold Storage Solutions',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'uclemmer.net')->first()->id,
+	    'hostname' => 'www.uclemmer.net',
+	    'title' => 'uclemmer',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'fisherscholarship.com')->first()->id,
+	    'hostname' => 'www.fisherscholarship.com',
+	    'title' => 'Fisher Scholarship',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'fisherscholarship.com')->first()->id,
+	    'hostname' => 'dev.fisherscholarship.com',
+	    'title' => 'Fisher Scholarship',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'hollerbach.co')->first()->id,
+	    'hostname' => 'www.hollerbach.co',
+	    'title' => 'Hollerbach',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'goodbyemonstercookies.com')->first()->id,
+	    'hostname' => 'www.goodbyemonstercookies.com',
+	    'title' => 'Goodbye Monster Cookies',
+	]);
+
+	factory(App\Models\Website::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'domain_id' => $domains->where('tld', 'goodbyemonstercookies.com')->first()->id,
+	    'hostname' => 'dev.goodbyemonstercookies.com',
+	    'title' => 'Goodbye Monster Cookies',
 	]);
     }
 }
