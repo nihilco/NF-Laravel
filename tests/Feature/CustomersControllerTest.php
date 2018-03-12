@@ -11,13 +11,13 @@ class CustomersControllerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
-	$this->customer = factory(\App\Models\Customer::class)->create();
+        
+        $this->customer = factory(\App\Models\Customer::class)->create();
     }
 
     public function test_a_guest_cannot_view_customers()
     {
-	$response = $this->get('/customers');
-	$response->assertStatus(302);
+        $response = $this->get('/customers');
+        $response->assertStatus(302);
     }
 }

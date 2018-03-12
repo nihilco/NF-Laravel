@@ -12,12 +12,12 @@ class AccountsControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->account = factory(\App\Models\Account::class)->create();
+        $this->account = factory(\App\Models\Account::class)->create();
     }
 
     public function test_a_guest_cannot_view_accounts()
     {
-	$response = $this->get('/accounts');
-	$response->assertStatus(302);
+        $response = $this->get('/accounts');
+        $response->assertStatus(302);
     }
 }

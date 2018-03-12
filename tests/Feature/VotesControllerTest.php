@@ -12,13 +12,13 @@ class VotesControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->vote = factory(\App\Models\Vote::class)->create();
+        $this->vote = factory(\App\Models\Vote::class)->create();
     }
 
     public function test_a_guest_cannot_view_votes()
     {
-	$response = $this->get('/votes');
-	$response->assertStatus(302);
+        $response = $this->get('/votes');
+        $response->assertStatus(302);
     }
 
 }

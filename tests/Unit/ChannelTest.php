@@ -13,7 +13,7 @@ class ChannelTest extends TestCase
     {
         parent::setUp();
 
-	$this->channel = factory(\App\Models\Channel::class)->create();
+        $this->channel = factory(\App\Models\Channel::class)->create();
     }
 
     public function test_a_channel_has_owner()

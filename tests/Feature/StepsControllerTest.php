@@ -11,19 +11,19 @@ class StepsControllerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
-	$this->step = factory(\App\Models\Step::class)->create();
+        
+        $this->step = factory(\App\Models\Step::class)->create();
     }
 
     public function test_a_guest_cannot_view_steps()
     {
-	$response = $this->get('/steps');
-	$response->assertStatus(302);
+        $response = $this->get('/steps');
+        $response->assertStatus(302);
     }
 
     public function test_a_guest_cannot_view_a_step()
     {
-	$response = $this->get($this->step->path());
-	$response->assertSee($this->step->content);
+        $response = $this->get($this->step->path());
+        $response->assertSee($this->step->content);
     }
 }

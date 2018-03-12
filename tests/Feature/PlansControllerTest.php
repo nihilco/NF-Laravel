@@ -11,13 +11,13 @@ class PlansControllerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
-	$this->plan = factory(\App\Models\Plan::class)->create();
+        
+        $this->plan = factory(\App\Models\Plan::class)->create();
     }
 
     public function test_a_guest_cannot_view_plans()
     {
-	$response = $this->get('/plans');
-	$response->assertStatus(302);
+        $response = $this->get('/plans');
+        $response->assertStatus(302);
     }
 }

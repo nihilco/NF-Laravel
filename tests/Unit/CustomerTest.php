@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CustomerTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $customer;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->customer = factory(\App\Models\Customer::class)->create();
     }
+
+    public function test_a_customer_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->customer->owner);
+    }
+
+    public function test_a_customer_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->customer->creator);
+    }    
 }

@@ -12,12 +12,12 @@ class SourcesControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->source = factory(\App\Models\Source::class)->create();
+        $this->source = factory(\App\Models\Source::class)->create();
     }
 
     public function test_a_guest_cannot_view_sources()
     {
-	$response = $this->get('/sources');
-	$response->assertStatus(302);
+        $response = $this->get('/sources');
+        $response->assertStatus(302);
     }
 }

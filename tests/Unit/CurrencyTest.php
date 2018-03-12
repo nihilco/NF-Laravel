@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CurrencyTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $currency;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->currency = factory(\App\Models\Currency::class)->create();
+    }
+
+    public function test_a_currency_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->currency->owner);
+    }
+
+    public function test_a_currency_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->currency->creator);
     }
 }

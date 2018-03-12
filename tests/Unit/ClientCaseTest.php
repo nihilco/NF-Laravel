@@ -13,7 +13,7 @@ class ClientCaseTest extends TestCase
     {
         parent::setUp();
 
-	$this->clientCase = factory(\App\Models\ClientCase::class)->create();
+        $this->clientCase = factory(\App\Models\ClientCase::class)->create();
     }
 
     public function test_a_case_has_owner()
@@ -30,4 +30,9 @@ class ClientCaseTest extends TestCase
     {
         $this->assertInstanceOf(\App\Models\Client::class, $this->clientCase->client);
     }
+
+    public function test_a_case_has_case_type()
+    {
+        $this->assertInstanceOf(\App\Models\CaseType::class, $this->clientCase->type);
+    }    
 }

@@ -12,12 +12,12 @@ class SubscriptionsControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->subscription = factory(\App\Models\Subscription::class)->create();
+        $this->subscription = factory(\App\Models\Subscription::class)->create();
     }
 
     public function test_a_guest_cannot_view_subscriptions()
     {
-	$response = $this->get('/subscriptions');
-	$response->assertStatus(302);
+        $response = $this->get('/subscriptions');
+        $response->assertStatus(302);
     }
 }

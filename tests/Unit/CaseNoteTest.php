@@ -13,7 +13,7 @@ class CaseNoteTest extends TestCase
     {
         parent::setUp();
 
-	$this->caseNote = factory(\App\Models\CaseNote::class)->create();
+        $this->caseNote = factory(\App\Models\CaseNote::class)->create();
     }
 
     public function test_a_case_note_has_owner()

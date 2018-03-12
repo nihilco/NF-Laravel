@@ -25,4 +25,9 @@ class PageTest extends TestCase
     {
         $this->assertInstanceOf(\App\Models\User::class, $this->page->creator);
     }
+
+    public function test_a_page_has_website()
+    {
+        $this->assertInstanceOf(\App\Models\Website::class, $this->page->website);
+    }    
 }

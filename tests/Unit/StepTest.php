@@ -7,13 +7,27 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class StepTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $step;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->step = factory(\App\Models\Step::class)->create();
     }
+
+    public function test_a_step_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->step->owner);
+    }
+
+    public function test_a_step_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->step->creator);
+    }
+
+    public function test_a_step_has_tutorial()
+    {
+        $this->assertInstanceOf(\App\Models\Tutorial::class, $this->step->tutorial);
+    }    
 }

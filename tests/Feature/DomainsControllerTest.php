@@ -12,13 +12,13 @@ class DomainsControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->domain = factory(\App\Models\Domain::class)->create();
+        $this->domain = factory(\App\Models\Domain::class)->create();
     }
 
     public function test_a_guest_cannot_view_domains()
     {
-	$response = $this->get('/domains');
-	$response->assertStatus(302);
+        $response = $this->get('/domains');
+        $response->assertStatus(302);
     }
 
 }

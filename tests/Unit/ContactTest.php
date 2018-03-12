@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ContactTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $contact;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->contact = factory(\App\Models\Contact::class)->create();
     }
+
+    public function test_a_contact_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->contact->owner);
+    }
+
+    public function test_a_contact_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->contact->creator);
+    }        
 }

@@ -12,20 +12,20 @@ class AuthorsControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->author = factory(\App\Models\Author::class)->create();
+        $this->author = factory(\App\Models\Author::class)->create();
     }
 
     public function test_a_guest_can_view_authors()
     {
-	$response = $this->get('/authors');
+        $response = $this->get('/authors');
 	
-	$response->assertSee($this->author->last_name);
+        $response->assertSee($this->author->last_name);
     }
-
+    
     public function test_a_guest_can_view_a_author()
     {
-	$response = $this->get($this->author->path());
-
-	$response->assertSee($this->author->last_name);
+        $response = $this->get($this->author->path());
+        
+        $response->assertSee($this->author->last_name);
     }
 }

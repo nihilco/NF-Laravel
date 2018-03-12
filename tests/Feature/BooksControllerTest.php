@@ -12,7 +12,7 @@ class BooksControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->book = factory(\App\Models\Book::class)->create();
+        $this->book = factory(\App\Models\Book::class)->create();
     }
 
     /**
@@ -24,7 +24,7 @@ class BooksControllerTest extends TestCase
     {	
         $response = $this->get('/books');
 
-	$response->assertSee($this->book->title);
+        $response->assertSee($this->book->title);
     }
 
     /**
@@ -36,6 +36,6 @@ class BooksControllerTest extends TestCase
     {
         $response = $this->get('/books/' . $this->book->id);
 
-	$response->assertSee($this->book->title);
+        $response->assertSee($this->book->title);
     }
 }

@@ -12,7 +12,7 @@ class TutorialsControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->tutorial = factory(\App\Models\Tutorial::class)->create();
+        $this->tutorial = factory(\App\Models\Tutorial::class)->create();
     }
 
     /**
@@ -24,7 +24,7 @@ class TutorialsControllerTest extends TestCase
     {	
         $response = $this->get('/tutorials');
 
-	$response->assertSee($this->tutorial->title);
+        $response->assertSee($this->tutorial->title);
     }
 
     /**
@@ -36,7 +36,7 @@ class TutorialsControllerTest extends TestCase
     {
         $response = $this->get($this->tutorial->path());
 
-	$response->assertSee($this->tutorial->title);
+        $response->assertSee($this->tutorial->title);
     }
 
     //public function test_a_user_can_view_steps_associated_with_a_tutorial()

@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthorTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $author;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->author = factory(\App\Models\Author::class)->create();
+    }
+
+    public function test_an_author_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->author->owner);
+    }
+
+    public function test_an_author_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->author->creator);
     }
 }

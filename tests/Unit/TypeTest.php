@@ -7,13 +7,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TypeTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $type;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->type = factory(\App\Models\Type::class)->create();
+    }
+
+    public function test_a_type_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->type->owner);
+    }
+
+    public function test_a_type_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->type->creator);
     }
 }

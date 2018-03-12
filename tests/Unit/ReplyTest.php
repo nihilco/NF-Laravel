@@ -12,11 +12,12 @@ class ReplyTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-	$thread = factory(\App\Models\Thread::class)->create();
-	$this->reply = factory(\App\Models\Reply::class)->create([
-	    'resource_id' => $thread->id,
-	    'resource_type' => get_class($thread),
-	]);
+
+        $thread = factory(\App\Models\Thread::class)->create();
+        $this->reply = factory(\App\Models\Reply::class)->create([
+            //'resource_id' => $thread->id,
+            //'resource_type' => get_class($thread),
+        ]);
     }
     
     public function test_a_reply_has_owner()
@@ -31,6 +32,11 @@ class ReplyTest extends TestCase
 
     public function test_a_reply_has_resource()
     {
-        $this->assertInstanceOf($this->reply->resource_type, $this->reply->resource);
-    }
+        $this->assertInstanceOf(\App\Models\Resource::class, $this->reply->resource);
+    }    
+
+    //public function test_a_reply_has_resource()
+    //{
+    //    $this->assertInstanceOf($this->reply->resource_type, $this->reply->resource);
+    //}
 }

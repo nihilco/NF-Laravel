@@ -13,7 +13,7 @@ class PostTest extends TestCase
     {
         parent::setUp();
 
-	$this->post = factory(\App\Models\Post::class)->create();
+        $this->post = factory(\App\Models\Post::class)->create();
     }
 
     public function test_a_post_has_owner()
@@ -26,8 +26,13 @@ class PostTest extends TestCase
         $this->assertInstanceOf(\App\Models\User::class, $this->post->creator);
     }
 
-    public function test_a_post_has_replies()
+    public function test_a_post_has_website()
     {
-        $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->post->replies);
+        $this->assertInstanceOf(\App\Models\Website::class, $this->post->website);
     }
+    
+    //public function test_a_post_has_replies()
+    //{
+    //    $this->assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, $this->post->replies);
+    //}
 }

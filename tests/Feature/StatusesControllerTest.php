@@ -12,19 +12,19 @@ class StatusesControllerTest extends TestCase
     {
         parent::setUp();
 
-	$this->status = factory(\App\Models\Status::class)->create();
+        $this->status = factory(\App\Models\Status::class)->create();
     }
 
     public function test_a_guest_cannot_view_statuses()
     {
-	$response = $this->get('/statuses');
-	$response->assertStatus(302);
+        $response = $this->get('/statuses');
+        $response->assertStatus(302);
     }
 
     public function test_a_guest_ca_view_a_status()
     {
-	$response = $this->get($this->status->path());
+        $response = $this->get($this->status->path());
 
-	$response->assertSee($this->status->name);
+        $response->assertSee($this->status->name);
     }	
 }

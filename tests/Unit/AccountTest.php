@@ -7,13 +7,27 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AccountTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public $account;
+
+    public function setUp()
     {
-        $this->assertTrue(true);
+        parent::setUp();
+
+        $this->account = factory(\App\Models\Account::class)->create();
     }
+
+    public function test_an_account_has_owner()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->account->owner);
+    }
+
+    public function test_an_account_has_creator()
+    {
+        $this->assertInstanceOf(\App\Models\User::class, $this->account->creator);
+    }
+
+    public function test_an_account_has_type()
+    {
+        $this->assertInstanceOf(\App\Models\Type::class, $this->account->type);
+    }    
 }

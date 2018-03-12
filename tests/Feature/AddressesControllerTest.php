@@ -11,13 +11,13 @@ class AddressesControllerTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-
-	$this->address = factory(\App\Models\Address::class)->create();
+        
+        $this->address = factory(\App\Models\Address::class)->create();
     }
 
     public function test_a_guest_cannot_view_addresses()
     {
-	$response = $this->get('/addresses');
-	$response->assertStatus(302);
+        $response = $this->get('/addresses');
+        $response->assertStatus(302);
     }
 }
