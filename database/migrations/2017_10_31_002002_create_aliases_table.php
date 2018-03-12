@@ -15,16 +15,16 @@ class CreateAliasesTable extends Migration
     {
         Schema::create('aliases', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('domain_id');
-	    $table->string('source');
-	    $table->string('destination');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('domain_id');
+            $table->string('source');
+            $table->string('destination');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

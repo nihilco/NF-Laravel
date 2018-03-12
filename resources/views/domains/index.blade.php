@@ -1,71 +1,58 @@
 @extends('layouts.admin')
 
-@section('title', 'Domains')
+@section('title', 'Domians')
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
 
-	        <div class="row">
-		    <div class="col-sm-9">
-                        <h1 class="pt-3">Domains</h1>
-		    </div>
-		    <div class="col-sm-3 text-right">
-                        <a href="/domains/create" class="btn btn-primary mt-3">Create Domain</a>
-		    </div>
-		</div>
+    <div class="col-sm-8">
 
-                <p class="lead">Here is a list of all domains:</p>
+      <h1>Domains</h1>
 
-		<table class="table table-bordered table-striped">
-		  <thead>
-		    <tr>
-                      <th scope="col">#</th>
-	              <th scope="col">TLD</th>
-     	              <th scope="col">Actions</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		  <?php
-		    $c=1;
-		  ?>
-		@forelse($domains as $domain)		  
-		    <tr>
-		      <th scope="row">{{ $c }}</th>
-		      <td><a href="{{ $domain->path() }}">{{ $domain->tld }}</a></td>
-		      <td>
-		        <ul class="list-inline">
-			  <li class="list-inline-item"><a href="{{ $domain->path() }}">View</a></li>
-			  @can('update', $domain)
-			  <li class="list-inline-item"><a href="{{ $domain->path() . '/edit' }}">Edit</a></li>
-			  @endcan
-			  @can('delete', $domain)
-			  <li class="list-inline-item"><form method="POST" action="/domains/{{ $domain->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
-			  @endcan
-			</ul>
-		      </td>
-		    </tr>
-		    <?php
-		      $c++;
-		    ?>
-		@empty
-		    <tr>
-		      <td colspan="3">No domains at this time.</td>
-		    </tr>
-                @endforelse
-		  </tbody>
-		</table>
-
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      
-
-	    </div>
-	</div>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Domains',
+          ],
+      ]])
+    
     </div>
+
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Domain::class)
+      <a href="/resources/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Domain</a>
+      @endcan
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @forelse($domains as $domain)
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $domain->tld }}</h5>
+          <p class="card-text">{!! \Illuminate\Support\Str::words($domain->description, 25,'....')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+    <div class="col-sm-12">
+      <p>No domains at this time.</p>
+    </div>
+
+    @endforelse
+    
+  </div>
+
+</div>
 
 @endsection

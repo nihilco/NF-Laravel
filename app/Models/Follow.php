@@ -21,14 +21,7 @@ class Follow extends Base
      */
     protected $hidden = ['resource'];
 
-    protected $with = ['creator', 'owner'];
-
     protected $appends = ['isFollowed'];
-
-    protected static function boot()
-    {
-        parent::boot();
-    }
 
     //
     public function path()

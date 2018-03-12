@@ -12,22 +12,11 @@ class Thread extends Base
     use ActivityTrait, FavoriteTrait, FollowTrait, ReplyTrait;
     
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        
-    ];
-
-    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = ['forum'];
-
-    protected $with = ['creator', 'owner'];
+    protected $hidden = ['topic'];
 
     protected $appends = ['isFollowing'];
 
@@ -35,13 +24,13 @@ class Thread extends Base
     {
         parent::boot();
 
-	static::created(function ($thread) {
-	    $thread->forum->increment('threads_count');
-	});
-
-	static::deleted(function ($thread) {
-	    $thread->forum->decrement('threads_count');
-	});
+        static::created(function ($thread) {
+            $thread->topic->increment('threads_count');
+        });
+        
+        static::deleted(function ($thread) {
+            $thread->topic->decrement('threads_count');
+        });
     }
 
     //
@@ -50,14 +39,9 @@ class Thread extends Base
         return '/threads/' . $this->id;
     }
 
-    public function forum()
+    public function topic()
     {
-        return $this->belongsTo(Forum::class);
-    }
-
-    public function scopeFilter($query, $filters)
-    {
-        return $filters->apply($query);
+        return $this->belongsTo(Topic::class);
     }
 
     public function getclassAttribute()

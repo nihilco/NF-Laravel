@@ -4,66 +4,54 @@
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
 
-	        <div class="row">
-		    <div class="col-sm-9">
-                        <h1 class="pt-3">Accounts</h1>
-		    </div>
-		    <div class="col-sm-3 text-right">
-		        @can('create', \App\Models\Account::class)
-                        <a href="/accounts/create" class="btn btn-primary mt-3">Create Account</a>
-			@endcan
-		    </div>
-		</div>
+    <div class="col-sm-8">
 
-                <p class="lead">Here is a list of all accounts:</p>
+      <h1>Accounts</h1>
 
-		<table class="table table-bordered table-striped">
-		  <thead>
-		    <tr>
-                      <th scope="col">#</th>
-	              <th scope="col">Name</th>
-     	              <th scope="col">Actions</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		  <?php
-		    $c=1;
-		  ?>
-		@forelse($accounts as $account)		  
-		    <tr>
-		      <th scope="row">{{ $c }}</th>
-		      <td>{{ $account->name }}</td>
-		      <td>
-		        <ul class="list-inline">
-			  <li class="list-inline-item"><a href="{{ $account->path() }}">View</a></li>
-			  <li class="list-inline-item"><a href="{{ $account->path() . '/edit' }}">Edit</a></li>
- 			  <li class="list-inline-item"><form method="POST" action="{{ $account->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
-			</ul>
-		      </td>
-		    </tr>
-		    <?php
-		      $c++;
-		    ?>
-		@empty
-		    <tr>
-		      <td colspan="3">No accounts at this time.</td>
-		    </tr>
-                @endforelse
-		  </tbody>
-		</table>
-
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      
-
-	    </div>
-	</div>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Accounts',
+          ],
+      ]])
+    
     </div>
+
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Account::class)
+      <a href="/accounts/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Account</a>
+      @endcan
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @forelse($accounts as $account)
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $account->name }}</h5>
+          <p class="card-text">{!! \Illuminate\Support\Str::words($account->description, 25,'....')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+    <div class="col-sm-12">
+      <p>No accounts at this time.</p>
+    </div>
+    @endforelse
+    
+  </div>
+
+</div>
 
 @endsection

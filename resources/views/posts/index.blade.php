@@ -1,34 +1,59 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Posts')
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
+    
+    <div class="col-sm-8">
 
-	        <div class="mt-3">
-                    <h1>Posts</h1>
-		</div>
+      <h1>Posts</h1>
 
-                <p class="lead">Posts for the blog.</p>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Posts',
+          ],
+      ]])
 
-                @foreach($posts as $post)
-                <article>
-                    <h2><a href="{{ $post->path() }}">{{ $post->title }}</a></h2>
-	            <p class="post-description">{{ $post->description }}</p>
-                </article>
-                @endforeach
-
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      @include('blog.sidebar')
-
-	    </div>
-	</div>
     </div>
 
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Post::class)
+      <a href="/posts/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Post</a>
+      @endcan
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+
+    @forelse($posts as $post)
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $post->title }}</h5>
+          <p class="card-text">{!! \Illuminate\Support\Str::words($post->description, 25,'....')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+
+    <div class="col-sm-12">
+      <p>No posts at this time.</p>
+    </div>
+
+    @endforelse
+    
+  </div>    
+
+</div>
+    
 @endsection

@@ -15,14 +15,14 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('zone_id');
-	    $table->unsignedInteger('type_id');
-	    $table->string('name');
-	    $table->text('value');
-	    $table->unsignedInteger('ttl');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('zone_id');
+            $table->unsignedInteger('type_id');
+            $table->string('name');
+            $table->text('value');
+            $table->unsignedInteger('ttl');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

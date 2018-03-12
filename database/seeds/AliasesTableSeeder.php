@@ -11,16 +11,24 @@ class AliasesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-	factory(\App\Models\Alias::class)->create([
-	    'source' => 'uriah@nihil.co',
-	    'destination' => 'uriah.clemmer@nihil.co',
-	]);
+        $domains = \App\Models\Domain::all();
 
         //
-	factory(\App\Models\Alias::class)->create([
-	    'source' => 'uclemmer@nihil.co',
-	    'destination' => 'uriah.clemmer@nihil.co',
-	]);
+        factory(\App\Models\Alias::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'domain_id' => $domains->where('tld', 'nihil.co')->first()->id,
+            'source' => 'uriah@nihil.co',
+            'destination' => 'uriah.clemmer@nihil.co',
+        ]);
+        
+        //
+        factory(\App\Models\Alias::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'domain_id' => $domains->where('tld', 'nihil.co')->first()->id,
+            'source' => 'uclemmer@nihil.co',
+            'destination' => 'uriah.clemmer@nihil.co',
+        ]);
     }
 }

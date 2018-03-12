@@ -25,8 +25,8 @@ class PrioritiesController extends Controller
     public function index()
     {
         //
-	$priorities = Priority::all();
-	return view('priorities.index', compact('priorities'));
+        $priorities = Priority::all();
+        return view('priorities.index', compact('priorities'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PrioritiesController extends Controller
     public function create()
     {
         //
-	return view('priorities.create');
+        return view('priorities.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class PrioritiesController extends Controller
     public function show(Priority $priority)
     {
         //
-	return view('priorities.show', compact('priority'));
+        return view('priorities.show', compact('priority'));
     }
 
     /**
@@ -72,7 +72,7 @@ class PrioritiesController extends Controller
     public function edit(Priority $priority)
     {
         //
-	return view('priorities.edit', compact('priority'));
+        return view('priorities.edit', compact('priority'));
     }
 
     /**
@@ -96,5 +96,15 @@ class PrioritiesController extends Controller
     public function destroy(Priority $priority)
     {
         //
+        $this->authorize('delete', $priority);
+        
+        //
+        $priority->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/priorities');
     }
 }

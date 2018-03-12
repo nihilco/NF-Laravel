@@ -1,69 +1,58 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Channels')
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
 
-	        <div class="mt-3">
-                    <h1>Channels</h1>
-		</div>
+    <div class="col-sm-8">
 
-                <p class="lead">Channels for the blog.</p>
+      <h1>Channels</h1>
 
-                @foreach($channels as $channel)
-		<div class="row mt-3">
-		  <div class="col-sm-5">
-		    <h2>{{ $channel->title }}</h2>
-		    <p>{{ $channel->desciption }}</p>
-		  </div>
-		  <div class="col-sm-7">
-		    <div class="row">
-		      <div class="col-sm-4">
-		      Threads
-		      </div>
-		      <div class="col-sm-4">
-		      Replies
-		      </div>
-		      <div class="col-sm-4">
-		      Updated
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		@foreach($channel->forums as $forum)
-		<div class="row">
-		  <div class="col-sm-5">
-                    <h3><a href="{{ $forum->path() }}">{{ $forum->title }}</a></h3>
-		  </div>
-		  <div class="col-sm-7">
-		    <div class="row">
-		      <div class="col-sm-4">
-		      {{ $forum->threads_count }}
-		      </div>
-		      <div class="col-sm-4">
-		      {{ $forum->replies_count }}
-		      </div>
-		      <div class="col-sm-4">
-		      {{ $forum->updated_at->diffForHumans() }}
-		      </div>
-		    </div>
-		  </div>
-                </div>
-		@endforeach
-                @endforeach
-
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      @include('forums.sidebar')
-
-	    </div>
-	</div>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Channels',
+          ],
+      ]])
+    
     </div>
+
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Channel::class)
+      <a href="/channels/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Channel</a>
+      @endcan
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @forelse($channels as $channel)
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $channel->title }}</h5>
+          <p class="card-text">{!! \Illuminate\Support\Str::words($channel->description, 25,'....')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+    <div class="col-sm-12">
+      <p>No channels at this time.</p>
+    </div>
+
+    @endforelse
+    
+  </div>
+
+</div>
 
 @endsection

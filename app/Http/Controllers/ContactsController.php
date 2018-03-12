@@ -96,5 +96,15 @@ class ContactsController extends Controller
     public function destroy(Contact $contact)
     {
         //
+        $this->authorize('delete', $contact);
+        
+        //
+        $contact->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/contacts');
     }
 }

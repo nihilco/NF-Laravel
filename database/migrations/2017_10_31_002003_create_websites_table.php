@@ -15,13 +15,12 @@ class CreateWebsitesTable extends Migration
     {
         Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-   	    $table->unsignedInteger('domain_id');
-    	    $table->unsignedInteger('account_id')->nullable();
-	    $table->string('hostname');
-	    $table->string('title');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('domain_id');
+            $table->string('hostname');
+            $table->string('title');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -25,8 +25,8 @@ class OrganizationsController extends Controller
     public function index()
     {
         //
-	$organizations = Organization::all();
-	return view('organizations.index', compact('organizations'));
+        $organizations = Organization::all();
+        return view('organizations.index', compact('organizations'));
     }
 
     /**
@@ -37,7 +37,7 @@ class OrganizationsController extends Controller
     public function create()
     {
         //
-	return view('organizations.create');
+        return view('organizations.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class OrganizationsController extends Controller
     public function show(Organization $organization)
     {
         //
-	return view('organizations.show', compact('organization'));
+        return view('organizations.show', compact('organization'));
     }
 
     /**
@@ -72,7 +72,7 @@ class OrganizationsController extends Controller
     public function edit(Organization $organization)
     {
         //
-	return view('organizations.edit', compact('organization'));
+        return view('organizations.edit', compact('organization'));
     }
 
     /**
@@ -96,5 +96,15 @@ class OrganizationsController extends Controller
     public function destroy(Organization $organization)
     {
         //
+        $this->authorize('delete', $organization);
+        
+        //
+        $organization->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/organizations');
     }
 }

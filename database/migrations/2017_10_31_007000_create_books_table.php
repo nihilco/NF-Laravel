@@ -15,16 +15,16 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
     	    $table->unsignedInteger('series_id')->nullable();
-	    $table->unsignedInteger('series_order')->nullable();
-	    $table->string('title_display');
-	    $table->string('title_alphabetic');
+            $table->unsignedInteger('series_order')->nullable();
+            $table->string('title_display');
+            $table->string('title_alphabetic');
     	    $table->string('subtitle')->nullable();
-	    $table->string('slug');
-	    $table->text('description');
-	    $table->softDeletes();
+            $table->string('slug');
+            $table->text('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

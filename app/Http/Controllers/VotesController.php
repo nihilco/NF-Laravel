@@ -25,8 +25,8 @@ class VotesController extends Controller
     public function index()
     {
         //
-	$votes = vote::latest()->get();
-	return view('votes.index', compact('votes'));
+        $votes = vote::latest()->get();
+        return view('votes.index', compact('votes'));
     }
 
     /**
@@ -37,7 +37,7 @@ class VotesController extends Controller
     public function create()
     {
         //
-	return view('votes.create');
+        return view('votes.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class VotesController extends Controller
     public function show(Vote $vote)
     {
         //
-	return view('votes.show', compact('vote'));
+        return view('votes.show', compact('vote'));
     }
 
     /**
@@ -72,7 +72,7 @@ class VotesController extends Controller
     public function edit(Vote $vote)
     {
         //
-	return view('votes.edit', compact('vote'));
+        return view('votes.edit', compact('vote'));
     }
 
     /**
@@ -96,5 +96,15 @@ class VotesController extends Controller
     public function destroy(Vote $vote)
     {
         //
+        $this->authorize('delete', $vote);
+        
+        //
+        $vote->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/votes');
     }
 }

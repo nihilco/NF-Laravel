@@ -135,5 +135,15 @@ class AccountsController extends Controller
     public function destroy(Account $account)
     {
         //
+        $this->authorize('delete', $account);
+        
+        //
+        $account->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/accounts');
     }
 }

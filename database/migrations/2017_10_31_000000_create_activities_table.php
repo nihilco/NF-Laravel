@@ -15,11 +15,11 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('user_id');
-	    $table->string('type');
-	    $table->unsignedInteger('resource_id');
-	    $table->string('resource_type');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('type_id');
+            $table->unsignedInteger('resource_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

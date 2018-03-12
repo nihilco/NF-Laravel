@@ -4,70 +4,56 @@
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
 
-	        <div class="row">
-		    <div class="col-sm-9">
-                        <h1 class="pt-3">Websites</h1>
-		    </div>
-		    <div class="col-sm-3 text-right">
-                        <a href="/websites/create" class="btn btn-primary mt-3">Create Website</a>
-		    </div>
-		</div>
+    <div class="col-sm-8">
 
-                <p class="lead">Here is a list of all websites:</p>
+      <h1>Websites</h1>
 
-		<table class="table table-bordered table-striped">
-		  <thead>
-		    <tr>
-                      <th scope="col">#</th>
-	              <th scope="col">Hostname</th>
-		      <th scope="col">Title</th>
-     	              <th scope="col">Actions</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		  <?php
-		    $c=1;
-		  ?>
-		@forelse($websites as $website)
-		    <tr>
-		      <th scope="row">{{ $c }}</th>
-		      <td>{{ $website->hostname }}</td>
-      		      <td>{{ $website->title }}</td>
-		      <td>
-		        <ul class="list-inline">
-			  <li class="list-inline-item"><a href="{{ $website->path() }}">View</a></li>
-			  @can('update', $website)
-			  <li class="list-inline-item"><a href="{{ $website->path() . '/edit' }}">Edit</a></li>
-			  @endcan
-			  @can('delete', $website)
-			  <li class="list-inline-item"><form method="POST" action="/websites/{{ $website->id }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
-			  @endcan
-			</ul>
-		      </td>
-		    </tr>
-		    <?php
-		      $c++;
-		    ?>
-		@empty
-		    <tr>
-		      <td colspan="4">No websites at this time.</td>
-		    </tr>
-                @endforelse
-		  </tbody>
-		</table>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Websites',
+          ],
+      ]])
 
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      
-
-	    </div>
-	</div>
     </div>
+
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Website::class)
+      <a href="/websites/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Website</a>
+      @endcan
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @forelse($websites as $website)
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $website->hostname }}</h5>
+          <h6 class="card-subtitle">{{ $website->title }}</h6>
+          <p class="card-text">{!! \Illuminate\Support\Str::words($website->description, 25,'....')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+    <div class="col-sm-12">
+      <p>No websites at this time.</p>
+    </div>
+
+    @endforelse
+    
+  </div>
+
+</div>
 
 @endsection

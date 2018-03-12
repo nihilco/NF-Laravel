@@ -1,27 +1,25 @@
 @extends('layouts.admin')
 
-@section('title', auth()->user()->name . '\'s Profile')
+@section('title', 'Profile')
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
+    <div class="col-sm-12">
 
-	        <div class="mt-3">
-                    <h1>{{ auth()->user()->name . '\'s Profile' }}</h1>
-		</div>
+      <h1>Profile</h1>
 
-                <p class="lead">User profile for {{ auth()->user()->name }}.</p>
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Profile',
+          ],
+      ]])
 
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      
-
-	    </div>
-	</div>
     </div>
+  </div>
+
+</div>
 
 @endsection

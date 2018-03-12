@@ -25,8 +25,8 @@ class PublishersController extends Controller
     public function index()
     {
         //
-	$publishers = Publisher::all();
-	return view('publishers.index', compact('publishers'));
+        $publishers = Publisher::all();
+        return view('publishers.index', compact('publishers'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PublishersController extends Controller
     public function create()
     {
         //
-	return view('publishers.create');
+        return view('publishers.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class PublishersController extends Controller
     public function show(Publisher $publisher)
     {
         //
-	return view('publishers.show', compact('publisher'));
+        return view('publishers.show', compact('publisher'));
     }
 
     /**
@@ -72,7 +72,7 @@ class PublishersController extends Controller
     public function edit(Publisher $publisher)
     {
         //
-	return view('publishers.edit', compact('publisher'));
+        return view('publishers.edit', compact('publisher'));
     }
 
     /**
@@ -96,5 +96,15 @@ class PublishersController extends Controller
     public function destroy(Publisher $publisher)
     {
         //
+        $this->authorize('delete', $publisher);
+        
+        //
+        $publisher->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/publishers');
     }
 }

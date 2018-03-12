@@ -27,7 +27,7 @@ class BooksController extends Controller
     public function index()
     {
         //
-	$books = Book::orderBY('title_alphabetic', 'asc')->paginate(25);
+	$books = Book::orderBY('title_alphabetic', 'asc')->paginate(24);
 	return view('books.index', compact(['books']));
     }
 
@@ -194,14 +194,14 @@ class BooksController extends Controller
     public function destroy(Book $book)
     {
         //
-	$this->authorize('delete', $book);
-
-	$book->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        $this->authorize('delete', $book);
+        
+        $book->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

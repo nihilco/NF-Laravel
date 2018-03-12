@@ -15,9 +15,9 @@ class CreateAuthorBookTable extends Migration
     {
         Schema::create('author_book', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('author_id');
-	    $table->unsignedInteger('book_id');
-	    $table->softDeletes();
+            $table->unsignedInteger('author_id');
+            $table->unsignedInteger('book_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

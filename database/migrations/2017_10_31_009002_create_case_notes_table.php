@@ -15,12 +15,11 @@ class CreateCaseNotesTable extends Migration
     {
         Schema::create('case_notes', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('account_id')->nullable();
-	    $table->unsignedInteger('case_id');
-	    $table->text('content');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('case_id');
+            $table->text('content');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

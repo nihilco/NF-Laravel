@@ -25,8 +25,8 @@ class SubscriptionsController extends Controller
     public function index()
     {
         //
-	$subscriptions = Subscription::all();
-	return view('subscriptions.index', compact('subscriptions'));
+        $subscriptions = Subscription::all();
+        return view('subscriptions.index', compact('subscriptions'));
     }
 
     /**
@@ -37,7 +37,7 @@ class SubscriptionsController extends Controller
     public function create()
     {
         //
-	return view('subscriptions.create');
+        return view('subscriptions.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class SubscriptionsController extends Controller
     public function show(Subscription $subscription)
     {
         //
-	return view('subscriptions.show', compact('subscription'));
+        return view('subscriptions.show', compact('subscription'));
     }
 
     /**
@@ -72,7 +72,7 @@ class SubscriptionsController extends Controller
     public function edit(Subscription $subscription)
     {
         //
-	return view('subscriptions.edit', compact('subscription'));
+        return view('subscriptions.edit', compact('subscription'));
     }
 
     /**
@@ -96,5 +96,15 @@ class SubscriptionsController extends Controller
     public function destroy(Subscription $subscription)
     {
         //
+        $this->authorize('delete', $subscription);
+        
+        //
+        $subscription->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/subscriptions');
     }
 }

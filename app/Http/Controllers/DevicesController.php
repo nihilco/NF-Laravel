@@ -25,8 +25,8 @@ class DevicesController extends Controller
     public function index()
     {
         //
-	$devices = Device::all();
-	return view('devices.index', compact('devices'));
+        $devices = Device::all();
+        return view('devices.index', compact('devices'));
     }
 
     /**
@@ -37,7 +37,7 @@ class DevicesController extends Controller
     public function create()
     {
         //
-	return view('devices.create');
+        return view('devices.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class DevicesController extends Controller
     public function show(Device $device)
     {
         //
-	return view('devices.show', compact('device'));
+        return view('devices.show', compact('device'));
     }
 
     /**
@@ -72,7 +72,7 @@ class DevicesController extends Controller
     public function edit(Device $device)
     {
         //
-	return view('devices.edit', compact('device'));
+        return view('devices.edit', compact('device'));
     }
 
     /**
@@ -96,5 +96,15 @@ class DevicesController extends Controller
     public function destroy(Device $device)
     {
         //
+        $this->authorize('delete', $device);
+        
+        //
+        $device->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/devices');
     }
 }

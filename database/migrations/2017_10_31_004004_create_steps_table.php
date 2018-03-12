@@ -15,12 +15,12 @@ class CreateStepsTable extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('tutorial_id');
-	    $table->text('content');
-	    $table->unsignedInteger('order');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('tutorial_id');
+            $table->text('content');
+            $table->unsignedInteger('order');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

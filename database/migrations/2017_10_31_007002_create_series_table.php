@@ -15,13 +15,13 @@ class CreateSeriesTable extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('name');
-	    $table->string('slug');
-	    $table->text('description');
-	    $table->unsignedInteger('books_in_series')->default(1);
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('name');
+            $table->string('slug');
+            $table->text('description');
+            $table->unsignedInteger('books_in_series')->default(1);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

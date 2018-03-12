@@ -6,11 +6,11 @@ $factory->define(App\Models\Contact::class, function (Faker $faker) {
 
     return [
     	'creator_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'owner_id' => function () {
-	    return factory(App\Models\User::class)->create()->id;
-	},
-	'display_name' => $faker->lastName . ', ' . $faker->firstName,
+            return factory(App\Models\User::class)->create()->id;
+        },
+        'owner_id' => function () {
+            return factory(App\Models\User::class)->create()->id;
+        },
+        'display_name' => $faker->lastName . ', ' . $faker->firstName,
     ];
 });

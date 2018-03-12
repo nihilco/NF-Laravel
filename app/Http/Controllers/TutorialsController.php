@@ -25,8 +25,8 @@ class TutorialsController extends Controller
     public function index()
     {
         //
-	$tutorials = Tutorial::latest()->get();
-	return view('tutorials.index', compact('tutorials'));
+        $tutorials = Tutorial::latest()->get();
+        return view('tutorials.index', compact('tutorials'));
     }
 
     /**
@@ -37,7 +37,7 @@ class TutorialsController extends Controller
     public function create()
     {
         //
-	return view('tutorials.create');
+        return view('tutorials.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class TutorialsController extends Controller
     public function show(Tutorial $tutorial)
     {
         //
-	return view('tutorials.show', compact('tutorial'));
+        return view('tutorials.show', compact('tutorial'));
     }
 
     /**
@@ -72,7 +72,7 @@ class TutorialsController extends Controller
     public function edit(Tutorial $tutorial)
     {
         //
-	return view('tutorials.edit');
+        return view('tutorials.edit');
     }
 
     /**
@@ -96,5 +96,15 @@ class TutorialsController extends Controller
     public function destroy(Tutorial $tutorial)
     {
         //
+        $this->authorize('delete', $tutorial);
+        
+        //
+        $tutorial->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/tutorials');
     }
 }

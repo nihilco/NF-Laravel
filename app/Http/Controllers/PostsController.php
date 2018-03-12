@@ -25,9 +25,9 @@ class PostsController extends Controller
      */
     public function index(PostFilters $filters)
     {
-	$posts = Post::filter($filters)->get();
+        $posts = Post::filter($filters)->get();
 
-	return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -38,7 +38,7 @@ class PostsController extends Controller
     public function create()
     {
         //
-	return view('posts.create');
+        return view('posts.create');
     }
 
     /**
@@ -50,30 +50,30 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	  'title' => 'required',
-	  'slug' => 'required',
-	  'description' => 'required',
-	  'content' => 'required',
-	]);
-    
+        $this->validate(request(), [
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'content' => 'required',
+        ]);
+        
         //
-	$post = new Post();
-
-	$post->creator_id = auth()->id();
-	$post->owner_id = auth()->id();
-	$post->website_id = config('view.website_id');
-	$post->title = request('title');
-	$post->slug = request('slug');
-	$post->description = request('description');
-	$post->content = request('content');
-	$post->published_at = \Carbon\Carbon::now()->toDateTimeString();
-
-	$post->save();
-
-	return redirect('/posts');
+        $post = new Post();
+        
+        $post->creator_id = auth()->id();
+        $post->owner_id = auth()->id();
+        $post->website_id = config('view.website_id');
+        $post->title = request('title');
+        $post->slug = request('slug');
+        $post->description = request('description');
+        $post->content = request('content');
+        $post->published_at = \Carbon\Carbon::now()->toDateTimeString();
+        
+        $post->save();
+        
+        return redirect('/posts');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -83,7 +83,7 @@ class PostsController extends Controller
     public function show(Post $post)
     {
         //
-	return view('posts.show', compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -95,7 +95,7 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         //
-	return view('posts.edit', compact('post'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -119,5 +119,15 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
         //
+        $this->authorize('delete', $post);
+        
+        //
+        $post->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/posts');
     }
 }

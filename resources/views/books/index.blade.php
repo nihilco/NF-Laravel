@@ -1,66 +1,65 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Books')
 
 @section('content')
 
-    <div class="container page-top">
+<div class="container-fluid">
 
-        <div class="row">
-	    <div class="col-sm-8 col-md-9">
+  <div class="row">
 
-	        <div class="row">
-		    <div class="col-sm-9">
-                        <h1 class="pt-3">Books</h1>
-		    </div>
-		    <div class="col-sm-3">
-                        <a href="/books/create" class="btn btn-primary mt-3">Create Book</a>
-		    </div>
-		</div>
+    <div class="col-sm-8">
 
-                <p class="lead">Reading!  Who likes reading?!</p>
+      <h1>Books</h1>
 
-                @foreach($books as $book)
-                <article>
-		    <div class="row">
-		        <div class="col-sm-9">
-			    <h2><a href="{{ $book->path() }}">{{ $book->title_display }}</a></h2>
-		            <h3>by
-                            <?php $c=1 ?>
-		            @foreach($book->authors as $author)
-		                @if($c > 1)
-		                and 
-		                @endif
-		                <a href="{{ $author->path() }}">{{ $author->name() }}</a>
-		                <?php $c++ ?>
-		            @endforeach
-		            </h3>
-			</div>
-			<div class="col-sm-3">
-			    <ul class="list-inline">
-			        <li class="list-inline-item"><a href="{{ $book->path() }}">View</a></li>
-			        @can('update', $book)
-			        <li class="list-inline-item"><a href="{{ $book->path() . '/edit' }}">Edit</a></li>
-			        @endcan
-			        @can('delete', $book)
-			        <li class="list-inline-item"><form method="POST" action="{{ $book->path() }}">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger">Delete</button></form></li>
-			        @endcan
-			    </ul>
-			</div>
-		    </div>
-	            <p class="post-description">{!! $book->description !!}</p>
-                </article>
-                @endforeach
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Books',
+          ],
+      ]])
 
-		{{ $books->links('vendor.pagination.bootstrap-4') }}
-
-	    </div>
-	    <div class="col-sm-4 col-md-3">
-
-	      @include('books.sidebar')
-
-	    </div>
-	</div>
     </div>
+
+    <div class="col-sm-4 text-right">
+
+      @can('create', \App\Models\Book::class)
+      <a href="/books/create" class="btn btn-lg btn-primary mt-3"><i class="fas fa-plus"></i> Book</a>
+      @endcan
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    @forelse($books as $book)		  
+
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="https://placehold.it/300x450" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ $book->title_display }}</h5>
+          <p class="card-text">{!! \Illuminate\Support\Str::limit($book->description, 150,'...')  !!}</p>
+        </div>
+      </div>
+    </div>
+
+    @empty
+
+    <p>No books at this time.</p>
+
+    @endforelse
+    
+  </div>
+
+  @if($books->hasPages())
+  <div class="row">
+    <div class="col-sm-12">
+          {{ $books->links() }}
+    </div>
+  </div>
+  @endif
+
+</div>
 
 @endsection

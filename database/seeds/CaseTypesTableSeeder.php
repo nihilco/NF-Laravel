@@ -14,42 +14,41 @@ class CaseTypesTableSeeder extends Seeder
         factory(App\Models\CaseType::class)->create([
             'creator_id' => 1,
             'owner_id' => 1,
-	    'name' => 'Personal Injury',
-	    'description' => '',
-	    'color' => 'primary',
+            'name' => 'Personal Injury',
+            'description' => '',
+            'color' => 'primary',
         ]);
-
+        
         factory(App\Models\CaseType::class)->create([
             'creator_id' => 1,
             'owner_id' => 1,
-	    'name' => 'Divorce',
-	    'description' => '',
-	    'color' => 'success',
+            'name' => 'Divorce',
+            'description' => '',
+            'color' => 'success',
         ]);
-
+        
         factory(App\Models\CaseType::class)->create([
             'creator_id' => 1,
             'owner_id' => 1,
-	    'name' => 'Bankruptcy',
-	    'description' => '',
-	    'color' => 'danger',
+            'name' => 'Bankruptcy',
+            'description' => '',
+            'color' => 'danger',
         ]);
-
+        
         factory(App\Models\CaseType::class)->create([
             'creator_id' => 1,
             'owner_id' => 1,
-	    'name' => 'Criminal',
-	    'description' => '',
-	    'color' => 'warning',
+            'name' => 'Criminal',
+            'description' => '',
+            'color' => 'warning',
         ]);
-
+        
         factory(App\Models\CaseType::class)->create([
             'creator_id' => 1,
             'owner_id' => 1,
-	    'name' => 'DUI',
-	    'description' => '',
-	    'color' => 'info',
+            'name' => 'DUI',
+            'description' => '',
+            'color' => 'info',
         ]);
-
     }
 }

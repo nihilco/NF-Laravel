@@ -25,8 +25,8 @@ class InvoicesController extends Controller
     public function index()
     {
         //
-	$invoices = Invoice::all();
-	return view('invoices.index', compact('invoices'));
+        $invoices = Invoice::all();
+        return view('invoices.index', compact('invoices'));
     }
 
     /**
@@ -37,7 +37,7 @@ class InvoicesController extends Controller
     public function create()
     {
         //
-	return view('invoices.create');
+        return view('invoices.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class InvoicesController extends Controller
     public function show(Invoice $invoice)
     {
         //
-	return view('invoices.show', compact('invoice'));
+        return view('invoices.show', compact('invoice'));
     }
 
     /**
@@ -72,7 +72,7 @@ class InvoicesController extends Controller
     public function edit(Invoice $invoice)
     {
         //
-	return view('invoices.edit', compact('invoice'));
+        return view('invoices.edit', compact('invoice'));
     }
 
     /**
@@ -96,5 +96,15 @@ class InvoicesController extends Controller
     public function destroy(Invoice $invoice)
     {
         //
+        $this->authorize('delete', $invoice);
+        
+        //
+        $invoice->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/invoices');
     }
 }

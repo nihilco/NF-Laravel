@@ -25,8 +25,8 @@ class FollowsController extends Controller
     public function index()
     {
         //
-	$follows = Follow::all();
-	return view('follows.index', compact('follows'));
+        $follows = Follow::all();
+        return view('follows.index', compact('follows'));
     }
 
     /**
@@ -37,7 +37,7 @@ class FollowsController extends Controller
     public function create()
     {
         //
-	return view('follows.create');
+        return view('follows.create');
     }
 
     /**
@@ -49,20 +49,20 @@ class FollowsController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate($request, [
-	    'resource_id' => 'required',
-	    'resource_type' => 'required',
-	]);
-
-	$resource = request('resource_type')::find(request('resource_id'));
-
-	if($resource->isFollowing) {
-	    $resource->unfollow();
-	} else {
-	  $resource->follow();
-	}
-
-	return back();
+        $this->validate($request, [
+            'resource_id' => 'required',
+            'resource_type' => 'required',
+        ]);
+        
+        $resource = request('resource_type')::find(request('resource_id'));
+        
+        if($resource->isFollowing) {
+            $resource->unfollow();
+        } else {
+            $resource->follow();
+        }
+        
+        return back();
     }
 
     /**
@@ -74,7 +74,7 @@ class FollowsController extends Controller
     public function show(Follow $follow)
     {
         //
-	return view('follows.show', compact('follow'));
+        return view('follows.show', compact('follow'));
     }
 
     /**
@@ -86,7 +86,7 @@ class FollowsController extends Controller
     public function edit(Follow $follow)
     {
         //
-	return view('follows.edit', compact('follow'));
+        return view('follows.edit', compact('follow'));
     }
 
     /**
@@ -110,5 +110,15 @@ class FollowsController extends Controller
     public function destroy(Follow $follow)
     {
         //
+        $this->authorize('delete', $follow);
+        
+        //
+        $follow->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/follows');
     }
 }

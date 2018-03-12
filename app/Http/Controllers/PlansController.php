@@ -25,8 +25,8 @@ class PlansController extends Controller
     public function index()
     {
         //
-	$plans = Plan::all();
-	return view('plans.index', compact('plans'));
+        $plans = Plan::all();
+        return view('plans.index', compact('plans'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PlansController extends Controller
     public function create()
     {
         //
-	return view('plans.create');
+        return view('plans.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class PlansController extends Controller
     public function show(Plan $plan)
     {
         //
-	return view('plans.show', compact('plan'));
+        return view('plans.show', compact('plan'));
     }
 
     /**
@@ -72,7 +72,7 @@ class PlansController extends Controller
     public function edit(Plan $plan)
     {
         //
-	return view('plans.edit', compact('plan'));
+        return view('plans.edit', compact('plan'));
     }
 
     /**
@@ -96,5 +96,15 @@ class PlansController extends Controller
     public function destroy(Plan $plan)
     {
         //
+        $this->authorize('delete', $plan);
+        
+        //
+        $plan->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/plans');
     }
 }

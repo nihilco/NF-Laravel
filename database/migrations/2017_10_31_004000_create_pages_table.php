@@ -15,17 +15,17 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('creator_id');
     	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('website_id');
-	    $table->string('title');
-	    $table->string('slug');
-	    $table->text('description');
+            $table->unsignedInteger('website_id');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('description');
     	    $table->text('content');
-	    $table->unsignedInteger('views_count')->default(0);
-	    $table->datetime('last_viewed_at')->nullable();
+            $table->unsignedInteger('views_count')->default(0);
+            $table->datetime('last_viewed_at')->nullable();
     	    $table->datetime('published_at');
-	    $table->softDeletes();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,12 +15,12 @@ class CreateCurrenciesTable extends Migration
     {
         Schema::create('currencies', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('symbol', 1);
-	    $table->string('abbr');
-	    $table->string('name');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('symbol', 1);
+            $table->string('abbr');
+            $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

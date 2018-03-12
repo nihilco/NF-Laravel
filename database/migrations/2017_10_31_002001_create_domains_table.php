@@ -15,13 +15,13 @@ class CreateDomainsTable extends Migration
     {
         Schema::create('domains', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('customer_id');
-	    $table->string('tld');
-	    $table->date('registered_on');
-	    $table->date('expires_on');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('customer_id');
+            $table->string('tld');
+            $table->date('registered_on');
+            $table->date('expires_on');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

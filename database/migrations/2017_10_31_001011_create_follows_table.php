@@ -15,14 +15,13 @@ class CreateFollowsTable extends Migration
     {
         Schema::create('follows', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('resource_id');
-	    $table->string('resource_type');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('resource_id');
+            $table->softDeletes();
             $table->timestamps();
-
-	    $table->unique(['owner_id', 'resource_id', 'resource_type']);
+            
+            $table->unique(['owner_id', 'resource_id']);
         });
     }
 

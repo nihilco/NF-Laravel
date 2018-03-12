@@ -15,14 +15,14 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('resource_type');
-	    $table->string('name', 100);
-	    $table->string('slug', 100)->unique();
-	    $table->text('description');
-	    $table->softDeletes();
-	    $table->timestamps();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('model');
+            $table->string('name', 100);
+            $table->string('slug', 100)->unique();
+            $table->text('description');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -15,11 +15,11 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('nickname');
-	    $table->datetime('last_used_on');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('nickname');
+            $table->datetime('last_used_on');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

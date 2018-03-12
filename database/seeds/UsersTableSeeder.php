@@ -13,6 +13,8 @@ class UsersTableSeeder extends Seeder
     {
         // Uriah Clemmer
 	factory(\App\Models\User::class)->create([
+        'creator_id' => 1,
+	    'owner_id' => 1,
 	    'name' => 'Uriah Clemmer',
 	    'username' => 'uriah.clemmer@nihil.co',
 	    'email' => 'uriah@nihil.co',
@@ -22,6 +24,8 @@ class UsersTableSeeder extends Seeder
 
 	// Ella Chedburn
 	factory(\App\Models\User::class)->create([
+        'creator_id' => 1,
+	    'owner_id' => 1,
 	    'name' => 'Ella Chedburn',
 	    'username' => 'echedburn',
 	    'email' => 'echedburn@gmail.com',
@@ -31,6 +35,8 @@ class UsersTableSeeder extends Seeder
 
 	// Chandler Maze
 	factory(\App\Models\User::class)->create([
+        'creator_id' => 1,
+	    'owner_id' => 1,
 	    'name' => 'Chandler Maze',
 	    'username' => 'cmaze',
 	    'email' => 'chandler@mazestonelaw.com',
@@ -40,6 +46,8 @@ class UsersTableSeeder extends Seeder
 
 	// Clayton Stone
 	factory(\App\Models\User::class)->create([
+        'creator_id' => 1,
+	    'owner_id' => 1,
 	    'name' => 'Clayton Stone',
 	    'username' => 'Wcstone87',
 	    'email' => 'clayton@mazestonelaw.com',

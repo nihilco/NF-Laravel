@@ -137,5 +137,15 @@ class AddressesController extends Controller
     public function destroy(Address $address)
     {
         //
+        $this->authorize('delete', $address);
+        
+        //
+        $address->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/addresses');
     }
 }

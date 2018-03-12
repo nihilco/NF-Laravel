@@ -26,8 +26,8 @@ class RepliesController extends Controller
     public function index()
     {
         //
-	$replies = Reply::all();
-	return view('replies.index', compact('replies'));
+        $replies = Reply::all();
+        return view('replies.index', compact('replies'));
     }
 
     /**
@@ -38,7 +38,7 @@ class RepliesController extends Controller
     public function create()
     {
         //
-	return view('replies.create');
+        return view('replies.create');
     }
 
     /**
@@ -50,40 +50,40 @@ class RepliesController extends Controller
     public function store(Request $request)
     {
 	//
-	$this->validate(request(), [
-	    'content' => 'required',
-	]);
+        $this->validate(request(), [
+            'content' => 'required',
+        ]);
 
         //
-	//$path = $request->path();
-	//list($class, $id, $action) = explode('/', $path);
+        //$path = $request->path();
+        //list($class, $id, $action) = explode('/', $path);
+        
+        //if($class == 'threads') {
+        //    $model = \App\Models\Thread::find($id);
+        //}elseif($class == 'issues') {
+        //    $model = \App\Models\Issue::find($id);
+        //}elseif($class == 'posts') {
+        //    $model = \App\Models\Post::find($id);
+        //}else{
+        //    abort(404, 'Given resource not found.');
+        //}
+        
+        $reply = new Reply();
 
-	//if($class == 'threads') {
-	//    $model = \App\Models\Thread::find($id);
-	//}elseif($class == 'issues') {
-	//    $model = \App\Models\Issue::find($id);
-	//}elseif($class == 'posts') {
-	//    $model = \App\Models\Post::find($id);
-	//}else{
-	//    abort(404, 'Given resource not found.');
-	//}
-
-	$reply = new Reply();
-
-	$reply->creator_id = auth()->id();
-	$reply->owner_id = auth()->id();
-	$reply->resource_id = request('resource_id');
-	$reply->resource_type = request('resource_type');
-	$reply->favorites_count = 0;
-	$reply->content = request('content');
-
-	$reply->save();
-
-	if(request()->expectsJson()) {
-	    return $reply->load(['creator', 'owner']);
-	}
-
-	return redirect($model->path())->with('flash', 'Your reply was successful.');
+        $reply->creator_id = auth()->id();
+        $reply->owner_id = auth()->id();
+        $reply->resource_id = request('resource_id');
+        $reply->resource_type = request('resource_type');
+        $reply->favorites_count = 0;
+        $reply->content = request('content');
+        
+        $reply->save();
+        
+        if(request()->expectsJson()) {
+            return $reply->load(['creator', 'owner']);
+        }
+        
+        return redirect($model->path())->with('flash', 'Your reply was successful.');
     }
 
     /**
@@ -95,7 +95,7 @@ class RepliesController extends Controller
     public function show(Reply $reply)
     {
         //
-	return view('replies.show', compact('reply'));
+        return view('replies.show', compact('reply'));
     }
 
     /**
@@ -107,7 +107,7 @@ class RepliesController extends Controller
     public function edit(Reply $reply)
     {
         //
-	return view('replies.edit', compact('reply'));
+        return view('replies.edit', compact('reply'));
     }
 
     /**
@@ -120,12 +120,12 @@ class RepliesController extends Controller
     public function update(Request $request, Reply $reply)
     {
         //
-	$this->authorize('update', $reply);
-
-	$reply->content = request('content');
-	$reply->save();
+        $this->authorize('update', $reply);
+        
+        $reply->content = request('content');
+        $reply->save();
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -135,15 +135,15 @@ class RepliesController extends Controller
     public function destroy(Reply $reply)
     {
         //
-	$this->authorize('delete', $reply);
-
-	$reply->delete();
-
-	if(request()->wantsJson()) {
-	    return response(['status' => 'Reply was deleted.'], 204);
-	}
-
-	return back();
+        $this->authorize('delete', $reply);
+        
+        $reply->delete();
+        
+        if(request()->wantsJson()) {
+            return response(['status' => 'Reply was deleted.'], 204);
+        }
+        
+        return back();
     }
 
     /**
@@ -154,12 +154,12 @@ class RepliesController extends Controller
     public function list(Request $request)
     {
         if(request()->expectsJson()) {
-	    $cn = request('resource_type');
-	    return $cn::find(request('resource_id'))->replies()->paginate(20);
-	}
-
+            $cn = request('resource_type');
+            return $cn::find(request('resource_id'))->replies()->paginate(20);
+        }
+        
         //
-	$replies = Reply::all();
-	return view('replies.list', compact('replies'));
+        $replies = Reply::all();
+        return view('replies.list', compact('replies'));
     }
 }

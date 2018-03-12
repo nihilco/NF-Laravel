@@ -25,8 +25,8 @@ class ZonesController extends Controller
     public function index()
     {
         //
-	$zones = Zone::all();
-	return view('zones.index', compact('zones'));
+        $zones = Zone::all();
+        return view('zones.index', compact('zones'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ZonesController extends Controller
     public function create()
     {
         //
-	return view('zones.create');
+        return view('zones.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class ZonesController extends Controller
     public function show(Zone $zone)
     {
         //
-	return view('zones.show', compact('zone'));
+        return view('zones.show', compact('zone'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ZonesController extends Controller
     public function edit(Zone $zone)
     {
         //
-	return view('zones.edit', compact('zone'));
+        return view('zones.edit', compact('zone'));
     }
 
     /**
@@ -96,5 +96,15 @@ class ZonesController extends Controller
     public function destroy(Zone $zone)
     {
         //
+        $this->authorize('delete', $zone);
+        
+        //
+        $zone->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/zones');
     }
 }

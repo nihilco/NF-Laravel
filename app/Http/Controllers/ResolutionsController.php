@@ -25,8 +25,8 @@ class ResolutionsController extends Controller
     public function index()
     {
         //
-	$resolutions = Resolution::all();
-	return view('resolutions.index', compact('resolutions'));
+        $resolutions = Resolution::all();
+        return view('resolutions.index', compact('resolutions'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ResolutionsController extends Controller
     public function create()
     {
         //
-	return view('resolutions.create');
+        return view('resolutions.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class ResolutionsController extends Controller
     public function show(Resolution $resolution)
     {
         //
-	return view('resolutions.show', compact('resolution'));
+        return view('resolutions.show', compact('resolution'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ResolutionsController extends Controller
     public function edit(Resolution $resolution)
     {
         //
-	return view('resolutions.edit', compact('resolution'));
+        return view('resolutions.edit', compact('resolution'));
     }
 
     /**
@@ -96,5 +96,15 @@ class ResolutionsController extends Controller
     public function destroy(Resolution $resolution)
     {
         //
+        $this->authorize('delete', $resolution);
+        
+        //
+        $resolution->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/resolutions');
     }
 }

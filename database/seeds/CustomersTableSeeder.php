@@ -11,270 +11,388 @@ class CustomersTableSeeder extends Seeder
      */
     public function run()
     {
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'The NIHIL Corporation',
-	]);
+        $accounts = \App\Models\Account::all();
+        $types = \App\Models\Type::where('model', 'App\Models\Customer')->get();
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'The NIHIL Corporation',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Uriah M. Clemmer IV',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'EST Prints',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'The Shirlock Foundation',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Nancy Clemmer',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Chris Clemmer',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'UTK Delts',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Taraloka Foundation',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Antiquarians',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Ben Hollerbach',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Hollerbach & Tompkins LLC.',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Tim Williams',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Encore',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Just Peachy Pictures',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'First American Commercial Property Group',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Pathrise',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'weScore',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Katharine Freeman',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Tisdale Construction',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'David Cross',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Ternion Athletics',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Tate Township',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Vince Bianco',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Lexander Farm',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Lucy Coppedge',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Bethel-Tate Fire Department',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Subway',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Sushi Nabe',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Coast-to-Coast College Fair',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
 
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Uriah M. Clemmer IV',
-	]);
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Case Antiques',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Flagstick Partners',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Blue Springs Historical Association',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'La Qhia',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Maze & Stone PLLC.',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Ella Chedburn',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Business')->first()->id,
+            'name' => 'Green Product Junkie',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
+        
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Kate Gribbin',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
 
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'EST Prints',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'The Shirlock Foundation',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Nancy Clemmer',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Chris Clemmer',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'UTK Delts',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Taraloka Foundation',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Antiquarians',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Ben Hollerbach',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Hollerbach & Tompkins LLC.',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Tim Williams',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Encore',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Just Peachy Pictures',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'First American Commercial Property Group',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Pathrise',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'weScore',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Katharine Freeman',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Tisdale Construction',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'David Cross',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Ternion Athletics',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Tate Township',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Vince Bianco',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Lexander Farm',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Lucy Coppedge',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Bethel-Tate Fire Department',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Subway',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Sushi Nabe',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Coast-to-Coast College Fair',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Case Antiques',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Flagstick Partners',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Blue Springs Historical Association',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'La Qhia',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Maze & Stone PLLC.',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Ella Chedburn',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'business',
-	    'name' => 'Green Product Junkie',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Kate Gribbin',
-	]);
-
-	factory(App\Models\Customer::class)->create([
-	    'creator_id' => 1,
-	    //'owner_id' => 1,
-	    'type' => 'individual',
-	    'name' => 'Jen Clemmer',
-	]);
+        factory(App\Models\Customer::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'account_id' => 1,
+            'account_id' => 1,
+            'type_id' => $types->where('name', 'Individual')->first()->id,
+            'name' => 'Jen Clemmer',
+            'billing_address_id' => 0,
+            'shipping_address_id' => 0,
+        ]);
     }
 }

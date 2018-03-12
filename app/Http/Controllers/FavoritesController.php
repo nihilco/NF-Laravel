@@ -25,8 +25,8 @@ class FavoritesController extends Controller
     public function index()
     {
         //
-	$favorites = Favorite::all();
-	return view('favorites.index', compact('favorites'));
+        $favorites = Favorite::all();
+        return view('favorites.index', compact('favorites'));
     }
 
     /**
@@ -37,7 +37,7 @@ class FavoritesController extends Controller
     public function create()
     {
         //
-	return view('favorites.create');
+        return view('favorites.create');
     }
 
     /**
@@ -51,19 +51,19 @@ class FavoritesController extends Controller
         $resource = request('resource_type')::find(request('resource_id'));
 	
         //
-	if($resource->isFavorited()) {
-	    $resource->unfavorite();
-	    $status = 'Successfully unfavorited.';
-	}else{
-	    $resource->favorite();
-	    $status = 'Successfully favorited.';
-	}
-
-	if(request()->wantsJson()) {
-	    return response(['status' => $status], 204);
-	}
-
-	return back();
+        if($resource->isFavorited()) {
+            $resource->unfavorite();
+            $status = 'Successfully unfavorited.';
+        }else{
+            $resource->favorite();
+            $status = 'Successfully favorited.';
+        }
+        
+        if(request()->wantsJson()) {
+            return response(['status' => $status], 204);
+        }
+        
+        return back();
     }
 
     /**
@@ -75,7 +75,7 @@ class FavoritesController extends Controller
     public function show(Favorite $favorite)
     {
         //
-	return view('favorites.show', compact('favorite'));
+        return view('favorites.show', compact('favorite'));
     }
 
     /**
@@ -87,7 +87,7 @@ class FavoritesController extends Controller
     public function edit(Favorite $favorite)
     {
         //
-	return view('favorites.edit', compact('favorite'));
+        return view('favorites.edit', compact('favorite'));
     }
 
     /**
@@ -111,8 +111,8 @@ class FavoritesController extends Controller
     public function destroy(Request $request, Favorite $favorite = null)
     {
         //
-	$resource = request('resource_type')::find(request('resource_id'));
-
-	$resource->unfavorite();
+        $resource = request('resource_type')::find(request('resource_id'));
+        
+        $resource->unfavorite();
     }
 }

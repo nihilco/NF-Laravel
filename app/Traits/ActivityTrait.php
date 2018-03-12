@@ -10,17 +10,17 @@ trait ActivityTrait
     {
         //if(auth()->guest()) return;
 
-	foreach(static::getActivitiesToRecord() as $event) {
-            static::$event(function ($model) use ($event) {
-	        $model->recordActivity($event);
-	    });
-	}
-
-	static::deleting(function ($model) {
-	    $model->activity()->delete();
-	});
+        //foreach(static::getActivitiesToRecord() as $event) {
+        //    static::$event(function ($model) use ($event) {
+        //        $model->recordActivity($event);
+        //    });
+        //}
+        
+        static::deleting(function ($model) {
+            $model->activity()->delete();
+        });
     }
-
+    
     protected static function getActivitiesToRecord()
     {
         return ['created'];
@@ -29,16 +29,22 @@ trait ActivityTrait
     protected function recordActivity($event)
     {
         $this->activity()->create([
-	    'user_id' => auth()->guest() ? '1' : auth()->id(),
-	    'type' => $this->getActivityType($event),
-	]);
+            'creator_id' => auth()->guest() ? '1' : auth()->id(),
+            'owner_id' => auth()->guest() ? '1' : auth()->id(),
+            'type_id' => $this->getActivityType($event)->id,
+        ]);
     }
 
     protected function getActivityType($event)
     {
-	$type = str_plural(strtolower((new \ReflectionClass($this))->getShortName()));
+        //$type = str_plural(strtolower((new \ReflectionClass($this))->getShortName()));
+        $type = strtolower((new \ReflectionClass($this))->getShortName());
 
-	return "{$type}.{$event}"; 
+        //return "{$type}.{$event}";
+        return \App\Models\Type::where([
+            ['model', '=', \App\Models\Activity::class],
+            ['slug', '=', "{$type}-{$event}"],
+        ])->first();
     }
 
     public function activity()

@@ -25,8 +25,8 @@ class WebsitesController extends Controller
     public function index()
     {
         //
-	$websites = Website::all();
-	return view('websites.index', compact('websites'));
+        $websites = Website::all();
+        return view('websites.index', compact('websites'));
     }
 
     /**
@@ -37,7 +37,7 @@ class WebsitesController extends Controller
     public function create()
     {
         //
-	return view('websites.create');
+        return view('websites.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class WebsitesController extends Controller
     public function show(Website $website)
     {
         //
-	return view('websites.show', compact('website'));
+        return view('websites.show', compact('website'));
     }
 
     /**
@@ -72,7 +72,7 @@ class WebsitesController extends Controller
     public function edit(Website $website)
     {
         //
-	return view('websites.edit', compact('website'));
+        return view('websites.edit', compact('website'));
     }
 
     /**
@@ -96,5 +96,15 @@ class WebsitesController extends Controller
     public function destroy(Website $website)
     {
         //
+        $this->authorize('delete', $website);
+        
+        //
+        $website->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/websites');
     }
 }

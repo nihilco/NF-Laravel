@@ -8,9 +8,9 @@ trait FavoriteTrait
 {
     protected static function bootFavoriteTrait()
     {
-        static::deleting(function ($model) {
-	    $model->favorites->each->delete();
-	});
+        //static::deleting(function ($model) {
+        //    $model->favorites->each->delete();
+        //});
     }
 
     public function incrementFavoritesCount($i = 1)

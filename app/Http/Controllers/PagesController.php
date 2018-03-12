@@ -94,7 +94,7 @@ class PagesController extends Controller
     public function edit(Page $page)
     {
         //
-	return view('page.edit', compact('page'));
+        return view('page.edit', compact('page'));
     }
 
     /**
@@ -118,5 +118,15 @@ class PagesController extends Controller
     public function destroy(Page $page)
     {
         //
+        $this->authorize('delete', $page);
+        
+        //
+        $page->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/pages');
     }
 }

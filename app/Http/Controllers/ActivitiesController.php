@@ -96,5 +96,15 @@ class ActivitiesController extends Controller
     public function destroy(Activity $activity)
     {
         //
+        $this->authorize('delete', $activity);
+        
+        //
+        $activity->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/activities');        
     }
 }

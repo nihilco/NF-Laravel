@@ -15,12 +15,12 @@ class CreateProvincesTable extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('country_id');
-	    $table->string('abbr');
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('country_id');
+            $table->string('abbr');
     	    $table->string('name');
-	    $table->softDeletes();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

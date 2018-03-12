@@ -15,14 +15,14 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('first_name');
-   	    $table->string('middle_name')->nullable();
-	    $table->string('last_name');
-	    $table->text('description');
-	    $table->string('website')->nullable();
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('first_name');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name');
+            $table->text('description');
+            $table->string('website')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

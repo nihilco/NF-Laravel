@@ -26,8 +26,8 @@ class SessionsController extends Controller
     public function index()
     {
         //
-	$sessions = Session::all();
-	return view('sessions.index', compact(['sessions']));
+        $sessions = Session::all();
+        return view('sessions.index', compact(['sessions']));
     }
 
     /**
@@ -38,7 +38,7 @@ class SessionsController extends Controller
     public function create()
     {
         //
-	return view('sessions.create');
+        return view('sessions.create');
     }
 
     /**
@@ -50,11 +50,11 @@ class SessionsController extends Controller
     public function store(LoginRequest $request)
     {
         //
-	if(! auth()->attempt(request(['email', 'password'])) ) {
-	     return back();
-	}
-
-	return redirect()->route('dashboard');
+        if(! auth()->attempt(request(['email', 'password'])) ) {
+            return back();
+        }
+        
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -66,7 +66,7 @@ class SessionsController extends Controller
     public function show(Session $session)
     {
         //
-	return view('sessions.show');
+        return view('sessions.show');
     }
 
     /**
@@ -78,7 +78,7 @@ class SessionsController extends Controller
     public function edit(Session $session)
     {
         //
-	return view('sessions.edit', compact('session'));
+        return view('sessions.edit', compact('session'));
     }
 
     /**
@@ -102,9 +102,9 @@ class SessionsController extends Controller
     public function destroy(Session $session)
     {
         //
-	auth()->logout();
-
-	return redirect()->home();
+        auth()->logout();
+        
+        return redirect()->home();
     }
 
 }

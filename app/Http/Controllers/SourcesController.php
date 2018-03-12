@@ -25,8 +25,8 @@ class SourcesController extends Controller
     public function index()
     {
         //
-	$sources = Source::all();
-	return view('sources.index', compact('sources'));
+        $sources = Source::all();
+        return view('sources.index', compact('sources'));
     }
 
     /**
@@ -37,7 +37,7 @@ class SourcesController extends Controller
     public function create()
     {
         //
-	return view('sources.create');
+        return view('sources.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class SourcesController extends Controller
     public function show(Source $source)
     {
         //
-	return view('sources.show', compact('source'));
+        return view('sources.show', compact('source'));
     }
 
     /**
@@ -72,7 +72,7 @@ class SourcesController extends Controller
     public function edit(Source $source)
     {
         //
-	return view('sources.edit', compact('source'));
+        return view('sources.edit', compact('source'));
     }
 
     /**
@@ -96,5 +96,15 @@ class SourcesController extends Controller
     public function destroy(Source $source)
     {
         //
+        $this->authorize('delete', $source);
+        
+        //
+        $source->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/sources');
     }
 }

@@ -25,8 +25,8 @@ class StatusesController extends Controller
     public function index()
     {
         //
-	$statuses = Status::all();
-	return view('statuses.index', compact('statuses'));
+        $statuses = Status::all();
+        return view('statuses.index', compact('statuses'));
     }
 
     /**
@@ -37,7 +37,7 @@ class StatusesController extends Controller
     public function create()
     {
         //
-	return view('statuses.create');
+        return view('statuses.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class StatusesController extends Controller
     public function show(Status $status)
     {
         //
-	return view('statuses.show', compact('status'));
+        return view('statuses.show', compact('status'));
     }
 
     /**
@@ -72,7 +72,7 @@ class StatusesController extends Controller
     public function edit(Status $status)
     {
         //
-	return view('statuses.edit', compact('status'));
+        return view('statuses.edit', compact('status'));
     }
 
     /**
@@ -96,5 +96,15 @@ class StatusesController extends Controller
     public function destroy(Status $status)
     {
         //
+        $this->authorize('delete', $status);
+        
+        //
+        $status->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/statuses');
     }
 }

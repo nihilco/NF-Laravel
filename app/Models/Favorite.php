@@ -15,27 +15,20 @@ class Favorite extends Base
      */
     protected $fillable = [
         'creator_id',
-	'owner_id',
+        'owner_id',
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
 
     protected static function boot()
     {
         parent::boot();
 
-	static::created(function ($favorite) {
-	    $favorite->resource->incrementFavoritesCount();
-	});
+        //static::created(function ($favorite) {
+        //    $favorite->resource->incrementFavoritesCount();
+        //});
 
-	static::deleted(function ($favorite) {
-	    $favorite->resource->decrementFavoritesCount();
-	});
+        //static::deleted(function ($favorite) {
+        //    $favorite->resource->decrementFavoritesCount();
+        //});
     }
     
     //

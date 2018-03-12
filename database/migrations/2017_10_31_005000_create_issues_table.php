@@ -15,18 +15,18 @@ class CreateIssuesTable extends Migration
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
     	    $table->unsignedInteger('type_id');
        	    $table->unsignedInteger('status_id');
        	    $table->unsignedInteger('priority_id');
-	    $table->string('slug')->unique();
-	    $table->string('subject');
-	    $table->text('content');
-	    $table->unsignedInteger('assignee_id')->nullable();
-	    $table->datetime('assigned_at')->nullable();
+            $table->string('slug')->unique();
+            $table->string('subject');
+            $table->text('content');
+            $table->unsignedInteger('assignee_id')->nullable();
+            $table->datetime('assigned_at')->nullable();
        	    $table->unsignedInteger('resolution_id');	    
-	    $table->softDeletes();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -25,8 +25,8 @@ class OrdersController extends Controller
     public function index()
     {
         //
-	$orders = Order::latest()->get();
-	return view('orders.index', compact('orders'));
+        $orders = Order::latest()->get();
+        return view('orders.index', compact('orders'));
     }
 
     /**
@@ -37,7 +37,7 @@ class OrdersController extends Controller
     public function create()
     {
         //
-	return view('orders.create');
+        return view('orders.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class OrdersController extends Controller
     public function show(Order $order)
     {
         //
-	return view('orders.show', compact('order'));
+        return view('orders.show', compact('order'));
     }
 
     /**
@@ -72,7 +72,7 @@ class OrdersController extends Controller
     public function edit(Order $order)
     {
         //
-	return view('orders.edit', compact('order'));
+        return view('orders.edit', compact('order'));
     }
 
     /**
@@ -96,5 +96,15 @@ class OrdersController extends Controller
     public function destroy(Order $order)
     {
         //
+        $this->authorize('delete', $order);
+        
+        //
+        $order->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/orders');
     }
 }

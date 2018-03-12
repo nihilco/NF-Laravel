@@ -25,8 +25,8 @@ class ChannelsController extends Controller
     public function index()
     {
         //
-	$channels = Channel::all();
-	return view('channels.index', compact('channels'));
+        $channels = Channel::all();
+        return view('channels.index', compact('channels'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ChannelsController extends Controller
     public function create()
     {
         //
-	return view('channels.create');
+        return view('channels.create');
     }
 
     /**
@@ -49,25 +49,25 @@ class ChannelsController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	    'title' => 'required',
-	    'slug' => 'required',
-	    'description' => 'required',
-	]);
-
-	$channel = new Channel();
-
-	$channel->creator_id = auth()->id();
-	$channel->owner_id = auth()->id();
-	$channel->title = request('title');
-	$channel->slug = request('slug');
-	$channel->description = request('description');
-
-	$channel->save();
-
-	return redirect($channel->path());
+        $this->validate(request(), [
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+        ]);
+        
+        $channel = new Channel();
+        
+        $channel->creator_id = auth()->id();
+        $channel->owner_id = auth()->id();
+        $channel->title = request('title');
+        $channel->slug = request('slug');
+        $channel->description = request('description');
+        
+        $channel->save();
+        
+        return redirect($channel->path());
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -77,7 +77,7 @@ class ChannelsController extends Controller
     public function show(Channel $channel)
     {
         //
-	return view('channels.show', compact('channel'));
+        return view('channels.show', compact('channel'));
     }
 
     /**
@@ -112,5 +112,15 @@ class ChannelsController extends Controller
     public function destroy(Channel $channel)
     {
         //
+        $this->authorize('delete', $channel);
+        
+        //
+        $channel->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/channels');
     }
 }

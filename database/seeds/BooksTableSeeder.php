@@ -11,397 +11,397 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-	$authors = \App\Models\Author::all();
-	$series = \App\Models\Series::all();
-
+        $authors = \App\Models\Author::all();
+        $series = \App\Models\Series::all();
+        
         $b1 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title_display' => 'Beyond the Ice Limit',
-	    'title_alphabetic' => 'Beyond the Ice Limit',
-	    'slug' => 'beyond-the-ice-limit',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title_display' => 'Beyond the Ice Limit',
+            'title_alphabetic' => 'Beyond the Ice Limit',
+            'slug' => 'beyond-the-ice-limit',
+        ]);
+        
         $b1->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b1->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+        $b1->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b2 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title_display' => 'The Obsidian Chamber',
-	    'title_alphabetic' => 'Obsidian Chamber, The',
-	    'slug' => 'the-obsidian-chamber',
-	]);
-
-	$b2->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b2->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title_display' => 'The Obsidian Chamber',
+            'title_alphabetic' => 'Obsidian Chamber, The',
+            'slug' => 'the-obsidian-chamber',
+        ]);
+        
+        $b2->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b2->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b5 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title_display' => 'Arcanum Unbound',
-	    'title_alphabetic' => 'Arcanum Unbound',
-	    'slug' => 'arcanum-unbound',
-	]);
-	
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title_display' => 'Arcanum Unbound',
+            'title_alphabetic' => 'Arcanum Unbound',
+            'slug' => 'arcanum-unbound',
+        ]);
+        
         $b5->addAuthor($authors->where('last_name', 'Sanderson')->first()->id);
-
+        
         $b7 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title_display' => 'Reliquary',
-	    'title_alphabetic' => 'Relinquary',
-	    'slug' => 'relinquary',
-	]);
-
-	$b7->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b7->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title_display' => 'Reliquary',
+            'title_alphabetic' => 'Relinquary',
+            'slug' => 'relinquary',
+        ]);
+        
+        $b7->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b7->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b9 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Sutton',
-	    'title_alphabetic' => 'Sutton',
-	    'slug' => 'sutton',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Sutton',
+            'title_alphabetic' => 'Sutton',
+            'slug' => 'sutton',
+        ]);
+        
         $b9->addAuthor($authors->where('last_name', 'Moehringer')->first()->id);
-
+        
         $b10 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'White Fire',
-	    'title_alphabetic' => 'White Fire',
-	    'slug' => 'white-fire',
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'White Fire',
+            'title_alphabetic' => 'White Fire',
+            'slug' => 'white-fire',
         ]);
-
-	$b10->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b10->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+        
+        $b10->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b10->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b11 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Blue Labyrinth',
-	    'title_alphabetic' => 'Blue Labyrinth',
-	    'slug' => 'blue-labyrinth',
+            'title_alphabetic' => 'Blue Labyrinth',
+            'slug' => 'blue-labyrinth',
         ]);
-
-	$b11->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b11->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+        
+        $b11->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b11->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b12 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Two Graves',
-	    'title_alphabetic' => 'Two Graves',
-	    'slug' => 'two-graves',
-	]);
-
-	$b12->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b12->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+            'title_alphabetic' => 'Two Graves',
+            'slug' => 'two-graves',
+        ]);
+        
+        $b12->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b12->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b13 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Cross the Line',
-	    'title_alphabetic' => 'Cross the Line',
-	    'slug' => 'cross-the-line',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Cross the Line',
+            'title_alphabetic' => 'Cross the Line',
+            'slug' => 'cross-the-line',
+        ]);
+        
         $b13->addAuthor($authors->where('last_name', 'Patterson')->first()->id);
-
+        
         $b14 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'No Man\'s Land',
-	    'title_alphabetic' => 'No Man\'s Land',
-	    'slug' => 'no-mans-land',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'No Man\'s Land',
+            'title_alphabetic' => 'No Man\'s Land',
+            'slug' => 'no-mans-land',
+        ]);
+        
         $b14->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
-
+        
         $b15 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Guilty',
-	    'title_alphabetic' => 'Guilty, The',
-	    'slug' => 'the-guilty',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Guilty',
+            'title_alphabetic' => 'Guilty, The',
+            'slug' => 'the-guilty',
+        ]);
+        
         $b15->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
-
+        
         $b17 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Escape',
-	    'title_alphabetic' => 'Escape, The',
-	    'slug' => 'the-escape',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Escape',
+            'title_alphabetic' => 'Escape, The',
+            'slug' => 'the-escape',
+        ]);
+        
         $b17->addAuthor($authors->where('last_name', 'Baldacci')->first()->id);
-
+        
         $b18 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Rogue Lawyer',
-	    'title_alphabetic' => 'Rogue Lawyer',
-	    'slug' => 'rogue-lawyer',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Rogue Lawyer',
+            'title_alphabetic' => 'Rogue Lawyer',
+            'slug' => 'rogue-lawyer',
+        ]);
+        
         $b18->addAuthor($authors->where('last_name', 'Grisham')->first()->id);
-
+        
         $b19 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Go Set a Watchman',
-	    'title_alphabetic' => 'Go Set a Watchman',
-	    'slug' => 'go-set-a-watchman',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Go Set a Watchman',
+            'title_alphabetic' => 'Go Set a Watchman',
+            'slug' => 'go-set-a-watchman',
+        ]);
+        
         $b19->addAuthor($authors->where('last_name', 'Lee')->first()->id);
 
         $b20 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Hatching Twitter',
-	    'title_alphabetic' => 'Hatching Twitter',
-	    'slug' => 'hatching-twitter',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Hatching Twitter',
+            'title_alphabetic' => 'Hatching Twitter',
+            'slug' => 'hatching-twitter',
+        ]);
+        
         $b20->addAuthor($authors->where('last_name', 'Bilton')->first()->id);
-
+        
         $b21 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Guns, Germs, and Steel',
-	    'title_alphabetic' => 'Guns, Germs, and Steel',
-	    'slug' => 'guns-germs-and-steel',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Guns, Germs, and Steel',
+            'title_alphabetic' => 'Guns, Germs, and Steel',
+            'slug' => 'guns-germs-and-steel',
+        ]);
+        
         $b21->addAuthor($authors->where('last_name', 'Diamond')->first()->id);
-
+        
         $b23 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'London Bridges',
-	    'title_alphabetic' => 'London Bridges',
-	    'slug' => 'london-bridges',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'London Bridges',
+            'title_alphabetic' => 'London Bridges',
+            'slug' => 'london-bridges',
+        ]);
+        
         $b23->addAuthor($authors->where('last_name', 'Patterson')->first()->id);
-
+        
         $b25 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Armada',
-	    'title_alphabetic' => 'Armada',
-	    'slug' => 'armada',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Armada',
+            'title_alphabetic' => 'Armada',
+            'slug' => 'armada',
+        ]);
+        
         $b25->addAuthor($authors->where('last_name', 'Cline')->first()->id);
-
+        
         $b27 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Maze Runner',
-	    'title_alphabetic' => 'Maze Runner, The',
-	    'slug' => 'the-maze-runner',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Maze Runner',
+            'title_alphabetic' => 'Maze Runner, The',
+            'slug' => 'the-maze-runner',
+        ]);
+        
         $b27->addAuthor($authors->where('last_name', 'Dashner')->first()->id);
-
+        
         $b28 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Eye of Mnids',
-	    'title_alphabetic' => 'Eye of Minds, The',
-	    'slug' => 'the-eye-of-minds',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Eye of Mnids',
+            'title_alphabetic' => 'Eye of Minds, The',
+            'slug' => 'the-eye-of-minds',
+        ]);
+        
         $b28->addAuthor($authors->where('last_name', 'Dashner')->first()->id);
 
         $b29 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Human Division',
-	    'title_alphabetic' => 'Human Division, The',
-	    'slug' => 'the-human-division',
-	]);
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Human Division',
+            'title_alphabetic' => 'Human Division, The',
+            'slug' => 'the-human-division',
+        ]);
 
         $b29->addAuthor($authors->where('last_name', 'Scalzi')->first()->id);
 
         $b30 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'A Gentleman in Moscow',
-	    'title_alphabetic' => 'Gentleman in Moscow, A',
-	    'slug' => 'a-gentleman-in-moscow',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'A Gentleman in Moscow',
+            'title_alphabetic' => 'Gentleman in Moscow, A',
+            'slug' => 'a-gentleman-in-moscow',
+        ]);
+        
         $b30->addAuthor($authors->where('last_name', 'Towels')->first()->id);
-
+        
         $b31 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Lost Island',
-	    'title_alphabetic' => 'Lost Island, The',
-	    'slug' => 'the-lost-island',
-	]);
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Lost Island',
+            'title_alphabetic' => 'Lost Island, The',
+            'slug' => 'the-lost-island',
+        ]);
 
-	$b31->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-	$b31->addAuthor($authors->where('last_name', 'Child')->first()->id);
-
+        $b31->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b31->addAuthor($authors->where('last_name', 'Child')->first()->id);
+        
         $b32 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Kraken Poject',
-	    'title_alphabetic' => 'Kraken Project, The',
-	    'slug' => 'the-kraken-project',
-	]);
-
-	$b32->addAuthor($authors->where('last_name', 'Preston')->first()->id);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Kraken Poject',
+            'title_alphabetic' => 'Kraken Project, The',
+            'slug' => 'the-kraken-project',
+        ]);
+        
+        $b32->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        
         $b33 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Finders Keepers',
-	    'title_alphabetic' => 'Finders Keepers',
-	    'slug' => 'finders-keepers',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Finders Keepers',
+            'title_alphabetic' => 'Finders Keepers',
+            'slug' => 'finders-keepers',
+        ]);
+        
         $b33->addAuthor($authors->where('last_name', 'King')->first()->id);
-
+        
         $b35 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'A Thousand Spendid Suns',
-	    'title_alphabetic' => 'Thousand Splendid Suns, A',
-	    'slug' => 'a-thousand-splendid-suns',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'A Thousand Spendid Suns',
+            'title_alphabetic' => 'Thousand Splendid Suns, A',
+            'slug' => 'a-thousand-splendid-suns',
+        ]);
+        
         $b35->addAuthor($authors->where('last_name', 'Hosseini')->first()->id);
-
+        
         $b36 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Half the World',
-	    'title_alphabetic' => 'Half the World',
-	    'slug' => 'half-the-world',
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Half the World',
+            'title_alphabetic' => 'Half the World',
+            'slug' => 'half-the-world',
+        ]);
+        
         $b36->addAuthor($authors->where('last_name', 'Abercrombie')->first()->id);
-
+        
         // Sword of Truth Series
-	$b37 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Wizard\'s First Rule',
-	    'title_alphabetic' => 'Wizard\'s First Rule',
-	    'slug' => 'wizards-first-rule',
-	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
-	    'series_order' => 1,
-	]);
-
+        $b37 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Wizard\'s First Rule',
+            'title_alphabetic' => 'Wizard\'s First Rule',
+            'slug' => 'wizards-first-rule',
+            'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
+            'series_order' => 1,
+        ]);
+        
         $b37->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b38 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Stone of Tears',
-	    'title_alphabetic' => 'Stone of Tears',
-	    'slug' => 'stone-of-tears',
-	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
-	    'series_order' => 2,
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Stone of Tears',
+            'title_alphabetic' => 'Stone of Tears',
+            'slug' => 'stone-of-tears',
+            'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
+            'series_order' => 2,
+        ]);
+        
         $b38->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         $b39 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Blood of the Fold',
-	    'title_alphabetic' => 'Blood of the Fold',
-	    'slug' => 'blood-of-the-fold',
-	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
-	    'series_order' => 3,
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Blood of the Fold',
+            'title_alphabetic' => 'Blood of the Fold',
+            'slug' => 'blood-of-the-fold',
+            'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
+            'series_order' => 3,
+        ]);
+        
         $b39->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
-
+        
         $b40 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Temple of the Winds',
-	    'title_alphabetic' => 'Temple of the Winds',
-	    'slug' => 'temple-of-the-winds',
-	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
-	    'series_order' => 4,
-	]);
-
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Temple of the Winds',
+            'title_alphabetic' => 'Temple of the Winds',
+            'slug' => 'temple-of-the-winds',
+            'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
+            'series_order' => 4,
+        ]);
+        
         $b40->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
-
+        
         $b41 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'Soul of the Fire',
-	    'title_alphabetic' => 'Soul of the Fire',
-	    'slug' => 'soul-of-the-fires',
-	    'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
-	    'series_order' => 5,
-	]);
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Soul of the Fire',
+            'title_alphabetic' => 'Soul of the Fire',
+            'slug' => 'soul-of-the-fires',
+            'series_id' => $series->where('name', 'The Sword of Truth')->first()->id,
+            'series_order' => 5,
+        ]);
 
         $b41->addAuthor($authors->where('last_name', 'Goodkind')->first()->id);
 
         // The Demon Cycle
-	$b42 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
-	    'title_display' => 'The Warded Man',
-	    'title_alphabetic' => 'Warded Man, The',
-	    'slug' => 'the-warded-man',
-	    'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
-	    'series_order' => 1,
-	    'description' => '<p><strong>As darkness falls after sunset, the corelings riseâ€”demons who possess supernatural powers and burn with a consuming hatred of humanity.</strong></p>
+        $b42 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Warded Man',
+            'title_alphabetic' => 'Warded Man, The',
+            'slug' => 'the-warded-man',
+            'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
+            'series_order' => 1,
+            'description' => '<p>As darkness falls after sunset, the corelings rise - demons who possess supernatural powers and burn with a consuming hatred of humanity.</p>
 
-<p>For hundreds of years the demons have terrorized the night, slowly culling the human herd that shelters behind magical wardsâ€”symbols of power whose origins are lost in myth and whose protection is terrifyingly fragile. It was not always this way. Once, men and women battled the corelings on equal terms, but those days are gone. Night by night the demons grow stronger, while human numbers dwindle under their relentless assault. Now, with hope for the future fading, three young survivors of vicious demon attacks will dare the impossible, stepping beyond the crumbling safety of the wards to risk everything in a desperate quest to regain the secrets of the past. Together, they will stand against the night.</p>',
+<p>For hundreds of years the demons have terrorized the night, slowly culling the human herd that shelters behind magical wards - symbols of power whose origins are lost in myth and whose protection is terrifyingly fragile. It was not always this way. Once, men and women battled the corelings on equal terms, but those days are gone. Night by night the demons grow stronger, while human numbers dwindle under their relentless assault. Now, with hope for the future fading, three young survivors of vicious demon attacks will dare the impossible, stepping beyond the crumbling safety of the wards to risk everything in a desperate quest to regain the secrets of the past. Together, they will stand against the night.</p>',
         ]);
 
         $b42->addAuthor($authors->where('last_name', 'Brett')->first()->id);
-
+        
         $b43 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The Great Bazaar',
-	    'title_alphabetic' => 'Great Bazaar, The',
-	    'slug' => 'the-great-bazaar',
+            'title_alphabetic' => 'Great Bazaar, The',
+            'slug' => 'the-great-bazaar',
             'description' => '<p>Humanity has been brought to the brink of extinction. Each night the world is overrun by demons - bloodthirsty creatures of nightmare that have been hunting and killing humanity for over 300 years. A scant few hamlets and half-starved city-states are all that remain of a once-proud civilization, and it is only by hiding behind wards, ancient symbols with the power to repel the demons, that anyone has been able to survive.</p.
 
 <p>A handful of Messengers brave the night to keep the lines of communication open among the increasingly isolated populace. But there was a time when the demons were not so bold. A time when wards did more than hold the demons at bay: They allowed man to fight back, and to win.</p>
 
 <p>Messenger Arlen Bales will search anywhere, dare anything, to return this magic to the world. Abban, a merchant in the Great Bazaar of Krasia, purports to sell everything a man\'s heart could desire, including, perhaps, the key to Arlen\'s quest.</p>',
         ]);
-
+        
         $b43->addAuthor($authors->where('last_name', 'Brett')->first()->id);
-
+        
         $b44 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The Desert Spear',
-	    'title_alphabetic' => 'Desert Spear, The',
-	    'slug' => 'the-desert-spear',
+            'title_alphabetic' => 'Desert Spear, The',
+            'slug' => 'the-desert-spear',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 2,
             'description' => '<p>The sun is setting on humanity. The night now belongs to voracious demons that prey upon a dwindling population forced to cower behind half-forgotten symbols of power. Legends tell of a Deliverer: a general who once bound all mankind into a single force that defeated the demons. But is the return of the Deliverer just another myth? Perhaps not. Out of the desert rides Ahmann Jardir, who has forged the desert tribes into a demon-killing army. He has proclaimed himself Sharâ€™Dama Ka, the Deliverer, and he carries ancient weaponsâ€”a spear and a crownâ€”that give credence to his claim. But the Northerners claim their own Deliverer: the Warded Man, a dark, forbidding figure. Once, the Sharâ€™Dama Ka and the Warded Man were friends. Now they are fierce adversaries. Yet as old allegiances are tested and fresh alliances forged, all are unaware of the appearance of a new breed of demon, more intelligentâ€”and deadlyâ€”than any that have come before.</p>',
         ]);
-
+        
         $b44->addAuthor($authors->where('last_name', 'Brett')->first()->id);
-
+        
         $b45 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Brayan\'s Gold',
-	    'title_alphabetic' => 'Brayan\'s Gold',
-	    'slug' => 'brayans-gold',
+            'title_alphabetic' => 'Brayan\'s Gold',
+            'slug' => 'brayans-gold',
             'description' => '<p>Return to the world of The Warded Man and The Desert Spear in an illustrated new novella by Peter V. Brett.</p>
 
 <p>Humanity has been brought to the brink of extinction. Each night, the world is overrun by demons bloodthirsty creatures of nightmare that have been hunting the surface for over 300 years. A scant few hamlets and half-starved city-states are all that remain of a once proud civilization, and it is only by hiding behind wards, ancient symbols with the power to repel the demons, that they survive. A handful of Messengers brave the night to keep the lines of communication open between the increasingly isolated populace.</p>
@@ -414,11 +414,11 @@ class BooksTableSeeder extends Seeder
         $b45->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b46 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Daylight War',
-	    'title_alphabetic' => 'Daylight War',
-	    'slug' => 'daylight-war',
+            'title_alphabetic' => 'Daylight War',
+            'slug' => 'daylight-war',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 3,
             'description' => '<p>With The Warded Man and The Desert Spear, Peter V. Brett surged to the front rank of contemporary fantasy, standing alongside giants in the field such as George R. R. Martin, Robert Jordan, and Terry Brooks. The Daylight War, the eagerly anticipated third volume in Brettâ€™s internationally bestselling Demon Cycle, continues the epic tale of humanityâ€™s last stand against an army of demons that rise each night to prey on mankind.</p>
@@ -435,15 +435,15 @@ class BooksTableSeeder extends Seeder
 
 <p>Once Arlen and Jardir were as close as brothers. Now they are the bitterest of rivals. As humanityâ€™s enemies rise, the only two men capable of defeating them are divided against each other by the most deadly demons of allâ€”those lurking in the human heart.</p>',
         ]);
-
+        
         $b46->addAuthor($authors->where('last_name', 'Brett')->first()->id);
-
+        
         $b47 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Messenger\'s Legacy',
-	    'title_alphabetic' => 'Messenger\'s Legacy',
-	    'slug' => 'messengers-legacy',
+            'title_alphabetic' => 'Messenger\'s Legacy',
+            'slug' => 'messengers-legacy',
             'description' => '<p>Humanity has been brought to the brink of extinction. Each night, the world is overrun by demons--bloodthirsty creatures of nightmare that have been hunting the surface for over 300 years. A scant few hamlets and half-starved city-states are all that remain of a once proud civilization, and it is only by hiding behind wards, ancient symbols with the power to repel the demons, that they survive. A handful of Messengers brave the night to keep the lines of communication open between the increasingly isolated populace.</p>
 
 <p>Briar Damaj is a boy of six in the small village of Bogton. Half-Krasian, the village children call him Mudboy for his dark skin. When tragedy strikes, Briar decides the town is better off without him, fleeing into the bog with nothing but his wits and a bit of herb lore to protect him.</p>
@@ -454,11 +454,11 @@ class BooksTableSeeder extends Seeder
         $b47->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b48 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The Skull Throne',
-	    'title_alphabetic' => 'Skull Throne, The',
-	    'slug' => 'the-skull-throne',
+            'title_alphabetic' => 'Skull Throne, The',
+            'slug' => 'the-skull-throne',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 4,
             'description' => '<p>The first three novels in Peter V. Brettâ€™s groundbreaking Demon Cycle seriesâ€”The Warded Man, The Desert Spear, and The Daylight Warâ€”set a new standard for heroic fantasy. The powerful saga of humans winnowed to the brink of extinction by night-stalking demons, and the survivors who fight back, has kept readers breathless as they eagerly turned the pages. Now the thrilling fourth volume, The Skull Throne, raises the stakes as it carries the action in shocking new directions.</p>
@@ -481,11 +481,11 @@ class BooksTableSeeder extends Seeder
         $b48->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b49 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The Core',
-	    'title_alphabetic' => 'Core, The',
-	    'slug' => 'the-core',
+            'title_alphabetic' => 'Core, The',
+            'slug' => 'the-core',
             'series_id' => $series->where('name', 'The Demon Cycle')->first()->id,
             'series_order' => 5,
             'description' => 'New York Times bestselling author Peter V. Brett brings one of the most imaginative fantasy sagas of the twenty-first century to an epic close.
@@ -500,46 +500,46 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b49->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         $b50 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Barren',
-	    'title_alphabetic' => 'Barren',
-	    'slug' => 'barren',
+            'title_alphabetic' => 'Barren',
+            'slug' => 'barren',
         ]);
 
         $b50->addAuthor($authors->where('last_name', 'Brett')->first()->id);
 
         // The Old Kingdom
         $b51 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Clariel',
-	    'title_alphabetic' => 'Clariel',
-	    'slug' => 'clariel',
+            'title_alphabetic' => 'Clariel',
+            'slug' => 'clariel',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 1,
         ]);
-
+        
         $b51->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b52 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Sabriel',
-	    'title_alphabetic' => 'Sabriel',
-	    'slug' => 'sabriel',
+            'title_alphabetic' => 'Sabriel',
+            'slug' => 'sabriel',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 2,
         ]);
 
         $b52->addAuthor($authors->where('last_name', 'Nix')->first()->id);
-
+        
         $b53 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Lirael',
-	    'title_alphabetic' => 'Lirael',
-	    'slug' => 'lirael',
+            'title_alphabetic' => 'Lirael',
+            'slug' => 'lirael',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 3,
         ]);
@@ -547,11 +547,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b53->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b54 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Abhorsen',
-	    'title_alphabetic' => 'Abhorsen',
-	    'slug' => 'abhorsen',
+            'title_alphabetic' => 'Abhorsen',
+            'slug' => 'abhorsen',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 4,
         ]);
@@ -559,11 +559,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b54->addAuthor($authors->where('last_name', 'Nix')->first()->id);
 
         $b55 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'To Hold the Bridge',
-	    'title_alphabetic' => 'To Hold the Bridge',
-	    'slug' => 'to-hold-the-bridge',
+            'title_alphabetic' => 'To Hold the Bridge',
+            'slug' => 'to-hold-the-bridge',
             'series_id' => $series->where('name', 'The Old Kingdom')->first()->id,
             'series_order' => 5,
         ]);
@@ -572,11 +572,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
 
         // The Desden Files
         $b56 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Storm Front',
-	    'title_alphabetic' => 'Storm Front',
-	    'slug' => 'storm-front',
+            'title_alphabetic' => 'Storm Front',
+            'slug' => 'storm-front',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 1,
             'description' => 'For Harry Dresdenâ€”Chicago\'s only professional wizardâ€”business, to put it mildly, stinks. So when the police bring him in to consult on a grisly double murder committed with black magic, Harry\'s seeing dollar signs. But where there\'s black magic, there\'s a black mage behind it. And now that mage knows Harry\'s name...',
@@ -585,11 +585,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b56->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b57 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Fool Moon',
-	    'title_alphabetic' => 'Fool Moon',
-	    'slug' => 'fool-moon',
+            'title_alphabetic' => 'Fool Moon',
+            'slug' => 'fool-moon',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 2,
             'description' => 'Meet Harry Dresden, Chicago\'s first (and only) Wizard P.I. Turns out the \'everyday\' world is full of strange and magical things - and most of them don\'t play well with humans. That\'s where Harry comes in.Business has been slow lately for Harry Dresden. Okay, business has been dead. Not undead - just dead. You would think Chicago would have a little more action for the only professional wizard in the phone book. But lately, Harry hasn\'t been able to dredge up any kind of work - magical or mundane. But just when it looks like he can\'t afford his next meal, a murder comes along that requires his particular brand of supernatural expertise. A brutally mutilated corpse. Strange-looking paw prints. A full moon. Take three guesses. And the first two don\'t count . . . Magic - it can get a guy killed.',
@@ -598,11 +598,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b57->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b58 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Grave Peril',
-	    'title_alphabetic' => 'Grave Peril',
-	    'slug' => 'grave-peril',
+            'title_alphabetic' => 'Grave Peril',
+            'slug' => 'grave-peril',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 3,
             'description' => 'In all his years of supernatural sleuthing, Harry Dresden has never faced anything like this: the spirit world\'s gone postal. These ghosts are tormented, violent, and deadly. Someone-or something-is purposely stirring them up to wreak unearthly havoc. But why? If Harry doesn\'t figure it out soon, he could wind up a ghost himself.',
@@ -611,11 +611,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b58->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b59 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Summer Knight',
-	    'title_alphabetic' => 'Summer Knight',
-	    'slug' => 'summer-knight',
+            'title_alphabetic' => 'Summer Knight',
+            'slug' => 'summer-knight',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 4,
             'description' => 'Private detective/wizard-for-hire Harry Dresden is suckered into tangling in the affairs of Faerie, where the fate of the entire world-and his soul-are at stake.',
@@ -624,11 +624,11 @@ Trusting their closest confidantes, Leesha, Inevera, Ragen, and Elissa, to rally
         $b59->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b60 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Death Masks',
-	    'title_alphabetic' => 'Death Masks',
-	    'slug' => 'death-masks',
+            'title_alphabetic' => 'Death Masks',
+            'slug' => 'death-masks',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 5,
             'description' => 'Harry Dresden, Chicago?s only practicing professional wizard, should be happy that business is pretty good for a change. But he also knows that whenever things are going good, the only way left for them to go is bad. Way bad.
@@ -643,11 +643,11 @@ Some days, it just doesn?t pay to get out of bed. No matter how much you?re char
         $b60->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b61 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Blood Rites',
-	    'title_alphabetic' => 'Blood Rites',
-	    'slug' => 'blood-rites',
+            'title_alphabetic' => 'Blood Rites',
+            'slug' => 'blood-rites',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 6,
             'description' => 'For Harry Dresden, there have been worse assignments than going undercover on the set of an adult film. Still, there\'s something more troubling than usual about his newest case. The film\'s producer believes he\'s the target of a sinister curse-but it\'s the women around him who are dying.
@@ -658,11 +658,11 @@ Harry\'s even more frustrated because he only got involved with this bizarre mys
         $b61->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b62 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Dead Beat',
-	    'title_alphabetic' => 'Dead Beat',
-	    'slug' => 'dead-beat',
+            'title_alphabetic' => 'Dead Beat',
+            'slug' => 'dead-beat',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 7,
             'description' => 'Jim Butcher\'s Dresden Files novels have been compared to Harry Potter with an adult tone and attitude. Now, in his first hardcover adventure, Harry Dresden must save Chicago from black magic and necromancy-all in a day\'s work for the city\'s only professional wizard.',
@@ -671,11 +671,11 @@ Harry\'s even more frustrated because he only got involved with this bizarre mys
         $b62->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b63 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Proven Guilty',
-	    'title_alphabetic' => 'Proven Guilty',
-	    'slug' => 'proven-guilty',
+            'title_alphabetic' => 'Proven Guilty',
+            'slug' => 'proven-guilty',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 8,
             'description' => 'Elevated "into the front rank of urban fantasy heroes" (SF Site), professional wizard Harry Dresden is pledged to fight crime, banish evil, and outwit the masters of dark arts in the shadowy corners of Chicago.
@@ -686,11 +686,11 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b63->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b64 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'White Night',
-	    'title_alphabetic' => 'White Night',
-	    'slug' => 'white-night',
+            'title_alphabetic' => 'White Night',
+            'slug' => 'white-night',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 9,
             'description' => 'Professional wizard Harry Dresden is investigating a series of deaths in Chicago. Someone is killing practitioners of magic, those incapable of becoming full-fledged wizards. Shockingly, all the evidence points to Harry\'s half-brother, Thomas, as the murderer. Determined to clear his sibling\'s name, Harry uncovers a conspiracy within the White Council of Wizards that threatens not only him, but his nearest and dearest, too...',
@@ -699,11 +699,11 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b64->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b65 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Small Favor',
-	    'title_alphabetic' => 'Small Favor',
-	    'slug' => 'small-favor',
+            'title_alphabetic' => 'Small Favor',
+            'slug' => 'small-favor',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 10,
             'description' => 'Harry Dresden?s life finally seems to be calming down?until a shadow from the past returns. Mab, monarch of the Sidhe Winter Court, calls in an old favor from Harry?one small favor that will trap him between a nightmarish foe and an equally deadly ally, and that will strain his skills?and loyalties?to their very limits.',
@@ -712,11 +712,11 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b65->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b66 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Turn Coat',
-	    'title_alphabetic' => 'Turn Coat',
-	    'slug' => 'turn-coat',
+            'title_alphabetic' => 'Turn Coat',
+            'slug' => 'turn-coat',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 11,
             'description' => 'The Warden Morgan has been accused of treason against the Wizards of the White Council-and there\'s only one final punishment for that crime. He\'s on the run, he wants his name cleared, and he needs someone with a knack for backing the underdog. Like Harry Dresden. Now, Harry must uncover a traitor within the Council, keep a less-than-agreeable Morgan under wraps, and avoid coming under scrutiny himself. And a single mistake could cost Harry his head...',
@@ -725,11 +725,11 @@ Harry, the only wizard in the Chicago phone book, is drafted to look into rumors
         $b66->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b67 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Changes',
-	    'title_alphabetic' => 'Changes',
-	    'slug' => 'changes',
+            'title_alphabetic' => 'Changes',
+            'slug' => 'changes',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 12,
             'description' => 'Long ago, Susan Rodriguez was Harry Dresden\'s lover-until she was attacked by his enemies, leaving her torn between her own humanity and the bloodlust of the vampiric Red Court. Susan then disappeared to South America, where she could fight both her savage gift and those who cursed her with it.
@@ -742,11 +742,11 @@ He\'s fighting to save his child.',
         $b67->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b68 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Ghost Story',
-	    'title_alphabetic' => 'Ghost Story',
-	    'slug' => 'ghost-story',
+            'title_alphabetic' => 'Ghost Story',
+            'slug' => 'ghost-story',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 13,
             'description' => 'When we last left the mighty wizard detective Harry Dresden, he wasn\'t doing well. In fact, he had been murdered by an unknown assassin.
@@ -761,11 +761,11 @@ The eagerly awaited new novel in the #1 New York Times bestselling Dresden Files
         $b68->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b69 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Side Jobs',
-	    'title_alphabetic' => 'Side Jobs',
-	    'slug' => 'side-jobs',
+            'title_alphabetic' => 'Side Jobs',
+            'slug' => 'side-jobs',
             'series_id' => $series->where('name', 'Dresden Files')->first()->id,
             'series_order' => 99,
             'description' => 'The first short story collection in the #1 New York Times bestselling series-including a brand-new Harry Dresden novella!
@@ -777,11 +777,11 @@ Here, together for the first time, are the shorter works of #1 New York Times be
 
         // The Codex Alera
         $b70 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Furies of Calderon',
-	    'title_alphabetic' => 'Furies of Calderon',
-	    'slug' => 'furies-of-calderon',
+            'title_alphabetic' => 'Furies of Calderon',
+            'slug' => 'furies-of-calderon',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 1,
             'description' => 'In the realm of Alera, where people bond with the furies-elementals of earth, air, fire, water, and metal-fifteen-year-old Tavi struggles with his lack of furycrafting. But when his homeland erupts in chaos-when rebels war with loyalists and furies clash with furies-Tavi\'s simple courage will turn the tides of war.',
@@ -790,11 +790,11 @@ Here, together for the first time, are the shorter works of #1 New York Times be
         $b70->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b71 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Academ\'s Fury',
-	    'title_alphabetic' => 'Academ\'s Fury',
-	    'slug' => 'academs-fury',
+            'title_alphabetic' => 'Academ\'s Fury',
+            'slug' => 'academs-fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 2,
             'description' => 'For one thousand years, the people of Alera have united against the aggressive and threatening races that inhabit the world, using their unique bond with the Furies--elementals of Earth, Air, Fire, Water, and Metal. But now, the unity of the Alerians hangs in precarious balance. The First Lord of Alera has fallen in his efforts to protect his people from the vicious attacks of their enemies. Now, the fate of the Alerians lies in the hands of Tavi, a young man who must use all of his courage and resourcefulness to save his people--and himself.',
@@ -803,11 +803,11 @@ Here, together for the first time, are the shorter works of #1 New York Times be
         $b71->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b72 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Cursor\'s Fury',
-	    'title_alphabetic' => 'Cursor\'s Fury',
-	    'slug' => 'cursors-fury',
+            'title_alphabetic' => 'Cursor\'s Fury',
+            'slug' => 'cursors-fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 3,
             'description' => 'The power-hungry High Lord of Kalare has launched a rebellion against the aging First Lord, Gaius Sextus, who with the loyal forces of Alera must fight beside the unlikeliest of allies-the equally contentious High Lord of Aquitaine.
@@ -818,11 +818,11 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b72->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b73 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Captain\'s Fury',
-	    'title_alphabetic' => 'Captain\'s Fury',
-	    'slug' => 'captains-fury',
+            'title_alphabetic' => 'Captain\'s Fury',
+            'slug' => 'captains-fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 4,
             'description' => 'After two years of bitter conflict with the hordes of invading Canim, Tavi of Calderon, now Captain of the First Aleran Legion, realizes that a peril far greater than the Canim exists-the terrifying Vord, who drove the savage Canim from their homeland. Now, Tavi must find a way to overcome the centuries-old animosities between Aleran and Cane if an alliance is to be forged against their mutual enemy. And he must lead his legion in defiance of the law, against friend and foe-before the hammerstroke of the Vord descends on them all.',
@@ -831,11 +831,11 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b73->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b74 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'Princeps\' Fury',
-	    'title_alphabetic' => 'Princeps\' Fury',
-	    'slug' => 'princeps-fury',
+            'title_alphabetic' => 'Princeps\' Fury',
+            'slug' => 'princeps-fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 5,
             'description' => 'Under Tavi of Calderon, heir to the crown, war-torn Alera rebuilds while politicians and nobles vie for power. But from the south comes news: the dreaded Vord have come to Alera. For a thousand years, Alera and her furies have withstood every enemy and survived every foe.',
@@ -844,11 +844,11 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         $b74->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
         $b75 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'First Lord\'s Fury',
-	    'title_alphabetic' => 'First Lord\'s Fury',
-	    'slug' => 'first-lords-fury',
+            'title_alphabetic' => 'First Lord\'s Fury',
+            'slug' => 'first-lords-fury',
             'series_id' => $series->where('name', 'The Codex Alera')->first()->id,
             'series_order' => 6,
             'description' => 'For Gaius Octavian, life has been one long battle. Now, the end of all he fought for is close at hand. The brutal, dreaded Vord are on the march against Alera. And perhaps for the final time, Gaius Octavian and his legions must stand against the enemies of his people. And it will take all his intelligence, ingenuity, and furycraft to save their world from eternal darkness.',
@@ -856,25 +856,24 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
 
         $b75->addAuthor($authors->where('last_name', 'Butcher')->first()->id);
 
-	$b76 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+        $b76 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The People vs. Alex Cross',
-	    'title_alphabetic' => 'People vs. Alex Cross, The',
-	    'slug' => 'the-people-vs-alex-cross',
+            'title_alphabetic' => 'People vs. Alex Cross, The',
+            'slug' => 'the-people-vs-alex-cross',
         ]);
 
         $b76->addAuthor($authors->where('last_name', 'Patterson')->first()->id);
 
-	$b77 = factory('App\Models\Book')->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,	
+        $b77 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
             'title_display' => 'The Woman in the Window',
-	    'title_alphabetic' => 'Woman in the Window, The',
-	    'slug' => 'the-woman-in-the-window',
+            'title_alphabetic' => 'Woman in the Window, The',
+            'slug' => 'the-woman-in-the-window',
         ]);
 
         $b77->addAuthor($authors->where('last_name', 'Finn')->first()->id);
-	
     }
 }

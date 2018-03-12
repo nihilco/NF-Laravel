@@ -15,14 +15,14 @@ class CreatePlansTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('stripe_id');
-	    $table->string('name');
-	    $table->integer('amount');
-	    $table->integer('interval_count');
-	    $table->string('interval');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('stripe_id');
+            $table->string('name');
+            $table->integer('amount');
+            $table->integer('interval_count');
+            $table->unsignedInteger('interval_type_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -9,31 +9,13 @@ class Channel extends Base
 {
     use ActivityTrait, FavoriteTrait;
     
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
-
-    protected $with = ['creator'];
-
     protected static function boot()
     {
         parent::boot();
 
-	static::deleting(function ($channel) {
-	    $channel->forums()->delete();
-	});
+        static::deleting(function ($channel) {
+            $channel->topics()->each->delete();
+        });
     }
 
     //
@@ -42,8 +24,8 @@ class Channel extends Base
         return '/channels/' . $this->id;
     }
 
-    public function forums()
+    public function topics()
     {
-	return $this->hasMany(Forum::class);
+	return $this->hasMany(Topic::class);
     }
 }

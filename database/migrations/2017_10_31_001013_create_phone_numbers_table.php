@@ -15,14 +15,13 @@ class CreatePhoneNumbersTable extends Migration
     {
         Schema::create('phone_numbers', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('resource_id');
-	    $table->string('resource_type');
-	    $table->string('country_code')->nullable();
-	    $table->string('area_code')->nullable();
-	    $table->string('number');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('resource_id');
+            $table->string('country_code')->nullable();
+            $table->string('area_code')->nullable();
+            $table->string('number');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

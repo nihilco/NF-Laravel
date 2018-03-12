@@ -25,8 +25,8 @@ class CountriesController extends Controller
     public function index()
     {
         //
-	$countries = Country::all();
-	return view('countries.index', compact('countries'));
+        $countries = Country::all();
+        return view('countries.index', compact('countries'));
     }
 
     /**
@@ -37,7 +37,7 @@ class CountriesController extends Controller
     public function create()
     {
         //
-	return view('countries.create');
+        return view('countries.create');
     }
 
     /**
@@ -49,27 +49,27 @@ class CountriesController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	    'code' => 'required',
-	    'name' => 'required',
-	]);
-
-	$country = new Country();
-
-	$country->creator_id = auth()->id();
-	$country->owner_id = auth()->id();
-	$country->code = request('code');
-	$country->name = request('name');
-
-	$country->save();
-
-	if(request()->expectsJson()) {
-	    return $country->load(['creator', 'owner']);
-	}
-
-	return redirect($country->path());
+        $this->validate(request(), [
+            'code' => 'required',
+            'name' => 'required',
+        ]);
+        
+        $country = new Country();
+        
+        $country->creator_id = auth()->id();
+        $country->owner_id = auth()->id();
+        $country->code = request('code');
+        $country->name = request('name');
+        
+        $country->save();
+        
+        if(request()->expectsJson()) {
+            return $country->load(['creator', 'owner']);
+        }
+        
+        return redirect($country->path());
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -79,7 +79,7 @@ class CountriesController extends Controller
     public function show(Country $country)
     {
         //
-	return view('countries.show', compact('country'));
+        return view('countries.show', compact('country'));
     }
 
     /**
@@ -90,12 +90,12 @@ class CountriesController extends Controller
      */
     public function edit(Country $country)
     {
-	$this->authorize('update', $country);
+        $this->authorize('update', $country);
 	
         //
-	return view('countries.edit', compact('country'));
+        return view('countries.edit', compact('country'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -105,24 +105,24 @@ class CountriesController extends Controller
      */
     public function update(Request $request, Country $country)
     {
-	$this->authorize('update', $country);
-
+        $this->authorize('update', $country);
+        
         //
-	$this->validate(request(), [
-	    'code' => 'required',
-	    'name' => 'required',
-	]);
+        $this->validate(request(), [
+            'code' => 'required',
+            'name' => 'required',
+        ]);
+        
+        $country->code = request('code');
+        $country->name = request('name');
+        
+        $country->save();
+        
+        if(request()->expectsJson()) {
+            return $country->load(['creator', 'owner']);
+        }
 
-	$country->code = request('code');
-	$country->name = request('name');
-
-	$country->save();
-
-	if(request()->expectsJson()) {
-	    return $country->load(['creator', 'owner']);
-	}
-
-	return redirect($country->path());
+        return redirect($country->path());
     }
 
     /**
@@ -134,14 +134,14 @@ class CountriesController extends Controller
     public function destroy(Country $country)
     {
         //
-	$this->authorize('delete', $country);
-
-	$country->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        $this->authorize('delete', $country);
+        
+        $country->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

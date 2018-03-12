@@ -15,13 +15,13 @@ class CreateResourcesTable extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('parent_id')->nullable();
-	    $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('parent_id')->nullable();
+            $table->unsignedInteger('creator_id');
     	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('type_id');
-	    $table->string('name');
-	    $table->text('description');
-	    $table->softDeletes();
+            $table->unsignedInteger('type_id');
+            $table->string('name');
+            $table->text('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -25,8 +25,8 @@ class ResourcesController extends Controller
     public function index()
     {
         //
-	$resources = Resource::all();
-	return view('resources.index', compact('resources'));
+        $resources = Resource::all();
+        return view('resources.index', compact('resources'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ResourcesController extends Controller
     public function create()
     {
         //
-	return view('resources.create');
+        return view('resources.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class ResourcesController extends Controller
     public function show(Resource $resource)
     {
         //
-	return view('resources.show', compact('resource'));
+        return view('resources.show', compact('resource'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ResourcesController extends Controller
     public function edit(Resource $resource)
     {
         //
-	return view('resources.edit', compact('resource'));
+        return view('resources.edit', compact('resource'));
     }
 
     /**
@@ -96,5 +96,15 @@ class ResourcesController extends Controller
     public function destroy(Resource $resource)
     {
         //
+        $this->authorize('delete', $resource);
+        
+        //
+        $resource->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/resources');
     }
 }

@@ -133,27 +133,27 @@ class ClientsController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-	$this->authorize('update', $client);
-
-	//dd($client);
-
+        $this->authorize('update', $client);
+        
+        //dd($client);
+        
         //
-	$this->validate(request(), [
-	    'name' => 'required',
-	    //'description' => 'required',
-	]);
-
-	$client->name = request('name');
-	$client->description = request('description');
-
-	$client->save();
-
-	if(request()->expectsJson()) {
-	    return $client->load(['creator', 'owner']);
-	}
-
-	//return redirect($client->path());
-	return back();
+        $this->validate(request(), [
+            'name' => 'required',
+            //'description' => 'required',
+        ]);
+        
+        $client->name = request('name');
+        $client->description = request('description');
+        
+        $client->save();
+        
+        if(request()->expectsJson()) {
+            return $client->load(['creator', 'owner']);
+        }
+        
+        //return redirect($client->path());
+        return back();
     }
 
     /**
@@ -165,14 +165,14 @@ class ClientsController extends Controller
     public function destroy(Client $client)
     {
         //
-	$this->authorize('delete', $client);
-	
-	$client->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return redirect('/clients');
+        $this->authorize('delete', $client);
+        
+        $client->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/clients');
     }
 }

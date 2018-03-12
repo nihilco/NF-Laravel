@@ -15,16 +15,16 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('customer_id');
-	    $table->unsignedInteger('status_id');
-	    $table->string('slug');
-	    $table->unsignedInteger('total_items');
-	    $table->datetime('packaged_at')->nullable();
-	    $table->datetime('shipped_at')->nullable();
-	    $table->datetime('delivered_at')->nullable();
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('customer_id');
+            $table->unsignedInteger('status_id');
+            $table->string('slug')->unique();
+            $table->unsignedInteger('total_items');
+            $table->datetime('packaged_at')->nullable();
+            $table->datetime('shipped_at')->nullable();
+            $table->datetime('delivered_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

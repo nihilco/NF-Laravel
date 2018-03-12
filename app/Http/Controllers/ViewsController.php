@@ -25,8 +25,8 @@ class ViewsController extends Controller
     public function index()
     {
         //
-	$views = View::latest()->get();
-	return view('', compact('views'));
+        $views = View::latest()->get();
+        return view('', compact('views'));
     }
 
     /**
@@ -37,7 +37,7 @@ class ViewsController extends Controller
     public function create()
     {
         //
-	return view('views.create');
+        return view('views.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class ViewsController extends Controller
     public function show(View $view)
     {
         //
-	return view('views.show', compact('view'));
+        return view('views.show', compact('view'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ViewsController extends Controller
     public function edit(View $view)
     {
         //
-	return view('views.edit', compact('view'));
+        return view('views.edit', compact('view'));
     }
 
     /**
@@ -96,5 +96,15 @@ class ViewsController extends Controller
     public function destroy(View $view)
     {
         //
+        $this->authorize('delete', $view);
+        
+        //
+        $view->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/views');
     }
 }

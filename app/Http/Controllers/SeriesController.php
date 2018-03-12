@@ -25,8 +25,8 @@ class SeriesController extends Controller
     public function index()
     {
         //
-	$series = Series::find();
-	return view('series.index', compact('series'));
+        $series = Series::all();
+        return view('series.index', compact('series'));
     }
 
     /**
@@ -37,7 +37,7 @@ class SeriesController extends Controller
     public function create()
     {
         //
-	return view('series.create');
+        return view('series.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class SeriesController extends Controller
     public function show(Series $series)
     {
         //
-	return view('series.show', compact('series'));
+        return view('series.show', compact('series'));
     }
 
     /**
@@ -72,7 +72,7 @@ class SeriesController extends Controller
     public function edit(Series $series)
     {
         //
-	return view('series.edit', compact('series'));
+        return view('series.edit', compact('series'));
     }
 
     /**
@@ -96,5 +96,15 @@ class SeriesController extends Controller
     public function destroy(Series $series)
     {
         //
+        $this->authorize('delete', $series);
+        
+        //
+        $series->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/series');
     }
 }

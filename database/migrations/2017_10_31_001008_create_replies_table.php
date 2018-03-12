@@ -15,13 +15,12 @@ class CreateRepliesTable extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('resource_id');
-	    $table->string('resource_type');
-	    $table->text('content');
-	    $table->unsignedInteger('favorites_count')->default(0);
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('resource_id');
+            $table->text('content');
+            $table->unsignedInteger('favorites_count')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

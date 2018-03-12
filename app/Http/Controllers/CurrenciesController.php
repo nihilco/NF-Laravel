@@ -25,8 +25,8 @@ class CurrenciesController extends Controller
     public function index()
     {
         //
-	$currencies = Currency::all();
-	return view('currencies.index', compact('currencies'));
+        $currencies = Currency::all();
+        return view('currencies.index', compact('currencies'));
     }
 
     /**
@@ -37,7 +37,7 @@ class CurrenciesController extends Controller
     public function create()
     {
         //
-	return view('currencies.create');
+        return view('currencies.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class CurrenciesController extends Controller
     public function show(Currency $currency)
     {
         //
-	return view('currencies.show', compact('currency'));
+        return view('currencies.show', compact('currency'));
     }
 
     /**
@@ -72,7 +72,7 @@ class CurrenciesController extends Controller
     public function edit(Currency $currency)
     {
         //
-	return view('currencies.edit', compact('currency'));
+        return view('currencies.edit', compact('currency'));
     }
 
     /**
@@ -96,5 +96,15 @@ class CurrenciesController extends Controller
     public function destroy(Currency $currency)
     {
         //
+        $this->authorize('delete', $currency);
+        
+        //
+        $currency->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/currencies');
     }
 }

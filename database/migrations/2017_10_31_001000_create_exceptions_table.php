@@ -15,7 +15,12 @@ class CreateExceptionsTable extends Migration
     {
         Schema::create('exceptions', function (Blueprint $table) {
             $table->increments('id');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('type_id');
+            $table->string('code')->nullable();
+            $table->string('message');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

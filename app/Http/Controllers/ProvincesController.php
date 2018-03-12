@@ -26,8 +26,8 @@ class ProvincesController extends Controller
     public function index()
     {
         //
-	$provinces = Province::all();
-	return view('provinces.index', compact('provinces'));
+        $provinces = Province::all();
+        return view('provinces.index', compact('provinces'));
     }
 
     /**
@@ -37,10 +37,10 @@ class ProvincesController extends Controller
      */
     public function create()
     {
-	$countries = Country::all();
+        $countries = Country::all();
 	
         //
-	return view('provinces.create', compact(['countries']));
+        return view('provinces.create', compact(['countries']));
     }
 
     /**
@@ -52,29 +52,29 @@ class ProvincesController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	    'abbr' => 'required',
-	    'name' => 'required',
-	    'country' => 'required|integer',
-	]);
-
-	$province = new Province();
-
-	$province->creator_id = auth()->id();
-	$province->owner_id = auth()->id();
-	$province->abbr = request('abbr');
-	$province->name = request('name');
-	$province->country_id = request('country');
-
-	$province->save();
-
-	if(request()->expectsJson()) {
-	    return $province->load(['creator', 'owner']);
-	}
-
-	return redirect($province->path());
+        $this->validate(request(), [
+            'abbr' => 'required',
+            'name' => 'required',
+            'country' => 'required|integer',
+        ]);
+        
+        $province = new Province();
+        
+        $province->creator_id = auth()->id();
+        $province->owner_id = auth()->id();
+        $province->abbr = request('abbr');
+        $province->name = request('name');
+        $province->country_id = request('country');
+        
+        $province->save();
+        
+        if(request()->expectsJson()) {
+            return $province->load(['creator', 'owner']);
+        }
+        
+        return redirect($province->path());
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -84,7 +84,7 @@ class ProvincesController extends Controller
     public function show(Province $province)
     {
         //
-	return view('provinces.show', compact('province'));
+        return view('provinces.show', compact('province'));
     }
 
     /**
@@ -95,12 +95,12 @@ class ProvincesController extends Controller
      */
     public function edit(Province $province)
     {
-	$this->authorize('update', $province);
-
+        $this->authorize('update', $province);
+        
     	$countries = Country::all();
-	
+        
         //
-	return view('provinces.edit', compact(['province', 'countries']));
+        return view('provinces.edit', compact(['province', 'countries']));
     }
 
     /**
@@ -112,26 +112,26 @@ class ProvincesController extends Controller
      */
     public function update(Request $request, Province $province)
     {
-	$this->authorize('update', $province);
+        $this->authorize('update', $province);
 	
         //
-	$this->validate(request(), [
-	    'abbr' => 'required',
-	    'name' => 'required',
-	    'country' => 'required|integer',
-	]);
-
-	$province->abbr = request('abbr');
-	$province->name = request('name');
-	$province->country_id = request('country');
-
-	$province->save();
-
-	if(request()->expectsJson()) {
-	    return $province->load(['creator', 'owner']);
-	}
-
-	return redirect($province->path());
+        $this->validate(request(), [
+            'abbr' => 'required',
+            'name' => 'required',
+            'country' => 'required|integer',
+        ]);
+        
+        $province->abbr = request('abbr');
+        $province->name = request('name');
+        $province->country_id = request('country');
+        
+        $province->save();
+        
+        if(request()->expectsJson()) {
+            return $province->load(['creator', 'owner']);
+        }
+        
+        return redirect($province->path());
     }
 
     /**
@@ -143,14 +143,14 @@ class ProvincesController extends Controller
     public function destroy(Province $province)
     {
         //
-	$this->authorize('delete', $province);
-	
-	$province->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        $this->authorize('delete', $province);
+        
+        $province->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

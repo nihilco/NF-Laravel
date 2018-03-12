@@ -15,12 +15,12 @@ class CreateCaseTypesTable extends Migration
     {
         Schema::create('case_types', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->string('name');
-	    $table->text('description');
-	    $table->string('color')->nullable();
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('color')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

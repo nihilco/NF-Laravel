@@ -25,8 +25,8 @@ class RatingsController extends Controller
     public function index()
     {
         //
-	$ratings = Rating::all();
-	return view('ratings.index', compact('ratings'));
+        $ratings = Rating::all();
+        return view('ratings.index', compact('ratings'));
     }
 
     /**
@@ -37,7 +37,7 @@ class RatingsController extends Controller
     public function create()
     {
         //
-	return view('ratings.create');
+        return view('ratings.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class RatingsController extends Controller
     public function show(Rating $rating)
     {
         //
-	return view('ratings.show', compact('rating'));
+        return view('ratings.show', compact('rating'));
     }
 
     /**
@@ -72,7 +72,7 @@ class RatingsController extends Controller
     public function edit(Rating $rating)
     {
         //
-	return view('ratings.edit', compact('rating'));
+        return view('ratings.edit', compact('rating'));
     }
 
     /**
@@ -96,5 +96,15 @@ class RatingsController extends Controller
     public function destroy(Rating $rating)
     {
         //
+        $this->authorize('delete', $rating);
+        
+        //
+        $rating->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/ratings');
     }
 }

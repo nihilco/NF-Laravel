@@ -25,8 +25,8 @@ class RecordsController extends Controller
     public function index()
     {
         //
-	$records = Record::all();
-	return view('recors.index', compact('records'));
+        $records = Record::all();
+        return view('recors.index', compact('records'));
     }
 
     /**
@@ -37,7 +37,7 @@ class RecordsController extends Controller
     public function create()
     {
         //
-	return view('records.create');
+        return view('records.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class RecordsController extends Controller
     public function show(Record $record)
     {
         //
-	return view('records.show', compact('record'));
+        return view('records.show', compact('record'));
     }
 
     /**
@@ -72,7 +72,7 @@ class RecordsController extends Controller
     public function edit(Record $record)
     {
         //
-	return view('records.edit', compact('record'));
+        return view('records.edit', compact('record'));
     }
 
     /**
@@ -96,5 +96,15 @@ class RecordsController extends Controller
     public function destroy(Record $record)
     {
         //
+        $this->authorize('delete', $record);
+        
+        //
+        $record->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/records');
     }
 }

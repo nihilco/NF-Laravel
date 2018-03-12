@@ -2,47 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-
 class ClientCase extends Base
 {
-    use SoftDeletes;
-
     protected $table = 'cases';
     
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
-
     protected static function boot()
     {
-	parent::boot();
+        parent::boot();
 
-	static::created(function ($clientCase) {
-	    \App\Models\CaseNote::create([
-		'creator_id' => $clientCase->creator_id,
-		'owner_id' => $clientCase->owner_id,
-		'account_id' => $clientCase->account_id,
-		'case_id' => $clientCase->id,
-		'content' => 'Case created.'		
-	    ]);
-	});
+        static::created(function ($clientCase) {
+            \App\Models\CaseNote::create([
+                'creator_id' => $clientCase->creator_id,
+                'owner_id' => $clientCase->owner_id,
+                'case_id' => $clientCase->id,
+                'content' => 'Case created.'		
+            ]);
+        });
 
-	static::deleting(function ($clientCase) {
-	    $clientCase->notes()->each->delete();
-	});
+        static::deleting(function ($clientCase) {
+            $clientCase->notes()->each->delete();
+        });
     }
     
     //
@@ -86,10 +65,5 @@ class ClientCase extends Base
 
 	$this->date_settled_at = \Carbon\Carbon::now();
 	$this->save();
-    }
-
-    public function scopeFilter($query, $filters)
-    {
-        return $filters->apply($query);
     }
 }

@@ -12,17 +12,10 @@ class Activity extends Base
     protected $fillable = [
         'user_id',
         'type',
-	'resource_id',
-	'resource_type',
+	    'resource_id',
+	    'resource_type',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
-    
     //
     public function path()
     {
@@ -31,18 +24,18 @@ class Activity extends Base
 
     public function resource()
     {
-	return $this->morphTo();
+        return $this->morphTo();
     }
 
     public static function feed($user, $take = 25)
     {
         return static::where('user_id', $user->id)
-	    ->latest()
-	    ->with(['resource', 'resource.owner'])
-	    ->take($take)
-	    ->get()
-	    ->groupBy(function ($activity) {
-	        return $activity->created_at->format('Y-m-d');
-	    });
+            ->latest()
+            ->with(['resource', 'resource.owner'])
+            ->take($take)
+            ->get()
+            ->groupBy(function ($activity) {
+                return $activity->created_at->format('Y-m-d');
+            });
     }
 }

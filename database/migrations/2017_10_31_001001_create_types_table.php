@@ -15,14 +15,14 @@ class CreateTypesTable extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('parent_id')->nullable();
-	    $table->string('resource_type');
-	    $table->string('name', 100);
-	    $table->string('slug', 100)->unique();
-	    $table->text('description');
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('parent_id')->nullable();
+            $table->string('model');
+            $table->string('name', 100);
+            $table->string('slug', 100)->unique();
+            $table->text('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

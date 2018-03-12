@@ -2,39 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-
 class Client extends Base
 {
-    use SoftDeletes;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [];
-
-    protected $with = ['creator', 'owner'];
-
-    protected static function boot()
-    {
-	parent::boot();
-
-	//static::deleting(function ($client) {
-	//    $client->cases()->each->delete();
-	//});
-    }
-
     //
     public function path()
     {

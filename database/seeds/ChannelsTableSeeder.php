@@ -12,37 +12,37 @@ class ChannelsTableSeeder extends Seeder
     public function run()
     {
         //
-	$notifications = factory(App\Models\Channel::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title' => 'Notifications Forum',
-	    'slug' => 'notifications',
-	    'description' => 'Notifications forum.',
-	]);
-
-	$general = factory(App\Models\Channel::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title' => 'General Forum',
-	    'slug' => 'general',
-	    'description' => 'General forum.',
-	]);
-
-	$nonrelated = factory(App\Models\Channel::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title' => 'Non-Related Forum',
-	    'slug' => 'nonrelated',
-	    'description' => 'Non-related forum.',
-	]);
-
-	$support = factory(App\Models\Channel::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'title' => 'Support Forum',
-	    'slug' => 'support',
-	    'description' => 'Support forum.',
-	]);
+        $notifications = factory(App\Models\Channel::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title' => 'Notifications Channel',
+            'slug' => 'notifications',
+            'description' => 'Notifications channel.',
+        ]);
+        
+        $general = factory(App\Models\Channel::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title' => 'General Channel',
+            'slug' => 'general',
+            'description' => 'General channel.',
+        ]);
+        
+        $nonrelated = factory(App\Models\Channel::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title' => 'Non-Related Channel',
+            'slug' => 'nonrelated',
+            'description' => 'Non-related channel.',
+        ]);
+        
+        $support = factory(App\Models\Channel::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'title' => 'Support Channel',
+            'slug' => 'support',
+            'description' => 'Support channel.',
+        ]);
 
     }
 }

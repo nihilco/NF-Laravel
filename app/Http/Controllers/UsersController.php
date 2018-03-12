@@ -26,7 +26,7 @@ class UsersController extends Controller
     public function index()
     {
         //
-	$users = User::paginate(25);
+	$users = User::paginate(24);
 	return view('users.index', compact('users'));
     }
 
@@ -97,5 +97,15 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+        $this->authorize('delete', $user);
+        
+        //
+        $user->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/users');        
     }
 }

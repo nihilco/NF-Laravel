@@ -25,8 +25,8 @@ class PhoneNumbersController extends Controller
     public function index()
     {
         //
-	$phoneNumbers = PhoneNumber::all();
-	return view('phone-numbers.index', compact('phoneNumbers'));
+        $phoneNumbers = PhoneNumber::all();
+        return view('phone-numbers.index', compact('phoneNumbers'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PhoneNumbersController extends Controller
     public function create()
     {
         //
-	return view('phone-numbers.create');
+        return view('phone-numbers.create');
     }
 
     /**
@@ -49,27 +49,27 @@ class PhoneNumbersController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	    'number' => 'required',
-	]);
-
-	$phoneNumber = new PhoneNumber();
-
-	$phoneNumber->creator_id = auth()->id();
-	$phoneNumber->owner_id = auth()->id();
-	$phoneNumber->resource_id = 1;
-	$phoneNumber->resource_type = \App\Models\Customer::class;
-	$phoneNumber->number = request('number');
-
-	$phoneNumber->save();
-
-	if(request()->expectsJson()) {
-	    return $phoneNumber->load(['creator', 'owner']);
-	}
-
-	return redirect($phoneNumber->path());
+        $this->validate(request(), [
+            'number' => 'required',
+        ]);
+        
+        $phoneNumber = new PhoneNumber();
+        
+        $phoneNumber->creator_id = auth()->id();
+        $phoneNumber->owner_id = auth()->id();
+        $phoneNumber->resource_id = 1;
+        $phoneNumber->resource_type = \App\Models\Customer::class;
+        $phoneNumber->number = request('number');
+        
+        $phoneNumber->save();
+        
+        if(request()->expectsJson()) {
+            return $phoneNumber->load(['creator', 'owner']);
+        }
+        
+        return redirect($phoneNumber->path());
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -79,7 +79,7 @@ class PhoneNumbersController extends Controller
     public function show(PhoneNumber $phoneNumber)
     {
         //
-	return view('phone-numbers.show', compact('phoneNumber'));
+        return view('phone-numbers.show', compact('phoneNumber'));
     }
 
     /**
@@ -91,7 +91,7 @@ class PhoneNumbersController extends Controller
     public function edit(PhoneNumber $phoneNumber)
     {
         //
-	return view('phone-numbers.edit', compact('phoneNumber'));
+        return view('phone-numbers.edit', compact('phoneNumber'));
     }
 
     /**
@@ -103,22 +103,22 @@ class PhoneNumbersController extends Controller
      */
     public function update(Request $request, PhoneNumber $phoneNumber)
     {
-                //
-	$this->validate(request(), [
-	    'number' => 'required',
-	]);
-	
-	$phoneNumber->number = request('number');
-
-	$phoneNumber->save();
-
-	if(request()->expectsJson()) {
-	    return $phoneNumber->load(['creator', 'owner']);
-	}
-
-	return redirect($phoneNumber->path());
+        //
+        $this->validate(request(), [
+            'number' => 'required',
+        ]);
+        
+        $phoneNumber->number = request('number');
+        
+        $phoneNumber->save();
+        
+        if(request()->expectsJson()) {
+            return $phoneNumber->load(['creator', 'owner']);
+        }
+        
+        return redirect($phoneNumber->path());
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -128,5 +128,15 @@ class PhoneNumbersController extends Controller
     public function destroy(PhoneNumber $phoneNumber)
     {
         //
+        $this->authorize('delete', $phoneNumber);
+        
+        //
+        $phoneNumber->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

@@ -25,8 +25,8 @@ class LinksController extends Controller
     public function index()
     {
         //
-	$links = Link::all();
-	return view('links.index', compact('links'));
+        $links = Link::all();
+        return view('links.index', compact('links'));
     }
 
     /**
@@ -37,7 +37,7 @@ class LinksController extends Controller
     public function create()
     {
         //
-	return view('links.create');
+        return view('links.create');
     }
 
     /**
@@ -60,8 +60,8 @@ class LinksController extends Controller
     public function show(Link $link)
     {
         //
-	//return view('links.show', compact('link'));
-	return redirect($link->url);
+        //return view('links.show', compact('link'));
+        return redirect($link->url);
     }
 
     /**
@@ -73,7 +73,7 @@ class LinksController extends Controller
     public function edit(Link $link)
     {
         //
-	return view('links.edit', compact('link'));
+        return view('links.edit', compact('link'));
     }
 
     /**
@@ -97,5 +97,15 @@ class LinksController extends Controller
     public function destroy(Link $link)
     {
         //
+        $this->authorize('delete', $link);
+        
+        //
+        $link->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/links');
     }
 }

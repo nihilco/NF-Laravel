@@ -25,8 +25,8 @@ class StepsController extends Controller
     public function index()
     {
         //
-	$steps = Step::all();
-	return view('steps.index', compact('steps'));
+        $steps = Step::all();
+        return view('steps.index', compact('steps'));
     }
 
     /**
@@ -37,7 +37,7 @@ class StepsController extends Controller
     public function create()
     {
         //
-	return view('steps.create');
+        return view('steps.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class StepsController extends Controller
     public function show(Step $step)
     {
         //
-	return view('steps.show', compact('step'));
+        return view('steps.show', compact('step'));
     }
 
     /**
@@ -72,7 +72,7 @@ class StepsController extends Controller
     public function edit(Step $step)
     {
         //
-	return view('steps.edit', compact('step'));
+        return view('steps.edit', compact('step'));
     }
 
     /**
@@ -96,5 +96,15 @@ class StepsController extends Controller
     public function destroy(Step $step)
     {
         //
+        $this->authorize('delete', $step);
+        
+        //
+        $step->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/steps');
     }
 }

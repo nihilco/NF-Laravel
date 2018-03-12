@@ -25,8 +25,8 @@ class TypesController extends Controller
     public function index()
     {
         //
-	$types = Type::all();
-	return view('types.index', compact('types'));
+        $types = Type::all();
+        return view('types.index', compact('types'));
     }
 
     /**
@@ -37,7 +37,7 @@ class TypesController extends Controller
     public function create()
     {
         //
-	return view('types.create');
+        return view('types.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class TypesController extends Controller
     public function show(Type $type)
     {
         //
-	return view('types.show', compact('type'));
+        return view('types.show', compact('type'));
     }
 
     /**
@@ -72,7 +72,7 @@ class TypesController extends Controller
     public function edit(Type $type)
     {
         //
-	return view('types.edit', compact('type'));
+        return view('types.edit', compact('type'));
     }
 
     /**
@@ -96,5 +96,15 @@ class TypesController extends Controller
     public function destroy(Type $type)
     {
         //
+        $this->authorize('delete', $type);
+        
+        //
+        $type->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/types');
     }
 }

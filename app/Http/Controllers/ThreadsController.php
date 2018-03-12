@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Forum;
+use App\Models\Topic;
 use App\Models\Thread;
 use App\Models\User;
 use App\Filters\ThreadFilters;
@@ -28,13 +28,13 @@ class ThreadsController extends Controller
     public function index(ThreadFilters $filters)
     {
         //
-	$threads = Thread::filter($filters)->get();
-
-	if(request()->wantsJson()) {
-	    return $threads;
-	}
-
-	return view('threads.index', compact('threads'));
+        $threads = Thread::filter($filters)->get();
+        
+        if(request()->wantsJson()) {
+            return $threads;
+        }
+        
+        return view('threads.index', compact('threads'));
     }
 
     /**
@@ -126,16 +126,16 @@ class ThreadsController extends Controller
      */
     public function destroy(Thread $thread)
     {
-	//
-	$this->authorize('delete', $thread);
-
         //
-	$thread->delete();
-
-	if(request()->wantsJson()) {
-	    return response([], 204);
-	}
-
-	return redirect('/forums');
+        $this->authorize('delete', $thread);
+        
+        //
+        $thread->delete();
+        
+        if(request()->wantsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/threads');
     }
 }

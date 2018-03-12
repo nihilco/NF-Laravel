@@ -15,16 +15,16 @@ class CreateThreadsTable extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->increments('id');
-	    $table->unsignedInteger('creator_id');
-	    $table->unsignedInteger('owner_id');
-	    $table->unsignedInteger('forum_id');
-	    $table->string('title');
-	    $table->string('slug');
-	    $table->text('content');
-	    $table->unsignedInteger('replies_count')->default(0);
-	    $table->unsignedInteger('favorites_count')->default(0);
-	    $table->datetime('last_reply_at')->nullable();
-	    $table->softDeletes();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('topic_id');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('content');
+            $table->unsignedInteger('replies_count')->default(0);
+            $table->unsignedInteger('favorites_count')->default(0);
+            $table->datetime('last_reply_at')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

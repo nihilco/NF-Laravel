@@ -11,27 +11,27 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
-	$websites = App\Models\Website::all();
+        $websites = App\Models\Website::all();
 	
         //
-	$page1 = factory(App\Models\Page::class)->create([
-  	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'website_id' => $websites->where('hostname', 'www.uclemmer.com')->first()->id,
-	    'title' => 'About',
-	    'slug' => 'about',
-	    'description' => 'About page content.',
-	    'content' => '',
-	]);
+        $page1 = factory(App\Models\Page::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'website_id' => $websites->where('hostname', 'www.uclemmer.com')->first()->id,
+            'title' => 'About',
+            'slug' => 'about',
+            'description' => 'About page content.',
+            'content' => '',
+        ]);
 
-	$page2 = factory(App\Models\Page::class)->create([
-	    'creator_id' => 1,
-	    'owner_id' => 1,
-	    'website_id' => $websites->where('hostname', 'www.mazestonelaw.com')->first()->id,
-	    'title' => 'About Us',
-	    'slug' => 'about-us',
-	    'description' => '',
-	    'content' => '<p class="justify">Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
+        $page2 = factory(App\Models\Page::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'website_id' => $websites->where('hostname', 'www.mazestonelaw.com')->first()->id,
+            'title' => 'About Us',
+            'slug' => 'about-us',
+            'description' => '',
+            'content' => '<p class="justify">Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
 	    Central and Eastern Kentucky. It was founded by Chandler Maze and Clayton Stone. Chandler and
 	    Clayton met in law school, and bonded over their fondness for their “Kentucky Home.” Chandler and
 	    Clayton truly care about the members of their community. We put our clients first, and work tirelessly to

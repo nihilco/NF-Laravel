@@ -25,7 +25,7 @@ class AuthorsController extends Controller
     public function index()
     {
         //
-	$authors = Author::orderBy('last_name')->get();
+        $authors = Author::orderBy('last_name')->paginate(24);
 	return view('authors.index', compact('authors'));
     }
 
@@ -156,14 +156,14 @@ class AuthorsController extends Controller
     public function destroy(Author $author)
     {
         //
-	$this->authorize('delete', $author);
+        $this->authorize('delete', $author);
+        
+        $author->delete();
 
-	$author->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }
