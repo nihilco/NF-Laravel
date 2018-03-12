@@ -168,7 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
-	Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 	
         /*
          * Application Service Providers...
@@ -179,9 +179,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-	App\Providers\ConfigServiceProvider::class,
-	App\Providers\GoutteServiceProvider::class,
-	App\Providers\StripeServiceProvider::class,	
+        App\Providers\ConfigServiceProvider::class,
+        App\Providers\GoutteServiceProvider::class,
+        App\Providers\StripeServiceProvider::class,	
     ],
 
     /*
@@ -230,10 +230,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-	//
-	'Debugbar' => Barryvdh\Debugbar\Facade::class,
-	'Goutte' => App\Facades\GoutteFacade::class,
-	'Stripe' => App\Facades\StripeFacade::class,	
+        //
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Goutte' => App\Facades\GoutteFacade::class,
+        'Stripe' => App\Facades\StripeFacade::class,	
     ],
 
 ];
