@@ -9,4 +9,9 @@ class Publisher extends Base
     {
         return '/publishers/' . $this->id;
     }
+
+    public function address()
+    {
+        return $this->belongsTo(Address::class);
+    }
 }

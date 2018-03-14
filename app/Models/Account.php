@@ -9,4 +9,9 @@ class Account extends Base
     {
         return '/accounts/' . $this->id;
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

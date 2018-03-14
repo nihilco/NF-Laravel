@@ -9,4 +9,9 @@ class Exception extends Base
     {
         return '/exceptions/' . $this->id;
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

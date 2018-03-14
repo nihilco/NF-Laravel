@@ -14,6 +14,9 @@ $factory->define(App\Models\Invoice::class, function (Faker $faker) {
         'customer_id' => function () {
             return factory(App\Models\Customer::class)->create()->id;
         },
+        'type_id' => function () {
+            return factory(App\Models\Type::class)->create()->id;
+        },
         'status_id' => function () {
             return factory(App\Models\Status::class)->create()->id;
         },

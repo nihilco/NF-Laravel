@@ -9,4 +9,14 @@ class LineItem extends Base
     {
         return '/line-items/' . $this->id;
     }
+
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

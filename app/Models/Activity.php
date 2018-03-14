@@ -22,9 +22,19 @@ class Activity extends Base
         return '/activities/' . $this->id;
     }
 
+    //public function resource()
+    //{
+    //    return $this->morphTo();
+    //}
+
     public function resource()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Resource::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 
     public static function feed($user, $take = 25)

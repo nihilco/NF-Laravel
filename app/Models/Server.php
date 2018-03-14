@@ -9,4 +9,9 @@ class Server extends Base
     {
         return '/servers/' . $this->id;
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

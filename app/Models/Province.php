@@ -9,4 +9,9 @@ class Province extends Base
     {
         return '/provinces/' . $this->id;
     }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

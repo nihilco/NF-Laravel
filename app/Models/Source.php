@@ -9,4 +9,14 @@ class Source extends Base
     {
         return '/sources/' . $this->id;
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

@@ -15,6 +15,11 @@ class Post extends Base
         return '/posts/' . $this->id;
     }
 
+    public function website()
+    {
+        return $this->belongsTo(Website::class);
+    }
+
     public function replies()
     {
         return $this->morphMany(Reply::class, 'resource');

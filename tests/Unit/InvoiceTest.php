@@ -31,6 +31,11 @@ class InvoiceTest extends TestCase
         $this->assertInstanceOf(\App\Models\Customer::class, $this->invoice->customer);
     }
 
+    public function test_an_invoice_has_type()
+    {
+        $this->assertInstanceOf(\App\Models\Type::class, $this->invoice->type);
+    }
+
     public function test_an_invoice_has_status()
     {
         $this->assertInstanceOf(\App\Models\Status::class, $this->invoice->status);

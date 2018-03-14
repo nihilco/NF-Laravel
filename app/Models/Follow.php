@@ -32,8 +32,13 @@ class Follow extends Base
     /**
      * Get all of the owning commentable models.
      */
+    //public function resource()
+    //{
+    //    return $this->morphTo();
+    //}
+
     public function resource()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Resource::class);
     }
 }

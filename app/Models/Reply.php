@@ -53,4 +53,9 @@ class Reply extends Base
     //{
     //    return $this->morphTo();
     //}
+
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
 }

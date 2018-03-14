@@ -9,4 +9,14 @@ class Address extends Base
     {
         return '/addresses/' . $this->id;
     }
+
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
 }

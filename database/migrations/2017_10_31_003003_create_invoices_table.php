@@ -18,6 +18,7 @@ class CreateInvoicesTable extends Migration
             $table->unsignedInteger('creator_id');
             $table->unsignedInteger('owner_id');
             $table->unsignedInteger('customer_id');
+            $table->unsignedInteger('type_id');
             $table->unsignedInteger('status_id');
             $table->string('slug');
             $table->unsignedInteger('total_items');

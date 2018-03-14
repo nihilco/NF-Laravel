@@ -9,4 +9,9 @@ class Website extends Base
     {
         return '/websites/' . $this->id;
     }
+
+    public function domain()
+    {
+        return $this->belongsTo(Domain::class);
+    }    
 }

@@ -10,4 +10,8 @@ class Vote extends Base
         return '/votes/' . $this->id;
     }
 
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
 }

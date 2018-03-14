@@ -9,4 +9,9 @@ class Zone extends Base
     {
         return '/zones/' . $this->id;
     }
+
+    public function domain()
+    {
+        return $this->belongsTo(Domain::class);
+    }
 }

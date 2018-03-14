@@ -9,4 +9,9 @@ class Step extends Base
     {
         return '/steps/' . $this->id;
     }
+
+    public function tutorial()
+    {
+        return $this->belongsTo(Tutorial::class);
+    }
 }

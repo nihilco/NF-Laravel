@@ -10,4 +10,9 @@ class Setting extends Base
         return '/settings/' . $this->id;
     }
 
+    public function valueType()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
 }

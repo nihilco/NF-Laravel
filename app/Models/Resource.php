@@ -9,4 +9,9 @@ class Resource extends Base
     {
         return '/resources/' . $this->id;
     }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

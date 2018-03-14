@@ -9,4 +9,9 @@ class PhoneNumber extends Base
     {
         return '/phone-numbers/' . $this->id;
     }
+
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
 }

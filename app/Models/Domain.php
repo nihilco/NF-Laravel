@@ -9,4 +9,9 @@ class Domain extends Base
     {
         return '/domains/' . $this->id;
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

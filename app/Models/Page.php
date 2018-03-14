@@ -14,4 +14,9 @@ class Page extends Base
     {
         return 'slug';
     }
+
+    public function website()
+    {
+        return $this->belongsTo(Website::class);
+    }
 }

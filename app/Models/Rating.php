@@ -9,4 +9,9 @@ class Rating extends Base
     {
         return '/ratings/' . $this->id;
     }
+
+    public function resource()
+    {
+        return $this->belongsTo(Resource::class);
+    }
 }

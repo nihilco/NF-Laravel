@@ -9,4 +9,14 @@ class Record extends Base
     {
         return '/records/' . $this->id;
     }
+
+    public function zone()
+    {
+        return $this->belongsTo(Zone::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

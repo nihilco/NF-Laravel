@@ -9,4 +9,9 @@ class Alias extends Base
     {
         return '/aliases/' . $this->id;
     }
+
+    public function domain()
+    {
+        return $this->belongsTo(Domain::class);
+    }
 }

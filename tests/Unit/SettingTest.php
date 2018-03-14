@@ -28,6 +28,6 @@ class SettingTest extends TestCase
 
     public function test_a_setting_has_value_type()
     {
-        $this->assertInstanceOf(\App\Models\Type::class, $this->setting->value_type);
+        $this->assertInstanceOf(\App\Models\Type::class, $this->setting->valueType);
     }    
 }
