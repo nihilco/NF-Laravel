@@ -36,7 +36,7 @@
 
     <div class="col-sm-3">
       <div class="card">
-        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <img class="card-img-top" src="https://placehold.it/450x300?text={{ $invoice->id  }}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Invoice #{{ $invoice->id }}</h5>
         </div>

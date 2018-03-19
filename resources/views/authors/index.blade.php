@@ -36,7 +36,7 @@
 
     <div class="col-sm-3">
       <div class="card">
-        <img class="card-img-top" src="https://placehold.it/450x300" alt="Card image cap">
+        <img class="card-img-top" src="https://placehold.it/450x300?text={{ $author->id }}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ $author->first_name . ' ' . $author->last_name }}</h5>
 	      <p class="card-text">{!! \Illuminate\Support\Str::limit($author->description, 150,'...')  !!}</p>
