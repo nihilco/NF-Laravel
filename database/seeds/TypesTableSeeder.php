@@ -79,6 +79,26 @@ class TypesTableSeeder extends Seeder
             'name' => 'Thread Created',
             'slug' => 'thread-created',
             'description' => 'Thread Created Activity.',
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Alias::class,
+            'name' => 'Domain Alias',
+            'slug' => 'domain-alias',
+            'description' => 'Domain Alias.',
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Alias::class,
+            'name' => 'Email Alias',
+            'slug' => 'email-alias',
+            'description' => 'Email Alias.',
         ]);        
     }
 }

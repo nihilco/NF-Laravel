@@ -213,7 +213,7 @@ class BooksTableSeeder extends Seeder
         $b28 = factory('App\Models\Book')->create([
             'creator_id' => 1,
             'owner_id' => 1,	
-            'title_display' => 'The Eye of Mnids',
+            'title_display' => 'The Eye of Minds',
             'title_alphabetic' => 'Eye of Minds, The',
             'slug' => 'the-eye-of-minds',
         ]);

@@ -18,6 +18,7 @@ class CreateAliasesTable extends Migration
             $table->unsignedInteger('creator_id');
             $table->unsignedInteger('owner_id');
             $table->unsignedInteger('domain_id');
+            $table->unsignedInteger('type_id');
             $table->string('source');
             $table->string('destination');
             $table->softDeletes();
