@@ -119,6 +119,36 @@ class TypesTableSeeder extends Seeder
             'name' => 'Mail Server',
             'slug' => 'mail-server',
             'description' => 'Mail Server.',
-        ]);                
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Invoice::class,
+            'name' => 'Invoice',
+            'slug' => 'invoice',
+            'description' => 'Invoice.',
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Invoice::class,
+            'name' => 'Quote',
+            'slug' => 'quote',
+            'description' => 'Quote.',
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Invoice::class,
+            'name' => 'Estimate',
+            'slug' => 'estimate',
+            'description' => 'Estimate.',
+        ]);
     }
 }
