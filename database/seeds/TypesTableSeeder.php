@@ -99,6 +99,26 @@ class TypesTableSeeder extends Seeder
             'name' => 'Email Alias',
             'slug' => 'email-alias',
             'description' => 'Email Alias.',
-        ]);        
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Server::class,
+            'name' => 'Web Server',
+            'slug' => 'web-server',
+            'description' => 'Web Server.',
+        ]);
+
+        //
+        factory(App\Models\Type::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'model' => \App\Models\Server::class,
+            'name' => 'Mail Server',
+            'slug' => 'mail-server',
+            'description' => 'Mail Server.',
+        ]);                
     }
 }
