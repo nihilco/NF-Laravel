@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,8 +12,11 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
     <!-- Custom styles for this template -->
-    <link href="/css/nihil.css" rel="stylesheet">
+    <link href="/css/nihil.css?t=<?php echo time() ?>" rel="stylesheet">
   </head>
 
   <body>
@@ -43,12 +46,76 @@
             </li>      
           </ul>
           <ul class="navbar-nav">
+            @guest
             <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/signup">Signup</a>
             </li>
+            @else
+	        <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        <i class="far fa-bell"></i>
+	          </a>
+	          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+		        <a class="dropdown-item" href="#">
+		          <div class="d-flex w-100 justify-content-between">
+		            <h5 class="mb-1">List group item heading</h5>
+		            <small>3 days ago</small>
+		          </div>
+		          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		          <small>Donec id elit non mi porta.</small>
+		        </a>
+		        <a class="dropdown-item" href="#">
+		          <div class="d-flex w-100 justify-content-between">
+		            <h5 class="mb-1">List group item heading</h5>
+		            <small>3 days ago</small>
+		          </div>
+		          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		          <small>Donec id elit non mi porta.</small>
+		        </a>
+		        <a class="dropdown-item" href="#">
+		          <div class="d-flex w-100 justify-content-between">
+		            <h5 class="mb-1">List group item heading</h5>
+		            <small>3 days ago</small>
+		          </div>
+		          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		          <small>Donec id elit non mi porta.</small>
+		        </a>
+		        <a class="dropdown-item" href="#">
+		          <div class="d-flex w-100 justify-content-between">
+		            <h5 class="mb-1">List group item heading</h5>
+		            <small>3 days ago</small>
+		          </div>
+		          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		          <small>Donec id elit non mi porta.</small>
+		        </a>
+		        <a class="dropdown-item" href="#">
+		          <div class="d-flex w-100 justify-content-between">
+		            <h5 class="mb-1">List group item heading</h5>
+		            <small>3 days ago</small>
+		          </div>
+		          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+		          <small>Donec id elit non mi porta.</small>
+		        </a>
+	          </div>
+	        </li>
+	        <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        Uriah
+	          </a>
+	          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDropdown">
+		        <a class="dropdown-item" href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+		        <a class="dropdown-item" href="/profile"><i class="fas fa-user"></i> Profile</a>
+		        <div class="dropdown-divider"></div>
+		        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+		        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+		          {{ csrf_field() }}
+	            </form>
+	          </div>
+	        </li>
+            @endguest
           </ul>
         </div>
       </div>
