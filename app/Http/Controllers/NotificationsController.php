@@ -91,7 +91,7 @@ class NotificationsController extends Controller
     public function destroy(Notification $notification)
     {
         //
-	$notification->markAsRead();
+        $notification->markAsRead();
     }
 
     /**
@@ -102,14 +102,14 @@ class NotificationsController extends Controller
     public function list(Request $request)
     {
         //
-	if(request('read')) {
-	    $notifications = auth()->user()->fresh()->readNotifications;
-	} elseif(request('unread')) {
-	    $notifications = auth()->user()->fresh()->unreadNotifications;
-	} else {
-	    $notifications = auth()->user()->fresh()->notifications;
-	}
-
-	return $notifications;
+        if(request('read')) {
+            $notifications = auth()->user()->fresh()->readNotifications;
+        } elseif(request('unread')) {
+            $notifications = auth()->user()->fresh()->unreadNotifications;
+        } else {
+            $notifications = auth()->user()->fresh()->notifications;
+        }
+        
+        return $notifications;
     }
 }

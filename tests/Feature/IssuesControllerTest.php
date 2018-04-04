@@ -15,17 +15,9 @@ class IssuesControllerTest extends TestCase
         $this->issue = factory(\App\Models\Issue::class)->create();
     }
 
-    public function test_a_guest_can_view_issues()
+    public function test_a_guest_cannot_view_issues()
     {
-        $response = $this->get('/issues');
-        
-        $response->assertSee($this->issue->subject);
-    }
-    
-    public function test_a_guest_can_view_an_issue()
-    {
-        $response = $this->get($this->issue->path());
-        
-        $response->assertSee($this->issue->subject);
+        $response = $this->get('/issues');        
+        $response->assertStatus(302);
     }
 }

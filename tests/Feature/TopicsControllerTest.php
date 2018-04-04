@@ -15,17 +15,9 @@ class TopicsControllerTest extends TestCase
         $this->topic = factory(\App\Models\Topic::class)->create();
     }
 
-    public function test_a_guest_can_view_topics()
+    public function test_a_guest_cannot_view_topics()
     {
         $response = $this->get('/topics');
-        
-        $response->assertSee($this->topic->title);
-    }
-    
-    public function test_a_guest_can_view_a_topic()
-    {
-        $response = $this->get($this->topic->path());
-        
-        $response->assertSee($this->topic->title);
+        $response->assertStatus(302);
     }
 }

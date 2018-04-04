@@ -20,22 +20,9 @@ class BooksControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_a_guest_can_view_books()
+    public function test_a_guest_cannot_view_books()
     {	
         $response = $this->get('/books');
-
-        $response->assertSee($this->book->title);
-    }
-
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_a_guest_can_view_a_book()
-    {
-        $response = $this->get('/books/' . $this->book->id);
-
-        $response->assertSee($this->book->title);
+        $response->assertStatus(302);
     }
 }

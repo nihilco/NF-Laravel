@@ -38,6 +38,11 @@ class SessionsController extends Controller
     public function create()
     {
         //
+        if(!auth()->guest()) {
+            return redirect()->route('dashboard');
+        }
+        
+        //
         return view('sessions.create');
     }
 

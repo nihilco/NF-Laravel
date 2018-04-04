@@ -24,7 +24,12 @@ class RegistrationController extends Controller
     public function create()
     {
         //
-	return view('registration.create');
+        if(!auth()->guest()) {
+            return redirect()->route('dashboard');
+        }
+        
+        //
+        return view('registration.create');
     }
 
     /**
@@ -35,10 +40,9 @@ class RegistrationController extends Controller
      */
     public function store(RegistrationRequest $request)
     {
-	$request->persist();
+        $request->persist();
     
-	return redirect()->route('dashboard');
-	
+        return redirect()->route('dashboard');
     }
 
 }
