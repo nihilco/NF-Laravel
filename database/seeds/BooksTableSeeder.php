@@ -881,6 +881,7 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
             'owner_id' => 1,	
             'title_display' => 'The Boy Who Harnessed the Wind',
             'title_alphabetic' => 'Boy Who Harnessed the Wind, The',
+            'subtitle' => 'Creating Currents of Electricity & Hope',
             'slug' => 'the-boy-who-harnessed-the-wind',
         ]);
 
