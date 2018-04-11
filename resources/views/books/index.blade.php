@@ -31,6 +31,33 @@
   </div>
 
   <div class="row">
+    <div class="col-sm-6">
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Filter
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+    
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+    
+    </div>
+    <div class="col-sm-6 text-right">
+      @if($books->hasPages())
+        {{ $books->links() }}
+      @endif
+    </div>
+  </div>
+
+  <div class="row">
 
     @forelse($books as $book)		  
 

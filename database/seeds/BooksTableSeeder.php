@@ -875,5 +875,117 @@ Meanwhile, young Tavi of Calderon joins a newly formed legion under an assumed n
         ]);
 
         $b77->addAuthor($authors->where('last_name', 'Finn')->first()->id);
+
+        $b78 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Boy Who Harnessed the Wind',
+            'title_alphabetic' => 'Boy Who Harnessed the Wind, The',
+            'slug' => 'the-boy-who-harnessed-the-wind',
+        ]);
+
+        $b78->addAuthor($authors->where('last_name', 'Kamkwamba')->first()->id);
+        $b78->addAuthor($authors->where('last_name', 'Mealer')->first()->id);
+
+        $b79 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Eye of the World',
+            'title_alphabetic' => 'Eye of the World, The',
+            'slug' => 'the-eye-of-the-world',
+        ]);
+
+        $b79->addAuthor($authors->where('last_name', 'Jordan')->first()->id);
+
+        $b80 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'A Crown of Swords',
+            'title_alphabetic' => 'Crown of Swords, A',
+            'slug' => 'a-crown-of-swords',
+        ]);
+
+        $b80->addAuthor($authors->where('last_name', 'Jordan')->first()->id);
+
+        $b81 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Mistborn',
+            'title_alphabetic' => 'Mistborn',
+            'slug' => 'mistborn',
+        ]);
+
+        $b81->addAuthor($authors->where('last_name', 'Sanderson')->first()->id);
+
+        $b82 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Hero of Ages',
+            'title_alphabetic' => 'Hero of Ages, The',
+            'slug' => 'the-hero-of-ages',
+        ]);
+
+        $b82->addAuthor($authors->where('last_name', 'Sanderson')->first()->id);
+
+        $b83 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'The Well of Ascension',
+            'title_alphabetic' => 'Well of Ascension, The',
+            'slug' => 'the-well-of-ascension',
+        ]);
+
+        $b83->addAuthor($authors->where('last_name', 'Sanderson')->first()->id);
+
+        $b84 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Turtles All the Way Down',
+            'title_alphabetic' => 'Turtles All the Way Down',
+            'slug' => 'turtles-all-the-way-down',
+        ]);
+
+        $b84->addAuthor($authors->where('last_name', 'Green')->first()->id);
+
+        $b85 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Children of the Fleet',
+            'title_alphabetic' => 'Children of the Fleet',
+            'slug' => 'children-of-the-fleet',
+        ]);
+
+        $b85->addAuthor($authors->where('last_name', 'Card')->first()->id);
+
+        $b86 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Perfect Shadow',
+            'title_alphabetic' => 'Perfect Shadow',
+            'slug' => 'perfect-shadow',
+        ]);
+
+        $b86->addAuthor($authors->where('last_name', 'Finn')->first()->id);
+
+        $b87 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'Oathbringer',
+            'title_alphabetic' => 'Oathbringer',
+            'slug' => 'oathbringer',
+        ]);
+
+        $b87->addAuthor($authors->where('last_name', 'Finn')->first()->id);
+
+        $b88 = factory('App\Models\Book')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,	
+            'title_display' => 'City of Endless Night',
+            'title_alphabetic' => 'City of Endless Night',
+            'slug' => 'city-of-endless-night',
+        ]);
+
+        $b88->addAuthor($authors->where('last_name', 'Preston')->first()->id);
+        $b88->addAuthor($authors->where('last_name', 'Child')->first()->id);                
     }
 }

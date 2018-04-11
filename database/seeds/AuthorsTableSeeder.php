@@ -166,5 +166,41 @@ class AuthorsTableSeeder extends Seeder
             'last_name' => 'Finn',
         ]);
 
+        $a23 = factory('App\Models\Author')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'first_name' => 'William',
+            'last_name' => 'Kamkwamba',
+        ]);
+
+        $a24 = factory('App\Models\Author')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'first_name' => 'Bryan',
+            'last_name' => 'Mealer',
+        ]);        
+
+        $a25 = factory('App\Models\Author')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'first_name' => 'Robert',
+            'last_name' => 'Jordan',
+        ]);
+
+        $a26 = factory('App\Models\Author')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'first_name' => 'Orson',
+            'middle_name' => 'Scott',
+            'last_name' => 'Card',
+        ]);
+
+        $a27 = factory('App\Models\Author')->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'first_name' => 'John',
+            'last_name' => 'Green',
+        ]);        
+        
     }
 }

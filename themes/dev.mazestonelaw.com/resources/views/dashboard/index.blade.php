@@ -8,66 +8,7 @@
 
 @section('content')
 
-<div class="container-fluid">
-
-<div class="row">
-  <div class="col-sm-9">
-
-<div class="card panel">
-  
-    <div class="row">
-      <div class="col-sm-2 text-center bg-primary card-header">
-	  <span class="month">March</span><br />
-	  <span class="day">3</span>
-      </div>
-      <div class="col-sm-2 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-      <div class="col-sm-2 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-      <div class="col-sm-2 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-      <div class="col-sm-2 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-      <div class="col-sm-2 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-    </div>
-
-</div>
-
-  </div>
-  <div class="col-sm-3">
-
-<div class="card panel">
-  
-    <div class="row">
-      <div class="col-sm-5 text-center bg-primary card-header">
-	  <span class="month">March</span><br />
-	  <span class="day">3</span>
-      </div>
-      <div class="col-sm-7 card-body">
-	  <span class="weekday">Saturday</span><br />
-	  <span class="time">1:38<small>pm</small></span>
-      </div>
-    </div>
-
-</div>
-
-  </div>
-</div>
-
-</div>
-
-    <div class="container-fluid page-top">
+    <div class="container page-top">
 
         <div class="row">
 	    <div class="col-sm-12">

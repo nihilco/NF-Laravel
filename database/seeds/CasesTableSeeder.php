@@ -31,7 +31,17 @@ class CasesTableSeeder extends Seeder
             'case_type_id' => 5,
             'name' => 'Montgomery',
             'description' => 'DUI at Cattleman\'s. DUI Second. Refusal Aggravated.',
-            'date_settled_at' => null,
+            'date_settled_at' => \Carbon\Carbon::now(),
         ]);
+
+        //factory(App\Models\ClientCase::class)->create([
+        //    'creator_id' => 1,
+        //    'owner_id' => 3,
+        //    'client_id' => 3,
+        //    'case_type_id' => 1,
+        //    'name' => 'Montgomery',
+        //    'description' => 'Big case description.',
+        //    'date_settled_at' => null,
+        //]);        
     }
 }
