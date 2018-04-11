@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
 	    CasesTableSeeder::class,
 	    CaseNotesTableSeeder::class,
 	    CaseTypesTableSeeder::class,
+	    LotteriesTableSeeder::class,
 	]);
     }
 }
