@@ -13,7 +13,7 @@
         <div class="row" >
           <div class="col-sm-6">
 
-            <h1 class="mt-3"><a href="{{ $clientCase->client->path() }}">{{ $clientCase->client->name }}</a></h1>
+            <h1 class="mt-3">{{ $clientCase->client->name }}</h1>
             <h3 class="mt-3">{{ $clientCase->county }} County <span class="badge badge-{{ $clientCase->type->color }}">{{ $clientCase->type->name }}</span></h3>
 
             <p class="">{{ $clientCase->description }}</p>
