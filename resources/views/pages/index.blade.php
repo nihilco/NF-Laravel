@@ -38,7 +38,7 @@
       <div class="card">
         <img class="card-img-top" src="https://placehold.it/450x300?text={{ $page->id }}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{ $page->title }}</h5>
+          <h5 class="card-title"><a href="{{ $page->path() }}">{{ $page->title }}</a></h5>
           <p class="card-text">{!! \Illuminate\Support\Str::words($page->description, 25,'....')  !!}</p>
         </div>
       </div>

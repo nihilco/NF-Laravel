@@ -25,8 +25,8 @@ class CaseTypesController extends Controller
     public function index()
     {
         //
-	$caseTypes = CaseType::all();
-	return view('case-types.index', compact('caseTypes'));
+        $caseTypes = CaseType::all();
+        return view('case-types.index', compact('caseTypes'));
     }
 
     /**
@@ -37,7 +37,7 @@ class CaseTypesController extends Controller
     public function create()
     {
         //
-	return view('case-types.create');
+        return view('case-types.create');
     }
 
     /**
@@ -49,30 +49,31 @@ class CaseTypesController extends Controller
     public function store(Request $request)
     {
         //
-	$this->validate(request(), [
-	    'name' => 'required',
-	    'description' => 'required',
-	]);
-
-	$caseType = new CaseType();
-
-	$caseType->creator_id = auth()->id();
-	$caseType->owner_id = auth()->id();
-	$caseType->name = request('name');
-	$caseType->description = request('description');
-	if(request('color') && request('color') != '') {
-	    $caseType->color = request('color');
-	}
-
-	$caseType->save();
-
-	if(request()->expectsJson()) {
-	    return $caseType->load(['creator', 'owner']);
-	}
-
-	return redirect($caseType->path());
+        $this->validate(request(), [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        
+        $caseType = new CaseType();
+        
+        $caseType->creator_id = auth()->id();
+        $caseType->owner_id = auth()->id();
+        $caseType->name = request('name');
+        $caseType->description = request('description');
+        if(request('color') && request('color') != '') {
+            $caseType->color = request('color');
+        }
+        
+        $caseType->save();
+        
+        if(request()->expectsJson()) {
+            return $caseType->load(['creator', 'owner']);
+        }
+        
+        //return redirect($caseType->path());
+        return back();
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -82,9 +83,9 @@ class CaseTypesController extends Controller
     public function show(CaseType $caseType)
     {
         //
-	return view('case-types.show', [
-	    'caseType' => $caseType,
-	]);
+        return view('case-types.show', [
+            'caseType' => $caseType,
+        ]);
     }
 
     /**
@@ -96,7 +97,7 @@ class CaseTypesController extends Controller
     public function edit(CaseType $caseType)
     {
         //
-	return view('case-types.edit', compact('caseType'));
+        return view('case-types.edit', compact('caseType'));
     }
 
     /**
@@ -109,31 +110,31 @@ class CaseTypesController extends Controller
     public function update(Request $request, CaseType $caseType)
     {
         //
-	$this->authorize('update', $caseType);
-
+        $this->authorize('update', $caseType);
+        
         //
-	$this->validate(request(), [
-	    'name' => 'required',
-	    'description' => 'required',
-	]);
+        $this->validate(request(), [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
 
-	$caseType = new CaseType();
-
-	$caseType->creator_id = auth()->id();
-	$caseType->owner_id = auth()->id();
-	$caseType->name = request('name');
-	$caseType->description = request('description');
-	if(request('color') && request('color') != '') {
-	    $caseType->color = request('color');
-	}
-
-	$caseType->save();
-
-	if(request()->expectsJson()) {
-	    return $caseType->load(['creator', 'owner']);
-	}
-
-	return redirect($caseType->path());
+        $caseType = new CaseType();
+        
+        $caseType->creator_id = auth()->id();
+        $caseType->owner_id = auth()->id();
+        $caseType->name = request('name');
+        $caseType->description = request('description');
+        if(request('color') && request('color') != '') {
+            $caseType->color = request('color');
+        }
+        
+        $caseType->save();
+        
+        if(request()->expectsJson()) {
+            return $caseType->load(['creator', 'owner']);
+        }
+        
+        return redirect($caseType->path());
     }
 
     /**
@@ -145,14 +146,14 @@ class CaseTypesController extends Controller
     public function destroy(CaseType $caseType)
     {
         //
-	$this->authorize('delete', $caseType);
+        $this->authorize('delete', $caseType);
+        
+        $caseType->delete();
 
-	$caseType->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

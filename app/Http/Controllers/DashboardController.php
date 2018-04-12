@@ -21,9 +21,9 @@ class DashboardController extends Controller
     //
     public function index()
     {
-	//$cases = ClientCase::where('date_settled_at', '=', null)->get();
-	$caseNotes = CaseNote::latest()->take(50)->with(['case', 'owner'])->get();
-
+        //$cases = ClientCase::where('date_settled_at', '=', null)->get();
+        $caseNotes = CaseNote::latest()->take(50)->with(['case', 'owner'])->paginate(50);
+        
         return view('dashboard.index', compact(['caseNotes']));
     }
 }

@@ -11,14 +11,14 @@ class LotteriesTableSeeder extends Seeder
      */
     public function run()
     {
-	factory(App\Models\Client::class)->create([
+	factory(App\Models\Lottery::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 3,
 	    'name' => 'Powerball',
 	    'description' => 'National Powerball lottery.',
 	]);
 
-	factory(App\Models\Client::class)->create([
+	factory(App\Models\Lottery::class)->create([
 	    'creator_id' => 1,
 	    'owner_id' => 3,
 	    'name' => 'Mega Millions',

@@ -15,7 +15,9 @@ class ClientCase extends Base
                 'creator_id' => $clientCase->creator_id,
                 'owner_id' => $clientCase->owner_id,
                 'case_id' => $clientCase->id,
-                'content' => 'Case created.'		
+                'content' => 'Case created.',
+                'created_at' => $clientCase->created_at->addSecond(),
+                'updated_at' => $clientCase->updated_at->addSecond(),
             ]);
         });
 
@@ -55,15 +57,15 @@ class ClientCase extends Base
 
     public function settle()
     {
-	\App\Models\CaseNote::create([
-	    'creator_id' => auth()->guest() ? 1 : auth()->id(),
-	    'owner_id' => auth()->guest() ? 1 : auth()->id(),
-	    'account_id' => $this->account_id,
-	    'case_id' => $this->id,
-	    'content' => 'Case settled.'		
-	]);
-
-	$this->date_settled_at = \Carbon\Carbon::now();
-	$this->save();
+        \App\Models\CaseNote::create([
+            'creator_id' => auth()->guest() ? 1 : auth()->id(),
+            'owner_id' => auth()->guest() ? 1 : auth()->id(),
+            //'account_id' => $this->account_id,
+            'case_id' => $this->id,
+            'content' => 'Case settled.'		
+        ]);
+        
+        $this->date_settled_at = \Carbon\Carbon::now();
+        $this->save();
     }
 }

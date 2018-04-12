@@ -31,8 +31,8 @@ class CaseNotesTableSeeder extends Seeder
             'owner_id' => $case->owner_id,
             'case_id' => 1,
             'content' => 'Pretrial March 5 at 10:00',
-            'created_at' => \Carbon\Carbon::now()->addSeconds(1),
-            'updated_at' => \Carbon\Carbon::now()->addSeconds(1),
+            'created_at' => \Carbon\Carbon::now()->subDays(5),
+            'updated_at' => \Carbon\Carbon::now()->subDays(5),
         ]);
     }
 }

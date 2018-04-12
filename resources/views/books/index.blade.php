@@ -65,7 +65,7 @@
       <div class="card">
         <img class="card-img-top" src="https://placehold.it/300x450?text={{ $book->id }}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{ $book->title_display }}</h5>
+          <h5 class="card-title"><a href="{{ $book->path() }}">{{ $book->title_display }}</a></h5>
           <p class="card-text">{!! \Illuminate\Support\Str::limit($book->description, 150,'...')  !!}</p>
         </div>
       </div>

@@ -54,47 +54,48 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-	$this->authorize('create', \App\Models\Client::class);
-	
+        $this->authorize('create', \App\Models\Client::class);
+        
         //
-	$this->validate(request(), [
-	    'name' => 'required',
-	    'email' => '',
-	    'phone' => '',
-	    'address1' => '',
-	    'address2' => '',
-	    'city' => '',
-	    'province' => '',
-	    'postal_code' => '',
-	    'description' => '',
-	]);
-
-	$client = new Client();
-
-	$client->creator_id = auth()->id();
-	$client->owner_id = auth()->id();
-	//$client->account_id = config('view.account_id');
-	$client->name = request('name');
-	$client->email = request('email');
-	$client->phone = request('phone');
-	$client->address1 = request('address1');
-	if(request('address2') != null && request('address2') != '') {
-	    $client->address2 = request('address2');
-	}
-	$client->city = request('city');
-	$client->province_id = request('province');
-	$client->postal_code = request('postal_code');
-	$client->description = request('description');
-
-	$client->save();
-
-	if(request()->expectsJson()) {
-	    return $client->load(['creator', 'owner']);
-	}
-
-	return redirect($client->path());
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => '',
+            'phone' => '',
+            'address1' => '',
+            'address2' => '',
+            'city' => '',
+            'province' => '',
+            'postal_code' => '',
+            'description' => '',
+        ]);
+        
+        $client = new Client();
+        
+        $client->creator_id = auth()->id();
+        $client->owner_id = auth()->id();
+        //$client->account_id = config('view.account_id');
+        $client->name = request('name');
+        $client->email = request('email');
+        $client->phone = request('phone');
+        $client->address1 = request('address1');
+        if(request('address2') != null && request('address2') != '') {
+            $client->address2 = request('address2');
+        }
+        $client->city = request('city');
+        $client->province_id = request('province');
+        $client->postal_code = request('postal_code');
+        $client->description = request('description');
+        
+        $client->save();
+        
+        if(request()->expectsJson()) {
+            return $client->load(['creator', 'owner']);
+        }
+        
+        //return redirect($client->path());
+        return back();
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -103,13 +104,13 @@ class ClientsController extends Controller
      */
     public function show(Client $client)
     {
-	$this->authorize('view', $client);
+        $this->authorize('view', $client);
 
-	return view('clients.show', [
-	    'client' => $client,
-	]);
+        return view('clients.show', [
+            'client' => $client,
+        ]);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -118,10 +119,10 @@ class ClientsController extends Controller
      */
     public function edit(Client $client)
     {
-	$this->authorize('update', $client);
+        $this->authorize('update', $client);
 	
         //
-	return view('clients.edit', compact('client'));
+        return view('clients.edit', compact('client'));
     }
 
     /**

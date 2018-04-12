@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $book->title)
+@section('title', $book->title_display)
 
 @section('content')
 

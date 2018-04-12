@@ -38,7 +38,7 @@
       <div class="card">
         <img class="card-img-top" src="https://placehold.it/450x300?text={{ $invoice->id  }}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Invoice #{{ $invoice->id }}</h5>
+          <h5 class="card-title"><a href="{{ $invoice->path() }}">Invoice #{{ $invoice->id }}</a></h5>
         </div>
       </div>
     </div>

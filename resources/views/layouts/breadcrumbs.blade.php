@@ -4,7 +4,7 @@
      <li class="list-inline-item">&#47;</li>
      <li class="list-inline-item">
      @if(array_key_exists('url', $breadcrumbs[$i]))
-     <a href="/">
+     <a href="{{ $breadcrumbs[$i]['url'] }}">
      @endif
      
      @if(array_key_exists('label', $breadcrumbs[$i]))

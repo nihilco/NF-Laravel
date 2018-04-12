@@ -4,7 +4,7 @@
 
 @extends('layouts.admin')
 
-@section('title', $clientCase->name)
+@section('title', $clientCase->client->name . ' - ' . $clientCase->county . ' County ' . $clientCase->type->name)
 
 @section('content')
 
@@ -14,13 +14,14 @@
           <div class="col-sm-6">
 
             <h1 class="mt-3"><a href="{{ $clientCase->client->path() }}">{{ $clientCase->client->name }}</a></h1>
-            <h3 class="mt-3">{{ $clientCase->name }} <span class="badge badge-{{ $clientCase->type->color }}">{{ $clientCase->type->name }}</span></h3>
+            <h3 class="mt-3">{{ $clientCase->county }} County <span class="badge badge-{{ $clientCase->type->color }}">{{ $clientCase->type->name }}</span></h3>
 
             <p class="">{{ $clientCase->description }}</p>
 
 	  </div>
 	  <div class="col-sm-3">
 	    <ul class="list-unstyled mt-3">
+          <li><strong>Contact Information:</strong></li>
 	      @if($clientCase->client->email)
 	      <li><a href="mailto:{{ $clientCase->client->email }}" target="_blank">{{ $clientCase->client->email }}</a></li>
 	      @endif
@@ -30,7 +31,7 @@
 	      @if($clientCase->client->address1 || $clientCase->client->address2 || $clientCase->client->city || $clientCase->client->province || $clientCase->client->postalcode)
               <li>{{ $clientCase->client->address1 }}<br />
 {{ ($clientCase->client->address2 != null || $clientCase->client->address2 != '') ? $clientCase->client->address2 . '<br />' : '' }}
-{{ $clientCase->client->city }}, {{ $clientCase->client->province->abbr }}{{ $clientCase->client->postal_code }}</li>
+{{ $clientCase->client->city }}, {{ $clientCase->client->province->abbr }} {{ $clientCase->client->postal_code }}</li>
    	      @endif
             </ul>
 	  </div>

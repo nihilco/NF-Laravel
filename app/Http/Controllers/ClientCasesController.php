@@ -26,8 +26,8 @@ class ClientCasesController extends Controller
     public function index()
     {
         //
-	$clientCases = ClientCase::all();
-	return view('client-cases.index', compact('clientCases'));
+        $clientCases = ClientCase::all();
+        return view('client-cases.index', compact('clientCases'));
     }
 
     /**
@@ -37,10 +37,10 @@ class ClientCasesController extends Controller
      */
     public function create()
     {
-	$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+        $clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
 	
         //
-	return view('client-cases.create', compact('clients'));
+        return view('client-cases.create', compact('clients'));
     }
 
     /**
@@ -52,31 +52,31 @@ class ClientCasesController extends Controller
     public function store(Request $request)
     {
         //
-	$this->authorize('create', \App\Models\ClientCase::class);
+        $this->authorize('create', \App\Models\ClientCase::class);
 	
         //
-	$this->validate(request(), [
-	    'client' => 'required',
-	    'name' => 'required',
-	]);
-
-	$clientCase = new ClientCase();
-
-	$clientCase->creator_id = auth()->id();
-	$clientCase->owner_id = auth()->id();
-	$clientCase->account_id = config('view.account_id');
-	$clientCase->client_id = request('client');
-	$clientCase->name = request('name');
-
-	$clientCase->save();
-
-	if(request()->expectsJson()) {
-	    return $clientCase->load(['creator', 'owner']);
-	}
-
-	return redirect($clientCase->path());	
+        $this->validate(request(), [
+            'client' => 'required',
+            'name' => 'required',
+        ]);
+        
+        $clientCase = new ClientCase();
+        
+        $clientCase->creator_id = auth()->id();
+        $clientCase->owner_id = auth()->id();
+        $clientCase->account_id = config('view.account_id');
+        $clientCase->client_id = request('client');
+        $clientCase->name = request('name');
+        
+        $clientCase->save();
+        
+        if(request()->expectsJson()) {
+            return $clientCase->load(['creator', 'owner']);
+        }
+        
+        return redirect($clientCase->path());	
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -86,7 +86,7 @@ class ClientCasesController extends Controller
     public function show(ClientCase $clientCase)
     {
         //
-	return view('client-cases.show', compact('clientCase'));
+        return view('client-cases.show', compact('clientCase'));
     }
 
     /**
@@ -97,12 +97,12 @@ class ClientCasesController extends Controller
      */
     public function edit(ClientCase $clientCase)
     {
-	$this->authorize('update', $clientCase);
-
-	$clients = Client::all();
-
+        $this->authorize('update', $clientCase);
+        
+        $clients = Client::all();
+        
         //
-	return view('client-cases.edit', compact(['clientCase', 'clients']));
+        return view('client-cases.edit', compact(['clientCase', 'clients']));
     }
 
     /**
@@ -115,23 +115,23 @@ class ClientCasesController extends Controller
     public function update(Request $request, ClientCase $clientCase)
     {
         //
-	$this->authorize('update', $clientCase);
+        $this->authorize('update', $clientCase);
+        
+        $this->validate(request(), [
+            'name' => 'required',
+            'client' => 'required',
+        ]);
+        
+        $clientCase->name = request('name');
+        $clientCase->client_id = request('client');
+        
+        $clientCase->save();
+        
+        if(request()->expectsJson()) {
+            return $clientCase->load(['creator', 'owner']);
+        }
 
-	$this->validate(request(), [
-	    'name' => 'required',
-	    'client' => 'required',
-	]);
-
-	$clientCase->name = request('name');
-	$clientCase->client_id = request('client');
-
-	$clientCase->save();
-
-	if(request()->expectsJson()) {
-	    return $clientCase->load(['creator', 'owner']);
-	}
-
-	return redirect($clientCase->path());
+        return redirect($clientCase->path());
     }
 
     /**
@@ -143,14 +143,14 @@ class ClientCasesController extends Controller
     public function destroy(ClientCase $clientCase)
     {
         //
-	$this->authorize('delete', $clientCase);
-
-	$clientCase->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return back();
+        $this->authorize('delete', $clientCase);
+        
+        $clientCase->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return back();
     }
 }

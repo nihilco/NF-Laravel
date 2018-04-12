@@ -19,7 +19,7 @@ $factory->define(App\Models\ClientCase::class, function (Faker $faker) {
         'case_type_id' => function () {
             return factory(App\Models\CaseType::class)->create()->id;
         },
-        'name' => $faker->words(rand(3,6), true),
+        'county' => $faker->word,
         'description' => $faker->paragraphs(1, true),
     ];
 });

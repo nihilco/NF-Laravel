@@ -24,15 +24,19 @@ class CasesTableSeeder extends Seeder
         //    }
         //}
 
-        factory(App\Models\ClientCase::class)->create([
+        $case1 = factory(App\Models\ClientCase::class)->create([
             'creator_id' => 1,
             'owner_id' => 3,
             'client_id' => 1,
             'case_type_id' => 5,
-            'name' => 'Montgomery',
+            'county' => 'Montgomery',
             'description' => 'DUI at Cattleman\'s. DUI Second. Refusal Aggravated.',
-            'date_settled_at' => \Carbon\Carbon::now(),
+            'created_at' => \Carbon\Carbon::now()->subWeek(),
+            'updated_at' => \Carbon\Carbon::now()->subWeek(),
+            //'date_settled_at' => \Carbon\Carbon::now(),
         ]);
+
+        $case1->settle();
 
         //factory(App\Models\ClientCase::class)->create([
         //    'creator_id' => 1,

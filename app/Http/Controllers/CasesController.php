@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Models\ClientCase;
 use App\Models\CaseType;
+use App\Models\Province;
 use App\Filters\CaseFilters;
 use Illuminate\Http\Request;
 
@@ -28,9 +29,9 @@ class CasesController extends Controller
     public function index(CaseFilters $filters)
     {
         //
-	$clientCases = ClientCase::filter($filters)->with(['client', 'owner'])->get();
+        $clientCases = ClientCase::filter($filters)->with(['client', 'owner'])->paginate(25);
 
-	return view('cases.index', compact('clientCases'));
+        return view('cases.index', compact('clientCases'));
     }
 
     /**
@@ -40,12 +41,13 @@ class CasesController extends Controller
      */
     public function create()
     {
-	//$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
-	$clients = Client::orderBy('name', 'asc')->get();
-	$caseTypes = CaseType::all();
-
+        //$clients = Client::where('account_id', config('view.account_id'))->orderBy('name', 'asc')->get();
+        $clients = Client::orderBy('name', 'asc')->get();
+        $caseTypes = CaseType::all();
+        $provinces = Province::all();
+        
         //
-	return view('cases.create', compact(['clients', 'caseTypes']));
+        return view('cases.create', compact(['clients', 'caseTypes', 'provinces']));
     }
 
     /**
@@ -57,36 +59,36 @@ class CasesController extends Controller
     public function store(Request $request)
     {
         //
-	$this->authorize('create', \App\Models\ClientCase::class);
+        $this->authorize('create', \App\Models\ClientCase::class);
 	
         //
-	$this->validate(request(), [
-	    'client' => 'required',
-	    'type' => 'required',
-	    'name' => 'required',
-	    'description' => '',
-	]);
-
-	$clientCase = new ClientCase();
-
-	$clientCase->creator_id = auth()->id();
-	$clientCase->owner_id = auth()->id();
-	//$clientCase->account_id = config('view.account_id');
-	$clientCase->client_id = request('client');
-	$clientCase->case_type_id = request('type');
-	$clientCase->date_of_incident = request('doi');
-	$clientCase->name = request('name');
-	$clientCase->description = request('description');
-
-	$clientCase->save();
-
-	if(request()->expectsJson()) {
-	    return $clientCase->load(['creator', 'owner']);
-	}
-
-	return redirect($clientCase->path());	
+        $this->validate(request(), [
+            'client' => 'required',
+            'type' => 'required',
+            'county' => 'required',
+            'description' => '',
+        ]);
+        
+        $clientCase = new ClientCase();
+        
+        $clientCase->creator_id = auth()->id();
+        $clientCase->owner_id = auth()->id();
+        //$clientCase->account_id = config('view.account_id');
+        $clientCase->client_id = request('client');
+        $clientCase->case_type_id = request('type');
+        $clientCase->date_of_incident = request('doi');
+        $clientCase->county = request('county');
+        $clientCase->description = request('description');
+        
+        $clientCase->save();
+        
+        if(request()->expectsJson()) {
+            return $clientCase->load(['creator', 'owner']);
+        }
+        
+        return redirect($clientCase->path());	
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -95,12 +97,12 @@ class CasesController extends Controller
      */
     public function show(int $id)
     {
-	if(!$clientCase = ClientCase::find($id)) {
-	    abort(404);
-	}
-	
+        if(!$clientCase = ClientCase::find($id)) {
+            abort(404);
+        }
+        
         //
-	return view('cases.show', compact('clientCase'));
+        return view('cases.show', compact('clientCase'));
     }
 
     /**
@@ -111,14 +113,16 @@ class CasesController extends Controller
      */
     public function edit(int $id)
     {
-	$clientCase = ClientCase::find($id);
-
-	$this->authorize('update', $clientCase);
-
-	$clients = Client::all();
-	$caseTypes = CaseType::all();
+        $clientCase = ClientCase::find($id);
+        
+        $this->authorize('update', $clientCase);
+        
+        $clients = Client::all();
+        $caseTypes = CaseType::all();
+        $provinces = Province::all();
+        
         //
-	return view('cases.edit', compact(['clientCase', 'clients', 'caseTypes']));
+        return view('cases.edit', compact(['clientCase', 'clients', 'caseTypes', 'provinces']));
     }
 
     /**
@@ -130,33 +134,33 @@ class CasesController extends Controller
      */
     public function update(Request $request, int $id)
     {
-	$clientCase = ClientCase::find($id);
-
+        $clientCase = ClientCase::find($id);
+        
         //
-	$this->authorize('update', $clientCase);
-
-	$this->validate(request(), [
-	    'name' => 'required',
-	    'client' => 'required',
-	    'type' => 'required',
-	    'description' => '',
-	]);
-
-	$clientCase->name = request('name');
-	$clientCase->client_id = request('client');
-	$clientCase->case_type_id = request('type');
-	$clientCase->date_of_incident = request('doi');
-	$clientCase->description = request('description');
-	
-	$clientCase->save();
-
-	if(request()->expectsJson()) {
-	    return $clientCase->load(['creator', 'owner']);
-	}
-
-	return redirect($clientCase->path());
+        $this->authorize('update', $clientCase);
+        
+        $this->validate(request(), [
+            'county' => 'required',
+            'client' => 'required',
+            'type' => 'required',
+            'description' => '',
+        ]);
+        
+        $clientCase->county = request('county');
+        $clientCase->client_id = request('client');
+        $clientCase->case_type_id = request('type');
+        $clientCase->date_of_incident = request('doi');
+        $clientCase->description = request('description');
+        
+        $clientCase->save();
+        
+        if(request()->expectsJson()) {
+            return $clientCase->load(['creator', 'owner']);
+        }
+        
+        return redirect($clientCase->path());
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -165,36 +169,36 @@ class CasesController extends Controller
      */
     public function destroy(int $id)
     {
-	if(!$clientCase = ClientCase::find($id)) {
-	    abort(404);
-	}
-
+        if(!$clientCase = ClientCase::find($id)) {
+            abort(404);
+        }
+        
         //
-	$this->authorize('delete', $clientCase);
-
-	$clientCase->delete();
-
-	if(request()->expectsJson()) {
-	    return response([], 204);
-	}
-
-	return redirect('/dashboard');
+        $this->authorize('delete', $clientCase);
+        
+        $clientCase->delete();
+        
+        if(request()->expectsJson()) {
+            return response([], 204);
+        }
+        
+        return redirect('/dashboard');
     }
-
+    
     public function settle(int $id)
     {
         if(!$clientCase = ClientCase::find($id)) {
-	    abort(404);
-	}
-
-	$this->authorize('settle', $clientCase);
-
-	$clientCase->settle();
-
-	if(request()->expectsJson()) {
-	    response([], 204);
-	}
-
-	return back();
+            abort(404);
+        }
+        
+        $this->authorize('settle', $clientCase);
+        
+        $clientCase->settle();
+        
+        if(request()->expectsJson()) {
+            response([], 204);
+        }
+        
+        return back();
     }
 }

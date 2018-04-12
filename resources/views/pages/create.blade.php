@@ -1,13 +1,36 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('title', 'Create Page')
 
 @section('content')
 
-    <div class="container page-top">
-      <div class="pt-3">
-        <h1>Create Page</h1>
-      </div>
+<div class="container-fluid">
+
+  <div class="row">
+    
+    <div class="col-sm-8">
+
+      <h1>Create Page</h1>
+
+      @include('layouts.breadcrumbs', ['breadcrumbs' => [
+          [
+              'label' => 'Pages',
+              'url' => '/pages',
+          ],
+          [
+              'label' => 'Create',
+          ],
+      ]])
+
+    </div>
+
+    <div class="col-sm-4 text-right">
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
       <p class="lead">Create a new page.</p>
 
       <form method="POST" action="/pages">
@@ -44,7 +67,9 @@
    	<button type="submit" class="btn btn-primary">Create Page</button>
 	
       </form>
-
     </div>
+  </div>
+    
+</div>    
 
 @endsection

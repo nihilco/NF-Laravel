@@ -27,8 +27,8 @@ class BooksController extends Controller
     public function index()
     {
         //
-	$books = Book::orderBY('title_alphabetic', 'asc')->paginate(24);
-	return view('books.index', compact(['books']));
+        $books = Book::orderBy('title_alphabetic', 'asc')->paginate(24);
+        return view('books.index', compact(['books']));
     }
 
     /**
@@ -39,9 +39,9 @@ class BooksController extends Controller
     public function create()
     {
         //
-	$series = Series::all();
-	$authors = Author::all();
-	return view('books.create', compact(['authors', 'series']));
+        $series = Series::all();
+        $authors = Author::all();
+        return view('books.create', compact(['authors', 'series']));
     }
 
     /**
@@ -53,51 +53,51 @@ class BooksController extends Controller
     public function store(Request $request)
     {
         //
-	$this->authorize('create', Book::class);
+        $this->authorize('create', Book::class);
 
-	$this->validate(request(), [
-	    'display' => 'required',
-	    'alphabetic' => 'required',
-	    'subtitle' => '',
-	    'slug' => 'required',
-	    'authors' => 'required|array|min:1',
-	    'authors.*' => 'min:1',
-	    'series' => '',
-	    'order' => '',
-	    'description' => 'required',
-	]);
-
-	$book = new Book();
-
-	$book->creator_id = auth()->id();
-	$book->owner_id = auth()->id();
-	$book->title_display = request('display');
-	$book->title_alphabetic = request('alphabetic');
-	$book->slug = request('slug');
-	$book->description = request('description');
-	if(request('subtitle') != '') {
-	    $book->subtitle = request('subtitle');
-	}
-	if(request('series') > 0) {
-	    $book->series_id = request('series');
-	}
-	if(request('order') > 0) {
-	    $book->series_order = request('order');
-	}
-
-	$book->save();
-
-	foreach(request('authors') as $a) {
-	    $book->addAuthor($a);
-	}
-
-	if($request->expectsJson()) {
-	    return $book->load(['creator', 'owner']);
-	}
-
-	return redirect($book->path());
+        $this->validate(request(), [
+            'display' => 'required',
+            'alphabetic' => 'required',
+            'subtitle' => '',
+            'slug' => 'required',
+            'authors' => 'required|array|min:1',
+            'authors.*' => 'min:1',
+            'series' => '',
+            'order' => '',
+            'description' => 'required',
+        ]);
+        
+        $book = new Book();
+        
+        $book->creator_id = auth()->id();
+        $book->owner_id = auth()->id();
+        $book->title_display = request('display');
+        $book->title_alphabetic = request('alphabetic');
+        $book->slug = request('slug');
+        $book->description = request('description');
+        if(request('subtitle') != '') {
+            $book->subtitle = request('subtitle');
+        }
+        if(request('series') > 0) {
+            $book->series_id = request('series');
+        }
+        if(request('order') > 0) {
+            $book->series_order = request('order');
+        }
+        
+        $book->save();
+        
+        foreach(request('authors') as $a) {
+            $book->addAuthor($a);
+        }
+        
+        if($request->expectsJson()) {
+            return $book->load(['creator', 'owner']);
+        }
+        
+        return redirect($book->path());
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -107,7 +107,7 @@ class BooksController extends Controller
     public function show(Book $book)
     {
         //
-	return view('books.show', compact('book'));
+        return view('books.show', compact('book'));
     }
 
     /**
@@ -119,11 +119,11 @@ class BooksController extends Controller
     public function edit(Book $book)
     {
         //
-	$series = Series::all();
-	$authors = Author::all();
-	return view('books.edit', compact(['book', 'series', 'authors']));
+        $series = Series::all();
+        $authors = Author::all();
+        return view('books.edit', compact(['book', 'series', 'authors']));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -134,55 +134,55 @@ class BooksController extends Controller
     public function update(Request $request, Book $book)
     {
         //
-	$this->authorize('update', $book);
-
-	$this->validate(request(), [
-	    'display' => 'required',
-	    'alphabetic' => 'required',
-	    'subtitle' => '',
-	    'slug' => 'required',
+        $this->authorize('update', $book);
+        
+        $this->validate(request(), [
+            'display' => 'required',
+            'alphabetic' => 'required',
+            'subtitle' => '',
+            'slug' => 'required',
     	    'authors' => 'required|array|min:1',
-	    'authors.*' => 'min:1',
-	    'series' => '',
-	    'order' => '',
-	    'description' => 'required',
-	]);
-
-	//dd(request());
-
-	$book->title_display = request('display');
-	$book->title_alphabetic = request('alphabetic');
-	$book->slug = request('slug');
-	$book->description = request('description');
-	if(request('subtitle') != '') {
-	    $book->subtitle = request('subtitle');
-	}else{
-	    $book->subtitle = null;
-	}
-	if(request('series') > 0) {
-	    $book->series_id = request('series');
-	}else{
-	    $book->series_id = null;
-	}
-	if(request('order') > 0) {
-	    $book->series_order = request('order');
-	}else{
-	    $book->series_order = null;
-	}
-
-	$book->save();
-
-	$book->authors->each->delete();
-
-	foreach(request('authors') as $a) {
-	    $book->addAuthor($a);
-	}
-
-	if($request->expectsJson()) {
-	    return $book->load(['creator', 'owner']);
-	}
-
-	return redirect($book->path());
+            'authors.*' => 'min:1',
+            'series' => '',
+            'order' => '',
+            'description' => 'required',
+        ]);
+        
+        //dd(request());
+        
+        $book->title_display = request('display');
+        $book->title_alphabetic = request('alphabetic');
+        $book->slug = request('slug');
+        $book->description = request('description');
+        if(request('subtitle') != '') {
+            $book->subtitle = request('subtitle');
+        }else{
+            $book->subtitle = null;
+        }
+        if(request('series') > 0) {
+            $book->series_id = request('series');
+        }else{
+            $book->series_id = null;
+        }
+        if(request('order') > 0) {
+            $book->series_order = request('order');
+        }else{
+            $book->series_order = null;
+        }
+        
+        $book->save();
+        
+        $book->authors->each->delete();
+        
+        foreach(request('authors') as $a) {
+            $book->addAuthor($a);
+        }
+        
+        if($request->expectsJson()) {
+            return $book->load(['creator', 'owner']);
+        }
+        
+        return redirect($book->path());
     }
 
     /**

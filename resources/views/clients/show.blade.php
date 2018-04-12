@@ -33,7 +33,8 @@
 		  <thead>
 		    <tr>
                       <th scope="col">#</th>
-	              <th scope="col">Name</th>
+	              <th scope="col">County</th>
+	              <th scope="col">Type</th>    
      	              <th scope="col">Actions</th>
 		    </tr>
 		  </thead>
@@ -44,7 +45,8 @@
 		@forelse($client->activeCases as $case)		  
 		    <tr>
 		      <th scope="row">{{ $c }}</th>
-		      <td><a href="{{ $case->path() }}">{{ $case->name }}</a></td>
+		      <td><a href="{{ $case->path() }}">{{ $case->county }} County</a></td>
+		      <td>{{ $case->type->name }}</td>
 		      <td>
 		        <ul class="list-inline">
 			  @can('update', $case)
@@ -64,7 +66,7 @@
 		    ?>
 		@empty
 		    <tr>
-		      <td colspan="3">No active cases at this time.</td>
+		      <td colspan="4">No active cases at this time.</td>
 		    </tr>
                 @endforelse
 		  </tbody>
@@ -76,7 +78,8 @@
 		  <thead>
 		    <tr>
                       <th scope="col">#</th>
-	              <th scope="col">Name</th>
+	              <th scope="col">County</th>
+	              <th scope="col">Type</th>            
      	              <th scope="col">Actions</th>
 		    </tr>
 		  </thead>
@@ -87,7 +90,8 @@
 		@forelse($client->settledCases as $case)		  
 		    <tr>
 		      <th scope="row">{{ $c }}</th>
-		      <td><a href="{{ $case->path() }}">{{ $case->name }}</a></td>
+		      <td><a href="{{ $case->path() }}">{{ $case->county }} County</a></td>
+              <td>{{ $case->type->name }}</td>
 		      <td>
 		        <ul class="list-inline">
 			  <li class="list-inline-item"><a href="{{ $case->path() }}">View</a></li>
@@ -108,7 +112,7 @@
 		    ?>
 		@empty
 		    <tr>
-		      <td colspan="3">No settled cases at this time.</td>
+		      <td colspan="4">No settled cases at this time.</td>
 		    </tr>
                 @endforelse
 		  </tbody>

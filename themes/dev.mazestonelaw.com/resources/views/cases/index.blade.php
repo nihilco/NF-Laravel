@@ -26,7 +26,7 @@
 
     <div class="col-sm-8">
 
-      <h1>{{ ucfirst($type) }} Cases</h1>
+      <h1 class="pt-3">{{ ucfirst($type) }} Cases</h1>
 
       @include('layouts.breadcrumbs', ['breadcrumbs' => [
           [

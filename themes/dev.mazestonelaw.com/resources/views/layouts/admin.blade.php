@@ -83,7 +83,11 @@
       </div>
     </nav>
 
-    @yield('content')
+    <main class="content-main">
+
+      @yield('content')
+
+    </main>
 
     <footer class="footer">
       <div class="container">
