@@ -71,7 +71,7 @@
 	<form method="POST" action="{{ $note->path() }}" style="position:absolute;right:15px;">{{ csrf_field() }}{{ method_field('DELETE') }}<button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button></form>
                                                                                                                  <h6><a href="{{ $note->case->path() }}">{{ $note->case->client->name }}</a> - <a href="{{ $note->case->path() }}">{{ $note->case->county . ' County' }} <span class="badge badge-{{ $note->case->type->color }}">{{ $note->case->type->name }}</span></a></h6>
           <p style="margin-bottom:0;margin-right:2em;">{{ $note->content }}</p>
-	  <small class="text-muted">Posted by <a href="{{ $note->owner->path() }}">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}</small>
+	  <small class="text-muted">Posted by <a href="#">{{ $note->owner->name }}</a> on {{ $note->created_at->toDayDateTimeString() }}</small>
 	</div>	
       </div>	    
 
