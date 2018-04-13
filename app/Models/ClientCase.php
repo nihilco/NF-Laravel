@@ -5,6 +5,8 @@ namespace App\Models;
 class ClientCase extends Base
 {
     protected $table = 'cases';
+
+    protected $dates = ['incident_at', 'settled_at'];
     
     protected static function boot()
     {
@@ -65,7 +67,17 @@ class ClientCase extends Base
             'content' => 'Case settled.'		
         ]);
         
-        $this->date_settled_at = \Carbon\Carbon::now();
+        $this->settled_at = \Carbon\Carbon::now();
         $this->save();
     }
+
+    //public function getIncidentAtAttribute($date)
+    //{
+    //    return \Carbon\Carbon::createFromFormat('m/d/Y', $date);
+    //}
+
+    //public function getSettledAtAttribute($date)
+    //{
+    //    return \Carbon\Carbon::createFromFormat('m/d/Y', $date);
+    //}
 }

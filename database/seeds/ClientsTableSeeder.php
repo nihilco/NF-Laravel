@@ -15,7 +15,7 @@ class ClientsTableSeeder extends Seeder
             'creator_id' => 1,
             'owner_id' => 3,
             'name' => 'Shawn Thompson',
-            'email' => 'stjffkldsjsfl@email',
+            'email' => 'stjffkldsjsfl@email.com',
             'phone' => '578389893443',
             'address1' => '60 East HWY',
             'city' => 'Owingsville',

@@ -9,7 +9,7 @@
     <div class="row">
 	  <div class="col-sm-12">
 
-        <h1>Create Case</h1>
+        <h1 class="mt-3">Create Case</h1>
 
         <p class="lead">Use the form to create a client.</p>
 

@@ -21,8 +21,8 @@ class CreateCasesTable extends Migration
     	    $table->unsignedInteger('case_type_id');
             $table->string('county');
             $table->text('description')->nullable();
-            $table->date('date_of_incident')->nullable();
-            $table->datetime('date_settled_at')->nullable();
+            $table->date('incident_at')->nullable();
+            $table->date('settled_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

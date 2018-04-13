@@ -38,7 +38,7 @@
   	  <div class="col-sm-3 text-right">
 
 	    <ul class="list-inline mt-3">
-	      @if($clientCase->date_settled_at == null)
+	      @if($clientCase->settled_at == null)
 	      <li class="list-inline-item"><form action="{{ $clientCase->path() . '/settle' }}" method="POST">{{ csrf_field() }}{{ method_field('PATCH') }}<button type="submit" class="btn btn-lg btn-success"><i class="fas fa-exchange-alt"></i></button></form></li>
 	      @endif
 	      @can('update', $clientCase)
