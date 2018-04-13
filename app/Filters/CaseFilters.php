@@ -10,12 +10,12 @@ class CaseFilters extends Filters
 
     public function active()
     {
-	return $this->builder->where('date_settled_at', '=', null);
+	return $this->builder->where('settled_at', '=', null);
     }
 
     public function closed()
     {
-        return $this->builder->where('date_settled_at', '!=', null);
+        return $this->builder->where('settled_at', '!=', null);
     }
 
     public function client()

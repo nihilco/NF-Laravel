@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <div class="container page-top">
+  <div class="container pb-3">
 
     <div class="row">
 	  <div class="col-sm-12">
