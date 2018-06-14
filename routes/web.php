@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Models\Page;
+use App\Models\Website;
 
 Route::get('/', 'DefaultController@index')->name('home');
 
@@ -23,6 +25,10 @@ Route::get('/verify-email', 'VerifyEmailController@index');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/profile', 'ProfileController@index')->name('profile');
+
+// Donate
+Route::get('/donate', 'DonationController@create');
+Route::post('/donate', 'DonationController@store');
 
 // TODO: Breakdown into grouped routes
 Route::resource('accounts', 'AccountsController');
@@ -40,6 +46,7 @@ Route::resource('categories', 'CategoriesController');
 Route::resource('channels', 'ChannelsController');
 Route::resource('clients', 'ClientsController');
 Route::resource('contact', 'ContactController');
+Route::resource('contact-us', 'ContactController');
 Route::resource('contacts', 'ContactsController');
 Route::resource('countries', 'CountriesController');
 Route::resource('currencies', 'CurrenciesController');
@@ -52,6 +59,7 @@ Route::resource('exceptions', 'ExceptionsController');
 Route::delete('/favorites', 'FavortitesController@destroy');
 Route::resource('favorites', 'FavoritesController');
 Route::resource('follows', 'FollowsController');
+Route::resource('fundraisers', 'FundraisersController');
 Route::resource('groups', 'GroupsController');
 Route::resource('invoices', 'InvoicesController');
 Route::resource('issues', 'IssuesController');
@@ -114,9 +122,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('send_test_email', function(){
     Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message) {
         $message->to('mclemmer@gmail.com', 'Matt Clemmer');
-	$message->from('no-reply@dev.mazestonelaw.com', 'No-Reply | Maze & Stone');
-	$message->subject('Mailgun and Laravel Test');
-      });
+        $message->from('no-reply@dev.mazestonelaw.com', 'No-Reply | Maze & Stone');
+        $message->subject('Mailgun and Laravel Test');
+    });
 });
 
-Route::get('/{page}', 'PagesController@show');
+//Route::get('/{page}', 'PagesController@show');
+Route::get('/{slug}', function($slug) {
+    $host = \Request::server("HTTP_HOST");
+    $w = Website::where('hostname', $host)->first();
+    $page = Page::where([
+        ['slug', $slug],
+        ['website_id', $w->id],
+    ])->first() ?? abort(404);
+    return view('pages.show', compact('page'));
+});

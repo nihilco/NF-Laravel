@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             WebsitesTableSeeder::class,
             AliasesTableSeeder::class,
             InvoicesTableSeeder::class,
+            FundraisersTableSeeder::class,
             PagesTableSeeder::class,
             PostsTableSeeder::class,
             CommentsTableSeeder::class,

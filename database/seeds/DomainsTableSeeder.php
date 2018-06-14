@@ -335,5 +335,12 @@ class DomainsTableSeeder extends Seeder
             'customer_id' => $customers->where('name', 'Jen Clemmer')->first()->id,
             'tld' => 'goodbyemonstercookies.com',
         ]);
+
+        factory(App\Models\Domain::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'customer_id' => $customers->where('name', 'Antiquarians')->first()->id,
+            'tld' => 'schowsestatesales.com',
+        ]);
     }
 }

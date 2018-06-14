@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Models\Fundraiser;
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class FundraisersController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,8 +25,8 @@ class PagesController extends Controller
     public function index()
     {
         //
-        $pages = Page::latest()->get();
-        return view('pages.index', compact('pages'));
+        $fundraisers = Fundraiser::all();
+        return view('fundraisers.index', compact('fundraisers'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PagesController extends Controller
     public function create()
     {
         //
-        return view('pages.create');
+        return view('fundraisers.create', compact([]));
     }
 
     /**
@@ -50,61 +50,58 @@ class PagesController extends Controller
     {
         //
         $this->validate(request(), [
-            'title' => 'required',
-            'slug' => 'required',
-            'description' => 'required',
-            'content' => 'required',
+            
         ]);
         
+        $fundraiser = new Fundraiser();
+
         //
-        $page = new Page();
         
-        $page->creator_id = auth()->id();
-        $page->owner_id = auth()->id();
-        $page->website_id = config('view.website_id');
-        $page->title = request('title');
-        $page->slug = request('slug');
-        $page->description = request('description');
-        $page->content = request('content');
-        $page->published_at = \Carbon\Carbon::now()->toDateTimeString();
-        
-        $page->save();
-        
-        return redirect('/pages');
+        $fundraiser->save();
+
+        if(request()->expectsJson()) {
+            return $fundraiser->load(['creator', 'owner']);
+        }
+
+        return redirect($fundraiser->path());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Fundraiser $fundraiser
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(Fundraiser $fundraiser)
     {
+        if($fundraiser->id == 1) {
+            return view('fundraisers.solar-panel', compact('fundraiser'));
+        }
+        
         //
-        return view('pages.show', compact('page'));
+        return view('fundraisers.show', compact('fundraiser'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Fundraiser $fundraiser
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit(Fundraiser $fundraiser)
     {
         //
-        return view('page.edit', compact('page'));
+        return view('fundraisers.edit', compact(['fundraiser']));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Page  $page
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Fundraiser $fundraiser
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, Fundraiser $fundraiser)
     {
         //
     }
@@ -112,21 +109,21 @@ class PagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Fundraiser $fundraiser
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy(Fundraiser $fundraiser)
     {
         //
-        $this->authorize('delete', $page);
+        $this->authorize('delete', $fundraiser);
         
         //
-        $page->delete();
+        $fundraiser->delete();
         
         if(request()->wantsJson()) {
             return response([], 204);
         }
         
-        return redirect('/pages');
+        return redirect('/fundraisers');
     }
 }

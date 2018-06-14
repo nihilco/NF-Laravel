@@ -7,9 +7,10 @@ html {
 body {
     /* Margin bottom by footer height */
     /*margin-bottom: 109px;*/
-    margin-bottom: 400px;
+    margin-bottom: 450px;
     /*background-color:#222;*/
     color:#FFF;
+    font-family: 'Montserrat', sans-serif;
 }
 .footer {
     position: absolute;
@@ -17,7 +18,7 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     /*height: 109px;*/
-    height: 400px;
+    height: 450px;
     background-color: #222;
     color:#FFF;
     border-top: 2px solid #afbd21;
@@ -31,9 +32,9 @@ a {
 }
 
 a:focus, a:hover {
-	     color: #afbd21;
-	     text-decoration: underline;
-	 }
+     color: #afbd21;
+     text-decoration: underline;
+}
 
 
 /* Custom page CSS
@@ -58,7 +59,7 @@ code {
 }
 
 .navbar {
-    border-bottom: 2px solid #afbd21;
+    border-bottom: 5px solid #afbd21;
 }
 
 .bg-dark {
@@ -121,14 +122,20 @@ ul.dd-right li.nav-item  a.nav-link {
     margin-top:-12px;
 }
 
+.page-top {
+    color:#000;
+    padding-bottom: 1rem;
+}
+
 .jumbotron {
     background-image:url('https://dev.taraloka.org/img/girls-waterfall-cropped.png');
     background-size:cover;
     background-position:bottom;
     color:#FFF;
-    border-top:2px solid #ec008c;
-    border-bottom:2px solid #ec008c;
+    /*border-top:2px solid #ec008c;
+    border-bottom:2px solid #ec008c;*/
     margin-bottom:0;
+    padding:4rem 2rem;
 }
 
 .jumbotron hr{
@@ -139,15 +146,99 @@ ul.dd-right li.nav-item  a.nav-link {
     background-color:#222;
     padding-top:20px;
     padding-bottom:20px;
-    border-top: 2px solid #afbd21;
-    border-bottom:2px solid #ec008c;
+    border-top: 5px solid #afbd21;
+    /*border-bottom:2px solid #ec008c;*/
 }
+
+.font-green {
+    color: #afbd21;
+}
+
+#footer-menu li{
+    margin-top:.5em;
+    margin-bottom:.5em;
+    font-size:1.25rem;
+}
+
+.footer a {
+    color: #afbd21;    
+}
+
+.footer a:hover {
+    color: #ec008c;
+}
+
+.footer .btn-primary {
+    color:#FFF;
+}
+
+.footer .btn-primary:hover {
+    color:#FFF;
+}
+
+#footer-contact .list-inline li{
+    display:inline-block;
+    margin-right:.5rem;
+}
+
+#hidden-modal {
+    visibility:hidden;
+}
+
+#hidden-modal .modal-body {
+    visibility:visible;
+}
+
+.content-image {
+    width:300px;
+}
+
+.content-image.pull-right {
+    padding-left:1rem;
+}
+
+
+
+
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+    background-color: white;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+
+
+
+
+
 
 @media (min-width: 576px) {
     body {
 	/* Margin bottom by footer height */
 	/*margin-bottom: 67px;*/
-	margin-bottom: 375px;
+	margin-bottom: 470px;
     }
     .footer {
 	position: absolute;
@@ -155,7 +246,7 @@ ul.dd-right li.nav-item  a.nav-link {
 	width: 100%;
 	/* Set the fixed height of the footer here */
 	/*height: 67px;*/
-	height: 375px;
+	height: 470px;
 	background-color: #222;
 	color:#FFF;
 	border-top: 2px solid #afbd21;
@@ -174,7 +265,9 @@ ul.dd-right li.nav-item  a.nav-link {
         border-bottom: 2px solid #afbd21;
     }
     .navbar-dark .navbar-nav .nav-link {
-	padding: 15px .5rem 18px .5em;
+	/*padding: 15px .5rem 18px .5em;*/
+	padding: 17px .5rem 16px .5em;
+	/*padding: 21px .5rem 12px .5em;*/
 	margin-top:-10px;
 	margin-bottom:-13px;
 	border-bottom: 2px solid #afbd21;

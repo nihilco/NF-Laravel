@@ -7,20 +7,13 @@
     <div class="container page-top">
 
         <div class="row">
-            <div class="col-sm-8 col-md-9">
+            <div class="col-12">
 
 	            <div class="mt-3">
                     <h1>{{ $page->title }}</h1>
 		        </div>
 
-		        <p class="lead">{{ $page->description }}</p>
-
-{!! $page->content !!}
-
-            </div>
-	        <div class="col-sm-4 col-md-3">
-
-                
+                {!! $page->content !!}
 
             </div>
         </div>

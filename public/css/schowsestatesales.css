@@ -1,0 +1,113 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    /*margin-bottom: 109px;*/
+    margin-bottom: 102px;
+    /*background-color:#222;*/
+    color:#000;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    /*height: 109px;*/
+    height: 102px;
+    /*background-color: #222;*/
+    background-color: #ac9782;
+    color:#FFF;
+    /*text-align: center;*/
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.jumbotron {
+    margin-top:56px;
+    color:#000;
+    background-image: url('https://dev.schowsestatesales.com/img/Chattanooga4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position-y: center;
+    background-position-y: -130px;
+}
+
+.jumbotron > .container > .row{
+    background-color:rgba(255,255,255,0.75);
+    padding-top:1em;
+    padding-bottom:1em;
+}
+
+/*.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}*/
+
+.input-group.is-invalid ~ .invalid-feedback,
+.form-check.is-invalid ~ .invalid-feedback{
+    display:block;
+}
+
+.input-group.is-invalid > .form-control,
+.input-group.is-invalid > .input-group-addon {
+    border-color: #dc3545;
+}
+
+.navbar.bg-primary {
+    background-color:#FFF !important;
+}
+
+.lead {
+    font-weight:500;
+}
+
+.footer #copyright {
+    text-align: center;
+}
+
+.footer #powered {
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    body {
+	/* Margin bottom by footer height */
+	/*margin-bottom: 67px;*/
+	margin-bottom: 54px !important;
+    }
+    .hide-sm-plus {
+	display: none;
+    }
+    .footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	/*height: 67px;*/
+	height: 54px;
+	padding-top:1em;
+	padding-bottom:1em;
+    }
+    .footer #copyright {
+	text-align: left;
+	/*line-height: 60px; /* Vertically center the text there */
+    }
+    .footer #powered {
+	text-align: right;
+	/*line-height: 60px; /* Vertically center the text there */
+    }
+}
+
+@media (min-width: 768px) {  }
+
+@media (min-width: 992px) {  }
+
+@media (min-width: 1200px) {  }

@@ -36,6 +36,7 @@ class AuthServiceProvider extends ServiceProvider
         \App\Models\Exception::class => \App\Policies\ExceptionPolicy::class,
         \App\Models\Favorite::class => \App\Policies\FavoritePolicy::class,
         \App\Models\Follow::class => \App\Policies\FollowPolicy::class,
+        \App\Models\Fundraiser::class => \App\Policies\FundraiserPolicy::class,
         \App\Models\Group::class => \App\Policies\GroupPolicy::class,
         \App\Models\Invoice::class => \App\Policies\InvoicePolicy::class,
         \App\Models\Issue::class => \App\Policies\IssuePolicy::class,

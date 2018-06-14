@@ -16,6 +16,13 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
+      
     <!-- Custom styles for this template -->
     <link href="/css/base.css" rel="stylesheet">
     <link href="/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
@@ -26,7 +33,7 @@
   <div id="app">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/">Taraloka Foundation</a>
+      <a class="navbar-brand" href="/"><img src="{{ url('/img/taraloka-combomark.png') }}" alt="Taraloka" width="auto" height="17" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,6 +50,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/partners">Partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/transparency">Transparency</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
@@ -99,79 +109,61 @@
           <div class="row">
             <div class="col-sm-12">
               <p><strong class="font-green">The Taraloka Foundation</strong> is a registered 501(c)3 non-profit organization creating opportunities for Himalayan girls by providing education, healthcare, and a safe refuge.</p>
-              <p>A donation of $160 per month can pay the salary of one of our employees or sponsor all of the needs of one of our girls for one month.  A dollar goes a long way, so please make a donation today!</p>
+      <p>Our mission is focused and simple.  We provide a safe refuge for orphaned and disadvantaged girls in the Indian Himalayan state of Sikkim - covering all of their needs until they graduate from college.  Taraloka now has nineteen girls in the home, eight in college, and two college graduates.</p>
             </div>
           </div>
 
         </div>
-	<div class="col-sm-2">
+  	    <div class="col-sm-8">
 
           <div class="row">
-            <div class="col-sm-12 text-center">
-
-              <ul class="list-unstyled" id="footer-menu">
-	        <li><a href="/mission">mission</a></li>
-	        <li><a href="/about">about</a></li>
-	        <li><a href="/newsletters">newsletters</a></li>
-	        <li><a href="/partners">partners</a></li>
-	        <!--<li><a href="/shop">shop</a></li>-->
-	        <li><a href="/contact">contact</a></li>
-	        <li><a href="/donate" class="btn btn-primary">donate</a></li>
-	      </ul>
-
+            <div class="col-sm-4 text-center">
+              <a href="/mission">
+                <img src="/img/mission.jpg" alt="mission" class="w-100" />
+                <h4>mission</h4>
+              </a>
             </div>
-	  </div>
-
-	</div>
-	<div class="col-sm-3">
-
-          <div class="row">
-            <div class="col-sm-6">
-	      <a href="#" data-toggle="modal" data-target="#footerPic1"><img src="/img/girl-1.png" class="img-fluid" alt="Girl 1" /></a>
+            <div class="col-sm-4 text-center">
+              <a href="/trips">
+                <img src="/img/trips.jpg" alt="trips" class="w-100" />
+                <h4>trips</h4>
+              </a>
             </div>
-            <div class="col-sm-6">
-              <a href="#" data-toggle="modal" data-target="#footerPic2"><img src="/img/girl-2.png" class="img-fluid" alt="Girl 2" /></a>
-            </div>
-	  </div>  
-          <div class="row" style="margin-top:20px;">
-            <div class="col-sm-6">
-	      <a href="#" data-toggle="modal" data-target="#footerPic3"><img src="/img/girl-3.png" class="img-fluid" alt="Girl 3" /></a>
-	    </div>
-	    <div class="col-sm-6">
-	      <a href="#" data-toggle="modal" data-target="#footerPic4"><img src="/img/girl-4.png" class="img-fluid" alt="Girl 4" /></a>
-	    </div>
-	  </div>
-
-	</div>
-	<div class="col-sm-3">
-
-          <div class="row">
-            <div class="col-sm-12" id="footer-contact">
-	      <h4>Contact Information</h4>
-              <address>
-                <strong class="font-green">The Taraloka Foundation</strong><br>
-                705 Northern Avenue<br />
-                Signal Mountain, TN 37377<br />
-                <a href="tel:14236056163">423.605.6163</a><br />
-                <a href="mailto:contact@taraloka.org">contact@taraloka.org</a>
-              </address>
-
-              <ul class="list-inline">
-                <li><a href="https://www.facebook.com/TaralokaFoundation" target="_blank"><i class="fa fa-2x fa-facebook"></i></a></li>
-                <!--<li><a href="#" target="_blank"><i class="fa fa-2x fa-twitter"></i></a></li>-->
-                <li><a href="https://plus.google.com/100164349293155842593" rel="publisher" target="_blank"><i class="fa fa-2x fa-google-plus"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-2x fa-youtube"></i></a></li>
-                <li><a href="mailto:contact@taraloka.org" target="_blank"><i class="fa fa-2x fa-envelope"></i></a></li>
-              </ul>
+            <div class="col-sm-4 text-center">
+              <a href="/film">
+                <img src="/img/film.jpg" alt="film" class="w-100" />
+                <h4>film</h4>
+              </a>
             </div>
           </div>
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <a href="/about">
+                <img src="/img/about.jpg" alt="about" class="w-100" />
+                <h4>about</h4>
+              </a>
+            </div>
+            <div class="col-sm-4 text-center">
+              <a href="/donate">
+                <img src="/img/donate.jpg" alt="donate" class="w-100" />
+                <h4>donate</h4>
+              </a>
+            </div>
+            <div class="col-sm-4 text-center">
+              <a href="/partners">
+                <img src="/img/partners.jpg" alt="partners" class="w-100" />
+                <h4>partners</h4>
+              </a>
+            </div>
+	  </div>
 
 	</div>
+
       </div>
 	
         <div class="row">
           <div class="col-sm-8" id="copyright">
-            Copyright &copy; 2015-2017 <strong class="font-green">The Taraloka Foundation</strong>.  All rights reserved.
+      Copyright &copy; 2015-<?php echo date('Y'); ?> <strong class="font-green">The Taraloka Foundation</strong>.  All rights reserved.
           </div>
           <div class="col-sm-4" id="powered">
             Powered by <a href="https://www.nihil.co" target="_blank">NIHIL</a>
@@ -191,5 +183,66 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="/js/base.js"></script>
     <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>                           
+    <script>
+     // Create a Stripe client.
+     var stripe = Stripe('pk_test_oBG1UuDfekCXu72oDEOjRcqk');
+
+    // Create an instance of Elements.
+    var elements = stripe.elements();
+
+    // Custom styling can be passed to options when creating an Element.
+    // (Note that this demo uses a wider set of styles than the guide below.)
+var style = {
+  base: {
+      color: '#32325d',
+      lineHeight: '18px',
+      fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+      fontSmoothing: 'antialiased',
+      fontSize: '16px',
+      '::placeholder': {
+          color: '#aab7c4'
+        }
+  },
+  invalid: {
+      color: '#fa755a',
+      iconColor: '#fa755a'
+  }
+};
+
+// Create an instance of the card Element.
+var card = elements.create('card', {style: style});
+
+// Add an instance of the card Element into the `card-element` <div>.
+card.mount('#card-element');
+
+// Handle real-time validation errors from the card Element.
+card.addEventListener('change', function(event) {
+    var displayError = document.getElementById('card-errors');
+    if (event.error) {
+        displayError.textContent = event.error.message;
+    } else {
+        displayError.textContent = '';
+    }
+});
+
+// Handle form submission.
+var form = document.getElementById('donation-form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    stripe.createToken(card).then(function(result) {
+        if (result.error) {
+            // Inform the user if there was an error.
+            var errorElement = document.getElementById('card-errors');
+            errorElement.textContent = result.error.message;
+        } else {
+            // Send the token to your server.
+            stripeTokenHandler(result.token);
+        }
+    });
+});
+    </script>
   </body>
 </html>

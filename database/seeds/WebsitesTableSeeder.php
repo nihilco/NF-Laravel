@@ -747,5 +747,21 @@ class WebsitesTableSeeder extends Seeder
             'hostname' => 'dev.goodbyemonstercookies.com',
             'title' => 'Goodbye Monster Cookies',
         ]);
+
+        factory(App\Models\Website::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'domain_id' => $domains->where('tld', 'schowsestatesales.com')->first()->id,
+            'hostname' => 'www.schowsestatesales.com',
+            'title' => 'Schows Estate Sales',
+        ]);
+
+        factory(App\Models\Website::class)->create([
+            'creator_id' => 1,
+            'owner_id' => 1,
+            'domain_id' => $domains->where('tld', 'schowsestatesales.com')->first()->id,
+            'hostname' => 'dev.schowsestatesales.com',
+            'title' => 'Schows Estate Sales',
+        ]);        
     }
 }

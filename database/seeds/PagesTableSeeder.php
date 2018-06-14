@@ -32,22 +32,22 @@ class PagesTableSeeder extends Seeder
             'slug' => 'about-us',
             'description' => '',
             'content' => '<p class="justify">Maze &amp; Stone, PLLC is a law firm located in Mount Sterling, Kentucky, although we service most of
-	    Central and Eastern Kentucky. It was founded by Chandler Maze and Clayton Stone. Chandler and
-	    Clayton met in law school, and bonded over their fondness for their “Kentucky Home.” Chandler and
-	    Clayton truly care about the members of their community. We put our clients first, and work tirelessly to
-	    obtain the best possible outcome in your case. We pride ourselves on our availability and attentiveness
-	    to our clients. We will take your case personally and be totally invested, something that cannot be said
-	    for TV lawyers, who will not be able to devote the time and attention that your case deserves.</p>',
-	]);
+	            Central and Eastern Kentucky. It was founded by Chandler Maze and Clayton Stone. Chandler and
+	            Clayton met in law school, and bonded over their fondness for their “Kentucky Home.” Chandler and
+	            Clayton truly care about the members of their community. We put our clients first, and work tirelessly to
+	            obtain the best possible outcome in your case. We pride ourselves on our availability and attentiveness
+	            to our clients. We will take your case personally and be totally invested, something that cannot be said
+	            for TV lawyers, who will not be able to devote the time and attention that your case deserves.</p>',
+	    ]);
 
-	$page3 = factory(App\Models\Page::class)->create([
+        $page3 = factory(App\Models\Page::class)->create([
             'creator_id' => 1,
-	    'owner_id' => 1,
-	    'website_id' => $websites->where('hostname', 'www.mazestonelaw.com')->first()->id,
-	    'title' => 'Practice Areas',
-	    'slug' => 'practice-areas',
-	    'description' => '',
-	    'content' => '<h2 class="text-center">Personal Injury</h2><p class="justify">If you or a loved one has sustained any type of injury as a result of the carless or
+            'owner_id' => 1,
+            'website_id' => $websites->where('hostname', 'www.mazestonelaw.com')->first()->id,
+            'title' => 'Practice Areas',
+            'slug' => 'practice-areas',
+            'description' => '',
+            'content' => '<h2 class="text-center">Personal Injury</h2><p class="justify">If you or a loved one has sustained any type of injury as a result of the carless or
 	    negligent actions of another, it is important to seek the help of an experienced attorney. At the Maze &amp;
 	    Stone, we can examine the facts of your case, help determine what actions need to be taken, and work
 	    endlessly to get you the compensation you deserve. Many injuries can leave people with pain and
@@ -195,5 +195,186 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 </div>
 </div>',
 	]);
+
+	$page8 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Mission',
+	    'slug' => 'mission',
+	    'description' => '',
+	    'content' => '<div class="row">
+    <div class="col-md-12">
+
+    <img src="/img/girl-5.png" alt="" class="pull-right content-image" />
+
+    <p><strong>The Taraloka Foundation</strong> creates opportunities for Himalayan children by providing education, healthcare, and a safe refuge.</p>
+
+    <p>We strive to do the best we can for a small group of girls in the Himalayan region of Sikkim. We take the girls from very difficult circumstance and support all of their needs until they graduate from college. As soon as one of our girls enters college, we have room to bring another girl into the Sikkim Happiness Home, their safe refuge.  Many have lost their parents and have no safety net. Some of our girls have a parent or a relative, but for a variety of reasons they need the safe refuge of the Sikkim Happiness Home. Regardless of the circumstance, our girls enjoy a life together as sisters. We help them cross over from a life of suffering to a life full of joy and potential.</p>
+
+    </div>
+    </div>',
+	]);
+
+    $page9 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'About',
+	    'slug' => 'about',
+	    'description' => '',
+	    'content' => '<div class="row">
+      <div class="col-sm-12">
+
+        <img src="/img/girl-6.png" alt="" class="pull-right content-image" />
+
+    <p>After twelve years of guiding students in India, Tim Williams created <strong>The Taraloka Foundation</strong> in 2012 as a way to assist the noble work of fellow guides and Tibetan locals, Kelsang Phuntsok and Gelek Gyatso.  Through their dedication and hard work, the Sikkim Happiness Home has become a place of safety, comfort, education, and love for more than 25 girls.</p>
+
+    <h3>Basic structure of Taraloka:</h3>
+
+        <ul>
+    <li>26 girls in the Sikkim Happiness Home (four story home in Gangtok, Sikkim India)</li>
+    <li>2 girls presently in college in Gangtok, Sikkim India (living in college dormitories) and one graduate seeking her Masters</li>
+    <li>each girl has a sponsor in the USA ($2300 annually per girl)</li>
+    <li>Beyond sponsorship funds, the Board of Directors raises about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more opportunities for the girls.
+    </li>
+    <li>3 employees in Sikkim (SHH coordinator, house mother, and cook)</li>
+    <li>The girls attend an excellent private school in Gangtok, Sikkim India (Paljor Namgyl School)</li>
+    <li>As soon as one girl leaves the SHH to live in a college dormitory, we find a sponsor and bring another young girl into the home.</li>
+        </ul>
+      </div>
+    </div>',
+	]);
+
+    $page10 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Newseltters',
+	    'slug' => 'newsletters',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page11 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Partners',
+	    'slug' => 'partners',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+	$page12 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'www.taraloka.org')->first()->id,
+	    'title' => 'Mission',
+	    'slug' => 'mission',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page13 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'www.taraloka.org')->first()->id,
+	    'title' => 'About',
+	    'slug' => 'about',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page14 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'www.taraloka.org')->first()->id,
+	    'title' => 'Newseltters',
+	    'slug' => 'newsletters',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page15 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'www.taraloka.org')->first()->id,
+	    'title' => 'Partners',
+	    'slug' => 'partners',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page16 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Transparency',
+	    'slug' => 'transparency',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page17 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'www.taraloka.org')->first()->id,
+	    'title' => 'Transparency',
+	    'slug' => 'transparency',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page18 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.schowsestatesales.com')->first()->id,
+	    'title' => 'Who We are',
+	    'slug' => 'who-we-are',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page19 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.schowsestatesales.com')->first()->id,
+	    'title' => 'Our Philosophy',
+	    'slug' => 'our-philosophy',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page20 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.schowsestatesales.com')->first()->id,
+	    'title' => 'Notable Sales',
+	    'slug' => 'notable-sales',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page21 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.schowsestatesales.com')->first()->id,
+	    'title' => 'Testimonials',
+	    'slug' => 'testimonials',
+	    'description' => '',
+	    'content' => '',
+	]);
+
+    $page22 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.schowsestatesales.com')->first()->id,
+	    'title' => 'Upcoming Listings',
+	    'slug' => 'upcoming-listings',
+	    'description' => '',
+	    'content' => '',
+	]);
+    
     }
 }
