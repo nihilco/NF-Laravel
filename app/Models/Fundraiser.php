@@ -7,7 +7,7 @@ class Fundraiser extends Base
     //
     public function path()
     {
-        return '/fundraisers/' . $this->id;
+        return '/fundraisers/' . $this->slug;
     }
 
     public function getRouteKeyName()

@@ -7,7 +7,7 @@ html {
 body {
     /* Margin bottom by footer height */
     /*margin-bottom: 109px;*/
-    margin-bottom: 450px;
+    margin-bottom: 915px;
     /*background-color:#222;*/
     color:#FFF;
     font-family: 'Montserrat', sans-serif;
@@ -18,7 +18,7 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     /*height: 109px;*/
-    height: 450px;
+    height: 915px;
     background-color: #222;
     color:#FFF;
     border-top: 2px solid #afbd21;
@@ -117,6 +117,10 @@ body#blank .content {
     margin-left:.5em;
 }
 
+.nav-item {
+    text-align: center;
+}
+
 ul.dd-right li.nav-item  a.nav-link {
     /*padding-bottom:16px;*/
     margin-top:-12px;
@@ -132,10 +136,9 @@ ul.dd-right li.nav-item  a.nav-link {
     background-size:cover;
     background-position:bottom;
     color:#FFF;
-    /*border-top:2px solid #ec008c;
-    border-bottom:2px solid #ec008c;*/
     margin-bottom:0;
     padding:4rem 2rem;
+    /*min-height:300px;*/
 }
 
 .jumbotron hr{
@@ -181,6 +184,8 @@ ul.dd-right li.nav-item  a.nav-link {
     margin-right:.5rem;
 }
 
+
+
 #hidden-modal {
     visibility:hidden;
 }
@@ -197,7 +202,24 @@ ul.dd-right li.nav-item  a.nav-link {
     padding-left:1rem;
 }
 
+.footer p {
+    
+}
 
+.footer #copyright {
+    text-align: center;
+    padding-top:1rem;
+}
+
+.footer #powered {
+    text-align: center;
+}
+
+
+
+.img-padded {
+    padding-bottom:2rem;
+}
 
 
 
@@ -207,17 +229,29 @@ ul.dd-right li.nav-item  a.nav-link {
  */
 .StripeElement {
     background-color: white;
+    /*
     height: 40px;
     padding: 10px 12px;
     border-radius: 4px;
-    border: 1px solid transparent;
+    border: 1px solid transparent;   
     box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
+   */
+    height: 40px;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: .5rem .75rem;
+    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.15);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
 }
 
 .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
+    /*box-shadow: 0 1px 3px 0 #cfd7df;*/
 }
 
 .StripeElement--invalid {
@@ -228,7 +262,9 @@ ul.dd-right li.nav-item  a.nav-link {
     background-color: #fefde5 !important;
 }
 
-
+#cta-header {
+    margin-top:1rem;
+}
 
 
 
@@ -237,29 +273,18 @@ ul.dd-right li.nav-item  a.nav-link {
 @media (min-width: 576px) {
     body {
 	/* Margin bottom by footer height */
-	/*margin-bottom: 67px;*/
-	margin-bottom: 470px;
+	margin-bottom: 490px;
     }
     .footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 	/* Set the fixed height of the footer here */
-	/*height: 67px;*/
-	height: 470px;
-	background-color: #222;
-	color:#FFF;
-	border-top: 2px solid #afbd21;
-	padding-top:20px;
-	padding-bottom:0px;
+	height: 490px;
+	font-size:0.85rem;	
     }
     .footer #copyright {
-	text-align: left;
-	line-height: 60px; /* Vertically center the text there */
+	padding-top:0;
     }
-    .footer #powered {
-	text-align: right;
-	line-height: 60px; /* Vertically center the text there */
+    #cta-header {
+	margin-top:3rem;
     }
     .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
         border-bottom: 2px solid #afbd21;
@@ -275,10 +300,69 @@ ul.dd-right li.nav-item  a.nav-link {
     .xs-only {
 	display:none;
     }
+    .jumbotron {
+	min-height:500px;
+    }
+    .img-padded {
+	padding-bottom:0rem;
+    }
 }
 
-@media (min-width: 768px) {  }
+@media (min-width: 768px) {
 
-@media (min-width: 992px) {  }
+    body {
+	/* Margin bottom by footer height */
+	margin-bottom: 540px;
+    }
+    .footer {
+	/* Set the fixed height of the footer here */
+	height: 540px;
+	font-size:0.85rem;	
+    }
 
-@media (min-width: 1200px) {  }
+}
+
+@media (min-width: 992px) {
+
+    body {
+	/* Margin bottom by footer height */
+	margin-bottom: 420px;
+    }
+    .footer {
+	/* Set the fixed height of the footer here */
+	height: 420px;
+	font-size:0.85rem;	
+    }
+    .footer #copyright {
+	text-align: left;
+	line-height: 60px; /* Vertically center the text there */	
+    }
+    .footer #powered {
+	text-align: right;
+	line-height: 60px; /* Vertically center the text there */
+    }    
+    #cta-header {
+	margin-top: 5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    body {
+	/* Margin bottom by footer height */
+	margin-bottom: 470px;
+    }
+    .footer {
+	/* Set the fixed height of the footer here */
+	height: 470px;
+	font-size:1rem;
+    }
+
+    .jumbotron {
+	background-size:cover;
+    }    
+
+    #cta-header {
+	margin-top:8rem;
+    }
+}

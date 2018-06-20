@@ -204,13 +204,16 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'slug' => 'mission',
 	    'description' => '',
 	    'content' => '<div class="row">
-    <div class="col-md-12">
+<div class="col-sm-4 order-sm-12">
 
-    <img src="/img/girl-5.png" alt="" class="pull-right content-image" />
+<img src="/img/mission-hugs.jpg" alt="Mission Hugs" class="img-fluid img-padded" />
 
-    <p><strong>The Taraloka Foundation</strong> creates opportunities for Himalayan children by providing education, healthcare, and a safe refuge.</p>
+</div>
+    <div class="col-sm-8 order-sm-1">
 
-    <p>We strive to do the best we can for a small group of girls in the Himalayan region of Sikkim. We take the girls from very difficult circumstance and support all of their needs until they graduate from college. As soon as one of our girls enters college, we have room to bring another girl into the Sikkim Happiness Home, their safe refuge.  Many have lost their parents and have no safety net. Some of our girls have a parent or a relative, but for a variety of reasons they need the safe refuge of the Sikkim Happiness Home. Regardless of the circumstance, our girls enjoy a life together as sisters. We help them cross over from a life of suffering to a life full of joy and potential.</p>
+    <p><strong>The Taraloka Foundation</strong> creates opportunities for Himalayan girls by providing education, healthcare, and a safe refuge.</p>
+
+    <p>We strive to do the best we can for a small group of girls in the Himalayan region of Sikkim. We rescue girls from difficult circumstances and support all of their needs until they graduate from college. As soon as one of our girls enters college, we have room to bring another girl into the Sikkim Happiness Home, their safe refuge.  Many have lost their parents and have no safety net. Some of our girls have a parent or a relative, but for a variety of reasons they need the safe refuge of the Sikkim Happiness Home. Regardless of the circumstance, our girls enjoy a life together as sisters. We help them cross over from a life of suffering to a life full of joy and potential.</p>
 
     </div>
     </div>',
@@ -224,22 +227,24 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'slug' => 'about',
 	    'description' => '',
 	    'content' => '<div class="row">
-      <div class="col-sm-12">
+<div class="col-sm-4 order-sm-12">
+        <img src="/img/about-girls-stair-steps.jpg" alt="About Girls Stair Steps" class="img-fluid img-padded" />
+</div>
+      <div class="col-sm-8 order-sm-1">
 
-        <img src="/img/girl-6.png" alt="" class="pull-right content-image" />
-
-    <p>After twelve years of guiding students in India, Tim Williams created <strong>The Taraloka Foundation</strong> in 2012 as a way to assist the noble work of fellow guides and Tibetan locals, Kelsang Phuntsok and Gelek Gyatso.  Through their dedication and hard work, the Sikkim Happiness Home has become a place of safety, comfort, education, and love for more than 25 girls.</p>
+    <p>After twelve years of guiding students in India, Tim Williams created <strong>The Taraloka Foundation</strong> in 2012 as a way to assist the noble work of fellow guides and Tibetan locals, Kelsang Phuntsok and Gelek Gyatso.  Through their dedication and hard work, the Sikkim Happiness Home has become a place of safety, comfort, education, and love for more than 33 girls.</p>
 
     <h3>Basic structure of Taraloka:</h3>
 
         <ul>
-    <li>26 girls in the Sikkim Happiness Home (four story home in Gangtok, Sikkim India)</li>
-    <li>2 girls presently in college in Gangtok, Sikkim India (living in college dormitories) and one graduate seeking her Masters</li>
-    <li>each girl has a sponsor in the USA ($2300 annually per girl)</li>
-    <li>Beyond sponsorship funds, the Board of Directors raises about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more opportunities for the girls.
+    <li>19 girls in the Sikkim Happiness Home (four story home in Gangtok, Sikkim India)</li>
+    <li>10 girls presently in college in Gangtok, Sikkim India (living in college dormitories)</li>
+    <li>4 graduates</li>
+    <li>Each girl has a sponsor in the USA ($2300 annually per girl)</li>
+    <li>Beyond sponsorship funds, the we raise about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more oportunities for the girls.
     </li>
     <li>3 employees in Sikkim (SHH coordinator, house mother, and cook)</li>
-    <li>The girls attend an excellent private school in Gangtok, Sikkim India (Paljor Namgyl School)</li>
+    <li>The girls attend an excellent private schools in Gangtok, Sikkim India</li>
     <li>As soon as one girl leaves the SHH to live in a college dormitory, we find a sponsor and bring another young girl into the home.</li>
         </ul>
       </div>
@@ -250,10 +255,49 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'creator_id' => 1,
 	    'owner_id' => 1,
 	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
-	    'title' => 'Newseltters',
+	    'title' => 'Newsletters',
 	    'slug' => 'newsletters',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+<div class="row">
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/June-2018.pdf" target="_blank"><img src="/img/Newsletters/Covers/June-2018.jpg" class="img-fluid" /></a>
+        <p>June 2018</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/January-2018.pdf#zoom=75,0,1025" target="_blank"><img src="/img/Newsletters/Covers/January-2018.jpg" class="img-fluid" /></a>
+        <p>January 2018</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/newsletters/PDFs/March-2017.pdf" target="_blank"><img src="/img/Newsletters/Covers/March-2017.jpg" class="img-fluid" /></a>
+        <p>March 2017</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/July-2016.pdf" target="_blank"><img src="/img/Newsletters/Covers/July-2016.jpg" class="img-fluid" /></a>
+        <p>July 2016</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/January-2016.pdf" target="_blank"><img src="/img/Newsletters/Covers/January-2016.jpg" class="img-fluid" /></a>
+        <p>January 2016</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/November-2015.pdf" target="_blank"><img src="/img/Newsletters/Covers/November-2015.png" class="img-fluid" /></a>
+        <p>November 2015</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/June-2015.pdf" target="_blank"><img src="/img/Newsletters/Covers/June-2015.jpg" class="img-fluid" /></a>
+        <p>June 2015</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/April-2015.pdf" target="_blank"><img src="/img/Newsletters/Covers/April-2015.jpg" class="img-fluid" /></a>
+        <p>April 2015</p>
+      </div>
+      <div class="col-sm-3 col-6 text-center">
+        <a href="/img/Newsletters/PDFs/October-2014.pdf" target="_blank"><img src="/img/Newsletters/Covers/October-2014.png" class="img-fluid" /></a>
+        <p>October 2014</p>
+      </div>
+    </div>
+        ',
 	]);
 
     $page11 = factory(App\Models\Page::class)->create([
@@ -263,7 +307,60 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Partners',
 	    'slug' => 'partners',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+<div class="row">
+<div class="col-sm-4 order-sm-12">
+
+<img src="/img/astral-shoe.jpg" alt="Partners" class="img-fluid img-padded" />
+
+</div>
+<div class="col-sm-8 order-sm-1">
+
+    <p>The Taraloka community includes kind souls and partners that have our girls in Patagonia jackets, wearing Astral shoes during the monsoon season, and appearing in a documentary supported by Susan and Robert Downey Jr..  Thanks to their generosity, our girls know there are people on the other side of the planet that are looking out for them.</p>
+
+    <div class="row">
+      <div class="col-sm-3 col-4">
+    <a href="http://www.astraldesigns.com/" target="_blank">
+      <img src="/img/Partners/astral-square.png" class="img-fluid" alt="Astral" />
+    </a>
+      </div>
+    <div class="col-sm-3 col-4">
+    <a href="http://www.dzifoundation.org/" target="_blank">
+      <img src="/img/Partners/dzifoundation-square.png" class="img-fluid" alt="dZi Foundation" />
+    </a>
+      </div>
+      <div class="col-sm-3 col-4">
+    <a href="http://flyingsquirrelbar.com/" target="_blank">
+      <img src="/img/Partners/flyingsquirrel.png" class="img-fluid" alt="Flying Squirrel" />
+    </a>
+      </div>
+      <div class="col-sm-3 col-4">
+    <a href="https://www.highlandbrewing.com/" target="_blank">
+      <img src="/img/Partners/highlandbrewing.png" class="img-fluid" alt="Highland Brewery" />
+    </a>
+      </div>
+      <div class="col-sm-3 col-4">
+        <a href="http://www.nihil.co/" target="_blank">
+      <img src="/img/Partners/nihil.png" class="img-fluid" alt="The NIHIL Corporation" />
+    </a>
+      </div>
+      <div class="col-sm-3 col-4">
+        <a href="http://www.patagonia.com/" target="_blank">
+      <img src="/img/Partners/patagonia.png" class="img-fluid" alt="Patagonia" />
+    </a>
+      </div>
+      <div class="col-sm-3 col-4">
+        <a href="http://randomactfunding.com/" target="_blank">
+          <img src="/img/Partners/RAF.png" class="img-fluid" alt="Random Act Funding" />
+        </a>
+      </div>
+    </div>
+
+
+</div>
+</div>
+        ',
 	]);
 
 	$page12 = factory(App\Models\Page::class)->create([
@@ -313,7 +410,36 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Transparency',
 	    'slug' => 'transparency',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+    <div class="row">
+      <div class="col-sm-3">
+        <a href="/img/1099s/PDFs/2017.pdf" target="_blank">
+          <img src="/img/1099s/Covers/2017.jpg" class="img-fluid" alt="2017 Form 1099" />
+        </a>
+        <p>2017 Form 1099</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="/img/1099s/PDFs/2016.pdf" target="_blank">
+          <img src="/img/1099s/Covers/2016.jpg" class="img-fluid" alt="2016 Form 1099" />
+        </a>
+        <p>2016 Form 1099</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="/img/1099s/PDFs/2015.pdf" target="_blank">
+          <img src="/img/1099s/Covers/2015.jpg" class="img-fluid" alt="2015 Form 1099" />
+        </a>
+        <p>2015 Form 1099</p>
+      </div>
+      <div class="col-sm-3">
+        <a href="/img/1099s/PDFs/2014.pdf" target="_blank">
+          <img src="/img/1099s/Covers/2014.jpg" class="img-fluid" alt="2014 Form 1099" />
+        </a>
+        <p>2014 Form 1099</p>
+      </div>
+    </div>
+
+        ',
 	]);
 
     $page17 = factory(App\Models\Page::class)->create([
@@ -333,7 +459,17 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Who We are',
 	    'slug' => 'who-we-are',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-whoweare" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+        <h1 class="display-3">Who We Are</h1>
+    </div>
+    </div>
+      </div>
+    </div>
+        ',
 	]);
 
     $page19 = factory(App\Models\Page::class)->create([
@@ -343,7 +479,19 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Our Philosophy',
 	    'slug' => 'our-philosophy',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-philosophy" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+        <h1 class="display-3">Our Philosophy</h1>
+    </div>
+    </div>
+      </div>
+    </div>
+
+        ',
 	]);
 
     $page20 = factory(App\Models\Page::class)->create([
@@ -353,7 +501,19 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Notable Sales',
 	    'slug' => 'notable-sales',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-sales" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+        <h1 class="display-3">Notable Sales</h1>
+    </div>
+    </div>
+      </div>
+    </div>
+
+        ',
 	]);
 
     $page21 = factory(App\Models\Page::class)->create([
@@ -363,7 +523,58 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Testimonials',
 	    'slug' => 'testimonials',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-testimonials" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+        <h1 class="display-3">Testimonials</h1>
+    </div>
+    </div>
+      </div>
+    </div>
+
+    <div style="padding-top:2em; padding-bottom:2em;">
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<p>&quot;The Coleman family knew when we met Carl and Mel, that we had found the perfect fit for handling the items that were important to us.  Their pointing us in the right direction, their marketing abilities, their personal connections and their artistic knowledge of antiques, have all been important to the success of needed restoration and the key to placing historical memorabilia in accessible locations to the public.</p>
+
+<p>Down to earth, honest, unpretentious, hard working and simply kind, are several characteristics that come to mind when we think about Carl and Mel.  They have become like family to the Coleman’s and we are so thankful that our paths have crossed!&quot;</p>
+
+<p>
+Donna Coleman<br />
+Chattanooga, TN<br />
+March 1, 2018
+</p>
+</div>
+<div class="col-sm-6">
+<p>
+&quotI highly recommend the services of Carl Schow for any Estate Sale efforts.
+</p>
+<p>
+Carl and his team bring to any estate sale a wealth of knowledge regarding most anything that
+one would consider dispensing with. He knows art, antiques, furniture, jewelry, glassware and
+almost anything I can think of. His experience at conducting such sales brings an added sense
+of feeling as if one is letting go of valuable and not so valuable items in the best possible way.
+Carl’s approach is comprehensive and efficient, and, in our case, gave my family a great sense
+of peace that we had dealt with our family’s treasures in the most respectful way knowing what
+was not valuable either brought us significant value, was donated to a good cause or dispensed
+with properly.&quot
+</p>
+<p>
+Chris Moore, MD<br />
+Lookout Mountain, GA</br />
+April 27, 2018
+</p>
+
+
+</div>
+</div>
+</div>
+</div>
+',
 	]);
 
     $page22 = factory(App\Models\Page::class)->create([
@@ -373,8 +584,138 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
 	    'title' => 'Upcoming Listings',
 	    'slug' => 'upcoming-listings',
 	    'description' => '',
-	    'content' => '',
+	    'content' => '
+
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-listings" style="margin-bottom:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+        <h1 class="display-3">Upcoming Listings</h1>
+    </div>
+    </div>
+      </div>
+    </div>
+
+        ',
 	]);
+
+    $page23 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Films',
+	    'slug' => 'films',
+	    'description' => '',
+	    'content' => '
+
+<div class="row">
+<div class="col-sm-6">
+
+<p>
+This is a short clip of Yangchen saying hello to her sponsor.  The voices you hear in the background are a group of her young sisters huddled around the camera… helping us film.
+</p>
+<p class="mt-4 pt-4">
+Taraloka documentary coming to this page very soon!
+</p>
+
+</div>
+<div class="col-sm-6">
+
+<div class="embed-responsive embed-responsive-16by9">
+
+<video id="my-video" class="video-js embed-responsive-item" controls preload="auto" width="640" height="360" poster="/img/Videos/Yanchen/Yanchen-Thumbs-Up.png" data-setup="{}">
+    <source src="/img/Videos/Yanchen/Yanchen-360p.mp4" type="video/mp4">
+    <source src="/img/Videos/Yanchen/Yanchen-360p.webm" type="video/webm">
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+</div>
+
+</div>
+</div>
+
+        ',
+	]);
+
+    $page23 = factory(App\Models\Page::class)->create([
+	    'creator_id' => 1,
+	    'owner_id' => 1,
+	    'website_id' => $websites->where('hostname', 'dev.taraloka.org')->first()->id,
+	    'title' => 'Trips',
+	    'slug' => 'trips',
+	    'description' => '',
+	    'content' => '
+
+<div class="row">
+<div class="col-sm-12">
+
+<p>
+Taraloka offers travel opportunities in India that support our work with the girls in the Sikkim Happiness Home.  Members of our staff have many years of experience  guiding and designing trips that range from trekking in Ladakh and Sikkim to motorcycle tours in both south and north India.
+</p>
+
+<p class="text-center">
+<a href="mailto:tim@taraloka.org" target="_blank">
+Please contact Tim Williams if you are interested in one of our unique adventures!
+</a>
+</p>
+
+<h2>Annual Taraloka Trips</h2>
+<p>
+Our annual trips in Sikkim are focused on spending time with the girls in Gangtok and in the villages where the they were born.  Trips typically occur in either December or March and include a variety of activities ranging from simple driving tours to Himalayan treks and adventures on Royal Enﬁeld motorcycles.
+</p>
+
+<div class="row">
+<div class="col-sm-12">
+<img src="/img/bikes.jpg" alt="Bikes" class="img-fluid" />
+</div>
+</div>
+
+<h2 class="text-center pt-4 pb-4">Our next trip<br />March 2019 motorcycle tour in Sikkim + trek in Dzonghu</h2>
+
+<div class="row">
+<div class="col-sm-4">
+<img src="/img/trip-1.jpg" alt="Trip" class="img-fluid" />
+</div>
+<div class="col-sm-4">
+<img src="/img/trip-2.jpg" alt="Trip" class="img-fluid" />
+</div>
+<div class="col-sm-4">
+<img src="/img/trip-4.jpg" alt="Trip" class="img-fluid" />
+</div>
+</div>
+
+<div class="row mt-4">
+<div class="col-sm-8">
+<h2>Dokham Tours and Travels</h2>  
+<p>
+Dokham is a guiding company owned by Gelek Gyatso, our India coordinator for Taraloka.  Gyatso specializes in motorcycle tours and trekking in Sikkim.  Custom trips can be created any time of year and a percentage of the trip cost will support Taraloka.
+</p>
+</div>
+<div class="col-sm-4">
+<img src="/img/trip-5.jpg" alt="Trip" class="img-fluid" />
+</div>
+</div>
+
+<div class="row mt-2">
+<div class="col-sm-8">
+<h2>Ladakh Trekking </h2>  
+<p>
+Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh and motorcycle tours all over India.  Lalit Prakash is our good friend and primary guide for these adventures.  Custom trips can be created any time of year and a percentage of the trip cost will support Taraloka.
+</p>
+</div>
+<div class="col-sm-4">
+<img src="/img/lalit.jpg" alt="Lalit" class="img-fluid" />
+</div>
+</div>
+
+</div>
+</div>
+
+        ',
+	]);    
     
     }
 }

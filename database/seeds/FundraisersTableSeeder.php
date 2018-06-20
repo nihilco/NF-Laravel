@@ -18,7 +18,7 @@ class FundraisersTableSeeder extends Seeder
             'name' => 'Solar Panel Fundraiser',
             'slug' => 'solar-panel-fundraiser',
             'description' => '',
-            'goal' => 450000,
+            'goal' => 600000,
             'actual' => 0,
         ]);
     }

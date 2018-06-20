@@ -35,7 +35,7 @@
 
 		  </div>
           <div class="col-sm-6">
-
+<!--
     		<div class="form-group">
               <label for="name">Recurrence</label><br />
 
@@ -55,7 +55,7 @@
 	          <small id="recurrenceHelp" class="invalid-feedback">{{ $errors->first('recurrence') }}</small>
 	          @endif
 	        </div>
-    
+    -->
           </div>
 	   </div>
        <div class="row">

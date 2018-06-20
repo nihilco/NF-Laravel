@@ -8,7 +8,7 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
 ?>
 
 @section('content')
-    <div class="jumbotron jumbotron-fluid" style="margin-bottom:0;">
+    <div class="jumbotron jumbotron-fluid" id="jumbotron-index" style="margin-bottom:0;">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -48,21 +48,21 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
         <h5>The Massachusetts Magazine</h5>
         <p>George Washingtons personal copy of The Massachusetts Magazine Vol 1 - 1789 (including signature and bookplate) chronicling his inauguration...</p>
         <h6>Sold for $138,000.</h6>
-        <a href="#" class="">View ></a>
+        <a href="/notable-sales" class="">View ></a>
       </div>    
       <div class="col-sm-3">
         <img src="/img/Silver-Service.jpg" class="block w-100" />
         <h5>Sterling Tea Service</h5>
         <p>Samuel Kirk & Son repousse sterling silver tea service</p>
         <h6>Sold for $11,000.</h6>
-        <a href="#" class="">View ></a>
+        <a href="/notable-sales" class="">View ></a>
       </div>
       <div class="col-sm-3">
         <img src="/img/36-Star-Flag.jpg" class="block w-100" />
         <h5>36-Sar Flag</h5>
         <p>Civil War era American hand-sewn 36-star flag. Descended in the family of Charles Harrod Boyd, who served on General George H. Thomas staff as Captain of the Topographical Engineers, Army of the Cumberland.</p>
         <h6>Sold for $5,500.</h6>
-        <a href="#" class="">View ></a>
+        <a href="/notable-sales" class="">View ></a>
       </div>
     
       <div class="col-sm-3">
@@ -70,7 +70,7 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
         <h5>Oil on Canvas</h5>
         <p>Victor Coleman Anderson Oil on Canvus</p>
         <h6>Sold for $33,600.</h6>
-        <a href="#" class="">View ></a>
+        <a href="/notable-sales" class="">View ></a>
       </div>
     </div>
   </div>
@@ -81,11 +81,15 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
     <div class="row">
       <div class="col-sm-6">
         <h2>Heres How To Reach Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel dolor enim. Donec lacinia metus at blandit faucibus.</p>
+        <p>We serve the greater Chattanooga area.</p>
+
+    <div class="embed-responsive embed-responsive-4by3">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208917.7731190438!2d-85.37877587939171!3d35.0982149388405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886060408a83e785%3A0x2471261f898728aa!2sChattanooga%2C+TN!5e0!3m2!1sen!2sus!4v1528982749363" width="600" height="450" frameborder="0" style="border:0" class="embed-responsive-item" allowfullscreen></iframe>
+    </div>
       </div>
       <div class="col-sm-6">
         <h2>Contact Us Now</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel dolor enim. Donec lacinia metus at blandit faucibus.</p>
+        <p>Please fill out the form below:</p>
 
     <form class="needs-validation" novalidate>
       <div class="form-row">

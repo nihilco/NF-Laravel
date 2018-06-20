@@ -19,7 +19,9 @@
 
 <h2>We have raised ${{ number_format($fundraiser->actual / 100, 0) }} of our ${{ number_format($fundraiser->goal / 100, 0) }} goal.</h2>
 
-<p>When Jackson Campbell traveled to India as a student in 2016, his focus was the adventure of bouldering among the ancient Hindu temples in Hampi.  While the bouldering was incredible, meeting the girls of the Sikkim Happiness Home is what lingered in his heart.</p>
+<img src="/img/jackson_campbell.jpeg" alt="Jackson Campbell" class="img-fluid" />
+
+<p class="mt-2">When Jackson Campbell traveled to India as a student in 2016, his focus was the adventure of bouldering among the ancient Hindu temples in Hampi.  While the bouldering was incredible, meeting the girls of the Sikkim Happiness Home is what lingered in his heart.</p>
 
     <p>After receiving a grant from Sewanee University for the travel and work, Jackson is returning to India to help with the installation and design of solar panels on the roof of the Sikkim Happiness Home!</p>
 
@@ -29,71 +31,21 @@
 
 	        </div>
 	        <div class="col-sm-6">
-
-      <form method="POST" id="donation-form" role="form" action="/fundraisers">
+                                                                                                                                  
+      <form method="POST" id="donation-form" role="form" action="/fundraisers/solar-panel-fundraiser">
 	    {{ csrf_field() }}
+        {{ method_field('PATCH') }}
+                                                                                      
+        <div class="mb-2">
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '25.00';">$25</button>
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '50.00';">$50</button>
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '100.00';">$100</button>
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '250.00';">$250</button>
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '500.00';">$500</button>
+          <button type="button" class="btn btn-lg btn-primary" onclick="this.form.elements.namedItem('amount').value = '1000.00';">$1000</button>
+        </div>                                                                                                                                  
     
-    <a href="#"><img src="/img/solar-panel.png" style="width: 100px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 100px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 100px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 100px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 100px" /></a>
-    <br />
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 45px" /></a>
-    <br />
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <br />
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-    <a href="#"><img src="/img/solar-panel.png" style="width: 22px" /></a>
-
-
-    	    <div class="row">
+    	    <div class="row mt-2">
 	      <div class="col-sm-6">
 
 		    <div class="form-group">

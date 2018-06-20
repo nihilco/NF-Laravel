@@ -51,7 +51,7 @@
             </div>
             <div class="col-sm-6">
 
-                <div class="row" style="padding-top:1rem;">
+                <div class="row" style="padding-top:3rem;">
                     <div class="col-6">
     
         <address>

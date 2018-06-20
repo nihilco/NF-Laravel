@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head>      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="uid" content="{{ Auth::check() ? Auth::user()->id : null }}">
     
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" type="image/png" href="/img/favicon_32x32.png">
 
     <title>@yield('title') | <?= $app->config['view']['title'] ?></title>
 
@@ -27,6 +27,16 @@
     <link href="/css/base.css" rel="stylesheet">
     <link href="/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
     <link href="/css/taraloka.css?t=<?= time() ?>" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2228318-23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-2228318-23');
+    </script>      
   </head>
 
   <body>
@@ -52,9 +62,6 @@
             <a class="nav-link" href="/partners">Partners</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/transparency">Transparency</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
   	  <li class="nav-item">
@@ -63,12 +70,14 @@
         </ul>
         <ul class="navbar-nav dd-right">
 	  @guest
+          <!--
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
-	    <a class="nav-link" href="/signup">Signup</a>
-	  </li>
+	        <a class="nav-link" href="/signup">Signup</a>
+	      </li>
+          -->
 	  @else
 	  <li class="nav-item dropdown">
 	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,7 +104,7 @@
       <div class="container">
 
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-lg-4 col-md-5 col-sm-6">
 
           <div class="row">
             <div class="col-sm-12">
@@ -114,44 +123,42 @@
           </div>
 
         </div>
-  	    <div class="col-sm-8">
+  	    <div class="col-lg-8 col-md-7 col-sm-6">
 
           <div class="row">
-            <div class="col-sm-4 text-center">
+            <div class="col-lg-4 col-6 text-center">
               <a href="/mission">
-                <img src="/img/mission.jpg" alt="mission" class="w-100" />
+                <img src="/img/mission.jpg" alt="mission" class="img-fluid" />
                 <h4>mission</h4>
               </a>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-lg-4 col-6 text-center">
               <a href="/trips">
-                <img src="/img/trips.jpg" alt="trips" class="w-100" />
+                <img src="/img/trips.jpg" alt="trips" class="img-fluid" />
                 <h4>trips</h4>
               </a>
             </div>
-            <div class="col-sm-4 text-center">
-              <a href="/film">
-                <img src="/img/film.jpg" alt="film" class="w-100" />
-                <h4>film</h4>
+            <div class="col-lg-4 col-6 text-center">
+              <a href="/films">
+                <img src="/img/film.jpg" alt="films" class="img-fluid" />
+                <h4>films</h4>
               </a>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-4 text-center">
+            <div class="col-lg-4 col-6 text-center">
               <a href="/about">
-                <img src="/img/about.jpg" alt="about" class="w-100" />
+                <img src="/img/about.jpg" alt="about" class="img-fluid" />
                 <h4>about</h4>
               </a>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-lg-4 col-6 text-center">
               <a href="/donate">
-                <img src="/img/donate.jpg" alt="donate" class="w-100" />
+                <img src="/img/donate.jpg" alt="donate" class="img-fluid" />
                 <h4>donate</h4>
               </a>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-lg-4 col-6 text-center">
               <a href="/partners">
-                <img src="/img/partners.jpg" alt="partners" class="w-100" />
+                <img src="/img/partners.jpg" alt="partners" class="img-fluid" />
                 <h4>partners</h4>
               </a>
             </div>
@@ -162,10 +169,10 @@
       </div>
 	
         <div class="row">
-          <div class="col-sm-8" id="copyright">
+          <div class="col-md-9" id="copyright">
       Copyright &copy; 2015-<?php echo date('Y'); ?> <strong class="font-green">The Taraloka Foundation</strong>.  All rights reserved.
           </div>
-          <div class="col-sm-4" id="powered">
+          <div class="col-md-3" id="powered">
             Powered by <a href="https://www.nihil.co" target="_blank">NIHIL</a>
           </div>
         </div>
@@ -181,11 +188,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="/js/base.js"></script>
-    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <!--<script src="/js/base.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>-->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>                           
     <script>
+                           $(function () {
+                               $('[data-toggle="tooltip"]').tooltip()
+                                   })
+                           
      // Create a Stripe client.
      var stripe = Stripe('pk_test_oBG1UuDfekCXu72oDEOjRcqk');
 
@@ -239,7 +250,13 @@ form.addEventListener('submit', function(event) {
             errorElement.textContent = result.error.message;
         } else {
             // Send the token to your server.
-            stripeTokenHandler(result.token);
+            //stripeTokenHandler(result.token);
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'stripeToken';
+            input.value = result.token.id;
+            form.appendChild(input);
+            form.submit();
         }
     });
 });
