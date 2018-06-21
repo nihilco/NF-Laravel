@@ -92,12 +92,13 @@ class FundraisersController extends Controller
         $this->validate(request(), [
             'stripeToken' => 'required',
             'name' => 'required',
-            'amount' => 'required',
+            'amount' => 'required|regex:/^\d*(\.\d{1,2})?$/',
             'email' => 'required|email',
             'comments' => '',
         ]);
         
-        \Stripe\Stripe::setApiKey("sk_test_pkUBnMZ0EEuUhIWsJGeyVNuX");
+        //\Stripe\Stripe::setApiKey("sk_test_pkUBnMZ0EEuUhIWsJGeyVNuX");
+	\Stripe\Stripe::setApiKey("sk_live_nZcSFL3SnsvRX5Hq0ukaLloz");
         $token = \Stripe\Token::retrieve(request('stripeToken'));
         
         if($token) {
@@ -108,10 +109,10 @@ class FundraisersController extends Controller
                     "amount" => request('amount') * 100,
                     "currency" => "usd",
                     "source" => $token->id,
-                    "description" => "Test Charge",
+                    "description" => "Solar Panel Fundraiser 2018",
                     "metadata" => [
+		        'name' => request('name'),
                         'comments' => request('comments'),
-                        'fundraiser' => 'Solar Panel Fundraiser 2018',
                     ],
                     'receipt_email' => request('email'),
                 ), array(
@@ -127,7 +128,8 @@ class FundraisersController extends Controller
                     return $fundraiser->load(['creator', 'owner']);
                 }
 
-                return redirect($fundraiser->path());
+                //return redirect($fundraiser->path());
+		return view('fundraisers.success');
                                 
             } catch(\Stripe\Error\Card $e) {
                 // Since it's a decline, \Stripe\Error\Card will be caught

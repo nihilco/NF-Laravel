@@ -41,12 +41,13 @@ class DonationController extends Controller
         $this->validate(request(), [
             'stripeToken' => 'required',
             'name' => 'required',
-            'amount' => 'required',
+            'amount' => 'required|regex:/^\d*(\.\d{1,2})?$/',
             'email' => 'required|email',
             'comments' => '',
         ]);
         
-        \Stripe\Stripe::setApiKey("sk_test_pkUBnMZ0EEuUhIWsJGeyVNuX");
+        //\Stripe\Stripe::setApiKey("sk_test_pkUBnMZ0EEuUhIWsJGeyVNuX");
+	\Stripe\Stripe::setApiKey("sk_live_nZcSFL3SnsvRX5Hq0ukaLloz");
         $token = \Stripe\Token::retrieve(request('stripeToken'));
         
         if($token) {
@@ -57,8 +58,9 @@ class DonationController extends Controller
                     "amount" => request('amount') * 100,
                     "currency" => "usd",
                     "source" => $token->id,
-                    "description" => "Test Charge",
+                    "description" => "General Donation",
                     "metadata" => [
+		        'name' => request('name'),
                         'comments' => request('comments'),
                     ],
                     'receipt_email' => request('email'),

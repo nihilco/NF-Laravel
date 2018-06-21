@@ -241,7 +241,7 @@ provide Clayton a broad base of knowledge in many areas of law.</p>
     <li>10 girls presently in college in Gangtok, Sikkim India (living in college dormitories)</li>
     <li>4 graduates</li>
     <li>Each girl has a sponsor in the USA ($2300 annually per girl)</li>
-    <li>Beyond sponsorship funds, the we raise about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more oportunities for the girls.
+    <li>Beyond sponsorship funds, we raise about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more oportunities for the girls.
     </li>
     <li>3 employees in Sikkim (SHH coordinator, house mother, and cook)</li>
     <li>The girls attend an excellent private schools in Gangtok, Sikkim India</li>
@@ -565,7 +565,7 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
     <li>10 girls presently in college in Gangtok, Sikkim India (living in college dormitories)</li>
     <li>4 graduates</li>
     <li>Each girl has a sponsor in the USA ($2300 annually per girl)</li>
-    <li>Beyond sponsorship funds, the we raise about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more oportunities for the girls.
+    <li>Beyond sponsorship funds, we raise about $25,000 annually for building maintenance, house needs, salaries, medical expenses, and creating more oportunities for the girls.
     </li>
     <li>3 employees in Sikkim (SHH coordinator, house mother, and cook)</li>
     <li>The girls attend an excellent private schools in Gangtok, Sikkim India</li>

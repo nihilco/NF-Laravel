@@ -198,7 +198,7 @@
                                    })
                            
      // Create a Stripe client.
-     var stripe = Stripe('pk_test_oBG1UuDfekCXu72oDEOjRcqk');
+     var stripe = Stripe('pk_live_OarklrMISiJaFK0aS856tunw');			   
 
     // Create an instance of Elements.
     var elements = stripe.elements();
@@ -257,6 +257,7 @@ form.addEventListener('submit', function(event) {
             input.value = result.token.id;
             form.appendChild(input);
             form.submit();
+	    form.find('input[type=submit]').addClass('disabled');
         }
     });
 });
