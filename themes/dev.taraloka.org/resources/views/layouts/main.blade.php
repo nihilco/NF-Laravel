@@ -8,6 +8,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="uid" content="{{ Auth::check() ? Auth::user()->id : null }}">
+
+    @yield('opengraph')
     
     <link rel="icon" type="image/png" href="/img/favicon_32x32.png">
 

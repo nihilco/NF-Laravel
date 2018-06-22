@@ -1,5 +1,14 @@
 @extends('layouts.main')
 
+@section('opengraph')
+<meta property="fb:app_id" content="187097078310518" />
+<meta property="og:url" content="https://www.taraloka.org/contact" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Faraloka Foundation" />
+<meta property="og:description" content="The Taraloka Foundation is a registered 501(c)3 non-profit organization creating opportunities for Himalayan girls by providing education, healthcare, and a safe refuge." />
+<meta property="og:image" content="{{ url('/img/Donor_Book/Donor_Book-1.jpg') }}" />
+@endsection
+
 @section('title', 'Contact')
 
 @section('content')

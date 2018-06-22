@@ -7,7 +7,7 @@ class Page extends Base
     //
     public function path()
     {
-        return '/pages/' . $this->slug;
+        return '/' . $this->slug;
     }
 
     public function getRouteKeyName()
