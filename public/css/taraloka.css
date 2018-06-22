@@ -153,6 +153,13 @@ ul.dd-right li.nav-item  a.nav-link {
     /*border-bottom:2px solid #ec008c;*/
 }
 
+.fundraiserWrapper {
+    background-color:#222;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-top: 2px solid #afbd21;
+}
+
 .font-green {
     color: #afbd21;
 }

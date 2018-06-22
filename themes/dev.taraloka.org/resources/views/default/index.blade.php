@@ -50,4 +50,19 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
 	  </div>
       </div>
     </div>
+
+    <div class="fundraiserWrapper">
+      <div class="container">
+          <div class="row">
+    	    <div class="col text-center">
+
+    <h2>Hey! Who turned off the lights?</h2>
+    <p>Learn more about how The Taraloka Foundation plans to power through India's daily blackouts.</p>
+<a href="/fundraisers/solar-panel-fundraiser">Explore our Solar Panel Fundraiser</a>
+
+	    </div>
+	  </div>
+      </div>
+    </div>    
+    
 @endsection
