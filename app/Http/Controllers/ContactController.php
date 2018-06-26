@@ -36,9 +36,9 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-	$request->persist();
+        $request->persist();
 
-	return back()->with('flash', 'Your message was sent!');
+        return back()->with('flash', 'Your message was sent!');
     }
 
     /**

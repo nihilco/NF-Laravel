@@ -2,7 +2,7 @@
     {{-- Header --}}
     @slot('header')
         @component('mail::header', ['url' => config('app.url')])
-            The Taraloka Foundation
+            <img src="{{ url('/img/taraloka-logo.png') }}" id="header-image"/>
         @endcomponent
     @endslot
 
@@ -21,7 +21,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+            &copy; 2015-{{ date('Y') }} {{ config('view.title') }}. All rights reserved.
         @endcomponent
     @endslot
 @endcomponent

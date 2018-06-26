@@ -40,11 +40,11 @@ class ContactRequest extends FormRequest
     public function persist()
     {
 
-	$monitors = ['Uriah' => 'uriah@nihil.co'];
-	$monitors = [config('mail.contact.name') => config('mail.contact.address')];
-
-	Mail::to($monitors)->send(new ContactMonitors($this));	
-	Mail::to([$this->name => $this->email])->send(new ContactReceipt($this));
+        $monitors = ['Uriah' => 'uriah@nihil.co'];
+        $monitors = [config('mail.contact.name') => config('mail.contact.address')];
+        
+        Mail::to($monitors)->send(new ContactMonitors($this));	
+        Mail::to([$this->name => $this->email])->send(new ContactReceipt($this));
     }
-
+    
 }

@@ -200,7 +200,7 @@
                                    })
                            
      // Create a Stripe client.
-     var stripe = Stripe('pk_live_OarklrMISiJaFK0aS856tunw');			   
+                           var stripe = Stripe('<?php if(env('STRIPE_MODE') == 'live') { echo env('STRIPE_PLATFORM_LIVE_PUBLISHABLE'); }else{ echo env('STRIPE_PLATFORM_TEST_PUBLISHABLE'); } ?>');			   
 
     // Create an instance of Elements.
     var elements = stripe.elements();
