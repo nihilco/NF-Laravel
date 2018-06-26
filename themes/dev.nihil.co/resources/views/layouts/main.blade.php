@@ -185,7 +185,7 @@
         </div>
         <div class="row" style="padding-top:25px;">
           <div class="col-sm-6">
-            <p>Copyright &copy; 2018 The NIHIL Corporation.  All rights reserved.</p>
+      <p>Copyright &copy; 2009-<?= date('Y') ?> The NIHIL Corporation.  All rights reserved.</p>
           </div>
           <div class="col-sm-6 text-right">
             <p>Powered by <a href="https://www.nihil.co" target="_blank">NIHIL</a></p>
