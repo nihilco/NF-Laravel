@@ -48,21 +48,18 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
         <h5>The Massachusetts Magazine</h5>
         <p>George Washingtons personal copy of The Massachusetts Magazine Vol 1 - 1789 (including signature and bookplate) chronicling his inauguration...</p>
         <h6>Sold for $138,000.</h6>
-        <a href="/notable-sales" class="">View ></a>
       </div>    
       <div class="col-sm-3">
         <img src="/img/Silver-Service.jpg" class="block w-100" />
         <h5>Sterling Tea Service</h5>
         <p>Samuel Kirk & Son repousse sterling silver tea service</p>
         <h6>Sold for $11,000.</h6>
-        <a href="/notable-sales" class="">View ></a>
       </div>
       <div class="col-sm-3">
         <img src="/img/36-Star-Flag.jpg" class="block w-100" />
         <h5>36-Sar Flag</h5>
         <p>Civil War era American hand-sewn 36-star flag. Descended in the family of Charles Harrod Boyd, who served on General George H. Thomas staff as Captain of the Topographical Engineers, Army of the Cumberland.</p>
         <h6>Sold for $5,500.</h6>
-        <a href="/notable-sales" class="">View ></a>
       </div>
     
       <div class="col-sm-3">
@@ -70,7 +67,6 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
         <h5>Oil on Canvas</h5>
         <p>Victor Coleman Anderson Oil on Canvus</p>
         <h6>Sold for $33,600.</h6>
-        <a href="/notable-sales" class="">View ></a>
       </div>
     </div>
   </div>

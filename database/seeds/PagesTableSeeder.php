@@ -852,15 +852,31 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
 	    'slug' => 'who-we-are',
 	    'description' => '',
 	    'content' => '
-    <div class="jumbotron jumbotron-fluid" id="jumbotron-whoweare" style="margin-bottom:0;">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-        <h1 class="display-3">Who We Are</h1>
-    </div>
-    </div>
-      </div>
-    </div>
+          <div class="jumbotron jumbotron-fluid" id="jumbotron-whoweare" style="margin-bottom:0;">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h1 class="display-3">Who We Are</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+    <div style="padding-top:2em; padding-bottom:2em;">
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+<img src="/img/about.jpg" alt="Schows" class="img-fluid" />
+</div>
+<div class="col-sm-8">
+<p>Carl Schow is a native Chattanoogan. After graduating from Baylor, he earned is undergraduate English degree from Rhodes College. He has been in the business for over 12 years now. Carl loves the rich material history of this country and has devoted his life to the study of the decorative arts. Carl met his wife, Melanie, while they were fellow students at the North Georgia School of Auctioneering.</p> 
+
+<p>Melanie Nichols, a Chattanooga transplant, began her career in antiques as a young girl in South Georgia as her mother’s trusty assistant. While working the antique markets, auctions, and shows, Melanie learned the pulse of the antique and collectible trade. After completing her graduate degree in Environmental Science, she returned to the antique world.</p> 
+
+<p>Carl and Melanie bring together a dynamic understanding of the ever changing and intricate business of antiques.</p>
+</div>
+</div>
+</div>
+</div>
         ',
 	]);
 
@@ -882,7 +898,18 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
     </div>
       </div>
     </div>
+    <div style="padding-top:2em; padding-bottom:2em;">
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
 
+</div>
+<div class="col-sm-3">
+
+</div>
+</div>
+</div>
+</div>
         ',
 	]);
 
@@ -904,6 +931,38 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
     </div>
       </div>
     </div>
+    <div style="padding-top:2em; padding-bottom:2em;">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="/img/The-Massachusetts-Magazine.jpg" class="block w-100" />
+        <h5>The Massachusetts Magazine</h5>
+        <p>George Washingtons personal copy of The Massachusetts Magazine Vol 1 - 1789 (including signature and bookplate) chronicling his inauguration...</p>
+        <h6>Sold for $138,000.</h6>
+      </div>    
+      <div class="col-sm-3">
+        <img src="/img/Silver-Service.jpg" class="block w-100" />
+        <h5>Sterling Tea Service</h5>
+        <p>Samuel Kirk & Son repousse sterling silver tea service</p>
+        <h6>Sold for $11,000.</h6>
+      </div>
+      <div class="col-sm-3">
+        <img src="/img/36-Star-Flag.jpg" class="block w-100" />
+        <h5>36-Sar Flag</h5>
+        <p>Civil War era American hand-sewn 36-star flag. Descended in the family of Charles Harrod Boyd, who served on General George H. Thomas staff as Captain of the Topographical Engineers, Army of the Cumberland.</p>
+        <h6>Sold for $5,500.</h6>
+      </div>
+    
+      <div class="col-sm-3">
+        <img src="/img/Oil-on-Canvas.jpg" class="block w-100" />
+        <h5>Oil on Canvas</h5>
+        <p>Victor Coleman Anderson Oil on Canvus</p>
+        <h6>Sold for $33,600.</h6>
+      </div>
+    </div>
+
+</div>
+</div>
 
         ',
 	]);
@@ -987,6 +1046,18 @@ April 27, 2018
     </div>
       </div>
     </div>
+    <div style="padding-top:2em; padding-bottom:2em;">
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+
+</div>
+<div class="col-sm-6">
+<p>Schow’s Estate Sales is privileged to be offering one of the most exciting estate sales in Chattanooga in recent memory. Situated on a sixty six acre tract on the brow of Lookout Mountain, where the only thing better than the view is the beautiful collection of antiques. The collection is comprehensive both in quality and quantity. This life long collection is a rare sight. It is a must for the collector of the timeless. Estate sale will be the middle of July.</p>
+</div>
+</div>
+</div>
+</div>
 
         ',
 	]);
