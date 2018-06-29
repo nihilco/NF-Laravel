@@ -47,7 +47,7 @@ class DonationRequest extends FormRequest
         $this->sanitize();
 
         $this->token = \Stripe\Token::retrieve(request('stripeToken'));
-        
+
         if($this->token) {
             
             try {
@@ -69,7 +69,7 @@ class DonationRequest extends FormRequest
 
                 $monitors = [
                     'Uriah' => 'uriah@nihil.co',
-                    //'Tim' => 'tim@taraloka.org',
+                    'Tim' => 'tim@taraloka.org',
                 ];
                 
                 Mail::to($monitors)->send(new DonationMonitors($this));	
@@ -118,10 +118,12 @@ class DonationRequest extends FormRequest
     private function getStripeApiKey()
     {
         if(env('STRIPE_MODE') == 'live') {
-            \Stripe\Stripe::setApiKey(env('STRIPE_PLATFORM_LIVE_SECTRET'));
+	    $key = env('STRIPE_PLATFORM_LIVE_SECRET');
         }else{
-            \Stripe\Stripe::setApiKey(env('STRIPE_PLATFORM_TEST_SECRET'));
+            $key = env('STRIPE_PLATFORM_TEST_SECRET');
         }
+	
+	\Stripe\Stripe::setApiKey($key);
     }
 
     private function sanitize()

@@ -144,9 +144,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="processingPaymentModalTitle">Payment Processing...</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
           <div class="modal-body">
             Your payment is processing.  Please be patient.  Do not click back or refresh your browser until this action is complete.
