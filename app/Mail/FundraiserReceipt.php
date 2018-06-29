@@ -6,9 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Http\Requests\DonationRequest;
+use App\Http\Requests\FundraiserRequest;
 
-class DonationMonitors extends Mailable
+class FundraiserReceipt extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,7 +19,7 @@ class DonationMonitors extends Mailable
      *
      * @return void
      */
-    public function __construct(DonationRequest $request)
+    public function __construct(FundraiserRequest $request)
     {
         //
         $this->request = $request;
@@ -32,8 +32,8 @@ class DonationMonitors extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->request['name'] . ' Made a Donation')
-                    ->markdown('emails.donation-monitors.html')
-                    ->text('emails.donation-monitors.text');
+        return $this->subject('Donation Receipt from ' . config('view.title'))
+                    ->markdown('emails.fundraiser-receipt.html')
+                    ->text('emails.fundraiser-receipt.text');
     }
 }

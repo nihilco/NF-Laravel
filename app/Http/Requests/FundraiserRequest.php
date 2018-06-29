@@ -5,14 +5,15 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\User;
 use Mail;
-use App\Mail\DonationMonitors;
-use App\Mail\DonationReceipt;
+use App\Mail\FundraiserMonitors;
+use App\Mail\FundraiserReceipt;
 use Carbon\Carbon;
 
-class DonationRequest extends FormRequest
+class FundraiserRequest extends FormRequest
 {
     public $token;
     public $charge;
+    public $fundraiser;
     
     /**
      * Determine if the user is authorized to make this request.
@@ -40,8 +41,10 @@ class DonationRequest extends FormRequest
         ];
     }
 
-    public function persist()
+    public function persist($fundraiser)
     {
+        $this->fundraiser = $fundraiser;
+        
         $this->getStripeApiKey();
 
         $this->sanitize();
@@ -67,13 +70,18 @@ class DonationRequest extends FormRequest
                     "stripe_account" => "acct_17OfNeG8vwHYcmsJ"
                 ));
 
+                //
+                $this->fundraiser->actual += (request('amount') * 100);
+        
+                $this->fundraiser->save();
+
                 $monitors = [
                     'Uriah' => 'uriah@nihil.co',
                     //'Tim' => 'tim@taraloka.org',
                 ];
                 
-                Mail::to($monitors)->send(new DonationMonitors($this));	
-                Mail::to([$this->name => $this->email])->send(new DonationReceipt($this));   
+                Mail::to($monitors)->send(new FundraiserMonitors($this));	
+                Mail::to([$this->name => $this->email])->send(new FundraiserReceipt($this));
 
                 return true;
                 

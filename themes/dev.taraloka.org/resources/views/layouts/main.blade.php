@@ -245,6 +245,8 @@ var form = document.getElementById('donation-form');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
+    $('#processingPaymentModal').modal('show');
+    
     stripe.createToken(card).then(function(result) {
         if (result.error) {
             // Inform the user if there was an error.
@@ -259,7 +261,7 @@ form.addEventListener('submit', function(event) {
             input.value = result.token.id;
             form.appendChild(input);
             form.submit();
-	    form.find('input[type=submit]').addClass('disabled');
+	        form.find('input[type=submit]').addClass('disabled');
         }
     });
 });

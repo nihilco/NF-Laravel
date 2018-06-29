@@ -36,8 +36,15 @@ class DonationController extends Controller
      */
     public function store(DonationRequest $request)
     {
-        $request->persist();
+        if($request->persist()) {
 
-        return view('donation.success');
+            if(request()->expectsJson()) {
+                return response('Success', 200);
+            }
+            
+            return view('donation.success');
+        }
+
+        return back();
     }
 }
