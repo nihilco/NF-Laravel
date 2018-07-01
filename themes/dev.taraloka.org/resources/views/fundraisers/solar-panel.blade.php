@@ -40,6 +40,15 @@
 
 	        </div>
 	        <div class="col-sm-6">
+
+    @if(session()->has('cardError'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong><i class="fas fa-exclamation-triangle"></i> Error!</strong> {{ session('cardError') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+	  </button>
+	  </div>
+@endif
                                                                                                                                   
       <form method="POST" id="donation-form" role="form" action="/fundraisers/solar-panel-fundraiser">
 	    {{ csrf_field() }}

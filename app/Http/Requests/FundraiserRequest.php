@@ -90,16 +90,18 @@ class FundraiserRequest extends FormRequest
                 $body = $e->getJsonBody();
                 $err  = $body['error'];
                 //dd($err);
-                print('Status is:' . $e->getHttpStatus() . "\n");
-                print('Type is:' . $err['type'] . "\n");
-                print('Code is:' . $err['code'] . "\n");
+                //print('Status is:' . $e->getHttpStatus() . "\n");
+                //print('Type is:' . $err['type'] . "\n");
+                //print('Code is:' . $err['code'] . "\n");
                 // param is '' in this case
-                print('Param is:' . $err['param'] . "\n");
-                print('Message is:' . $err['message'] . "\n");
-                abort(500, 'Card Error.');
+                //print('Param is:' . $err['param'] . "\n");
+                //print('Message is:' . $err['message'] . "\n");
+                $this->session()->flash('cardError', 'There was an error processing your card.  ' . $err['message']);
+                return false;
             } catch (\Stripe\Error\RateLimit $e) {
                 // Too many requests made to the API too quickly
-                abort(500, 'Rate Limit Error.');
+                $this->session()->flash('cardError', 'Too many attempts.  Please wait a few minutes and try again later.');
+                return false;
             } catch (\Stripe\Error\InvalidRequest $e) {
                 // Invalid parameters were supplied to Stripe's API
                 abort(500, 'Invalid Request Error.');

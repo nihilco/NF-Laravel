@@ -88,10 +88,12 @@ class DonationRequest extends FormRequest
                 // param is '' in this case
                 //print('Param is:' . $err['param'] . "\n");
                 //print('Message is:' . $err['message'] . "\n");
-		return back()->withError(['cardError', 'There was an error processing your card.' . $err['message']]);
+                $this->session()->flash('cardError', 'There was an error processing your card.  ' . $err['message']);
+                return false;
             } catch (\Stripe\Error\RateLimit $e) {
                 // Too many requests made to the API too quickly
-		return back()->withError(['ratelimitError', 'Too many attempts.  PLease wait and try again later.']);
+                $this->session()->flash('cardError', 'Too many attempts.  Please wait a few minutes and try again later.');
+                return false;
             } catch (\Stripe\Error\InvalidRequest $e) {
                 // Invalid parameters were supplied to Stripe's API
                 abort(500, 'Invalid Request Error.');

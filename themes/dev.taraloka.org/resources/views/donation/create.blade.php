@@ -19,12 +19,9 @@
       </div>
       <p class="lead">Please use the form below to make a donation.</p>
 
-@if($errors->has('cardError') || $errors->has('ratelimitError'))
+    @if(session()->has('cardError'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong><i class="fas fa-exclamation-triangle"></i> Error!</strong>
-  @foreach ($errors->all() as $error)
-        <div>{{ $error }}</div>
-	  @endforeach
+    <strong><i class="fas fa-exclamation-triangle"></i> Error!</strong> {{ session('cardError') }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
 	  </button>
