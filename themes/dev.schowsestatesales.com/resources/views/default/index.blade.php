@@ -39,7 +39,7 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
     <div class="row">
       <div class="col-sm-12 text-center">
         <h2>Notable Sales</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel dolor enim. Donec lacinia metus at blandit faucibus.</p>
+    <p>These are examples of items we have brokered. Important and valuable objects need attention from specialists. We go beyond researching value to researching where to find those potential clients that will want your item. The results speak for themselves.</p>
       </div>
     </div>
     <div class="row">
@@ -52,7 +52,7 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
       <div class="col-sm-3">
         <img src="/img/Silver-Service.jpg" class="block w-100" />
         <h5>Sterling Tea Service</h5>
-        <p>Samuel Kirk & Son repousse sterling silver tea service</p>
+    <p>Samuel Kirk & Son repousse sterling silver tea service, 6 pieces, comprised of a swing kettle on stand with burner, coffee pot, tea pot, creamer, covered sugar bowl with lion mask and ring handles...</p>
         <h6>Sold for $11,000.</h6>
       </div>
       <div class="col-sm-3">
@@ -65,7 +65,7 @@ $newYear = \Carbon\Carbon::createFromDate(2018,1,1);
       <div class="col-sm-3">
         <img src="/img/Oil-on-Canvas.jpg" class="block w-100" />
         <h5>Oil on Canvas</h5>
-        <p>Victor Coleman Anderson Oil on Canvus</p>
+    <p>Victor Anderson oil on canvas titled "Barn Swallow - Children Playing in Hay Loft", circa 1935. Depicting children swinging from the rafters of a barn onto the hay below, signed lower right, Victor C. Anderson.</p>
         <h6>Sold for $33,600.</h6>
       </div>
     </div>

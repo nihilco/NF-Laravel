@@ -857,6 +857,7 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
               <div class="row">
                 <div class="col-sm-12">
                   <h1 class="display-3">Who We Are</h1>
+<p>Carl and Melanie bring together a dynamic understanding of the ever changing and intricate business of antiques.</p>
                 </div>
               </div>
             </div>
@@ -871,8 +872,6 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
 <p>Carl Schow is a native Chattanoogan. After graduating from Baylor, he earned is undergraduate English degree from Rhodes College. He has been in the business for over 12 years now. Carl loves the rich material history of this country and has devoted his life to the study of the decorative arts. Carl met his wife, Melanie, while they were fellow students at the North Georgia School of Auctioneering.</p> 
 
 <p>Melanie Nichols, a Chattanooga transplant, began her career in antiques as a young girl in South Georgia as her mother’s trusty assistant. While working the antique markets, auctions, and shows, Melanie learned the pulse of the antique and collectible trade. After completing her graduate degree in Environmental Science, she returned to the antique world.</p> 
-
-<p>Carl and Melanie bring together a dynamic understanding of the ever changing and intricate business of antiques.</p>
 </div>
 </div>
 </div>
@@ -901,11 +900,11 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
     <div style="padding-top:2em; padding-bottom:2em;">
 <div class="container">
 <div class="row">
-<div class="col-sm-3">
-
+<div class="col-sm-8">
+<p>Our philosophy is simple. Provide the very best service to our customer base on their unique situation. So what does that entail? For estate sales, we have a proven process. First of all, we stage and clean a house to give the customers a vision. People need to see how furniture or household items can be applied in their house. Then we heavily research items to find value in today’s market. If we find an item with significant value that needs a national or international audience, we will broker or offer that in an national or international setting. (The week that I wrote this, I found a music box at a house we were conducting an estate sale and sold it online to someone in Austria for $1,600.00. In this business, it is vital one can research not only the value of an item but also the correct avenue to sell that item. This in essence is Schows, Estate Sales’s speciality.) Once the items have been researched, priced, and stage, the next step is advertising. We use several highly effective internet and print advertising campaigns to get those customers to the house. The day of the estate sale we have a courteous and knowledgeable staff to insure the success of your estate sale.</p>
 </div>
-<div class="col-sm-3">
-
+<div class="col-sm-4">
+<img class="img-fluid" src="/img/Music-Box.jpg" alt="Music Box" />
 </div>
 </div>
 </div>
@@ -927,6 +926,7 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
         <div class="row">
           <div class="col-sm-12">
         <h1 class="display-3">Notable Sales</h1>
+<p>These are examples of items we have brokered. Important and valuable objects need attention from specialists. We go beyond researching value to researching where to find those potential clients that will want your item. The results speak for themselves.</p>
     </div>
     </div>
       </div>
@@ -943,7 +943,7 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
       <div class="col-sm-3">
         <img src="/img/Silver-Service.jpg" class="block w-100" />
         <h5>Sterling Tea Service</h5>
-        <p>Samuel Kirk & Son repousse sterling silver tea service</p>
+        <p>Samuel Kirk & Son repousse sterling silver tea service, 6 pieces, comprised of a swing kettle on stand with burner, coffee pot, tea pot, creamer, covered sugar bowl with lion mask and ring handles and tea strainer. Each piece of baluster form with flared lip, and footed base, all with chased and engraved floral repousse decoration in high relief and feathered edges, the domed covers with figural grapevine cluster finials. Kettle, tea and coffee pot with carved ivory insulators, sugar bowl with lion mask handles. Each piece marked on the base &quot;S. Kirk & Son Co., 925/1000.&quot;</p>
         <h6>Sold for $11,000.</h6>
       </div>
       <div class="col-sm-3">
@@ -956,7 +956,7 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
       <div class="col-sm-3">
         <img src="/img/Oil-on-Canvas.jpg" class="block w-100" />
         <h5>Oil on Canvas</h5>
-        <p>Victor Coleman Anderson Oil on Canvus</p>
+        <p>Victor Anderson oil on canvas titled "Barn Swallow - Children Playing in Hay Loft", circa 1935. Depicting children swinging from the rafters of a barn onto the hay below, signed lower right, Victor C. Anderson. Likely housed in the original molded gilt wood frame, attributed to Newcomb Macklin. Mongerson Wunderlich Galleries, Chicago label en verso, lower left.</p>
         <h6>Sold for $33,600.</h6>
       </div>
     </div>
@@ -981,6 +981,9 @@ Our friends at Ladakh Trekking offer treks in the north Indian state of Ladkh an
         <div class="row">
           <div class="col-sm-12">
         <h1 class="display-3">Testimonials</h1>
+<p>
+&quotI highly recommend the services of Carl Schow for any Estate Sale efforts.&quot; - Chris Moore, MD
+</p>
     </div>
     </div>
       </div>
@@ -1002,17 +1005,14 @@ March 1, 2018
 </div>
 <div class="col-sm-6">
 <p>
-&quotI highly recommend the services of Carl Schow for any Estate Sale efforts.
-</p>
-<p>
-Carl and his team bring to any estate sale a wealth of knowledge regarding most anything that
+&quot;Carl and his team bring to any estate sale a wealth of knowledge regarding most anything that
 one would consider dispensing with. He knows art, antiques, furniture, jewelry, glassware and
 almost anything I can think of. His experience at conducting such sales brings an added sense
 of feeling as if one is letting go of valuable and not so valuable items in the best possible way.
 Carl’s approach is comprehensive and efficient, and, in our case, gave my family a great sense
 of peace that we had dealt with our family’s treasures in the most respectful way knowing what
 was not valuable either brought us significant value, was donated to a good cause or dispensed
-with properly.&quot
+with properly.&quot;
 </p>
 <p>
 Chris Moore, MD<br />
@@ -1049,11 +1049,14 @@ April 27, 2018
     <div style="padding-top:2em; padding-bottom:2em;">
 <div class="container">
 <div class="row">
-<div class="col-sm-6">
-
+<div class="col-sm-4">
+<img class="img-fluid" src="/img/Sewing-Machines.jpg" alt="Sewing Machines"/>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-8">
+<h1>Lookout Mountain, TN</h1>
+<h2>July 19-22</h2>
 <p>Schow’s Estate Sales is privileged to be offering one of the most exciting estate sales in Chattanooga in recent memory. Situated on a sixty six acre tract on the brow of Lookout Mountain, where the only thing better than the view is the beautiful collection of antiques. The collection is comprehensive both in quality and quantity. This life long collection is a rare sight. It is a must for the collector of the timeless. Estate sale will be the middle of July.</p>
+<p>More information and pictures can be found at the following: <a href="https://www.estatesales.net/GA/Lookout-Mountain/30750/1918629?oldBundleReload=true" target="_blank">https://www.estatesales.net/GA/Lookout-Mountain/30750/1918629?oldBundleReload=true</a></p>
 </div>
 </div>
 </div>
